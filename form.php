@@ -234,19 +234,56 @@ h1, h2, h3, h4, h5, h6, p{
     <div class="row col-12 mx-auto">
         <b class="col-10 col-md-8 text-center">Get Free Startup Resources.</b>
         <h6 class="col-12 text-center">Join thousands of the Early Stage African Founders building a business</h6>
-        <form>
+        <form action='backend/subscribe.php' method='post'>
             <div class="row">
                 <div class="col-11 col-md-3 input">
-                    <input type="text" class="form-control" placeholder="Firstname">
+                    <input type="text" name="firstname" class="form-control" placeholder="Firstname">
                 </div>
                 <div class="col-11 col-md-3 input">
-                    <input type="text" class="form-control" placeholder="Lastname">
+                    <input type="text" name="lastname" class="form-control" placeholder="Lastname">
                 </div>
                 <div class="col-11 col-md-3 input">
-                    <input type="email" class="form-control" placeholder="Email address">
+                    <input type="email" name="email" class="form-control" placeholder="Email address">
                 </div>
+
+
+                <!-- add the rest of the input form here -->
+
+
+
+                <!-- captcha -->
+                <link rel="stylesheet" href="assets/captcha.css" />
+                <script src="backend/app.js"></script>
+                <div class="container1">
+                    <div class="col-11 col-md-3 input">
+                            <div id="captcha" class="captcha"><script>createCaptcha();</script></div>
+                          <div class="restart">
+                            <a href="#" onclick="createCaptcha()">Change</a>
+                          </div>
+                    </div> 
+                  <div class="col-11 col-md-3 input">
+                    <input
+                    class="form-control"
+                      type="text"
+                      name="reCaptcha"
+                      id="reCaptcha"
+                      placeholder="Type The Captcha"
+                    />
+                    <div class="col-11 col-md-3 input">
+                        <input class="form-control" type="button" value="Submit" onclick="validateCaptcha()" />
+                <div>
+                  </div>
+                  <div id="errCaptcha" class="errmsg"></div>
+                  <div id="cap" class="cap"><input id="cap2" type="text" name="cap"></div>
+                </div>
+
+
+                <!-- end of captcha -->
+
+
+
                 <div class="col-11 col-md-3 subscribe">
-                    <input type="submit" value="Subscribe">
+                    <input type="submit" name="subscribe" value="Subscribe">
                 </div>
             </div>
         </form>
