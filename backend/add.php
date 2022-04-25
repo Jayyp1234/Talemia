@@ -30,7 +30,7 @@ if (isset($_POST['add'])) {
     $sql = "INSERT INTO `blog`(`category`, `title`, `author`, `date`, `duration`, `facebook`, `twitter`, `linkedin`, `whatsapp`, `email`, `image`, `body`) VALUES
      ('$category','$title','$author','$date',$duration','$facebook','$age','$category','$whatsapp','$email','$email','$content')";
      //query our SQL code
-     $signup = mysqli_query($con, $sql);
+     $add = mysqli_query($con, $sql);
 
      //upload image
      if (move_uploaded_file($_FILES['image']['tmp_name'], $folder)) {
@@ -44,7 +44,7 @@ if (isset($_POST['add'])) {
  else {
     // include error 404 page here (page not found) here !!!
 };
-    if ($signup) {
+    if ($add) {
         //redirect admin to blog page here !!!
     } else {
         //include error 500 or 200 (Server error) here !!!
