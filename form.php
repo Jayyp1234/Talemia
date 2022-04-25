@@ -4,7 +4,7 @@
 ?>
 
 <style>
-    @font-face {
+@font-face {
     font-family:OpenSans;
     src:url('../css/OpenSans-Regular.ttf');
 }
@@ -32,278 +32,327 @@ h1, h2, h3, h4, h5, h6, p{
     font-weight: normal;
     margin: unset;
 }
-.container{
-    margin: 3pc auto;
+ul, li{
+    list-style-type: none;
+    list-style: none;
+    margin: unset;
 }
-.image{
-    text-align: center;
+body{
+    position: relative;
 }
-.image img{
-    width: 30%;
-}
-.container .row{
-    justify-content: space-evenly;
-}
-.container .row b{
-    font-size: 1.2rem;
-    color: var(--blue);
-    margin-top: 1pc 0
-}
-.container .row h6{
-    font-size: 1.2rem;
-    margin: 2pc 0;
-}
-.container form .row{
-    justify-content: space-between;
-    align-items: center;
-}
-.container form .row * input:focus{
+:is(.form-control, .form-select):focus{
     box-shadow: none;
-    outline: none
-}
-.container form .row * input::placeholder{
-    font-size: .9rem;
-}
-.container form .row * input:not([type="submit"]):hover,
-.container form .row * input:not([type="submit"]):focus{
     border: 2px solid var(--blue);
-    outline: none;
 }
-* input:not([type="submit"]){
-    padding: .8rem;
-    border: 1.9px solid #212529;
-    font-size: .9rem
-}
-
-.input{
-    text-align: right;
-}
-[type="submit"]{
-    background-color: var(--blue);
-    color: var(--white);
-    padding: .9rem 2rem;
+.form-control{
     font-size: 14px;
     outline: none;
-    width: 70%;
-    border-radius:.35rem;
-    border: none;
 }
-[class="col-11 col-md-6 text-center"]{
-    margin-top: 3pc;
+.form-control:hover{
+    outline: 1px solid var(--blue);
 }
-[class="col-11 col-md-6 text-center"] h4{
-    font-weight: 600;
+.form-control, .form-select{
+    box-shadow: 0 1.5px 10px -7.5px;
+    width: 64%;
+}
+:is(.form-select, .form-control){
+    padding: 0.75rem 0.6rem;
+}
+input[type="radio"]{
+    cursor: pointer;
+}
+.form-check {
+    display: block;
+    padding: 0 0.8rem;
+    margin: 0;
+}
+.form-label {
+    margin-bottom: 0
+}
+.container-fluid{
+    padding: 0;
+}
+.container-fluid .cover-banner{
+    width: 100%;
+    top: -7pc;
+}
+.container-fluid .cover-banner > img:nth-child(2){
+    position: absolute;
+    bottom: -10%;
+    left: 21%;
+    border-radius: 100%;
+    width: 7%;
+}
+.container {
+    top: 0;
+    padding-left: 12pc;
+}
+.container h2{
+    font-weight: bolder;
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+
+}
+form{
+    flex-direction: column;
+    padding-top: 2.4pc;
+}
+form > div {
+    line-height: 2.2pc;
+    margin: 0.8pc 0;
+    padding: 0 0.5pc;
+}
+input::placeholder{
+    font-size: 14px;
+    color: #ccc;
+    opacity: .1;
 }
 
-.apply-btn{
-    margin: 2pc 0 0 0;
+.message{
+    white-space: nowrap;
 }
-.apply-btn a {
+.subscribe{
+    margin-top: 2pc;
+}
+.subscribe a{
     display: flex;
     background-color: var(--blue);
     color: var(--white);
     align-items: center;
-    padding: 1rem 4.5rem;
+    padding: 0.8rem 3.5rem;
     text-transform: capitalize;
     border-radius: 5px;
     justify-content: center;
+    transition: .6s ease-in-out;
 }
-.apply-btn a > div h5{
+.subscribe a > div h5{
     white-space: nowrap;
-    font-size: 14px;
+    font-size: 16px;
 }
-.apply-btn a > i{
+.subscribe a > i{
     margin-left: 5px;
     font-size: 1.1rem;
-    display: none;
-    opacity: 0;
-}
-.apply-btn a:hover > i{
-    margin-left: 5px;
-    font-size: 1.1rem;
-    opacity: 1;
-    display: block;
 }
 
 
 
-/* tablet screen size */
 @media (min-width: 767.5px) and (max-width: 991px){
-    
-    .container .row b {
-        font-size: 1.1rem;
-    }
-    .container .row h6 {
-        font-size: 1rem;
-        margin: 2pc 0;
-        padding: 0;
-    }
+
+}
 
 
-    .container form .row * input::placeholder{
-        font-size: .7rem;
+@media (min-width: 320px) and (max-width: 575.98px){
+    .container-fluid .cover-banner > img:nth-child(2) {
+        bottom: -22%;
+        left: 10%;
+        width: 15%;
     }
-    * input:not([type="submit"]) {
-        padding: 0.6rem;
+    .container-fluid .cover-banner {
+        top: 0;
     }
-    * input:not([type="submit"]){
-        padding: .6rem;
-        border: 1.9px solid #212529;
-        font-size: .8rem
+    .container h2 {
+        font-size: 1.5rem;
+        margin: 2pc 0 0 1.9rem;
     }
-    .input{
-        padding:0 5px;
+    .container {
+        top: 0pc;
+        padding: unset;
+        margin-bottom: 2pc;
     }
-    [type="submit"]{
-        padding: 0.8rem 2rem;
-        font-size: .75rem;
+    form {
+        padding-top: 1.5pc;
+        margin: 0 auto !important;
     }
-    .apply-btn a > div h5 {
-        white-space: nowrap;
+    :is(label, .message p){
         font-size: 13px;
     }
-    [class="col-11 col-md-6 text-center"] h4 {
-        font-weight: 600;
-        font-size: 1.25rem;
-        color: #303134;
+    :is(.form-select, .form-control) {
+        padding: 0.55rem 0.6rem;
     }
-
-}
-
-/* mobile screen size */
-@media (min-width: 320px) and (max-width: 575.98px){
-    .container{
-        margin: 1pc auto;
-    }
-    .image img{
-        width: 70%;
-    }
-    .container .row b {
-        font-size: 1rem;
-    }
-    .container .row h6 {
-        font-size: .86rem;
-    }
-    .container form .row {
-        justify-content: center;
-    }
-    .input {
-        margin: 0.5pc 0;
-    }
-    .container form .row * input::placeholder{
-        font-size: 11px;
-    }
-    * input:not([type="submit"]) {
-        padding: 0.5rem;
-        border: 1.9px solid #212529;
+    .form-control{
         font-size: 12px;
     }
-    .subscribe{
-        text-align:center;
-        margin-top: 1.7pc;
+    input::placeholder{
+        font-size: 12px;
     }
-    [type="submit"], .apply-btn a {
-        padding: 0.6rem 2rem;
-        width: 100%;
-        font-size: 12px
-    }
-    [type="submit"] {
-        padding: 0.6rem 2rem;
-        width: 100%;
-    }
-    [class="col-11 col-md-6 text-center"] {
-        margin-top: 2pc;
-        padding: 0;
-    }
-    [class="col-11 col-md-6 text-center"] h4{
+    .form-label {
         font-size: 14px;
     }
-    .apply-btn a > div h5 {
+    .form-control, .form-select {
+        width: 100%;
+    }
+    .form-check {
+        margin: 0 auto;
+    }
+    form > div {
+        line-height: 1.9pc;
+        margin: 0.8pc auto;
+        padding: 0 0.5pc;
+    }
+    .form-check{
+        margin: 0 auto;
+        padding: 0 0.5pc !important;
+    }
+
+    .message{
+        white-space: unset;
+        margin: 0 auto;
+    }
+    :is(.subscribe a > div h5, .subscribe a > i){
         font-size: 12px;
     }
+    
+
 }
+
+
+
 </style>
 
 
 
-
-<div class="container">
-    <div class="image col-10 mx-auto">
-        <img src="assets/image/Talemia-header-illustration.svg" class="img-fluid" alt="">
+<div class="container-fluid">
+    <div class="cover-banner position-relative">
+        <img src="assets/image/talemia-cover.jpg" class="img-fluid" alt="">
+        <img src="assets/image/talemia-logo.jpg" class="img-fluid" alt="">
     </div>
-    <div class="row col-12 mx-auto">
-        <b class="col-10 col-md-8 text-center">Get Free Startup Resources.</b>
-        <h6 class="col-12 text-center">Join thousands of the Early Stage African Founders building a business</h6>
-        <form action='backend/subscribe.php' method='post'>
-            <div class="row">
-                <div class="col-11 col-md-3 input">
-                    <input type="text" name="firstname" class="form-control" placeholder="Firstname">
-                </div>
-                <div class="col-11 col-md-3 input">
-                    <input type="text" name="lastname" class="form-control" placeholder="Lastname">
-                </div>
-                <div class="col-11 col-md-3 input">
-                    <input type="email" name="email" class="form-control" placeholder="Email address">
-                </div>
-
-
-                <!-- add the rest of the input form here -->
-
-
-
-                <!-- captcha -->
-                <link rel="stylesheet" href="assets/captcha.css" />
-                <script src="backend/app.js"></script>
-                <div class="container1">
-                    <div class="col-11 col-md-3 input">
-                            <div id="captcha" class="captcha"><script>createCaptcha();</script></div>
-                          <div class="restart">
-                            <a href="#" onclick="createCaptcha()">Change</a>
-                          </div>
-                    </div> 
-                  <div class="col-11 col-md-3 input">
-                    <input
-                    class="form-control"
-                      type="text"
-                      name="reCaptcha"
-                      id="reCaptcha"
-                      placeholder="Type The Captcha"
-                    />
-                    <div class="col-11 col-md-3 input">
-                        <input class="form-control" type="button" value="Submit" onclick="validateCaptcha()" />
-                <div>
-                  </div>
-                  <div id="errCaptcha" class="errmsg"></div>
-                  <div id="cap" class="cap"><input id="cap2" type="text" name="cap"></div>
-                </div>
-
-
-                <!-- end of captcha -->
-
-
-
-                <div class="col-11 col-md-3 subscribe">
-                    <input type="submit" name="subscribe" value="Subscribe">
-                </div>
+    <div class="col-12 container position-relative">
+        <h2 class="text-center text-md-start col-5 col-md-12">start your application</h2>
+        <form action="" class="row col-12">
+            <div class="col-11 col-md-7">
+                <label for="" class="form-label">First name:</label>
+                <input type="text" class="form-control" id="" placeholder="Firstname">
+            </div>
+            <div class="col-11 col-md-7">
+                <label for="" class="form-label">Last name:</label>
+                <input type="email" class="form-control" id="" placeholder="Lastname">
+            </div>
+            <div class="col-11 col-md-7">
+                <label for="" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="" placeholder="Email address">
+            </div>
+            <div class="col-11 col-md-7">
+                <label for="" class="form-label">Phone Number:</label>
+                <input type="email" class="form-control" id="" placeholder="Phone number">
+            </div>
+            <div class="col-11 col-md-7">
+                <label for="" class="form-select-label">Select Your Country</label>
+                <select class="form-select" size="1" aria-label="Default select example">
+                    <option value="Algeria">Algeria</option>
+                    <option value="Benin Republic">Benin Republic</option>
+                    <option value="Ethiopia">Ethiopia</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Ivory-Coast">Ivory-Coast</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option selected>Nigeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                  </select>
+            </div>
+            <div class="col-11 col-md-7">
+                <label for="startup-name" class="form-label">Name of Startup</label>
+                <input type="text" class="form-control" id="startup-name" placeholder="Startup Name">
+            </div>
+            <div class="form-check col-11 col-md-7">  
+                <label class="form-check-label" for="">Gender:</label><br>
+                <input class="" type="radio" name="flexRadioDefault" id="" placeholder="Firstname">
+                <label class="form-check-label" for="">Male</label><br>
+                <input class="" type="radio" name="flexRadioDefault" id="" placeholder="Firstname">
+                <label class="form-check-label" for="">Female</label>
+            </div>
+            <div class="col-11 col-md-7">
+                <label for="" class="form-select-label">Age Range:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Nigeria</option>
+                    <option value="Algeria1">Algeria1One</option>
+                    <option value="Algeria2">Algeria2Two</option>
+                    <option value="Algeria3">Algeria3Three</option>
+                  </select>
+            </div>
+            <div class="form-check col-11 col-md-7">  
+                <label class="form-check-label" for="">What Category of Startup/idea?</label><br>
+                <input class="" type="radio" name="flexRadioDefault" id="">
+                <label class="form-check-label" for="">
+                    Technology Based
+                </label><br>
+                <input class="" type="radio" name="flexRadioDefault" id="">
+                <label class="form-check-label" for="">
+                    Traditionally Based [Non-Tech]
+                </label>
+            </div>
+            <div class="col-11 col-md-7">
+                <label for="industry" class="form-select-label">What industry is your Startup/Idea?</label>
+                <select class="form-select" size="1" aria-label="" id="industry">
+                    <option value="Algeria">Agriculture</option>
+                    <option value="Benin Republic">Benin Republic</option>
+                    <option value="Ethiopia">Ethiopia</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Ivory-Coast">Ivory-Coast</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Algeria">Algeria</option>
+                  </select>
+            </div>
+            <div class="col-11 col-md-7">
+                <label for="startup-stage" class="form-select-label">Select Your Country:</label>
+                <select class="form-select" size="1" aria-label="" id="startup-stage">
+                    <option value="Algeria" selected>Idea</option>
+                    <option value="pre-mvp">Pre MVP</option>
+                    <option value="mvp">MVP</option>
+                    <option value="growth">Growth</option>
+                  </select>
+            </div>
+            <div class="form-check col-11 col-md-7">  
+                <label class="form-check-label" for="">Do you have a team apart from yourself?</label><br>
+                <input class="" type="radio" name="flexRadioDefault" id="">
+                <label class="form-check-label" for="">Yes</label><br>
+                <input class="" type="radio" name="flexRadioDefault" id="">
+                <label class="form-check-label" for="">No</label>
+            </div>
+            <div class="form-check col-11 col-md-7">  
+                <label class="form-check-label" for="">How old is your Startup?</label><br>
+                <input class="" type="radio" name="flexRadioDefault" id="">
+                <label class="form-check-label" for="">Yes</label><br>
+                <input class="" type="radio" name="flexRadioDefault" id="">
+                <label class="form-check-label" for="">No</label><br>
+                <input class="" type="radio" name="flexRadioDefault" id="">
+                <label class="form-check-label" for="">No</label>
             </div>
         </form>
-
-        <div class="col-11 col-md-6 text-center">
-            <h4>Launch your startup faster</h4>
+        <div class="col-8 col-11 col-md-7 message">
+            <p>Thank your for entering your details, click the link below to purchase your subscription.</p>
         </div>
-        <div class="apply-btn text-center col-11 col-md-8">
-            <a href="" class="col-4 col-md-2 mx-auto">
-                <div class=""><h5>apply now</h5></div>
-                <i class="icon-trending_flat"></i>
-                <!-- <div class="icon" style="transform: rotate(45deg); font-size: 20px;"><i class="icon-call_made"></i></div> -->
+        <div class="subscribe">
+            <a href="" class="col-11 col-md-2 mx-auto mx-lg-0">
+                <div class=""><h5>Subscribe</h5></div>
+                <i class="icon-arrow_forward"></i>
             </a>
         </div>
     </div>
 </div>
-
-
-
-
 
 
 
