@@ -56,6 +56,13 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/ui.css?v=1.1" rel="stylesheet" type="text/css" />
     <link href="assets/css/responsive.css?v=1.1" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <!-- iconfont -->
     <link rel="stylesheet" href="assets/fonts/material-icon/css/round.css" />
 </head>
@@ -143,7 +150,88 @@
     visibility: visible;
     display: block;
     top:40px;
-}@media all and (max-width:820px){
+}
+/* sidebar */
+.offcanvas h5{
+    visibility: hidden;
+}
+.offcanvas-body{
+    padding: 0;
+}
+.offcanvas-body .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 1.8pc;
+}
+.offcanvas-body .content .group-list {
+    width: 100%;
+}
+.offcanvas-body .content .group-list ul{
+    padding: 0;
+}
+.offcanvas-body .content .group-list ul > li{
+    line-height: 2.4pc;
+    position: relative;
+}
+.offcanvas-body .content .group-list ul > li > div > a,
+.offcanvas-body .content .group-list ul > li > a{
+    color: #212529;
+}
+.offcanvas-body .content .group-list ul > li > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.offcanvas-body .content .group-list ul > li > div i{
+    /* position: absolute; */
+    right: 0;
+    top: 50%;
+    font-size: 1.3rem;
+    padding-right: 0.8rem;
+}
+
+.offcanvas-body .content .get-started-and-icons,
+.offcanvas-body .content .group-list ul > li > a,
+.offcanvas-body .content .group-list ul > li > div a{
+    padding-left: 1.4pc;
+}
+.offcanvas-body .content .group-list ul > li > ul{
+    display: none;
+    padding-left: 1.7pc;
+    background-color: #eee;
+}
+.offcanvas-body .content .group-list ul > li > ul li{
+    line-height: 2pc;
+}
+.offcanvas-body .content .group-list ul > li > ul li a{
+    font-size: .86rem;
+    color: #343a40;
+}
+.offcanvas-body .content .get-started-and-icons > div > a{
+    font-size: 13px;
+    margin-top: 2pc;
+    padding: 0.5rem 1.1rem;
+    border-radius: 0.4rem;
+    background-color: rgba(9,9,157,1);
+    color: #fff;
+}
+.offcanvas-body .content .get-started-and-icons .icons ul{
+    padding: 0;
+    margin-top: 1.1pc;
+}
+.offcanvas-body .content .get-started-and-icons .icons ul li{
+    display: inline-block;
+    margin: 0 0.3rem;    
+}
+.offcanvas-body .content .get-started-and-icons .icons ul li a{
+    font-size: 14px;
+    color: #111;
+}
+
+@media all and (max-width:820px){
     .wtbx_ha_header_main, .wtbx_ha_header_main + .btn-primary{
         display: none;
     }
@@ -153,6 +241,7 @@
         display:block;
     }
 }
+
 </style>
 <body>
     <nav class="navbar fixed-top">
@@ -231,12 +320,60 @@
         </div>
     </nav>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-        <h5 id="offcanvasRightLabel">Offcanvas right</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        ...
-    </div>
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="content">
+                <div class="group-list">
+                    <ul>
+                        <li><a href="">About</a></li>
+                        <li>
+                            <div>
+                            <a href="">Products </a>
+                            <i class="icon-keyboard_arrow_right"></i>
+                            </div>
+                            <ul>
+                                <li><a href="">Buildr</a></li>
+                                <li><a href="">0 To 1</a></li>
+                                <li><a href="">Collabo</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="">Resources </a>
+                                <i class=" icon-keyboard_arrow_right"></i>
+                            </div>
+                            <ul>
+                                <li><a href="">Kleekpod</a></li>
+                                <li><a href="">Kleekbuzz</a></li>
+                                <li><a href="">Blog</a></li>
+                                <li><a href="">Success Stories</a></li>
+                                <li><a href="">Startup Freebies</a></li>
+                                <li><a href="">Reports</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="get-started-and-icons">
+                    <div>
+                        <a href="" class="btn">Get Started</a>
+                    </div>
+                    <div class="icons">
+                        <ul>
+                            <li><a href=""><i class="icon-facebook-f"></i></a></li>
+                            <li><a href=""><i class="icon-instagram"></i></a></li>
+                            <li><a href=""><i class="icon-linkedin"></i></a></li>
+                            <li><a href=""><i class="icon-whatsapp"></i></a></li>
+                            <!-- <li><a href=""><i class="fab fa-medium-m"></i></a></li> -->
+                            <li><a href=""><i class="icon-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <br><br><br>
