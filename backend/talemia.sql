@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2022 at 04:02 PM
+-- Generation Time: Apr 25, 2022 at 10:05 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -74,6 +74,18 @@ INSERT INTO `email` (`firstname`, `lastname`, `email`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `fee`
+--
+
+CREATE TABLE `fee` (
+  `id` int(20) NOT NULL,
+  `title` text COLLATE utf8_unicode_ci NOT NULL,
+  `price` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `signup`
 --
 
@@ -99,6 +111,26 @@ CREATE TABLE `signup` (
 
 INSERT INTO `signup` (`firstname`, `lastname`, `phone`, `country`, `startup`, `gender`, `age`, `category`, `industry`, `stage`, `team`, `idea`, `datepaid`) VALUES
 ('[value-1]', '[value-2]', '[value-3]', '[value-4]', '[value-5]', '[value-6]', '[value-7]', '[value-8]', '[value-9]', '[value-10]', '[value-11]', '[value-12]', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `fee`
+--
+ALTER TABLE `fee`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `fee`
+--
+ALTER TABLE `fee`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
