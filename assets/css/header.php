@@ -44,7 +44,6 @@
         <link rel="stylesheet" href="../assets/css/animate/animate.min.css" type="text/css">
         <link rel="preload" href="../assets/fonts/OpenSans-Regular.ttf" as='font' crossorigin='anonymous'>
         <link href="../assets/css/style.css" rel="stylesheet">
-        <link href="../assets/css/card.css" rel="stylesheet">
         <link href="../assets/css/ui.css?v=1.1" rel="stylesheet" type="text/css" />
         <link href="../assets/css/responsive.css?v=1.1" rel="stylesheet" />
         <!-- iconfont -->
