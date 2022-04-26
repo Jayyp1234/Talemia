@@ -155,15 +155,6 @@
 </div>
 
 
-
-
-
-
-
-
-
-
 <?php
     include "component/footer.php";
-
 ?>
