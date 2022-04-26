@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/icomoon/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <title>Ceo Page</title>
+</head>
+<body>
+
+    <style>
+        @font-face {
+    font-family:OpenSans;
+    src:url('assets/fonts/OpenSans-Regular.ttf');
+}
+:root{
+    --blue: #09099d;
+    --smokewhite: rgba(247,248,253);
+    --lightdark: #2d2a38;
+    --fontcolor: #7b8397;
+    --white: #fff;
+    --black: #151221;
+    --font1: 'Poppins', OpenSans;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--font1);
+}
+* i{
+    font-weight: normal;
+}
+a{
+    text-decoration: none !important;
+}
+h1, h2, h3, h4, h5, h6, p{
+    font-weight: normal;
+    margin: unset;
+}
+ul, li{
+    list-style-type: none;
+    list-style: none;
+    margin: unset;
+}
+header {
+    padding: .8pc 5pc 0;
+    width: 100%;
+}
+header .img-fluid {
+    width: 15%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container{
+    height: 100vh;
+    padding: 0;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+.container .image-holder .background{
+    position: absolute;
+    width: 300px;
+    height: 90vh;
+    top: -43vh;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: -1;
+    background-color: var(--blue);
+}
+.container .image-holder .background .circle{
+    border-radius: 100%;
+    top: -3%;
+    position: absolute;
+    left: -10%;
+    width: 100px;
+    height: 100px;
+    border: 4px solid white;
+}
+.container .image-holder .background > img{
+    top: 0;
+    left: 75%;
+    position: relative;
+    border-radius: 100%;
+    width: 20%;
+}
+.container .image-holder .background > i{
+    transform: rotateY(180deg);
+    color: #fff;
+    font-size: 8pc;
+    position: absolute;
+    bottom: 6%;
+    left: -5px;
+}
+.container .image-holder img{
+    border-radius: 1.2rem;
+    width: 90%;
+    position: absolute;
+    top: -32vh;
+    left: 20%;
+}
+.letter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0;
+}
+.letter img{
+    position: absolute;
+    opacity: .13;
+    width: 55%;
+}
+.letter b{
+    font-weight: bolder;
+    font-size: 2.4rem;
+    text-transform: capitalize;
+    padding: 0;
+}
+.letter a{
+    display: flex;
+    background-color: var(--blue);
+    color: var(--white);
+    align-items: center;
+    padding: 0.8rem 5em;
+    text-transform: capitalize;
+    border-radius: 5px;
+    justify-content: center;
+    margin-top: 2pc;
+}
+.letter p{
+    padding: 0;
+    margin-top: .8pc;
+}
+.letter > div span, .letter > div h5{ 
+    font-size: 1rem;
+}
+.letter > div {
+    padding: 0;
+    margin-top: 1.2pc;
+}
+.letter a > div h5{
+    white-space: nowrap;
+    font-size: 16px;
+}
+.letter a > i{
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+.letter a:hover > i{
+    margin-left: 7px;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+@media (min-width: 767.5px) and (max-width: 991px){
+    header {
+        padding: 0.5pc 2.3rem 0;
+    }
+    header .img-fluid {
+        width: 16%;
+    }
+    .container .image-holder .background {
+        width: 230px;
+    }
+    .container .image-holder img {
+        border-radius: .8rem;
+        top: -20vh;
+        left: 30%;
+    }
+    .container .image-holder .background > i {
+        font-size: 7pc;
+        left: -10px;
+    }
+    .letter p {
+        margin-top: 0.5pc;
+        font-size: 14px;
+    }
+    .letter b {
+        font-size: 1.9rem;
+    }
+    .letter img {
+        width: 60%;
+        padding: 0;
+    }
+    :is(.letter p, .letter > div h5, .letter > div span){
+      font-size: .9rem;
+    }
+    .letter a > div h5 {
+        font-size: 14px;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 575.98px){
+    header {
+        padding: 0.2pc 12px 0;
+    }
+    header .img-fluid {
+        width: 30%;
+    }
+    .container{
+        all: unset;
+    }
+    .container .image-holder .background{
+        position: relative;
+        width: 200px;
+        height: 70vh;
+        top: 10px;
+        border-radius: 0.5rem;
+    }
+    .container .image-holder .background .circle {
+        top: -3%;
+        left: -10%;
+        width: 70px;
+        height: 70px;
+        border: 3px solid white;
+    }
+    .container .image-holder > img{
+        border-radius: 0.8rem;
+        width: 75%;
+        top: 18%;
+        height: 47vh;
+        left: 20%;
+    }
+    .container .image-holder .background > i {
+        font-size: 5pc;
+    }
+    .letter {
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin: 3pc auto 0;
+        padding: 0 1pc;
+    }
+    .letter img{
+        display: none;
+    }
+    .letter b{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    .letter p{
+        font-size: 12px;
+        text-align: justify;
+    }
+    .letter a {
+        margin: 2pc auto;
+    }
+    .letter > div {
+        margin-top: 1pc;
+    }
+    .letter > div span, .letter > div h5{ 
+        font-size: 12px;
+    }
+    .letter a > div h5{
+        font-size: 12px;
+    }
+    .letter a > i{
+        font-size: 1rem;
+    }
+    .letter a:hover > i{
+        margin-left: 7px;
+    }
+
+
+
+}
+
+    </style>
+    <header><img src="assets/image/logo.svg" class="img-fluid" alt=""></header>
+    <div class="container col-12 row align-items-center row position-relative">
+        <div class="col-12 col-md-5 position-relative image-holder">
+            <div class="background">
+                <div class="circle"></div>
+                <img src="assets/image/talemia-logo.jpg" class="img-fluid" alt="">
+                <i class="icon-bubble_chart"></i>
+            </div>
+            <img src="assets/image/talemia-iamge-768x728.jpeg" alt="" class="img-fluid">            
+        </div>
+        
+
+        <div class="col-12 col-md-6 letter row">
+            <img src="assets/image/Talemia-header-illustration.svg"  class="img-fluid" alt="">
+            <b>Don't worry, Be Happy</b>
+            <p class="col-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, nostrum? Laboriosam quibusdam at explicabo voluptates quas ad odit, accusantium tempora eveniet eos libero in dolor odio nemo, nostrum dolores maiores?
+            Accusantium distinctio eligendi, corrupti asperiores maiores laudantium. Suscipit aut, magnam tempora in quae optio voluptates reiciendis eos ipsam, quaerat qui cum. Eveniet dignissimos voluptas ipsum quisquam debitis. Veritatis, laboriosam repellat?
+            Facere vel dicta totam nobis tenetur non exercitationem itaque reiciendis, numquam laboriosam saepe praesentium, sint, eaque soluta eveniet quae. Eos quos explicabo in labore, enim voluptatum a reprehenderit. Iste, dicta.
+            Error debitis hic cum suscipit omnis! Nisi, eius ipsa? Quibusdam quo quidem cum repellat dolorem numquam, porro possimus deleniti eum expedita facere! Voluptatum eos asperiores quod perferendis, animi harum laudantium!</p>
+            <div>
+                <div class="row col-12 text-start align-items-center">
+                    <h5> - <span> Okeke JohnPaul</span></h5>
+                </div>
+                <span><h5>CEO, Talemia.</h5></span>
+            </div>
+            <div class="text-start m-0">
+                <a href="" class="col-10 col-md-2 text-start">
+                    <div class=""><h5>Get in here</h5></div>
+                    <i class="icon-trending_flat"></i>
+                </a>
+            </div>
+        </div>
+        
+
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/bootstrap.min.js"></script>
+    
+</body>
+</html>
