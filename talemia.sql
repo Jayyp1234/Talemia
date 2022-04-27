@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2022 at 08:55 AM
+-- Generation Time: Apr 27, 2022 at 11:22 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -105,18 +105,10 @@ CREATE TABLE `signup` (
   `stage` text COLLATE utf8_unicode_ci NOT NULL,
   `team` text COLLATE utf8_unicode_ci NOT NULL,
   `idea` text COLLATE utf8_unicode_ci NOT NULL,
-  `datepaid` text COLLATE utf8_unicode_ci NOT NULL,
   `date_paid` text COLLATE utf8_unicode_ci NOT NULL,
   `date_expiry` text COLLATE utf8_unicode_ci NOT NULL,
   `payment_status` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `signup`
---
-
-INSERT INTO `signup` (`id`, `firstname`, `lastname`, `phone`, `country`, `startup`, `gender`, `age`, `category`, `industry`, `stage`, `team`, `idea`, `datepaid`, `date_paid`, `date_expiry`, `payment_status`) VALUES
-(1, '[value-1]', '[value-2]', '[value-3]', '[value-4]', '[value-5]', '[value-6]', '[value-7]', '[value-8]', '[value-9]', '[value-10]', '[value-11]', '[value-12]', '', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -172,7 +164,7 @@ ALTER TABLE `fee`
 -- AUTO_INCREMENT for table `signup`
 --
 ALTER TABLE `signup`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
