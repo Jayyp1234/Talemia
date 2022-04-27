@@ -30,7 +30,7 @@ if (isset($_POST['subscribe'])) {
 
     //SQL code to insert all our values into the table names signup
     $sql = "INSERT INTO `signup`(`firstname`, `lastname`, `phone`, `country`, `startup`, `gender`, `age`, `category`, `industry`, `stage`, `team`, `idea`) VALUES
-     ('$first_name','$last_name','$phone_number','$country',$startup','$gender','$age','$category','$industry','$stage','$team','$startup_idea')";
+('$first_name','$last_name','$phone_number','$country','$startup','$gender','$age','$category','$industry','$stage','$team','$startup_idea')";
      //query our SQL code
      $signup = mysqli_query($con, $sql);
 }
