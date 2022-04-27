@@ -4,7 +4,7 @@
    $password = "";
    $database = "talemia";
     
-    // Create connection
+    // Create connection to database
     $con = mysqli_connect($servername, $username, $password, $database);
     
     // Check connection
