@@ -31,7 +31,7 @@ function validateCaptcha() {
     } else if (validateCaptcha > 0 || recaptcha.length > 6) {
       errCaptcha.innerHTML = "Wrong captcha";
     } else {
-      errCaptcha.innerHTML = "Done";
+      errCaptcha.innerHTML = "Success";
       document.getElementById("cap2").value = cap;
     }
   }
