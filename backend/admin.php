@@ -1,6 +1,13 @@
 <?php
 require('connection.php');
 
+//Login for admin
+if (isset($_POST['login'])) {
+    $password = //admin password;
+    $admin = $con->real_escape_string($_POST['user']);
+    $pass = $con->real_escape_string($_POST['password']);
+    if ($pass == $password) {
+
 
 if (isset($_POST['update'])) {
 
@@ -25,5 +32,6 @@ if (isset($_POST['update'])) {
     } else {
         //include error 500 or 200 (Server error) here !!!
     }
+}
     
 ?>
