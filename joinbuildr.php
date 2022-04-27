@@ -20,23 +20,23 @@
         <form action="" class="row col-12">
             <div class="col-11 col-md-7">
                 <label for="" class="form-label">First name:</label>
-                <input type="text" class="form-control" id="" placeholder="Firstname">
+                <input type="text" name="firstname" class="form-control" id="" placeholder="Firstname">
             </div>
             <div class="col-11 col-md-7">
                 <label for="" class="form-label">Last name:</label>
-                <input type="email" class="form-control" id="" placeholder="Lastname">
+                <input type="text" name="lastname" class="form-control" id="" placeholder="Lastname">
             </div>
             <div class="col-11 col-md-7">
                 <label for="" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="" placeholder="Email address">
+                <input type="email" name="email" class="form-control" id="" placeholder="Email address">
             </div>
             <div class="col-11 col-md-7">
                 <label for="" class="form-label">Phone Number:</label>
-                <input type="email" class="form-control" id="" placeholder="Phone number">
+                <input type="number" name="phone" class="form-control" id="" placeholder="Phone number">
             </div>
             <div class="col-11 col-md-7">
                 <label for="" class="form-select-label">Select Your Country</label>
-                <select name="input_4" id="input_1_4" class="form-select" aria-required="true" aria-invalid="false">
+                <select name="country" id="input_1_4" class="form-select" aria-required="true" aria-invalid="false">
                     <option value="Nigeria">Nigeria</option>
                     <option value="Rwanda">Rwanda</option>
                     <option value="Ghana">Ghana</option>
@@ -62,18 +62,18 @@
             </div>
             <div class="col-11 col-md-7">
                 <label for="startup-name" class="form-label">Name of Startup</label>
-                <input type="text" class="form-control" id="startup-name" placeholder="Startup Name">
+                <input type="text" name="startup" class="form-control" id="startup-name" placeholder="Startup Name">
             </div>
             <div class="form-check col-11 col-md-7">
                 <label class="form-check-label" for="">Gender:</label><br>
-                <input class="" type="radio" name="flexRadioDefault" id="" placeholder="Firstname">
+                <input class="" type="radio" value="male" name="gender" id="" placeholder="Firstname">
                 <label class="form-check-label" for="">Male</label><br>
-                <input class="" type="radio" name="flexRadioDefault" id="" placeholder="Firstname">
+                <input class="" type="radio" value="female" name="gender" id="" placeholder="Firstname">
                 <label class="form-check-label" for="">Female</label>
             </div>
             <div class="col-11 col-md-7">
                 <label for="" class="form-select-label">Age Range:</label>
-                <select name="" id="input_1_7" class="large form-select" aria-required="true" aria-invalid="false">
+                <select name="" name="age" id="input_1_7" class="large form-select" aria-required="true" aria-invalid="false">
                     <option value="Below 25">Below 25</option>
                     <option value="20-25">20-25</option>
                     <option value="26-30">26-30</option>
@@ -83,18 +83,18 @@
             </div>
             <div class="form-check col-11 col-md-7">
                 <label class="form-check-label" for="">What Category of Startup/idea?</label><br>
-                <input class="" type="radio" name="flexRadioDefault" id="">
+                <input class="" type="radio" value="Technology based"  name="category" id="">
                 <label class="form-check-label" for="">
                     Technology Based
                 </label><br>
-                <input class="" type="radio" name="flexRadioDefault" id="">
+                <input class="" type="radio" value="Traditionally based" name="category" id="">
                 <label class="form-check-label" for="">
                     Traditionally Based [Non-Tech]
                 </label>
             </div>
             <div class="col-11 col-md-7">
                 <label for="industry" class="form-select-label">What industry is your Startup/Idea?</label>
-                <select name="input_10" id="input_1_10" class="large form-select" aria-invalid="false">
+                <select name="industry" id="input_1_10" class="large form-select" aria-invalid="false">
                     <option value="Agriculture">Agriculture</option>
                     <option value="Automotive">Automotive</option>
                     <option value="Commerce/Retail">Commerce/Retail</option>
@@ -121,7 +121,7 @@
             </div>
             <div class="col-11 col-md-7">
                 <label for="startup-stage" class="form-select-label">Select Your Country:</label>
-                <select name="input_11" id="input_1_11" class="large form-select" aria-invalid="false">
+                <select name="stage" id="input_1_11" class="large form-select" aria-invalid="false">
                     <option value="Idea">Idea</option>
                     <option value="Pre-MVP">Pre-MVP</option>
                     <option value="MVP">MVP</option>
@@ -130,18 +130,50 @@
             </div>
             <div class="form-check col-11 col-md-7">
                 <label class="form-check-label" for="">Do you have a team apart from yourself?</label><br>
-                <input class="" type="radio" name="flexRadioDefault" id="">
+                <input class="" type="radio" name="team" value="yes" id="">
                 <label class="form-check-label" for="">Yes</label><br>
-                <input class="" type="radio" name="flexRadioDefault" id="">
+                <input class="" type="radio" name="team" value="no" id="">
                 <label class="form-check-label" for="">No</label>
             </div>
             <div class="form-check col-11 col-md-7">
                 <label class="form-check-label" for="">How old is your Startup?</label><br>
-                <select name="input_13" id="input_1_13" class="large form-select" aria-invalid="false"><option value="Below 1 year">Below 1 year</option><option value="1-5 years">1-5 years</option><option value="Above 5 years">Above 5 years</option></select>
+                <select name="idea" id="input_1_13" class="large form-select" aria-invalid="false"><option value="Below 1 year">Below 1 year</option><option value="1-5 years">1-5 years</option><option value="Above 5 years">Above 5 years</option></select>
             </div>
             <div class="col-8 col-11 col-md-7 message">
             <p>Thank your for entering your details, click the link below to purchase your subscription.</p>
         </div>
+
+
+                          <!-- captcha -->
+                          <link rel="stylesheet" href="assets/captcha.css" />
+                <script src="backend/app.js"></script>
+                <div class="container1">
+                    <div class="col-11 col-md-3 input">
+                            <div id="captcha" class="captcha"><script>createCaptcha();</script></div>
+                          <div class="restart">
+                            <a href="#" onclick="createCaptcha()">Change</a>
+                          </div>
+                    </div> 
+                  <div class="col-11 col-md-3 input">
+                    <input
+                    class="form-control"
+                      type="text"
+                      name="reCaptcha"
+                      id="reCaptcha"
+                      placeholder="Type The Captcha"
+                    />
+                    <div class="col-11 col-md-3 input">
+                        <input class="form-control" type="button" value="Submit" onclick="validateCaptcha()" />
+                <div>
+                  </div>
+                  <div id="errCaptcha" class="errmsg"></div>
+                  <div id="cap" class="cap"><input id="cap2" type="text" name="cap"></div>
+                </div>
+
+
+                <!-- end of captcha -->
+
+
         <div class="subscribe">
             <a href="" class="col-11 col-md-2 mx-auto mx-lg-0">
             <div class="gform_footer top_label"> 
