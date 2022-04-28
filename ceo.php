@@ -1,20 +1,21 @@
 <?php
-require('backend/connection.php');
+// require('backend/connection.php');
 
-if (!isset($_GET['txnref']) || !isset($_GET['reference'])){
-    header('Location:https://talemia.com/');
-}
-else{
-    $start = time();
-    $finish = $start + (intval(1) * 30 * 3600);
-    $status = 'paid';
-    $email = $_SESSION['email'];
-    //update database
-    $sql = "UPDATE `signup` SET `date_paid`='$start',`date_expiry`='$finish',`payment_status`='$status' WHERE `email` = '$email'";
-     //query our SQL code
-     $update = mysqli_query($con, $sql);
-     //done
-}   
+// if (!isset($_GET['txnref']) || !isset($_GET['reference'])){
+//     header('Location:https://talemia.com/');
+// }
+// else{
+//     $start = time();
+//     $finish = $start + (intval(1) * 30 * 3600);
+//     $status = 'paid';
+//     $email = $_SESSION['email'];
+
+//     update database
+//     $sql = "UPDATE `signup` SET `date_paid`='$start',`date_expiry`='$finish',`payment_status`='$status' WHERE `email` = '$email'";
+//      query our SQL code
+//      $update = mysqli_query($con, $sql);
+//      done
+// }   
 ?>
 <html>
     <head>
@@ -90,7 +91,7 @@ else{
 		<!-- Header -->
 		<header class="header">
 			<div class="container">
-				<div class="row" style="align-items:center;">
+				<div class="row" style="align-items:center; margin: 0 auto;">
 					<div class="col-6">
 						<div class="logo">
 							<h2><a href="/"><img src="assets/image/logo.svg" width="150px"></a></h2>
@@ -335,6 +336,14 @@ body{
 
 
 @media (min-width: 320px) and (max-width: 575.98px){
+    .logo h2 a img {
+        width: 90%;
+    }
+    .header-btn a {
+        padding: 13px 1rem;
+        border-radius: 21px;
+        font-size: 11px;
+    }
     header {
         padding: 0.2pc 12px 0;
     }
