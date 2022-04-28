@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2022 at 12:17 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Apr 28, 2022 at 12:57 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -95,6 +95,7 @@ CREATE TABLE `signup` (
   `id` int(20) NOT NULL,
   `firstname` text COLLATE utf8_unicode_ci NOT NULL,
   `lastname` text COLLATE utf8_unicode_ci NOT NULL,
+  `email` text COLLATE utf8_unicode_ci NOT NULL,
   `phone` text COLLATE utf8_unicode_ci NOT NULL,
   `country` text COLLATE utf8_unicode_ci NOT NULL,
   `startup` text COLLATE utf8_unicode_ci NOT NULL,
@@ -115,8 +116,10 @@ CREATE TABLE `signup` (
 -- Dumping data for table `signup`
 --
 
-INSERT INTO `signup` (`id`, `firstname`, `lastname`, `phone`, `country`, `startup`, `gender`, `age`, `category`, `industry`, `stage`, `team`, `startup_age`, `startup_name`, `date_paid`, `date_expiry`, `payment_status`) VALUES
-(1, '[value-1]', '[value-2]', '[value-3]', '[value-4]', '[value-5]', '[value-6]', '[value-7]', '[value-8]', '[value-9]', '[value-10]', '[value-11]', '[value-12]', '', '', '', '');
+INSERT INTO `signup` (`id`, `firstname`, `lastname`, `email`, `phone`, `country`, `startup`, `gender`, `age`, `category`, `industry`, `stage`, `team`, `startup_age`, `startup_name`, `date_paid`, `date_expiry`, `payment_status`) VALUES
+(1, '[value-1]', '[value-2]', '', '[value-3]', '[value-4]', '[value-5]', '[value-6]', '[value-7]', '[value-8]', '[value-9]', '[value-10]', '[value-11]', '[value-12]', '', '', '', ''),
+(2, 'Isaac', 'Oladipo', '', '08130681656', 'Nigeria', 'Ice', 'Male', 'Below 25', 'Technology Based', 'Agriculture', 'Idea', 'Yes', 'Below 1 year', 'Ice', '0', '0', 'owing'),
+(4, 'Isaac', 'Oladipo', 'seun.oladipo@alumni.ubc.ca', '08130681656', 'Nigeria', 'quest', 'Male', 'Below 25', 'Technology Based', 'Agriculture', 'Idea', 'Yes', 'Below 1 year', 'quest', '0', '0', 'owing');
 
 --
 -- Indexes for dumped tables
@@ -172,7 +175,7 @@ ALTER TABLE `fee`
 -- AUTO_INCREMENT for table `signup`
 --
 ALTER TABLE `signup`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
