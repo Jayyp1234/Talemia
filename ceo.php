@@ -1,20 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+    <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/icomoon/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-    <title>Ceo Page</title>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://talemia.com/xmlrpc.php">
 
+    <!-- Search Engine Optimization by Rank Math PRO - https://s.rankmath.com/home -->
+    <title>Talemia - Welcome </title>
+    <meta name="description"
+        content="Talemia is an Edtech platform supporting early stage African founders to launch their startups faster than than they can do their own">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+    <link rel="canonical" href="https://talemia.com/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Talemia - Launch Your Startup Faster">
+    <meta property="og:description"
+        content="Talemia is an Edtech platform supporting early stage African founders to launch their startups faster than than they can do their own">
+    <meta property="og:url" content="https://talemia.com/">
+    <meta property="og:site_name" content="Talemia">
+    <meta property="og:updated_time" content="2022-04-09T10:51:25+01:00">
+    <meta property="article:published_time" content="2018-10-14T12:21:59+01:00">
+    <meta property="article:modified_time" content="2022-04-09T10:51:25+01:00">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Talemia - Launch Your Startup Faster">
+    <meta name="twitter:description"
+        content="Talemia is an Edtech platform supporting early stage African founders to launch their startups faster than than they can do their own">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="isaacdev">
+    <meta name="twitter:label2" content="Time to read">
+    <meta name="twitter:data2" content="10 minutes">
+
+    <link rel="https://api.w.org/" href="https://talemia.com/wp-json/">
+    <link rel="alternate" type="application/json" href="https://talemia.com/wp-json/wp/v2/pages/8236">
+    <link rel="shortlink" href="https://talemia.com/">
+    <link rel="alternate" type="application/json+oembed"
+        href="https://talemia.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftalemia.com%2F">
+    <link rel="alternate" type="text/xml+oembed"
+        href="https://talemia.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftalemia.com%2F&amp;format=xml">
+    <link rel="icon" href="https://talemia.com/wp-content/uploads/2021/12/cropped-favicon-new-32x32.png" sizes="32x32">
+    <link rel="icon" href="https://talemia.com/wp-content/uploads/2021/12/cropped-favicon-new-192x192.png"
+        sizes="192x192">
+    <link rel="apple-touch-icon" href="https://talemia.com/wp-content/uploads/2021/12/cropped-favicon-new-180x180.png">
+    <meta name="msapplication-TileImage"
+        content="https://talemia.com/wp-content/uploads/2021/12/cropped-favicon-new-270x270.png">
+
+    <!-- Style Sheet -->
+    <link rel="icon" href="assets/image/icon-fav.png" type="type/png">
+    <!--icons link-->
+    <link rel="stylesheet" href="assets/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/coming.css">
+    <link rel="stylesheet" href="assets/css/animate/animate.min.css" type="text/css">
+    <link rel="preload" href="assets/fonts/OpenSans-Regular.ttf" as='font' crossorigin='anonymous'>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/ui.css?v=1.1" rel="stylesheet" type="text/css" />
+    <link href="assets/css/responsive.css?v=1.1" rel="stylesheet" />
+    <!-- iconfont -->
+    <link rel="stylesheet" href="assets/fonts/material-icon/css/round.css" />
+    </head>
+    <body>
+    <style>
+    .btn-primary {
+        color: #fff;
+        background-color: #2d2da4;
+        border-color: #2d2da4;
+    }
+    </style>
+    
+    <main class="main-wraper">
+		<!-- Header -->
+		<header class="header">
+			<div class="container">
+				<div class="row" style="align-items:center;">
+					<div class="col-6">
+						<div class="logo">
+							<h2><a href="/"><img src="assets/image/logo.svg" width="150px"></a></h2>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="header-btn">
+							<a href="mailto:talemiahq@gmail.com" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Contact <i class="icon-envelope"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+        <br><br>
+        <div class="container col-12 row align-items-center row position-relative">
+        <div class="col-12 col-md-5 position-relative image-holder">
+            <div class="background">
+                <div class="circle"></div>
+                <img src="assets/image/talemia-logo.jpg" class="img-fluid" alt="">
+                <i class="icon-bubble_chart"></i>
+            </div>
+            <img src="assets/image/talemia-iamge-768x728.jpeg" alt="" class="img-fluid">            
+        </div>
+        
+
+        <div class="col-12 col-md-6 letter row">
+            <img src="assets/image/Talemia-header-illustration.svg"  class="img-fluid" alt="">
+            <b>Don't worry, Be Happy</b>
+            <p class="col-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, nostrum? Laboriosam quibusdam at explicabo voluptates quas ad odit, accusantium tempora eveniet eos libero in dolor odio nemo, nostrum dolores maiores?
+            Accusantium distinctio eligendi, corrupti asperiores maiores laudantium. Suscipit aut, magnam tempora in quae optio voluptates reiciendis eos ipsam, quaerat qui cum. Eveniet dignissimos voluptas ipsum quisquam debitis. Veritatis, laboriosam repellat?
+            Facere vel dicta totam nobis tenetur non exercitationem itaque reiciendis, numquam laboriosam saepe praesentium, sint, eaque soluta eveniet quae. Eos quos explicabo in labore, enim voluptatum a reprehenderit. Iste, dicta.
+            Error debitis hic cum suscipit omnis! Nisi, eius ipsa? Quibusdam quo quidem cum repellat dolorem numquam, porro possimus deleniti eum expedita facere! Voluptatum eos asperiores quod perferendis, animi harum laudantium!</p>
+            <div>
+                <div class="row col-12 text-start align-items-center">
+                    <h5> - <span> Okeke JohnPaul</span></h5>
+                </div>
+                <span><h5>CEO, Talemia.</h5></span>
+            </div>
+            <div class="text-start m-0">
+                <a href="" class="col-10 col-md-2 text-start">
+                    <div class=""><h5>Get in here</h5></div>
+                    <i class="icon-trending_flat"></i>
+                </a>
+            </div>
+        </div>
+        
+
+        
+    </div>
+</main>
     <style>
         @font-face {
     font-family:OpenSans;
@@ -63,7 +171,6 @@ body{
     flex-direction: column;
 }
 .container{
-    height: 100vh;
     padding: 0;
     justify-content: space-between;
     column-gap: 20px;
@@ -282,42 +389,7 @@ body{
 }
 
     </style>
-    <header><img src="assets/image/logo.svg" class="img-fluid" alt=""></header>
-    <div class="container col-12 row align-items-center row position-relative">
-        <div class="col-12 col-md-5 position-relative image-holder">
-            <div class="background">
-                <div class="circle"></div>
-                <img src="assets/image/talemia-logo.jpg" class="img-fluid" alt="">
-                <i class="icon-bubble_chart"></i>
-            </div>
-            <img src="assets/image/talemia-iamge-768x728.jpeg" alt="" class="img-fluid">            
-        </div>
-        
-
-        <div class="col-12 col-md-6 letter row">
-            <img src="assets/image/Talemia-header-illustration.svg"  class="img-fluid" alt="">
-            <b>Don't worry, Be Happy</b>
-            <p class="col-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, nostrum? Laboriosam quibusdam at explicabo voluptates quas ad odit, accusantium tempora eveniet eos libero in dolor odio nemo, nostrum dolores maiores?
-            Accusantium distinctio eligendi, corrupti asperiores maiores laudantium. Suscipit aut, magnam tempora in quae optio voluptates reiciendis eos ipsam, quaerat qui cum. Eveniet dignissimos voluptas ipsum quisquam debitis. Veritatis, laboriosam repellat?
-            Facere vel dicta totam nobis tenetur non exercitationem itaque reiciendis, numquam laboriosam saepe praesentium, sint, eaque soluta eveniet quae. Eos quos explicabo in labore, enim voluptatum a reprehenderit. Iste, dicta.
-            Error debitis hic cum suscipit omnis! Nisi, eius ipsa? Quibusdam quo quidem cum repellat dolorem numquam, porro possimus deleniti eum expedita facere! Voluptatum eos asperiores quod perferendis, animi harum laudantium!</p>
-            <div>
-                <div class="row col-12 text-start align-items-center">
-                    <h5> - <span> Okeke JohnPaul</span></h5>
-                </div>
-                <span><h5>CEO, Talemia.</h5></span>
-            </div>
-            <div class="text-start m-0">
-                <a href="" class="col-10 col-md-2 text-start">
-                    <div class=""><h5>Get in here</h5></div>
-                    <i class="icon-trending_flat"></i>
-                </a>
-            </div>
-        </div>
-        
-
-        
-    </div>
+    
 
 
 
