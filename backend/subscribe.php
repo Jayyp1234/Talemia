@@ -1,4 +1,10 @@
 <?php
+// Start the session
+session_start();
+?>
+
+
+<?php
 require('connection.php');
 
 
@@ -27,6 +33,7 @@ if (isset($_POST['subscribe'])) {
      $signup = mysqli_query($con, $sql);
      if ($signup) {
       $email = $con->real_escape_string($_POST['email']);
+      $_SESSION["email"] = $email;
       $price = 5000*100;
       $url = "https://api.paystack.co/transaction/initialize";
       $fields = [
