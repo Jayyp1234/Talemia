@@ -21,8 +21,8 @@ if (isset($_POST['subscribe'])) {
     $startup_age = $con->real_escape_string($_POST['age1']);
     
     //SQL code to insert all our values into the table names signup
-    $sql = "INSERT INTO `signup`(`firstname`, `lastname`, `phone`, `country`, `startup`, `gender`, `age`, `category`, `industry`, `stage`, `team`, `startup_age`, `startup_name`, `date_paid`, `date_expiry`, `payment_status`) VALUES
-     ('$first_name','$last_name','$phone_number','$country','$startup','$gender','$age','$category','$industry','$stage','$team','$startup_age','$startup_idea','0','0','owing')";
+    $sql = "INSERT INTO `signup`(`firstname`, `lastname`, `email`,  `phone`, `country`, `startup`, `gender`, `age`, `category`, `industry`, `stage`, `team`, `startup_age`, `startup_name`, `date_paid`, `date_expiry`, `payment_status`) VALUES
+     ('$first_name','$last_name','$email','$phone_number','$country','$startup','$gender','$age','$category','$industry','$stage','$team','$startup_age','$startup_idea','0','0','owing')";
      //query our SQL code
      $signup = mysqli_query($con, $sql);
      if ($signup) {

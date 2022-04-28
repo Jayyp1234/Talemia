@@ -48,27 +48,27 @@
                         <label class="gfield_label" for="input_1_1">First Name<span class="gfield_required"><span
                                     class="gfield_required gfield_required_asterisk">*</span></span></label>
                         <div class="ginput_container ginput_container_text"><input name="firstname" id="input_1_1"
-                                type="text" value="" class="large" aria-required="true" aria-invalid="false"> </div>
+                                type="text" value="" class="large" aria-required="true" aria-invalid="false" required> </div>
                     </div>
                     <div id="field_1_2"
                         class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
                         <label class="gfield_label" for="input_1_2">Last Name<span class="gfield_required"><span
                                     class="gfield_required gfield_required_asterisk">*</span></span></label>
                         <div class="ginput_container ginput_container_text"><input name="lastname" id="input_1_2"
-                                type="text" value="" class="large" aria-required="true" aria-invalid="false"> </div>
+                                type="text" value="" class="large" aria-required="true" aria-invalid="false" required> </div>
                     </div>
                     <div id="field_1_14"
                         class="gfield gfield--width-full field_sublabel_below field_description_below gfield_visibility_visible">
                         <label class="gfield_label" for="input_1_14">Phone Number</label>
                         <div class="ginput_container ginput_container_text"><input name="phone" id="input_1_14"
-                                type="text" value="" class="large" aria-invalid="false"> </div>
+                                type="text" value="" class="large" aria-invalid="false" required> </div>
                     </div>
                     <div id="field_1_3"
                         class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
                         <label class="gfield_label" for="input_1_3">Email Address<span class="gfield_required"><span
                                     class="gfield_required gfield_required_asterisk">*</span></span></label>
                         <div class="ginput_container ginput_container_text"><input name="email" id="input_1_3"
-                                type="text" value="" class="large" aria-required="true" aria-invalid="false"> </div>
+                                type="text" value="" class="large" aria-required="true" aria-invalid="false" required> </div>
                     </div>
                     <div id="field_1_4"
                         class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
@@ -77,7 +77,7 @@
                                     class="gfield_required gfield_required_asterisk">*</span></span></label>
                         <div class="ginput_container ginput_container_select"><span class="wtbx-select"><select
                                     name="country" id="input_1_4" class="large gfield_select" aria-required="true"
-                                    aria-invalid="false">
+                                    aria-invalid="false" required>
                                     <option value="Nigeria">Nigeria</option>
                                     <option value="Rwanda">Rwanda</option>
                                     <option value="Ghana">Ghana</option>
@@ -107,7 +107,7 @@
                                 class="gfield_required"><span
                                     class="gfield_required gfield_required_asterisk">*</span></span></label>
                         <div class="ginput_container ginput_container_text"><input name="startup" id="idea"
-                                type="text" value="" class="large" aria-required="true" aria-invalid="false"> </div>
+                                type="text" value="" class="large" aria-required="true" aria-invalid="false" required> </div>
                     </div>
                     <fieldset id="field_1_6"
                         class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
@@ -134,7 +134,7 @@
                                     class="gfield_required gfield_required_asterisk">*</span></span></label>
                         <div class="ginput_container ginput_container_select"><span class="wtbx-select"><select
                                     name="age" id="input_1_7" class="large gfield_select" aria-required="true"
-                                    aria-invalid="false">
+                                    aria-invalid="false" required>
                                     <option value="Below 25">Below 25</option>
                                     <option value="20-25">20-25</option>
                                     <option value="26-30">26-30</option>
@@ -168,7 +168,7 @@
                         class="gfield field_sublabel_below field_description_below gfield_visibility_visible"><label
                             class="gfield_label" for="input_1_10">What industry is your Startup/Idea?</label>
                         <div class="ginput_container ginput_container_select"><span class="wtbx-select"><select
-                                    name="industry" id="input_1_10" class="large gfield_select" aria-invalid="false">
+                                    name="industry" id="input_1_10" class="large gfield_select" aria-invalid="false" required>
                                     <option value="Agriculture">Agriculture</option>
                                     <option value="Automotive">Automotive</option>
                                     <option value="Commerce/Retail">Commerce/Retail</option>
@@ -197,7 +197,7 @@
                         class="gfield field_sublabel_below field_description_below gfield_visibility_visible"><label
                             class="gfield_label" for="input_1_11">What stage are you currently on?</label>
                         <div class="ginput_container ginput_container_select"><span class="wtbx-select"><select
-                                    name="stage" id="input_1_11" class="large gfield_select" aria-invalid="false">
+                                    name="stage" id="input_1_11" class="large gfield_select" aria-invalid="false" required>
                                     <option value="Idea">Idea</option>
                                     <option value="Pre-MVP">Pre-MVP</option>
                                     <option value="MVP">MVP</option>
@@ -226,7 +226,7 @@
                         class="gfield field_sublabel_below field_description_below gfield_visibility_visible"><label
                             class="gfield_label" for="input_1_13">How old is your Startup/Idea?</label>
                         <div class="ginput_container ginput_container_select"><span class="wtbx-select"><select
-                                    name="age1" id="input_1_13" class="large gfield_select" aria-invalid="false">
+                                    name="age1" id="input_1_13" class="large gfield_select" aria-invalid="false" required>
                                     <option value="Below 1 year">Below 1 year</option>
                                     <option value="1-5 years">1-5 years</option>
                                     <option value="Above 5 years">Above 5 years</option>
