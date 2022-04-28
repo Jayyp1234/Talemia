@@ -3,13 +3,6 @@ require('connection.php');
 
 
 if (isset($_POST['subscribe'])) {
-    //Captcha verification
-    $recap = $con->real_escape_string($_POST['reCaptcha']);
-    $cap = $con->real_escape_string($_POST['cap']);
-    if (!empty($cap) and $recap == $cap) {
-
-    
-
     //List of input we would be collecting from signup form
     //All input must be required and their names must match with the html forms
     $first_name = $con->real_escape_string($_POST['firstname']);
@@ -24,30 +17,22 @@ if (isset($_POST['subscribe'])) {
     $industry = $con->real_escape_string($_POST['industry']);
     $stage = $con->real_escape_string($_POST['stage']);
     $team = $con->real_escape_string($_POST['team']);
-    $startup_idea = $con->real_escape_string($_POST['idea']);
+    $startup_idea = $con->real_escape_string($_POST['startup']);
+    $startup_age = $con->real_escape_string($_POST['age1']);
     
-
-
     //SQL code to insert all our values into the table names signup
-    $sql = "INSERT INTO `signup`(`firstname`, `lastname`, `phone`, `country`, `startup`, `gender`, `age`, `category`, `industry`, `stage`, `team`, `idea`) VALUES
-('$first_name','$last_name','$phone_number','$country','$startup','$gender','$age','$category','$industry','$stage','$team','$startup_idea')";
+    $sql = "INSERT INTO `signup`(`id`, `firstname`, `lastname`, `phone`, `country`, `startup`, `gender`, `age`, `category`, `industry`, `stage`, `team`, `startup_age`, `startup_name`, `date_paid`, `date_expiry`, `payment_status`) VALUES
+     ('','$first_name','$last_name','$phone_number','$country',$startup','$gender','$age','$category','$industry','$stage','$team','$startup_age','$startup_idea','0','0','owing')";
      //query our SQL code
      $signup = mysqli_query($con, $sql);
-}
-else {
-    header("Location: form.html");
-}
-}
- else {
-    // include error 404 page here (page not found) here !!!
-};
-    if ($signup) {
-        $email = $con->real_escape_string($_POST['email']);
-        $price = 5000*100;
+     if ($signup) {
+      $email = $con->real_escape_string($_POST['email']);
+      $price = 5000*100;
       $url = "https://api.paystack.co/transaction/initialize";
       $fields = [
         'email' => $email,
-        'amount' => $price
+        'amount' => $price,
+        'callback_url' => 'http://localhost/Talemia/ceo.php'
       ];
       $fields_string = http_build_query($fields);
       //open connection
@@ -72,7 +57,9 @@ else {
       // echo $result;
       header("Location: $result2");
     } else {
-        //include error 500 or 200 (Server error) here !!!
+        echo 'error';
     }
+}
+    
     
 ?>

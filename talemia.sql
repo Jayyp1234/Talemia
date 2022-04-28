@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2022 at 11:22 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: Apr 28, 2022 at 12:17 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -104,11 +104,19 @@ CREATE TABLE `signup` (
   `industry` text COLLATE utf8_unicode_ci NOT NULL,
   `stage` text COLLATE utf8_unicode_ci NOT NULL,
   `team` text COLLATE utf8_unicode_ci NOT NULL,
-  `idea` text COLLATE utf8_unicode_ci NOT NULL,
+  `startup_age` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `startup_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `date_paid` text COLLATE utf8_unicode_ci NOT NULL,
   `date_expiry` text COLLATE utf8_unicode_ci NOT NULL,
   `payment_status` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `signup`
+--
+
+INSERT INTO `signup` (`id`, `firstname`, `lastname`, `phone`, `country`, `startup`, `gender`, `age`, `category`, `industry`, `stage`, `team`, `startup_age`, `startup_name`, `date_paid`, `date_expiry`, `payment_status`) VALUES
+(1, '[value-1]', '[value-2]', '[value-3]', '[value-4]', '[value-5]', '[value-6]', '[value-7]', '[value-8]', '[value-9]', '[value-10]', '[value-11]', '[value-12]', '', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -164,7 +172,7 @@ ALTER TABLE `fee`
 -- AUTO_INCREMENT for table `signup`
 --
 ALTER TABLE `signup`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
