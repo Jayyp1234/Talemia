@@ -13,6 +13,7 @@ else{
     $sql = "UPDATE `signup` SET `date_paid`='$start',`date_expiry`='$finish',`payment_status`='$status' WHERE `email` = '$email'";
      //query our SQL code
      $update = mysqli_query($con, $sql);
+     //done
 }   
 ?>
 <html>
