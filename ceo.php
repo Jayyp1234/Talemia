@@ -1,3 +1,15 @@
+<?php
+require('backend/connection.php');
+
+if (!isset($_GET['txnref']) || !isset($_GET['reference'])){
+    header('Location:https://talemia.com/');
+}
+else{
+    $start = time();
+    $finish = $start + (intval(1) * 30 * 3600);
+    $status = 'paid';
+}   
+?>
 <html>
     <head>
     <meta charset="UTF-8">
@@ -100,19 +112,22 @@
 
         <div class="col-12 col-md-6 letter row">
             <img src="assets/image/Talemia-header-illustration.svg"  class="img-fluid" alt="">
-            <b>Don't worry, Be Happy</b>
-            <p class="col-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, nostrum? Laboriosam quibusdam at explicabo voluptates quas ad odit, accusantium tempora eveniet eos libero in dolor odio nemo, nostrum dolores maiores?
-            Accusantium distinctio eligendi, corrupti asperiores maiores laudantium. Suscipit aut, magnam tempora in quae optio voluptates reiciendis eos ipsam, quaerat qui cum. Eveniet dignissimos voluptas ipsum quisquam debitis. Veritatis, laboriosam repellat?
-            Facere vel dicta totam nobis tenetur non exercitationem itaque reiciendis, numquam laboriosam saepe praesentium, sint, eaque soluta eveniet quae. Eos quos explicabo in labore, enim voluptatum a reprehenderit. Iste, dicta.
-            Error debitis hic cum suscipit omnis! Nisi, eius ipsa? Quibusdam quo quidem cum repellat dolorem numquam, porro possimus deleniti eum expedita facere! Voluptatum eos asperiores quod perferendis, animi harum laudantium!</p>
+            <b>Dear Builder,</b>
+            <p class="col-12">This is Victor.<br> I thought to personally send you this congratulatory note myself. You have made an incredible decision getting into Buildr. I personally think that you’re on the <strong>‘’Guinness World Records of Courageous People’’</strong>. I am not flattering you in any way. One of the most challenging things anyone could do is <strong> launch their own startup</strong>. It takes courage to decide that you’re going to find a problem and build  something that solves that problem<br><br>
+
+One of the reasons I started Talemia is to make this challenging journey easier, seamless and faster. I believe if there’s a way to do something, there’s even a faster way to do it. I have personally found out that ‘’Knowledge’’ isn’t what’s stopping people. Execution is our biggest stopper. You can almost google anything right now. What Talemia is doing through our community product - ‘Buildr’ is to simplify knowledge so that execution can happen seamlessly<br><br>
+
+Our biggest promise to you is getting you to move from <strong>0 to 1</strong>. Our product is built around the model of <strong>‘’Micro-Execution’’</strong>. It is 0 to 1 before 10, 100, 1000, 10,000, 100,000 and then 1 million. <br><br>
+
+I feel this note isn’t enough to capture the message in my heart to you. I made a very special video for you. But first, let’s get you into the <strong> Buildr Community</strong>. It’s <strong>super important</strong> to watch this video after you get into the community</p>
             <div>
                 <div class="row col-12 text-start align-items-center">
-                    <h5> - <span> Okeke JohnPaul</span></h5>
+                    <h5> - <span>CEO, Talemia.</span></h5>
                 </div>
-                <span><h5>CEO, Talemia.</h5></span>
+                <span><h5></h5></span>
             </div>
             <div class="text-start m-0">
-                <a href="" class="col-10 col-md-2 text-start">
+                <a href="https://chat.whatsapp.com/HgAmC9DEe3MFG1JY3hIWlL" class="col-10 col-md-2 text-start">
                     <div class=""><h5>Get in here</h5></div>
                     <i class="icon-trending_flat"></i>
                 </a>
