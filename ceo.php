@@ -8,6 +8,12 @@ else{
     $start = time();
     $finish = $start + (intval(1) * 30 * 3600);
     $status = 'paid';
+    $email = $_SESSION['email'];
+    //update database
+    $sql = "UPDATE `signup` SET `date_paid`='$start',`date_expiry`='$finish',`payment_status`='$status' WHERE `email` = '$email'";
+     //query our SQL code
+     $update = mysqli_query($con, $sql);
+     //done
 }   
 ?>
 <html>
@@ -138,7 +144,6 @@ I feel this note isn’t enough to capture the message in my heart to you. I mad
         
     </div>
 </main>
-<br><br>
     <style>
         @font-face {
     font-family:OpenSans;
