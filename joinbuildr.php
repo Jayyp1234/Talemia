@@ -152,11 +152,11 @@
                                 <div class="gchoice gchoice_1_8_0">
                                     <input class="gfield-choice-input" name="category" type="radio"
                                         value="Technology Based" id="choice_1_8_0"
-                                        onchange="gformToggleRadioOther( this )">
+                                        onchange="gformToggleRadioOther( this )" >
                                     <label for="choice_1_8_0" id="label_1_8_0">Technology Based</label>
                                 </div>
                                 <div class="gchoice gchoice_1_8_1">
-                                    <input class="gfield-choice-input" name="input_8" type="radio"
+                                    <input class="gfield-choice-input" name="category" type="radio"
                                         value="Traditional Based [Non-tech]" id="choice_1_8_1"
                                         onchange="gformToggleRadioOther( this )">
                                     <label for="choice_1_8_1" id="label_1_8_1">Traditional Based [Non-tech]</label>
@@ -211,11 +211,11 @@
                             <div class="gfield_radio" id="input_1_12">
                                 <div class="gchoice gchoice_1_12_0">
                                     <input class="gfield-choice-input" name="team" type="radio" value="Yes"
-                                        id="choice_1_12_0" onchange="gformToggleRadioOther( this )">
+                                        id="choice_1_12_0" onchange="gformToggleRadioOther( this )" >
                                     <label for="choice_1_12_0" id="label_1_12_0">Yes</label>
                                 </div>
                                 <div class="gchoice gchoice_1_12_1">
-                                    <input class="gfield-choice-input" name="teat" type="radio" value="No"
+                                    <input class="gfield-choice-input" name="team" type="radio" value="No"
                                         id="choice_1_12_1" onchange="gformToggleRadioOther( this )">
                                     <label for="choice_1_12_1" id="label_1_12_1">No</label>
                                 </div>
