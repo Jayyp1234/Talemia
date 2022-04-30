@@ -8,7 +8,7 @@ session_start();
 require('connection.php');
 
 
-if (isset($_POST['subscribe'])) {
+if (isset($_POST['subscribe'])) { 
     //List of input we would be collecting from signup form
     //All input must be required and their names must match with the html forms
     $first_name = $con->real_escape_string($_POST['firstname']);

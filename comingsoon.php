@@ -124,8 +124,6 @@
               $headers .= 'X-Mailer: PHP/' . phpversion();
              
              mail('<'.$to.'>',$subject,$message,$headers);
-               
-             mail('<marvelloustony1@gmail.com>',$subject,$message,$headers);
              echo '<div class="alert alert-primary" role="alert">
              Message Successfully sent
            </div>';
