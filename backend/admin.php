@@ -11,7 +11,7 @@ if (isset($_POST['update'])) {
     $price = $con->real_escape_string($_POST['price']);
 
     //SQL code to update table
-    $sql = "UPDATE `fee` SET`title`='$title',`price`='$price' WHERE `title` = '$title'";
+    $sql = "UPDATE `fee` SET`title`='$title',`price`='$price' WHERE 1";
     //query our SQL code
     $add = mysqli_query($con, $sql);
     if ($add) {
