@@ -1,3 +1,14 @@
+<?php
+include_once '../backend/connection.php';
+
+if(isset($_POST["submit"])){
+    $sql = "SELECT FROM ";
+}
+
+
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +54,118 @@
      margin-bottom:7px;
      border-radius:7px;
    }
+   body{
+       height: 100vh !important;
+   }
+   main {
+    margin-left: 0 0 0 250px !important;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+}
+   main .row {
+    margin: 0;
+    flex-direction: column;
+    height: 96vh !important;
+    }
+    .col-12{
+        padding: 0;
+        height: 48vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .top h1{
+    color: #fff;
+    }
+    .modal {
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    z-index: 100000000000;
+    }
+    .modal.show .modal-dialog {
+    max-width: 600px;
+    }
+    .modal-content {
+    height: 380px;
+    }
+    .modal-header button{
+    width: 40px;
+    height: 40px;
+    background: unset;
+    }
+    .modal-header .icon-close2{
+        font-size: 1.4rem;
+    }
+    .modal-header .icon-close2:hover{
+    background: #09099d;
+    color: white;
+    border-radius: 100%;
+    }
+    .update {
+    border-radius: 2rem;
+    padding: 1rem 4rem;
+    font-size: 14px;
+    background-color: #09099d;
+    color: white;
+    }
+    .update:hover {
+    color: white;
+    box-shadow: 0 0 40px -5px #09099d;
+    }
+    input {
+    padding: 19px;
+    height: 40%;
+    width: 100%;
+    background: whitesmoke;
+    }
+    .icon-bars {
+    right: 8px;
+    top: 11px;
+    }
+@media all and (max-width: 550px){
+main {
+    padding: 0;
+}
+.top h1{
+    font-size: 20px;
+}
+.modal {
+    left: 0;
+    top: 14%;
+}
+.modal-title {
+    font-size: 15px;
+}
+.modal-body{
+    margin: 10% 0 7%;
+    padding: 1rem .5rem;
+}
+.modal-footer input {
+    font-size: 12px;
+    margin-top: 10%;
+}
+.modal-footer input::placeholder {
+    font-size: 12px;
+}
+.update {
+    border-radius: 8px;
+    padding: 0.8rem;
+    width: 50%;
+    font-size: 13px;
+}
+.modal-footer input{
+    font-size: 12px;
+}
+main .intro-div b {
+    font-size: .9rem;
+}
+main .intro-div span{
+    font-size: 12px;
+}
+
+}
 </style>
 <body>
     <i class="icon-bars"></i>
@@ -64,14 +187,43 @@
         </ul>
         <br>
     </nav>
-    <main style="margin-right:5px;">
+    <main style="">
+    <!-- margin-right:5px; held--> 
         <div class="intro-div">
             <b>Dashboard</b>
             <span id="time" class="time"></span>
         </div>
-        <br>
+        <!-- <br> held-->
    
-            
+        <!-- Button trigger modal -->
+   <div class="row col-12">
+       <div class="col-12 top" style="background-color: #09099d">
+            <h1>SET A PRICE</h1>
+       </div>
+       <div class="col-12 bottom" style="background-color: #fdfdfd;">
+            <button type="button" class="btn update" data-bs-toggle="modal" data-bs-target="#staticBackdrop">UPDATE PRICE</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Price Update</h5>
+                    <button type="button" class="icon-close2" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" method="post">
+                    <div class="modal-body">
+                    <input type="text" placeholder="Input price">
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-success" name="update"></input>
+                    </div>
+                </form>
+                </div>
+            </div>
+            </div>
+       </div>
+   </div>
         
     </main>
 
