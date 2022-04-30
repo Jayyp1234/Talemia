@@ -1,19 +1,77 @@
 <?php
-require('backend/connection.php');
+session_start();
+ require('backend/connection.php');
 
-if (!isset($_GET['txnref']) || !isset($_GET['reference'])){
-    header('Location:https://talemia.com/');
-}
-else{
-    $start = time();
-    $finish = $start + (intval(1) * 30 * 3600);
-    $status = 'paid';
-    $email = $_SESSION['email'];
-    //update database
-    $sql = "UPDATE `signup` SET `date_paid`='$start',`date_expiry`='$finish',`payment_status`='$status' WHERE `email` = '$email'";
-     //query our SQL code
+ if (!isset($_GET['trxref']) || !isset($_GET['reference'])){
+     header('Location:https://talemia.com/');
+ }
+ else{
+     $start = time();
+     $finish = $start + (intval(1) * 30 * 3600);
+     $status = 'paid';
+     $email = $_SESSION['email'];
+     $name = $_SESSION['name'];
+     $sql = "UPDATE `signup` SET `date_paid`='$start',`date_expiry`='$finish',`payment_status`='$status' WHERE `email` = '$email'";
+//      query our SQL code
      $update = mysqli_query($con, $sql);
-     //done
+     if ($update){
+          //mailing 
+          $to =  $email;
+          // Subject
+          $subject = 'Welcome to Buildr';
+          // Message
+          $emailMsg =  `
+          Hi $name
+          
+          We're excited to work with you in launching your startup. Regardless of the phase you're currently at, we'd move you from 0 to 1 [Our Promise to You!]
+          
+          To enable us understand your solution and serve you better, we've set up an Introductory Session where you'd meet some of the coolest people on our team.
+          
+          Our Introductory Sessions are on a weekly rolling basis every Saturday. See access details below:
+          
+          Time: 10am GMT+1
+          Venue: Google Meet
+          Access Link: https://bit.ly/buildr-welcome
+          
+          PS: It's important to have your introductory session at least two[2] weeks into joining Buildr
+          
+          
+          Next Step?
+          Please get back to me with your preferred date via:: oluwadamilare@talemia.com
+          
+          Got any questions?
+          I'd be happy to provide answers
+          
+          See you soon
+          
+          Cheers!
+          
+          
+          Oluwadamilare
+          ProductOps Intern
+          Launch Your Startup Faster at
+          www.talemia.com
+          
+          `;
+          $message = "
+          <html>
+          <head>
+            <title> Welcome To Buildr </title>
+          </head>
+          <body>
+            <p> '".$emailMsg."'</p>
+          </body>
+          </html>
+          ";
+          //we want ot send html mail...
+          $headers  = 'MIME-Version: 1.0' . "\r\n";
+          $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+          // To send HTML mail, the Content-type header must be set
+           $headers .= 'X-Mailer: PHP/' . phpversion();
+          
+          mail('<'.$to.'>',$subject,$message,$headers);
+          
+     }
 }   
 ?>
 <html>
@@ -90,7 +148,7 @@ else{
 		<!-- Header -->
 		<header class="header">
 			<div class="container">
-				<div class="row" style="align-items:center;">
+				<div class="row" style="align-items:center; margin: 0 auto;">
 					<div class="col-6">
 						<div class="logo">
 							<h2><a href="/"><img src="assets/image/logo.svg" width="150px"></a></h2>
@@ -335,6 +393,14 @@ body{
 
 
 @media (min-width: 320px) and (max-width: 575.98px){
+    .logo h2 a img {
+        width: 90%;
+    }
+    .header-btn a {
+        padding: 13px 1rem;
+        border-radius: 21px;
+        font-size: 11px;
+    }
     header {
         padding: 0.2pc 12px 0;
     }

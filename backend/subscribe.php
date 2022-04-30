@@ -35,6 +35,10 @@ if (isset($_POST['subscribe'])) {
       $email = $con->real_escape_string($_POST['email']);
       //session
       $_SESSION["email"] = $email;
+// <<<<<<< HEAD
+// =======
+      $_SESSION["name"] = $first_name.''.$first_name;
+// >>>>>>> 939ba273db06a2b5d81baf426a9c05a979051734
       $price = 5000*100;
       $url = "https://api.paystack.co/transaction/initialize";
       $fields = [
