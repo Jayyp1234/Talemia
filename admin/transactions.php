@@ -1,10 +1,3 @@
-<?php   
-    include_once '../backend/connection.php';
-
-
-
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -63,41 +56,11 @@
         </div>
         <br>
         <ul>
-        <form action='dashboard.php' method='post'>
-                                        <input type='hidden' name='email' value='talemia'>
-                                        <input type='hidden' name='password' value='12345'>
-                                        <button type='submit' name='login'>
-                                        <li class='active' ><i class='icon-dashboard'></i><span> Dashboard</span> </li>
-                                        </button>
-                                    </form>
-                                    <form action='newsletter.php' method='post'>
-                                        <input type='hidden' name='email' value='talemia'>
-                                        <input type='hidden' name='password' value='12345'>
-                                        <button type='submit' name='login'>
-                                            <li> <i class='icon-globe'></i> <span> Newsletter</span> </li>
-                                        </button>
-                                    </form>
-                                    <form action='members.php' method='post'>
-                                        <input type='hidden' name='email' value='talemia'>
-                                        <input type='hidden' name='password' value='12345'>
-                                        <button type='submit' name='login'>
-                                            <li> <i class='icon-hdd-o'></i> <span> Members </span> </li>
-                                        </button>
-                                    </form>
-                                    <form action='blog.php' method='post'>
-                                        <input type='hidden' name='email' value='talemia'>
-                                        <input type='hidden' name='password' value='12345'>
-                                        <button type='submit' name='login'>
-                                            <li> <i class='icon-child'></i> <span> Blogs </span> </li>
-                                        </button>
-                                    </form>
-                                    <form action='transactions.php' method='post'>
-                                        <input type='hidden' name='email' value='talemia'>
-                                        <input type='hidden' name='password' value='12345'>
-                                        <button type='submit' name='login'>
-                                            <li> <i class='icon-square'> </i><span> Transactions </span> </li>
-                                        </button>
-                                    </form>
+            <li ><a href="dashboard.php"><i class="icon-dashboard"></i><span> Dashboard</span> </a></li>
+            <li><a href="newsletter.php"> <i class="icon-globe"></i> <span> Newsletter</span> </a></li>
+            <li><a href="members.php"> <i class="icon-hdd-o"></i> <span> Members </span> </a></li>
+            <li ><a href="blog.php"> <i class="icon-child"></i> <span> Blogs </span> </a></li>
+            <li class="active"><a href="transactions.php"> <i class="icon-square"> </i><span> Transactions </span> </a></li>
         </ul>
         <br>
     </nav>

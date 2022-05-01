@@ -74,8 +74,28 @@ input:focus, button:focus {
           <div class="card-title text-center border-bottom">
             <h2 class="p-3">Admin Login</h2>
           </div>
+          <?php
+            require('../backend/connection.php');
+                if (isset($_POST['login'])) {
+                    $password = 12345;
+                    $user = 'talemia';
+                    $admin = $con->real_escape_string($_POST['email']);
+                    $pass = $con->real_escape_string($_POST['password']);
+                    if ($pass == $password && $user == $admin) {
+                        $_SESSION['user'] = $admin;
+                        header('Location:dashboard.php');
+                        ob_end_flush();
+                    }
+                    else{
+                        echo '<div class="alert alert-danger" role="alert">
+                        Incorrect Details
+                      </div>';
+                    }
+                    
+                }
+                ?>
           <div class="card-body">
-            <form action="dashboard.php" method="POST">
+            <form action="" method="POST">
               <div class="mb-4">
                 <label for="username" class="form-label">Username/Email</label>
                 <input type="text" name="email" class="form-control" id="username" />
