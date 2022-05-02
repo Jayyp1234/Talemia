@@ -3,9 +3,6 @@ require('connection.php');
 
 
 if (isset($_POST['add'])) {
-
-    
-
     //List of input we would be collecting from signup form
     //All input must be required and their names must match with the html forms
     $category = $con->real_escape_string($_POST['category']);
@@ -22,9 +19,6 @@ if (isset($_POST['add'])) {
     $image = $_FILES['image']['name'];
     $folder = "media/";
     move_uploaded_file($_FILES["image"]["tmp_name"], "$folder".$_FILES["image"]["name"]);
-
-    
-
 
     //SQL code to insert all our values into the table names signup
     $sql = "INSERT INTO `blog`(`category`, `title`, `author`, `date`, `duration`, `facebook`, `twitter`, `linkedin`, `whatsapp`, `email`, `image`, `body`) VALUES

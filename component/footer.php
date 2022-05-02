@@ -1,3 +1,9 @@
+<style>
+    [data-ff-el="root"].ff-61c982a6d2fc90968d6f4de5 .ff-61c982a6d2fc90968d6f4de5__button {
+    height: 54px !important;
+    }
+</style>
+
 <footer id="footer" class="wtbx_skin_light">
                     <div class="wtbx_vc_row wtbx_vc_row-221092824 wtbx_stretch_row wtbx_anim_style_1" data-skin="light">
                         <div class="wtbx_vc_el_container wtbx_vc_row_container">
@@ -798,8 +804,8 @@
                                                                                                                 class="ff-61c982a6d2fc90968d6f4de5__container">
                                                                                                                 <form
                                                                                                                     class="ff-61c982a6d2fc90968d6f4de5__form fd-focus-visible-applied"
-                                                                                                                    action="https://form.flodesk.com/forms/61c982a6d2fc90968d6f4de5/submit"
-                                                                                                                    method="post"
+                                                                                                                    action="backend/newsletter.php"
+                                                                                                                    method="POST"
                                                                                                                     data-ff-el="form"
                                                                                                                     novalidate="">
                                                                                                                     <div
@@ -838,106 +844,18 @@
                                                                                                                         <div class="ff-61c982a6d2fc90968d6f4de5__fields"
                                                                                                                             data-ff-el="fields">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                            <input
-                                                                                                                                type="hidden"
-                                                                                                                                name="csrf"
-                                                                                                                                value="fbcef1e707d7e2c4f928cedeeab88e001a5b1b4ed999f560c146209dbfbbce60b20b3218f0e3051495a4e2e7e6396b110ec0dd873c0e04edf444b1e7f4657386">
-
-                                                                                                                            <div class="ff-61c982a6d2fc90968d6f4de5__field fd-form-group"
-                                                                                                                                style="display: none;">
-                                                                                                                                <input
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__control fd-form-control"
-                                                                                                                                    type="text"
-                                                                                                                                    maxlength="255"
-                                                                                                                                    name="Zyc0lhMVlZWl"
-                                                                                                                                    placeholder="Zyc0lhMVlZWl"
-                                                                                                                                    data-ff-tab="Zyc0lhMVlZWl::5zdCZCZFEMU">
-                                                                                                                                <label
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__label fd-form-label">First
-                                                                                                                                    name</label>
-                                                                                                                            </div>
-
                                                                                                                             <div class="ff-61c982a6d2fc90968d6f4de5__field fd-form-group"
                                                                                                                                 style="">
                                                                                                                                 <input
                                                                                                                                     class="ff-61c982a6d2fc90968d6f4de5__control fd-form-control"
                                                                                                                                     type="text"
+                                                                                                                                    
                                                                                                                                     maxlength="255"
-                                                                                                                                    name="WlZyc0lhMVlZ"
+                                                                                                                                    name="firstname"
                                                                                                                                     placeholder="WlZyc0lhMVlZ"
-                                                                                                                                    data-ff-tab="WlZyc0lhMVlZ::MU5zdCZCZFE">
+                                                                                                                                    required>
                                                                                                                                 <label
                                                                                                                                     class="ff-61c982a6d2fc90968d6f4de5__label fd-form-label">First
-                                                                                                                                    name</label>
-                                                                                                                            </div>
-
-                                                                                                                            <div class="ff-61c982a6d2fc90968d6f4de5__field fd-form-group"
-                                                                                                                                style="display: none;">
-                                                                                                                                <input
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__control fd-form-control"
-                                                                                                                                    type="text"
-                                                                                                                                    maxlength="255"
-                                                                                                                                    name="0yclhMVlZWlZ"
-                                                                                                                                    placeholder="0yclhMVlZWlZ"
-                                                                                                                                    data-ff-tab="0yclhMVlZWlZ::CzdZCZFEMU5">
-                                                                                                                                <label
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__label fd-form-label">First
-                                                                                                                                    name</label>
-                                                                                                                            </div>
-
-                                                                                                                            <div class="ff-61c982a6d2fc90968d6f4de5__field fd-form-group"
-                                                                                                                                style="display: none;">
-                                                                                                                                <input
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__control fd-form-control"
-                                                                                                                                    type="text"
-                                                                                                                                    maxlength="255"
-                                                                                                                                    name="lZyc0lhMVlZW"
-                                                                                                                                    placeholder="lZyc0lhMVlZW"
-                                                                                                                                    data-ff-tab="lZyc0lhMVlZW::U5zdCZCZFEM">
-                                                                                                                                <label
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__label fd-form-label">First
-                                                                                                                                    name</label>
-                                                                                                                            </div>
-
-                                                                                                                            <div class="ff-61c982a6d2fc90968d6f4de5__field fd-form-group"
-                                                                                                                                style="display: none;">
-                                                                                                                                <input
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__control fd-form-control"
-                                                                                                                                    type="text"
-                                                                                                                                    maxlength="255"
-                                                                                                                                    name="5zdCZCZFEMU"
-                                                                                                                                    placeholder="5zdCZCZFEMU"
-                                                                                                                                    data-ff-tab="5zdCZCZFEMU:Zyc0lhMVlZWl:phaUEWV">
-                                                                                                                                <label
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__label fd-form-label">Last
-                                                                                                                                    name</label>
-                                                                                                                            </div>
-
-                                                                                                                            <div class="ff-61c982a6d2fc90968d6f4de5__field fd-form-group"
-                                                                                                                                style="display: none;">
-                                                                                                                                <input
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__control fd-form-control"
-                                                                                                                                    type="text"
-                                                                                                                                    maxlength="255"
-                                                                                                                                    name="U5zdCZCZFEM"
-                                                                                                                                    placeholder="U5zdCZCZFEM"
-                                                                                                                                    data-ff-tab="U5zdCZCZFEM:lZyc0lhMVlZW:VphaUEW">
-                                                                                                                                <label
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__label fd-form-label">Last
                                                                                                                                     name</label>
                                                                                                                             </div>
 
@@ -947,23 +865,10 @@
                                                                                                                                     class="ff-61c982a6d2fc90968d6f4de5__control fd-form-control"
                                                                                                                                     type="text"
                                                                                                                                     maxlength="255"
-                                                                                                                                    name="MU5zdCZCZFE"
+                                                                                                                                    name="lastname"
+                                                                                                                                    
                                                                                                                                     placeholder="MU5zdCZCZFE"
-                                                                                                                                    data-ff-tab="MU5zdCZCZFE:WlZyc0lhMVlZ:WVphaUE">
-                                                                                                                                <label
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__label fd-form-label">Last
-                                                                                                                                    name</label>
-                                                                                                                            </div>
-
-                                                                                                                            <div class="ff-61c982a6d2fc90968d6f4de5__field fd-form-group"
-                                                                                                                                style="display: none;">
-                                                                                                                                <input
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__control fd-form-control"
-                                                                                                                                    type="text"
-                                                                                                                                    maxlength="255"
-                                                                                                                                    name="CzdZCZFEMU5"
-                                                                                                                                    placeholder="CzdZCZFEMU5"
-                                                                                                                                    data-ff-tab="CzdZCZFEMU5:0yclhMVlZWlZ:UhaEWVp">
+                                                                                                                                     required>
                                                                                                                                 <label
                                                                                                                                     class="ff-61c982a6d2fc90968d6f4de5__label fd-form-label">Last
                                                                                                                                     name</label>
@@ -975,66 +880,22 @@
                                                                                                                                     class="ff-61c982a6d2fc90968d6f4de5__control fd-form-control"
                                                                                                                                     type="text"
                                                                                                                                     maxlength="255"
-                                                                                                                                    name="WVphaUE"
+                                                                                                                                    name="email"
                                                                                                                                     placeholder="WVphaUE"
-                                                                                                                                    data-ff-tab="WVphaUE:MU5zdCZCZFE:submit">
+                                                                                                                                    required>
                                                                                                                                 <label
                                                                                                                                     class="ff-61c982a6d2fc90968d6f4de5__label fd-form-label">Email
                                                                                                                                     address</label>
                                                                                                                             </div>
-
-                                                                                                                            <div class="ff-61c982a6d2fc90968d6f4de5__field fd-form-group"
-                                                                                                                                style="display: none;">
-                                                                                                                                <input
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__control fd-form-control"
-                                                                                                                                    type="text"
-                                                                                                                                    maxlength="255"
-                                                                                                                                    name="VphaUEW"
-                                                                                                                                    placeholder="VphaUEW"
-                                                                                                                                    data-ff-tab="VphaUEW:U5zdCZCZFEM:submit">
-                                                                                                                                <label
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__label fd-form-label">Email
-                                                                                                                                    address</label>
-                                                                                                                            </div>
-
-                                                                                                                            <div class="ff-61c982a6d2fc90968d6f4de5__field fd-form-group"
-                                                                                                                                style="display: none;">
-                                                                                                                                <input
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__control fd-form-control"
-                                                                                                                                    type="text"
-                                                                                                                                    maxlength="255"
-                                                                                                                                    name="UhaEWVp"
-                                                                                                                                    placeholder="UhaEWVp"
-                                                                                                                                    data-ff-tab="UhaEWVp:CzdZCZFEMU5:submit">
-                                                                                                                                <label
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__label fd-form-label">Email
-                                                                                                                                    address</label>
-                                                                                                                            </div>
-
-                                                                                                                            <div class="ff-61c982a6d2fc90968d6f4de5__field fd-form-group"
-                                                                                                                                style="display: none;">
-                                                                                                                                <input
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__control fd-form-control"
-                                                                                                                                    type="text"
-                                                                                                                                    maxlength="255"
-                                                                                                                                    name="phaUEWV"
-                                                                                                                                    placeholder="phaUEWV"
-                                                                                                                                    data-ff-tab="phaUEWV:5zdCZCZFEMU:submit">
-                                                                                                                                <label
-                                                                                                                                    class="ff-61c982a6d2fc90968d6f4de5__label fd-form-label">Email
-                                                                                                                                    address</label>
-                                                                                                                            </div>
-
-
                                                                                                                         </div>
 
                                                                                                                         <div class="ff-61c982a6d2fc90968d6f4de5__footer"
                                                                                                                             data-ff-el="footer">
                                                                                                                             <button
                                                                                                                                 type="submit"
+                                                                                                                                name="subscribe"
                                                                                                                                 class="ff-61c982a6d2fc90968d6f4de5__button fd-btn"
-                                                                                                                                data-ff-el="submit"
-                                                                                                                                data-ff-tab="submit">
+                                                                                                                                >
                                                                                                                                 <span>Subscribe</span>
                                                                                                                             </button>
                                                                                                                         </div>
