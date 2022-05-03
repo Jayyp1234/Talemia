@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2022 at 03:51 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: May 03, 2022 at 12:52 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -70,8 +70,7 @@ CREATE TABLE `email` (
 --
 
 INSERT INTO `email` (`id`, `firstname`, `lastname`, `email`) VALUES
-(1, '[value-1]', '[value-2]', '[value-3]'),
-(2, '[value-1]', '[value-2]', '[value-3]');
+(6, 'Isaac', 'Oladipo', 'oladipoolayinka421@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -84,6 +83,13 @@ CREATE TABLE `fee` (
   `title` text COLLATE utf8_unicode_ci NOT NULL,
   `price` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `fee`
+--
+
+INSERT INTO `fee` (`id`, `title`, `price`) VALUES
+(1, 'subscription', '1500');
 
 -- --------------------------------------------------------
 
@@ -117,10 +123,7 @@ CREATE TABLE `signup` (
 --
 
 INSERT INTO `signup` (`id`, `firstname`, `lastname`, `email`, `phone`, `country`, `startup`, `gender`, `age`, `category`, `industry`, `stage`, `team`, `startup_age`, `startup_name`, `date_paid`, `date_expiry`, `payment_status`) VALUES
-(6, 'Okeke', 'Johnpaul', 'okekejohnpaul12@gmail.com', '+2349032210788', 'Nigeria', 'Marasoft Pay', 'Male', '20-25', 'Technology Based', 'Agriculture', 'Idea', 'Yes', 'Below 1 year', 'Marasoft Pay', '1651190686', '1651298686', 'paid'),
-(7, 'Okeke', 'Johnpaul', 'okekejohnpaul12@gmail.com', '+2349032210788', 'Nigeria', 'Marasoft Pay', 'Male', '20-25', 'Technology Based', 'Agriculture', 'Idea', 'Yes', 'Below 1 year', 'Marasoft Pay', '1651190686', '1651298686', 'paid'),
-(8, 'Okeke', 'Johnpaul', 'okekejohnpaul12@gmail.com', '+2349032210788', 'Nigeria', 'Marasoft Pay', 'Male', '20-25', 'Technology Based', 'Agriculture', 'Idea', 'Yes', 'Below 1 year', 'Marasoft Pay', '1651190686', '1651298686', 'paid'),
-(9, 'Okeke', 'Johnpaul', 'okekejohnpaul12@gmail.com', '+2349032210788', 'Nigeria', 'Marasoft Pay', 'Male', '20-25', 'Technology Based', 'Agriculture', 'Idea', 'Yes', 'Below 1 year', 'Marasoft Pay', '1651190686', '1651298686', 'paid');
+(34, 'Isaac', 'Oladipo', 'oladipoolayinka421@gmail.com', '08130681656', 'Nigeria', 'quest2', 'Male', 'Below 25', 'Technology Based', 'ICT', 'Pre-MVP', 'Yes', 'Below 1 year', 'quest2', '1651574908', '1651682908', 'paid');
 
 -- --------------------------------------------------------
 
@@ -130,10 +133,18 @@ INSERT INTO `signup` (`id`, `firstname`, `lastname`, `email`, `phone`, `country`
 
 CREATE TABLE `transaction` (
   `id` int(11) NOT NULL,
+  `name` text NOT NULL,
   `title` varchar(30) NOT NULL,
   `amount` int(30) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `time_stamp` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transaction`
+--
+
+INSERT INTO `transaction` (`id`, `name`, `title`, `amount`, `time_stamp`) VALUES
+(4, 'IsaacIsaac', 'subscription', 1500, '1651574908');
 
 --
 -- Indexes for dumped tables
@@ -183,25 +194,25 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT for table `email`
 --
 ALTER TABLE `email`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `fee`
 --
 ALTER TABLE `fee`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `signup`
 --
 ALTER TABLE `signup`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

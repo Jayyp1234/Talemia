@@ -11,9 +11,17 @@ session_start();
      $status = 'paid';
      $email = $_SESSION['email'];
      $name = $_SESSION['name'];
+     $fees = "SELECT * FROM `fee` WHERE `id` = '1'";
+      $fees_query = mysqli_query($con, $fees);
+      while($row = mysqli_fetch_array($fees_query)){
+        $title = $row['title'];
+        $price = $row['price'];
+      }
      $sql = "UPDATE `signup` SET `date_paid`='$start',`date_expiry`='$finish',`payment_status`='$status' WHERE `email` = '$email'";
-//      query our SQL code
+    $sql2 = "INSERT INTO `transaction`(`name`, `title`, `amount`, `time_stamp`) VALUES ('$name','$title','$price','$start')";
+     //      query our SQL code
      $update = mysqli_query($con, $sql);
+     $insert = mysqli_query($con, $sql2);
      if ($update){
           //mailing 
           $to =  $email;

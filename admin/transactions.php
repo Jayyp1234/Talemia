@@ -83,7 +83,7 @@
                             <?php
                 
                 require('../backend/connection.php');
-                $sql = "SELECT * FROM transaction INNER JOIN signup ON transaction.user_id = signup.id";
+                $sql = "SELECT * FROM `transaction`";
                 $query = mysqli_query($con,$sql);
                  if($query){
                      if(mysqli_num_rows($query) > 0){
@@ -99,7 +99,7 @@
                          $output .="<tr>
                          <td>".strtoupper($row['name'])."</td>
                          <td>".strtoupper($row['title'])."</td>
-                         <td>".number_format($row['price'])."</td>
+                         <td>".number_format($row['amount'])."</td>
                           
                    </tr>";
                      }

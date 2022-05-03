@@ -38,8 +38,13 @@ if (isset($_POST['subscribe'])) {
 // <<<<<<< HEAD
 // =======
       $_SESSION["name"] = $first_name.''.$first_name;
+      $fees = "SELECT `price` FROM `fee` WHERE `id` = '1'";
+      $fees_query = mysqli_query($con, $fees);
+      while($row = mysqli_fetch_array($fees_query)){
+        $price = $row['price']*100;
+      }
 // >>>>>>> 939ba273db06a2b5d81baf426a9c05a979051734
-      $price = 5000*100;
+      // $price = 5000*100;
       $url = "https://api.paystack.co/transaction/initialize";
       $fields = [
         'email' => $email,
