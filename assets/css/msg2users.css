@@ -72,7 +72,6 @@ body{
 .container{
     display: grid;
     align-items: center;
-    height: 80vh;
 }
 .container .row{
     margin: 0 auto;

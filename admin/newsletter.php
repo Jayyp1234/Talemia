@@ -33,6 +33,7 @@
     <link rel="preload" href="../assets/fonts/OpenSans-Regular.ttf" as='font' crossorigin='anonymous'>
     <link rel="preload" href="../assets/fonts/OpenSans-SemiBold.ttf" as='font' crossorigin='anonymous'>
     <link rel="preload" href="../assets/fonts/OpenSans-Bold.ttf" as='font' crossorigin='anonymous'>
+    <link rel="stylesheet" href="../assets/css/msg2users.css">
     <link href="../assets/css/dashboard.css" rel="stylesheet">
 </head>
 <style type="text/css">
@@ -50,7 +51,7 @@
         <br>
         <br>
         <div class="profiler" style="text-align: center;margin-top: 10px;line-height: 1.2;font-size: 14.5;font-weight: 600;">
-            <img src="assets/images/pngkey.com-linea-punteada-png-4149828.png" style="width: 100px;height: 100px;display: block;margin: auto;">
+            <img src="../assets/image/pngkey.com-linea-punteada-png-4149828.png" style="width: 100px;height: 100px;display: block;margin: auto;">
             
         </div>
         <br>
@@ -64,14 +65,74 @@
         </ul>
         <br>
     </nav>
-    <main style="margin-right:5px;">
-        <div class="intro-div">
-            <b>Dashboard</b>
-            <span id="time" class="time"></span>
+    <main style="">
+    <div class="container">
+        <div class="row col-12 text-center align-items-center">
+            <div class="col-md-12 text-center mx-auto text-center newsletter" style="height:400px;">
+            <h3 class="d-none d-md-block">Newsletter</h3>
+                <img src="../assets/image/newsletter.jpeg" alt="" style="height:300px;width:auto;" class="img-fluid">
+            </div>
+            <div class="col-10 col-md-12 mx-auto text-center newsletter">
+                
+                <form>
+                    <h3 class="d-block d-md-none" style="text-transform: uppercase;color:#09099d; font-weight: 600;">Newsletter</h3>
+                    <i class="icon-envelope-o"></i>
+                    <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">ADD NEWSLETTER</a>
+                    
+                <a href="subscribers.php" class="btn d-none d-md-block">View newsletter list</a>
+                </form>
+            </div>
         </div>
-        <br>
-   
-            
+    </div>
+
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel">Newsletter</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-2">
+                            <label for="title" class="col-form-label">Title:</label>
+                            <input type="text" class="form-control" id="title" >
+                        </div>
+                        <div class="mb-2">
+                            <label for="subject" class="col-form-label">Subject:</label>
+                            <input type="text" class="form-control" id="subject">
+                        </div>
+                        <div class="text-area">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary preview-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Preview</button>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel2">Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text">
+                    <p class="subject"></p>
+                    
+                </div>
+                <div class="modal-footer">
+                    <form action="">
+                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
         
     </main>
 
@@ -79,9 +140,11 @@
 </body>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
-
 <script>
-    var d = new Date();
-    document.getElementById("time").innerHTML = d.toDateString();
+    $(document).ready(function(){
+        $(document).on('click','.preview-btn', function(){
+            $('.subject').text($('#title').val());
+        });
+    });
 </script>
 </html>

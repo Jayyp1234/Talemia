@@ -57,25 +57,23 @@
         <br>
         <ul>
             <li ><a href="dashboard.php"><i class="icon-dashboard"></i><span> Dashboard</span> </a></li>
-            <li><a href="newsletter.php"> <i class="icon-globe"></i> <span> Newsletter</span> </a></li>
+            <li class="active"><a href="newsletter.php"> <i class="icon-globe"></i> <span> Newsletter</span> </a></li>
             <li><a href="members.php"> <i class="icon-hdd-o"></i> <span> Members </span> </a></li>
             <li ><a href="blog.php"> <i class="icon-child"></i> <span> Blogs </span> </a></li>
-            <li class="active"><a href="transactions.php"> <i class="icon-square"> </i><span> Transactions </span> </a></li>
+            <li ><a href="transactions.php"> <i class="icon-square"> </i><span> Transactions </span> </a></li>
         </ul>
         <br>
     </nav>
     <main style="margin-right:5px;">
         <div class="intro-div">
-            <b>Dashboard</b>
+            <b>Subcribers</b>
             <span id="time" class="time"></span>
         </div>
+    
         <br>
-        <section class="content-main">
-            <div style="display:flex;justify-content:space-between;flex-wrap:wrap;">
-                <div class="content-header" style="margin-bottom:0">
-                    <h4> Transactions</h4>
-                </div>
-            </div>
+        
+        <section class="content-main container">
+            
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
@@ -137,18 +135,3 @@
     document.getElementById("time").innerHTML = d.toDateString();
 </script>
 </html>
-
-
-
-
-
-
-
-<!-- i took this from line 102         
-
-
-<td>".number_format($row['email'])."</td>
-
-
-
--->
