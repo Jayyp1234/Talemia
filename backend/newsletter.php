@@ -49,12 +49,12 @@ else {
             align-items: center;
         }
         .box{
-            height: 400px;
+            height: 270px;
             width: 430px;
-            box-shadow: 3px 5px 20px -2px #aaa;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
             background-color: #f3f3f336;
             border-radius: 10px;
-            margin: 70px auto 50px;
+            margin: 150px auto 50px;
             display: flex;
             justify-content: space-evenly;
             flex-direction: column;
@@ -71,15 +71,15 @@ else {
             transition: .4s ease-in-out;
         }
         .box a:hover{
-           box-shadow: 0 0 50px -10px #09099d;
+           box-shadow: 0 0 10px -10px #09099d;
            transform: scale(1.01);
         }
         @media all (min-width: 426px){
             .box {
-                height: 320px;
+                height: 250px;
                 width: 300px;
-                box-shadow: 0 0 20px -10px #aaa;
-                margin: 10px auto 0px;
+                box-shadow: 3px 0 20px -10px #aaa;
+                margin: 120px auto 0px;
             }
             .box a{
                 border-radius: 2rem;
@@ -90,11 +90,11 @@ else {
         }
         @media all and (max-width: 425px){
             .box {
-                height: 310px;
+                height: 230px;
                 width: 260px;
-                box-shadow: 0px 0px 14px -2px #ddd;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
                 border-radius: 7px;
-                margin: 0 auto;
+                margin: 100px auto;
             }
             .box a{
                 font-size: 12px;

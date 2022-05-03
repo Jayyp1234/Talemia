@@ -35,6 +35,8 @@
     <link rel="preload" href="../assets/fonts/OpenSans-SemiBold.ttf" as='font' crossorigin='anonymous'>
     <link rel="preload" href="../assets/fonts/OpenSans-Bold.ttf" as='font' crossorigin='anonymous'>
     <link href="../assets/css/dashboard.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" >
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css" rel="stylesheet">
 </head>
 <style type="text/css">
    form input, form textarea{
@@ -43,7 +45,56 @@
      border:1px solid #d4d4d4;
      margin-bottom:7px;
      border-radius:7px;
-   }
+   }.hm-gradient {
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.darken-grey-text {
+    color: #2E2E2E;
+    font-weight:600;
+}
+.input-group.md-form.form-sm.form-2 input {
+    border: 1px solid #bdbdbd;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+.input-group.md-form.form-sm.form-2 input.purple-border {
+    border: 1px solid #9e9e9e;
+}
+.input-group.m-form.form-sm.form-2 input[type=text]:focus:not([readonly]).purple-border {
+    border: 1px solid #ba68c8;
+    box-shadow: none;
+}
+.form-2 .input-group-addon {
+    border: 1px solid #ba68c8;
+}
+.danger-text {
+    color: #ff3547; 
+}  
+.success-text {
+    color: #00C851; 
+}
+.table-bordered.red-border, .table-bordered.red-border th, .table-bordered.red-border td {
+    border: 1px solid #ff3547!important;
+}        
+.table.table-bordered th {
+    text-align: center;
+}.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #fff !important;
+    border: 1px solid #09099d !important;
+    background: -webkit-linear-gradient(top, #0275d8 0%, #09099d 100%);
+    background: -moz-linear-gradient(top, #0275d8 0%, #09099d 100%);
+    background: -ms-linear-gradient(top, #0275d8 0%, #09099d 100%);
+    background: -o-linear-gradient(top, #0275d8 0%, #09099d 100%);
+    background: linear-gradient(to bottom, #0275d8 0%, #09099d 100%) !important;
+}table.dataTable tbody th, table.dataTable tbody td {
+    font-weight: 400;
+    color: #6a6a6a;
+    padding: 8px 10px;
+    font-size:13px !important;
+}label{
+    display: flex;
+    align-items: center;
+}
 </style>
 <body>
     <i class="icon-bars"></i>
@@ -73,11 +124,11 @@
         <br>
         
         <section class="content-main container">
-            
+    
             <div class="card mb-4">
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table id="example" class="display" style="width:100%">
+                    <div class="table-responsive container">
+                        <table id="example" class="display container" style="width:100%">
                             <?php
                 
                 require('../backend/connection.php');
@@ -88,9 +139,9 @@
                          
                          $output = "<thead>
                          <tr>
-                             <th>Name</th>
-                             <th>Title</th>
-                             <th>Price</th>
+                             <th>Firstname</th>
+                             <th>Lastname</th>
+                             <th>Email</th>
                          </tr>
                      </thead><tbody>";
                      while($row = mysqli_fetch_assoc($query)){
