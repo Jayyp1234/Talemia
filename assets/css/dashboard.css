@@ -52,6 +52,7 @@ nav{
     padding-left: 10px;
     background-color: white;
     position: fixed;
+    border-right: .5px solid #eee;
     z-index: 9999999999;
     left:0;
     top: 0;
@@ -189,13 +190,9 @@ main .jumbotron span{
         display: none;
     }
     .modal {
-    top: 20%;
-    left: 3%;
-    z-index: 0;
-    }
-    .modal-body {
-        margin: 5% 0;
-    }
+    top: 1%;
+    z-index: 1000000000;
+    }   
     .modal-header .icon-close2 {
         font-size: 1.6rem;
     }
@@ -254,6 +251,7 @@ main .row{
 @media (max-width: 550px){
 main {
     margin-right: 0px;
+    height: 100vh;
 }
 }
 @media all and (max-width: 550px){
@@ -264,8 +262,6 @@ main {
     }
     main{
         margin-left: 0px;
-        /* padding-left: 5px;
-        padding-right: 5px; */
         padding: 0;
     }
     .icon-bars{

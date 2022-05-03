@@ -67,16 +67,15 @@
     </nav>
     <main style="">
     <div class="container">
-        <div class="row col-12 text-center align-items-center">
-            <div class="col-md-12 text-center mx-auto text-center newsletter" style="height:400px;">
-            <h3 class="d-none d-md-block">Newsletter</h3>
-                <img src="../assets/image/newsletter.jpeg" alt="" style="height:300px;width:auto;" class="img-fluid">
+        <div class="row col-12 text-center align-items-end align-items-md-center">
+            <div class="col-md-12 text-center mx-auto text-center newsletter">
+            <h3 class="d-none d-md-block">Send Newsletter</h3>
+                <img src="../assets/image/newsletter.jpeg" alt="" class="img-fluid">
             </div>
             <div class="col-10 col-md-12 mx-auto text-center newsletter">
                 
                 <form>
-                    <h3 class="d-block d-md-none" style="text-transform: uppercase;color:#09099d; font-weight: 600;">Newsletter</h3>
-                    <i class="icon-envelope-o"></i>
+                    <a class="d-block d-md-none" href="subscribers.php" style="text-transform: uppercase;border-radius: 30px;transition: .4s ease-in-out;border: none;color: white;background-color: #09099d;">View Newsletter</a>
                     <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">ADD NEWSLETTER</a>
                     
                 <a href="subscribers.php" class="btn d-none d-md-block">View newsletter list</a>
@@ -121,8 +120,19 @@
                     <h5 class="modal-title" id="exampleModalToggleLabel2">Preview</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text">
-                    <p class="subject"></p>
+                <div class="modal-body preview-summary">
+                    <div>
+                        <h5>Title:</h5>
+                        <h6 class='title'></h6>
+                    </div>
+                    <div>
+                        <h5>Subject:</h5>
+                        <h6 class='subject'></h6>
+                    </div>
+                    <div>
+                        <h5>Message:</h3>
+                        <p class='message-text'></p>
+                    </div>
                     
                 </div>
                 <div class="modal-footer">
@@ -143,7 +153,9 @@
 <script>
     $(document).ready(function(){
         $(document).on('click','.preview-btn', function(){
-            $('.subject').text($('#title').val());
+            $('.title').text($('#title').val());
+            $('.subject').text($('#subject').val());
+            $('.message-text').text($('#message-text').val());
         });
     });
 </script>

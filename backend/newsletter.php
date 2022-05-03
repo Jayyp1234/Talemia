@@ -49,12 +49,12 @@ else {
             align-items: center;
         }
         .box{
-            height: 80%;
-            width: 30%;
-            box-shadow: 0 0 30px -15px;
-            background-color: #fff;
+            height: 400px;
+            width: 430px;
+            box-shadow: 3px 5px 20px -2px #aaa;
+            background-color: #f3f3f336;
             border-radius: 10px;
-            margin: 10% auto 5%;
+            margin: 70px auto 50px;
             display: flex;
             justify-content: space-evenly;
             flex-direction: column;
@@ -74,9 +74,40 @@ else {
            box-shadow: 0 0 50px -10px #09099d;
            transform: scale(1.01);
         }
+        @media all (min-width: 426px){
+            .box {
+                height: 320px;
+                width: 300px;
+                box-shadow: 0 0 20px -10px #aaa;
+                margin: 10px auto 0px;
+            }
+            .box a{
+                border-radius: 2rem;
+            }
+            .box a:hover{
+                transform: scale(1.02);
+            }
+        }
+        @media all and (max-width: 425px){
+            .box {
+                height: 310px;
+                width: 260px;
+                box-shadow: 0px 0px 14px -2px #ddd;
+                border-radius: 7px;
+                margin: 0 auto;
+            }
+            .box a{
+                font-size: 12px;
+                border-radius: 2rem;
+            }
+            .box a:hover{
+                box-shadow: 0 0 50px -10px #09099d;
+                transform: scale(1.01);
+            }
+        }
     </style>
         <div class="row col-12 justify-content-center align-items-end" style="height:
-        500px">
+        450px">
             <div class="box">
                 <div class="">
                     <p><?php echo $message;?></p>

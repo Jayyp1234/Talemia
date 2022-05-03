@@ -72,33 +72,38 @@ body{
 .container{
     display: grid;
     align-items: center;
+    padding: 0;
+    background: var(--white);
+}
+.newsletter{
+    background-color: var(--white);
+    padding: 0;
 }
 .container .row{
     margin: 0 auto;
+    height: 100vh;
 }
 .container .row .newsletter > h3{
     color: var(--color);
     font-weight: 600;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin: 20px 0 20px 0;
     font-size: 2rem;
     letter-spacing: 1px;
 }
 .container .row .newsletter form{
-    height: 50vh;
+    display: flex;
+    height: 40vh;
     width: 70%;
     margin: 0 auto;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    box-shadow: 0 0 30px -19px var(--fontcolor);
+    align-items: start;
+    padding-top: 50px;
+    justify-content: space-around;
     border-radius: 10px;
 }
-.container .row .newsletter i{
-    font-size: 3rem;
-    color: var(--color);
-    margin-bottom: -3rem;
+.container .row .newsletter img {
+    width: auto;
+    height: 300px;
 }
 .container .row > div:nth-child(2) form a{
     background: var(--color);
@@ -108,8 +113,9 @@ body{
     color: var(--white);
     transition: .4s ease-in-out;
     border: none;
+    text-transform: uppercase;
 }
-.container .row > div:nth-child(2) form a:hover{
+:is(.container .row > div:nth-child(2) form a, .container .row .newsletter form a):hover{
     box-shadow: 0 16px 60px -17px var(--color);
     transform: scale(1.05);
 }
@@ -120,6 +126,7 @@ body{
     box-shadow: none;
     border: 2.7px solid var(--color);
 }
+
 .modal-body .text-area textarea {
     height: 30vh !important;
 }
@@ -133,8 +140,23 @@ body{
     font-weight: 600;
 }
 .modal-body{
-    padding: 1rem;
+    padding: 1rem 1rem 0;
     text-align: justify;
+}
+label.col-form-label {
+    padding: 0 0 0.1rem 0.3rem;
+}
+.preview-summary > div{
+    height: auto;
+    margin: 0 0 1rem 0;
+}
+.preview-summary > div h5{
+    font-weight: 600;
+    font-size: 16px;
+}
+.preview-summary > div h6, .preview-summary > div p{
+    font-weight: lighter;
+    font-size: 14px;
 }
 .modal-footer{
     border: unset;
@@ -148,16 +170,17 @@ body{
 @media (min-width: 992px) and (max-width: 1199.98px){
     .container .row .newsletter > h3 {
         font-size: 1.5rem;
+        margin: 20px 0 0 0;
     }
     .container .row .newsletter i {
         font-size: 1.7rem;
         margin-bottom: -2rem;
     }
-    .container .row > div:nth-child(1) img {
-        width: 85%;
-    }
     .modal.show .modal-dialog {
         height: 90vh;
+    }
+    .container .row .newsletter img {
+        height: 270px;
     }
     .container .row > div:nth-child(2) form a {
         font-size: .8rem;
@@ -168,13 +191,14 @@ body{
     }
     .modal-content {
         height: 100%;
-        justify-content: space-between;
+        justify-content: space-around;
     }
-    .modal-body * label {
-        padding: 1rem 0 0 0;
-    }
+    
     .modal-body {
-        padding: 0 1rem 0;
+        padding: 1rem 1rem 0;
+    }
+    .preview-summary > div h5 {
+        font-size: .9rem;
     }
     .modal-body form > div{
         margin: 0 !important;
@@ -216,15 +240,18 @@ body{
     .container .row .newsletter > h3 {
         font-size: 1.5rem;
     }
-    .container .row .newsletter i {
-        font-size: 1.7rem;
-        margin-bottom: -1.2rem;
+    .container .row .newsletter img {
+        width: auto;
+        height: 254px;
     }
     .container .row > div:nth-child(2) form a {
         font-size: .79rem;
     }
     .container .row > div:nth-child(2) form a:hover{
         transform: scale(1.025);
+    }
+    .modal {
+        left: 6%;
     }
     .modal-header{
         padding: 0.8rem 1rem;
@@ -237,6 +264,12 @@ body{
     }
     .modal-body {
         padding: 0.5rem .8rem 0;
+    }
+    .modal-body * label{
+        padding: 0 0 0.1rem 0.3rem;
+    }
+    .preview-summary > div h5 {
+        font-size: .9rem;
     }
     .modal-body form > div{
         margin: 0 !important;
@@ -265,22 +298,27 @@ body{
         font-size: 13px;
         text-transform: capitalize;
     }
-    .container .row .newsletter i {
-        font-size: 1.5rem;
-        margin-bottom: 0;
-    }
     .container .row > div:nth-child(2) form a {
-        font-size: .8rem;
-        padding: 0.6rem 1.4rem
+        font-size: .8rem;;
+        margin: 0 0 2rem;
     }
     .container .row > div:nth-child(1) img {
-        width: 72%;
+        height: 190px;
+    }
+    .newsletter {
+        margin-top: 4rem;
     }
     .container .row .newsletter form{
         width: 100%;
+        flex-direction: column;
+        width: 100%;
+        justify-content: start;
+        padding: 0;
+        align-items: center;
     }
-    .container .row .newsletter form h3{
-        font-size: 18px;
+    .container .row .newsletter form a{
+        font-size: .8rem;
+        padding: 0.6rem 1.4rem;
     }
     :is(.modal-title, .modal-header .btn-close){
         font-size: 15px;
@@ -291,8 +329,17 @@ body{
     .modal-body{
         padding: 0.6rem 0.5rem 0;
     }
+    .modal-body * label{
+        padding: 0 0 0.1rem 0.3rem;
+    }
+    .preview-summary > div h5 {
+        font-size: .8rem;
+    }
     .modal-body form > div{
         margin: 0 !important;
+    }
+    .preview-summary > div h6, .preview-summary > div p {
+        font-size: 13px;
     }
     .modal-body form > div input{
         font-size: 14px;
@@ -330,11 +377,11 @@ body{
     .container{
         padding: 0;
     }
-    .container .row{
-        height: 86vh;
+    .newsletter {
+        margin: 0;
     }
-    .container .row > div:nth-child(1) img{
-        width: 90%;
+    .container .row .newsletter img {
+        height: 165px;
     }
     .modal {
         top: 0%;
@@ -360,6 +407,15 @@ body{
     .modal-body {
         padding: .5rem 0.5rem 0 0.5rem;
     }
+    .modal-body * label{
+        padding: 0 0 0.1rem 0.3rem;
+    }
+    .preview-summary > div h6, .preview-summary > div p {
+        font-size: .75rem;
+    }
+    .preview-summary > div h5 {
+        font-size: .8rem;
+    }
     .modal-footer button {
         border-radius: 2rem;
         font-size: 12px;
@@ -373,20 +429,18 @@ body{
         border: 1.8px solid var(--color);
     }
     .container .row .newsletter form{
+        flex-direction: column;
         width: 100%;
         align-items: center;
-        height: 54vh;
-        justify-content: space-around;
+        justify-content: start;
+        padding: 0;
     }
-    .container .row .newsletter form h3{
+    .container .row .newsletter form a{
         font-size: 18px;
-    }
-    .container .row .newsletter i{
-        font-size: 1.8rem;
-        margin-bottom: 0;
     }
     .container .row > div:nth-child(2) form a{
         font-size: 12px;
+        margin: 0 0 2.4rem;
         padding: 0.8rem 1.4rem;
     }
     
