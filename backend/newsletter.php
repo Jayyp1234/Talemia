@@ -5,13 +5,6 @@
 
 <?php
 require('connection.php');
-
-function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-  }
 if (isset($_POST['subscribe'])) {
         //List of input we would be collecting from email subscription and news letter form
         //All input must be required and their names must match with the html forms
@@ -34,11 +27,11 @@ if (isset($_POST['subscribe'])) {
               }
         }
         else {
-            // header("Location:../index.php");
+             header("Location:../index.php");
         };
     } 
 else {
-    // header("Location:../index.php");
+     header("Location:../index.php");
 };
 ?>
 <!DOCTYPE html>
@@ -88,7 +81,7 @@ else {
                 <div class="">
                     <p><?php echo $message;?></p>
                 </div>
-                <a href="" class="btn" onclick="">Back to previous page</a>
+                <a href="#" class="btn" onclick="window.history.back();">Back to previous page</a>
             </div>
         </div>
 </body>
