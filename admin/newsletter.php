@@ -160,3 +160,16 @@
     });
 </script>
 </html>
+
+<?php
+
+require('../backend/connection.php');
+    $email_array = array();
+    $emails = "SELECT * FROM `email`";
+    $array = mysqli_query($con, $emails);
+    while ($row = mysqli_fetch_array($array)) {
+        $email = $row['email'];
+        array_push($email_array,$email);
+    }
+    print_r($email_array);
+?>
