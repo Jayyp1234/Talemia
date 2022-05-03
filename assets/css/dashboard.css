@@ -72,14 +72,10 @@ nav ul li{
     height: 45px;
     display: block;
     width: 100%;
-    color: #2a2b2bc4;
+    color: #2a2b2bc4 !important;
     transition: all 0.6s ease-in-out;
 }
-nav ul li.active, nav ul li.active:hover{
-    background-color: rgb(9 9 157);
-    border-radius: 20px;
-    color: white;
-}
+
 nav ul li:hover{
     background-color: #2b4ad42e;
     border-radius: 20px;
@@ -91,6 +87,15 @@ nav ul li a{
     align-items: center;
     font-size: 14px;
     font-weight: 500;
+    color:#2a2b2bc4 !important;
+}
+nav ul li.active, nav ul li.active:hover{
+    background-color: rgb(9 9 157);
+    border-radius: 20px;
+    color: white !important;
+}
+nav ul li.active a, nav ul li.active:hover a{
+    color: white !important;
 }
 nav ul li a i{
     margin-right: 20px;

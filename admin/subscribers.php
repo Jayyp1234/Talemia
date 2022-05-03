@@ -116,11 +116,22 @@
         <br>
     </nav>
     <main style="margin-right:5px;">
-        <div class="intro-div">
-            <b>Subcribers</b>
-            <span id="time" class="time"></span>
-        </div>
-    
+        <!-- Heading -->
+  <div class="p-3 bg-light mb-4">
+    <h1 class="">Subcribers</h1>
+    <!-- Breadcrumb -->
+    <nav class="d-flex" style="position:static;width:90%;background-color:transparent;margin:0;margin-left: -10px !important;">
+      <h6 class="mb-0">
+        <a href="dashboard.php" class="text-reset">Home</a>
+        <span>/</span>
+        <a href="newsletter.php" class="text-reset">Newsletter</a>
+        <span>/</span>
+        <a href="subscribers.php" class="text-reset"><u>Subscribers</u></a>
+      </h6>
+    </nav>
+    <!-- Breadcrumb -->
+  </div>
+  <!-- Heading -->
         <br>
         
         <section class="content-main container">

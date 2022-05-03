@@ -73,7 +73,50 @@
                 <img src="../assets/image/newsletter.jpeg" alt="" class="img-fluid">
             </div>
             <div class="col-10 col-md-12 mx-auto text-center newsletter">
-                
+            <?php
+
+require('../backend/connection.php');
+    $email_array = array();
+    $emails = "SELECT * FROM `email`";
+    $array = mysqli_query($con, $emails);
+    while ($row = mysqli_fetch_array($array)) {
+        $email = $row['email'];
+        array_push($email_array,$email);
+    }
+?>
+<?php
+ if (isset($_POST['subject']) && isset($_POST['title'])){ 
+          $to =  $email_array;
+          // Subject
+          $title = $_POST['title'];
+          $subject = $_POST['subject'];
+          // Message
+          $emailMsg = $_POST['message'];
+          $message = "
+          <html>
+          <head>
+            <title> ".$title." </title>
+          </head>
+          <body>
+            <p> ".$emailMsg."</p>
+          </body>
+          </html>
+          ";
+          //we want ot send html mail...
+          $headers  = 'MIME-Version: 1.0' . "\r\n";
+          $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+          // To send HTML mail, the Content-type header must be set
+          $headers .= 'X-Mailer: PHP/' . phpversion();
+          
+          mail($to,$subject,$message,$headers);
+          echo '<div class="alert alert-success" role="alert" style="display: flex;
+          justify-content: space-around;
+          align-items: center;">
+                Message Sucessfully Sent! <a href="newsletter.php" class=" btn btn-success">Ok</a>
+              </div>';
+}   
+?>  
+
                 <form>
                     <a class="d-block d-md-none" href="subscribers.php" style="text-transform: uppercase;border-radius: 30px;transition: .4s ease-in-out;border: none;color: white;background-color: #09099d;">View Newsletter</a>
                     <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">ADD NEWSLETTER</a>
@@ -92,18 +135,18 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form class="former" method="POST">
                         <div class="mb-2">
                             <label for="title" class="col-form-label">Title:</label>
-                            <input type="text" class="form-control" id="title" >
+                            <input type="text" name="title" class="form-control" id="title" >
                         </div>
                         <div class="mb-2">
                             <label for="subject" class="col-form-label">Subject:</label>
-                            <input type="text" class="form-control" id="subject">
+                            <input type="text" name="subject" class="form-control" id="subject">
                         </div>
                         <div class="text-area">
                             <label for="message-text" class="col-form-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <textarea class="form-control" name="message" id="message-text"></textarea>
                         </div>
                     </form>
                 </div>
@@ -136,9 +179,7 @@
                     
                 </div>
                 <div class="modal-footer">
-                    <form action="">
-                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Send</button>
-                    </form>
+                        <button class="btn submit btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Send</button>
                 </div>
             </div>
         </div>
@@ -148,6 +189,7 @@
 
 </div>
 </body>
+
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
 <script>
@@ -157,19 +199,10 @@
             $('.subject').text($('#subject').val());
             $('.message-text').text($('#message-text').val());
         });
+        $('.submit').on('click', function(){
+            $('.former').submit();
+        });
     });
 </script>
 </html>
 
-<?php
-
-require('../backend/connection.php');
-    $email_array = array();
-    $emails = "SELECT * FROM `email`";
-    $array = mysqli_query($con, $emails);
-    while ($row = mysqli_fetch_array($array)) {
-        $email = $row['email'];
-        array_push($email_array,$email);
-    }
-    print_r($email_array);
-?>
