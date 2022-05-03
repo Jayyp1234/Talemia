@@ -97,7 +97,7 @@
                      </thead><tbody>";
                      while($row = mysqli_fetch_assoc($query)){
                          $output .="<tr>
-                         <td>".strtoupper($row['name'])."</td>
+                         <td>".strtoupper($row['user_id'])."</td>
                          <td>".strtoupper($row['title'])."</td>
                          <td>".number_format($row['amount'])."</td>
                           
