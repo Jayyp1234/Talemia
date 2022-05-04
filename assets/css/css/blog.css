@@ -837,6 +837,7 @@ article.format-video .post-media .video-embed iframe {
   transform: translate3d(0, 0, 0);
 }
 
+
 .wtbx-related-posts .wtbx-related-post-thumbnail .wtbx-image-crop:before {
   content: '';
   position: absolute;

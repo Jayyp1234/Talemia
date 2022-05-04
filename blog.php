@@ -1416,6 +1416,7 @@ if (isset($_GET['title'])){
         //display blog post
         while ($row = mysqli_fetch_array($store)) {
             $title = $row['title'];
+            
             //echo $row['body'];
         }
 
@@ -1623,8 +1624,8 @@ if (isset($_GET['title'])){
                             <!-- .entry-content -->            
                             <div class="post-tags-n-social">
                                 <div class="post-tags">
-                                    <div class="tag-links"><span><a
-                                                href="https://talemia.com/blog/tag/creating-awareness/"
+                                    <div class="tag-links"><span>
+                                        <a href="https://talemia.com/blog/tag/creating-awareness/"
                                                 rel="tag">Creating Awareness</a></span><span><a
                                                 href="https://talemia.com/blog/tag/early-stage-founders/"
                                                 rel="tag">Early-Stage Founders</a></span><span><a

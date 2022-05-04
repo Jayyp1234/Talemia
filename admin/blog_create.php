@@ -36,7 +36,10 @@
     <link rel="preload" href="../assets/fonts/OpenSans-Bold.ttf" as='font' crossorigin='anonymous'>
     <link href="../assets/css/dashboard.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" >
+    <!-- iconfont -->
+    <link rel="stylesheet" href="../assets/fonts/material-icon/css/round.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css" rel="stylesheet">
+    
 </head>
 <style type="text/css">
    form input, form textarea{
@@ -73,35 +76,14 @@
 .success-text {
     color: #00C851; 
 }
-.table-bordered.red-border, .table-bordered.red-border th, .table-bordered.red-border td {
-    border: 1px solid #ff3547!important;
-}        
-.table.table-bordered th {
-    text-align: center;
-}.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-    color: #fff !important;
-    border: 1px solid #09099d !important;
-    background: -webkit-linear-gradient(top, #0275d8 0%, #09099d 100%);
-    background: -moz-linear-gradient(top, #0275d8 0%, #09099d 100%);
-    background: -ms-linear-gradient(top, #0275d8 0%, #09099d 100%);
-    background: -o-linear-gradient(top, #0275d8 0%, #09099d 100%);
-    background: linear-gradient(to bottom, #0275d8 0%, #09099d 100%) !important;
-}table.dataTable tbody th, table.dataTable tbody td {
-    font-weight: 400;
-    color: #6a6a6a;
-    padding: 8px 10px;
-    font-size:13px !important;
-}label{
-    display: flex;
-    align-items: center;
-}.bg-light {
+.bg-light {
     background-color: #09099d !important;
     color: white !important;
 }
 </style>
 <body>
     <i class="icon-bars"></i>
-    <nav>
+    <nav style="z-index: 10;">
         <br>
         <br>
         <div class="profiler" style="text-align: center;margin-top: 10px;line-height: 1.2;font-size: 14.5;font-weight: 600;">
@@ -113,72 +95,39 @@
             <li ><a href="dashboard.php"><i class="icon-dashboard"></i><span> Dashboard</span> </a></li>
             <li ><a href="newsletter.php"> <i class="icon-globe"></i> <span> Newsletter</span> </a></li>
             <li><a href="members.php"> <i class="icon-hdd-o"></i> <span> Members </span> </a></li>
-            <li ><a href="blog.php"> <i class="icon-child"></i> <span> Blogs </span> </a></li>
-            <li class="active"><a href="transactions.php"> <i class="icon-square"> </i><span> Transactions </span> </a></li>
+            <li class="active"><a href="blog.php"> <i class="icon-child"></i> <span> Blogs </span> </a></li>
+            <li ><a href="transactions.php"> <i class="icon-square"> </i><span> Transactions </span> </a></li>
         </ul>
         <br>
     </nav>
     <main style="margin-right:5px;">
         <!-- Heading -->
   <div class="p-3 bg-light mb-4">
-    <h1 class="">Transactions</h1>
+    <h1 class="">Create Blog</h1>
     <!-- Breadcrumb -->
     <nav class="d-flex" style="position:static;width:90%;background-color:transparent;margin:0;margin-left: -10px !important;">
       <h6 class="mb-0">
         <a href="dashboard.php" class="text-reset">Home</a>
         <span>/</span>
-        <a href="transactions.php" class="text-reset">Transactions</a>
+        <a href="blog.php" class="text-reset">Blog</a>
+        <span>/</span>
+        <a href="blog_create.php" class="text-reset">Create</a>
       </h6>
     </nav>
     <!-- Breadcrumb -->
   </div>
   <!-- Heading -->
         <br>
-        
         <section class="content-main container">
-    
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="table-responsive container">
-                    <table id="example" class="display" style="width:100%">
-                            <?php
-                
-                require('../backend/connection.php');
-                $sql = "SELECT * FROM `transaction`";
-                $query = mysqli_query($con,$sql);
-                 if($query){
-                     if(mysqli_num_rows($query) > 0){
-                         
-                         $output = "<thead>
-                         <tr>
-                             <th>Name</th>
-                             <th>Title</th>
-                             <th>Price</th>
-                         </tr>
-                     </thead><tbody>";
-                     while($row = mysqli_fetch_assoc($query)){
-                         $output .="<tr>
-                         <td>".strtoupper($row['user_id'])."</td>
-                         <td>".strtoupper($row['title'])."</td>
-                         <td>".number_format($row['amount'])."</td>
-                          
-                   </tr>";
-                     }
-                 }else{
-                     $output = '<b>You do not have any Transactions Yet</b>';
-                 }
-                 echo $output."</tbody>";
-                 }
-                
-                ?>
-                        </table>
-                    </div> <!-- table-responsive end// -->
-                </div> <!-- card-body end// -->
-            </div> <!-- card end// -->
+        <form>
 
+        </form>
+        <textarea class="content">
+            Welcome to TinyMCE!
+        </textarea>
 
         </section> <!-- content-main end// -->
-            
+        <button class="nn">Save Html</button>
         
     </main>
 
@@ -187,14 +136,20 @@
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../assets/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="../assets/datatables.min.js"></script>
+<script src="https://cdn.tiny.cloud/1/7t0yeydbn28ienxqq4hdusfn9ltpn1p5cdhuwyq8k2usnndn/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
-        $(document).ready(function () {
-            $('#example').DataTable();
-        });
-    </script>
-<script>
-    var d = new Date();
-    document.getElementById("time").innerHTML = d.toDateString();
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments ',
+      toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+      toolbar_mode: 'floating',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+    });
+    $('.nn').on('click', function(){
+        alert($("#mce_0_ifr").contents().find('#tinymce').html());
+    });
 </script>
+
+
 </html>
