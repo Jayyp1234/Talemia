@@ -4,6 +4,9 @@ include 'component/header.php';
 
 
 ?>
+
+
+
 <!-- Filter Posts By Author -->
 <?php
 if (!isset($_GET['author']) && !isset($_GET['tags']) && !isset($_GET['title']) && !isset($_GET['category'])){
@@ -1243,7 +1246,9 @@ if (isset($_GET['title'])){
     display: inline-block;
     margin: 0;
     width: 100%;
-} .post-tags-n-social .post-tags {
+}
+
+.post-tags-n-social .post-tags {
     display: block;
     text-align: center;
     margin: 2em 0 0;
@@ -1396,12 +1401,161 @@ if (isset($_GET['title'])){
   width: 3px;
   height: 10px;
   border-radius: 10px;
-  moz-transform-origin: top center;
+  -moz-transform-origin: top center;
   -o-transform-origin: top center;
   -ms-transform-origin: top center;
   -webkit-transform-origin: top center;
   transform-origin: top center;
+}.author-area > div{
+    display: flex;
+    align-items: center;
+}.author-image-inner h6{
+    display: none;
+}.post-wrapper{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-left: 2.5rem;
+}.post-wrapper .comment {
+    text-align: left;
 }
+.post-wrapper .comment h6{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    text-transform: capitalize;
+}.post-wrapper .comment h6 span{
+    margin: 0 5px;
+    color: #777;
+}.post-wrapper .comment * [class="icon-circle"]{
+    font-size: 5px;
+    color: #999;
+}.post-wrapper .comment h6 [class="icon-circle"]{
+    margin: 0 5px 0 10px;
+}.post-wrapper .comment p{
+    text-transform: initial;
+    margin: 0;
+}.post-wrapper .comment .icon button{
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 14px;
+    padding: 0;
+    color:#151221;
+}.comment .icon a, .icon span{
+    color:#151221;
+    font-size: 14px;
+}.comment .icon > [class="icon-circle"]{
+    margin: 0 7px;
+}
+/* subcomment styles */
+.sub-comment {
+    display: flex;
+    align-items: flex-start !important;
+    margin: 1rem 0 0 6.5rem;
+}.sub-comment .comment {
+    text-align: left;
+}
+.sub-comment .author-image-inner img{
+    border-radius: 100%;
+    width: 40px;
+}.sub-comment .post-wrapper{
+    margin-left: 1rem;
+}.sub-comment .post-wrapper .comment h6 {
+    margin: 0;
+    font-size: 13px;
+    text-transform: capitalize;
+}.sub-comment .post-wrapper .comment p{
+    margin: 0;
+    font-size: 13px;
+}.sub-comment .post-wrapper .comment * [class="icon-circle"]{
+    font-size: 4px;
+}.sub-comment .post-wrapper .comment .icon [class="icon-thumbs-up"],
+.sub-comment .post-wrapper .comment .icon [class="icon-thumbs-down"]{
+    font-size: 13px;
+}.sub-comment .post-wrapper .comment .icon button, .sub-comment .comment .icon a, .sub-comment .icon span{
+    font-size: 13px;
+}
+
+@media all and (max-width: 425px){
+    .author-area {
+        padding:0 0 1rem;
+    }
+    .author-area > div{
+        padding: 1.3rem .7rem .3rem;
+        display: block;
+    }.author-area .author-image {
+        width: 100%;
+        float: none;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        margin: 0;
+        justify-content: space-between;
+    }.author-area .post-wrapper .comment{
+        margin-left: 2.5rem;
+    }
+    .author-area .author-image .author-image-inner {
+        width: auto;
+        display: flex;
+        height: auto;
+        align-items: center;
+        border-radius: unset;
+        margin: 0;
+    }.author-area .author-image .author-image-inner h6 {
+        margin: 0 0 0 10px;
+        font-size: 13px;
+        font-weight: 600;
+        display: block;
+    }.author-area .author-image .author-image-inner img {
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+    }.author-area .author-image .author-posts {
+        margin:0;
+    }.post-wrapper{
+        margin: 0 auto;
+    }.post-wrapper .comment h6 {
+        display: none;
+    }.post-wrapper .comment p {
+        margin: 5px 0;
+        line-height: 1rem;
+        font-size: 13px;
+    }.post-wrapper .comment .icon button, .comment .icon a, .icon span {
+    font-size: 12px;
+    }.comment .icon .thumb{
+        font-size: 14px;
+    }form label{
+        white-space: normal;
+    }
+    /* sub-comment style */
+    .sub-comment {
+        margin: 0 0 0 3rem;
+        padding: 0 !important;
+    }.sub-comment .post-wrapper {
+        margin-left: 0;
+    }.sub-comment .author-image-inner img {
+        width: 25px;
+    }.sub-comment .author-image-inner h6 {
+        display: block;
+    }.sub-comment .author-image-inner{
+        display: flex;
+        align-items: center;
+    }.sub-comment .author-image-inner h6 {
+        margin: 0 0 0 10px;
+        font-size: 12px;
+    }.sub-comment .post-wrapper .comment p {
+        margin: 4px 0 6px 0;
+        font-size: 12px;
+    }.sub-comment .post-wrapper .comment{
+        margin-left: 2.1rem;
+    }.sub-comment .post-wrapper .comment .icon button, .sub-comment .comment .icon a,.sub-comment .icon span {
+        font-size: 12px;
+    }
+
+}
+
+
 </style>
 <?php
     $title = $_GET['title'];
@@ -1416,7 +1570,6 @@ if (isset($_GET['title'])){
         //display blog post
         while ($row = mysqli_fetch_array($store)) {
             $title = $row['title'];
-            
             //echo $row['body'];
         }
 
@@ -1624,8 +1777,8 @@ if (isset($_GET['title'])){
                             <!-- .entry-content -->            
                             <div class="post-tags-n-social">
                                 <div class="post-tags">
-                                    <div class="tag-links"><span>
-                                        <a href="https://talemia.com/blog/tag/creating-awareness/"
+                                    <div class="tag-links"><span><a
+                                                href="https://talemia.com/blog/tag/creating-awareness/"
                                                 rel="tag">Creating Awareness</a></span><span><a
                                                 href="https://talemia.com/blog/tag/early-stage-founders/"
                                                 rel="tag">Early-Stage Founders</a></span><span><a
@@ -1659,17 +1812,65 @@ if (isset($_GET['title'])){
                                 </div>
                             </div>
                             <!-- Comment Section -->
-                            <div class="author-area clearfix">
-                                <div class="author-image">
-                                    <div class="author-image-inner">
-                                        <img alt=""
-                                            src="https://secure.gravatar.com/avatar/d43ab1573f2e6770c84bd9747a50e167?s=120&amp;d=mm&amp;r=g"
-                                            srcset="https://secure.gravatar.com/avatar/d43ab1573f2e6770c84bd9747a50e167?s=240&amp;d=mm&amp;r=g 2x"
-                                            class="avatar avatar-120 photo" height="120" width="120" loading="lazy">
+
+                            <div class="author-area clearfix ">
+                                <div>
+                                    <div class="author-image">
+                                        <div class="author-image-inner">
+                                            <img alt=""
+                                                src="https://secure.gravatar.com/avatar/d43ab1573f2e6770c84bd9747a50e167?s=120&amp;d=mm&amp;r=g"
+                                                srcset="https://secure.gravatar.com/avatar/d43ab1573f2e6770c84bd9747a50e167?s=240&amp;d=mm&amp;r=g 2x"
+                                                class="avatar avatar-120 photo" height="120" width="120" loading="lazy">
+                                                <h6>Okeke John Paul</h6>
+                                        </div>
+
+
+                                        <a href="https://talemia.com/author/talemiahq/" class="author-posts">8 Posts</a>
                                     </div>
-
-
-                                    <a href="https://talemia.com/author/talemiahq/" class="author-posts">8 Posts</a>
+                                    <div class="post-wrapper">
+                                        <div class="comment">
+                                            <h6><b>Okeke John Paul</b> <i class="icon-circle"></i> <span>4h</span> </h6>
+                                            <p>Tech is one of the best thing that can happen to man actually.</p>
+                                            <div class="icon" style="display: flex; align-items:center; justify-content: flex-start;">
+                                                <button>Replies</button>
+                                                <i class="icon-circle"></i>
+                                                <a href="#">Share</a>
+                                                <i class="icon-circle"></i>
+                                                <span>10 Likes</span>
+                                                <i class="icon-circle"></i>
+                                                <i class="icon-thumbs-up thumb" style="margin: 0 4px 0 6px;color: #999;"></i>
+                                                <i class="icon-thumbs-down thumb"style="transform: rotateY(180deg);margin-left: 8px;color: #999;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-comment">
+                                    <div class="author-image-sub-comment">
+                                        <div class="author-image-inner">
+                                            <img alt=""
+                                                src="https://secure.gravatar.com/avatar/d43ab1573f2e6770c84bd9747a50e167?s=120&amp;d=mm&amp;r=g"
+                                                srcset="https://secure.gravatar.com/avatar/d43ab1573f2e6770c84bd9747a50e167?s=240&amp;d=mm&amp;r=g 2x"
+                                                class="avatar avatar-120 photo" height="120" width="120" loading="lazy">
+                                                <h6>Oladipo Isaac</h6>
+                                        </div>
+                                        <!-- <a href="https://talemia.com/author/talemiahq/" class="author-posts">8 Posts</a> -->
+                                    </div>
+                                    <div class="post-wrapper">
+                                        <div class="comment">
+                                            <h6><b>Oladipo Isaac</b> <i class="icon-circle"></i> <span>now</span> </h6>
+                                            <p>I find it fun and interesting to work with every single time.</p>
+                                            <div class="icon" style="display: flex; align-items:center; justify-content: flex-start;">
+                                                <button>Replies</button>
+                                                <i class="icon-circle"></i>
+                                                <a href="#">Share</a>
+                                                <i class="icon-circle"></i>
+                                                <span>10 Likes</span>
+                                                <i class="icon-circle"></i>
+                                                <i class="icon-thumbs-up" style="margin: 0 4px 0 6px;color: #999;"></i>
+                                                <i class="icon-thumbs-down"style="transform: rotateY(180deg);margin-left: 8px;color: #999;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

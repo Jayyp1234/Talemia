@@ -27,6 +27,8 @@
     <meta name="twitter:data1" content="isaacdev">
     <meta name="twitter:label2" content="Time to read">
     <meta name="twitter:data2" content="10 minutes">
+
+
     <style>
         img.wp-smiley,
         img.emoji {

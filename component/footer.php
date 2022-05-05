@@ -1294,6 +1294,7 @@
 
     </div><!-- #site -->
 
+
     <script type="text/html" id="wpb-modifications"></script>
     <script type="text/javascript" src="assets/js/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/js/app.js"></script>
@@ -1338,6 +1339,7 @@
         };
         /* ]]> */
     </script>
+
 </body>
 
 </html>
