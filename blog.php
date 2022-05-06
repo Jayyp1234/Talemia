@@ -1777,21 +1777,26 @@ if (isset($_GET['title'])){
                             <!-- .entry-content -->            
                             <div class="post-tags-n-social">
                                 <div class="post-tags">
-                                    <div class="tag-links"><span><a
-                                                href="https://talemia.com/blog/tag/creating-awareness/"
-                                                rel="tag">Creating Awareness</a></span><span><a
-                                                href="https://talemia.com/blog/tag/early-stage-founders/"
-                                                rel="tag">Early-Stage Founders</a></span><span><a
-                                                href="https://talemia.com/blog/tag/startups/"
-                                                rel="tag">Startups</a></span><span><a
-                                                href="https://talemia.com/blog/tag/storytelling/"
-                                                rel="tag">storytelling</a></span><span><a
-                                                href="https://talemia.com/blog/tag/storytelling-for-growth/"
-                                                rel="tag">Storytelling for Growth</a></span><span><a
-                                                href="https://talemia.com/blog/tag/storytelling-for-startups/"
-                                                rel="tag">Storytelling for Startups</a></span><span><a
-                                                href="https://talemia.com/blog/tag/visibility/"
-                                                rel="tag">Visibility</a></span></div>
+                                    <div class="tag-links">
+
+                                    <?php
+                                            require('backend/connection.php');
+                                            $categories = "SELECT * FROM `blog` WHERE `title` = '$title'";
+                                            $tags = mysqli_query($con, $categories);
+                                            while ($row = mysqli_fetch_array($tags)) {
+                                                $tag = $row['tags'];
+                                            }
+                                            $tag = explode(",",$tag);
+                                            foreach ($tag as $value) {
+                                                echo"
+                                            <span><a href='https://talemia.com/blog/tag/$value/' rel='tag'>$value</a></span>
+                                            ";
+                                              }
+                                            
+                                        ?>
+
+
+                                            </div>
                                 </div>
                             </div>
 
@@ -1828,9 +1833,25 @@ if (isset($_GET['title'])){
                                         <a href="https://talemia.com/author/talemiahq/" class="author-posts">8 Posts</a>
                                     </div>
                                     <div class="post-wrapper">
+
+
+                                    <!-- Display comments -->
+                                    <?php
+                                            $title = $_GET['title'];
+                                            $comments = "SELECT * FROM `comment` WHERE `title` = '$title'";
+                                            $display = mysqli_query($con, $comments);
+                                            while ($row = mysqli_fetch_array($display)) {
+                                                $name = $row['name'];
+                                                $comment = $row['comment'];
+                                                $date = $row['date'];
+                                            }
+                                        ?>
+
+
+
                                         <div class="comment">
-                                            <h6><b>Okeke John Paul</b> <i class="icon-circle"></i> <span>4h</span> </h6>
-                                            <p>Tech is one of the best thing that can happen to man actually.</p>
+                                            <h6><b>$name</b> <i class="icon-circle"></i> <span>$date</span> </h6>
+                                            <p>$comment</p>
                                             <div class="icon" style="display: flex; align-items:center; justify-content: flex-start;">
                                                 <button>Replies</button>
                                                 <i class="icon-circle"></i>
@@ -2623,8 +2644,12 @@ if (isset($_GET['title'])){
                                     id="cancel-comment-reply-link"
                                     href="/blog/storytelling-for-early-stage-startups/#respond"
                                     style="display:none;">(Cancel reply)</a></small></h3>
-                        <form action="https://talemia.com/wp-comments-post.php" method="post" id="commentform"
+                        <form action="backend/comments.php" method="post" id="commentform"
                             class="comment-form">
+                            <?php
+                                $title = $_GET['title'];
+                                echo"$title <input type='hidden' name='title' value='$title'>";
+                            ?>
                             <p class="comment-notes">Your email address will not be published. Required fields are
                                 marked *</p>
                             <p class="comment-form-comment"><label for="comment">Comment <span class="required"
@@ -2632,7 +2657,7 @@ if (isset($_GET['title'])){
                                     cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
                             <div class="comment-form-info-fields col_container">
                                 <div class="col_3 comment-form-author"><label for="author">Name</label> <span
-                                        class="required">*</span><input id="author" name="author" type="text" value=""
+                                        class="required">*</span><input id="author" name="name" type="text" value=""
                                         size="30" aria-required="true"></div>
                                 <div class="col_3 comment-form-email"><label for="email">Email</label> <span
                                         class="required">*</span><input id="email" name="email" type="text" value=""
