@@ -1,28 +1,20 @@
+
 <?php
-
-if (isset($_POST['liked'])) {
-		$postid = $_POST['postid'];
-		$result = mysqli_query($con, "SELECT * FROM posts WHERE id=$postid");
-		$row = mysqli_fetch_array($result);
-		$n = $row['likes'];
-
-		mysqli_query($con, "INSERT INTO likes (userid, postid) VALUES (1, $postid)");
-		mysqli_query($con, "UPDATE posts SET likes=$n+1 WHERE id=$postid");
-
-		echo $n+1;
-		exit();
-}
-if (isset($_POST['unliked'])) {
-		$postid = $_POST['postid'];
-		$result = mysqli_query($con, "SELECT * FROM posts WHERE id=$postid");
-		$row = mysqli_fetch_array($result);
-		$n = $row['likes'];
-
-		mysqli_query($con, "DELETE FROM likes WHERE postid=$postid AND userid=1");
-		mysqli_query($con, "UPDATE posts SET likes=$n-1 WHERE id=$postid");
-		
-		echo $n-1;
-		exit();
-	}
+ $ipaddress = getenv("REMOTE_ADDR") ;
+ $postid = $_POST['postid'];
+ $likes = "SELECT `user_ip` FROM `likes` WHERE `user_ip` = '$ipaddress'";
+ $validate = mysqli_query($con, $likes);
+ if ($validate) {
+	die(mysql_error());
+ } else {
+	 $new_likes = "SELECT * FROM `likes` WHERE `blog_id` = '$postid'";
+	 $update_likes = mysqli_query($con, $new_likes);
+	 $x = 0;
+	 while ($row = mysqli_fetch_array($update_likes)) {
+		 $x += 1;
+		 $add_ip = mysqli_query($con, "INSERT INTO `likes`(`blog_id`, `user_ip`) VALUES ('$postid','$ipaddress')");
+	 }
+	 return $x;
+ }
 
 ?>
