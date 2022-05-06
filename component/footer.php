@@ -963,7 +963,7 @@
                                                                                                     class="wtbx_vc_el_container wtbx_vc_button_container">
                                                                                                     <div
                                                                                                         class="wtbx_vc_el_inner wtbx_vc_button_inner">
-                                                                                                        <a href="https://talemia.com/joinbuildr/"
+                                                                                                        <a href="joinbuildr.php"
                                                                                                             target="_self"
                                                                                                             class="wtbx-button wtbx-button-arrow"><span
                                                                                                                 class="wtbx_button_inner">Apply
@@ -1323,13 +1323,6 @@
             "main_def": "70",
             "main_sticky": "70",
             "bottombar": ""
-        };
-        var simpleLikes = {
-            "ajaxurl": "https:\/\/talemia.com\/wp-admin\/admin-ajax.php",
-            "likes_single": "Like",
-            "likes_plural": "Likes",
-            "like": "Like",
-            "unlike": "Unlike"
         };
         var wtbxMediaPlayer = {
             "iconUrl": "https:\/\/talemia.com\/wp-content\/plugins\/scape-core\/assets\/images\/plyr.svg"

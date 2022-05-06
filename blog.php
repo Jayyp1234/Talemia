@@ -1,8 +1,5 @@
 <?php 
 include 'component/header.php';
-
-
-
 ?>
 
 
@@ -1570,7 +1567,8 @@ if (isset($_GET['title'])){
         //display blog post
         while ($row = mysqli_fetch_array($store)) {
             $title = $row['title'];
-            //echo $row['body'];
+            $id = $row['id'];
+            $body = $row['body'];
         }
 
     ?>
@@ -1771,7 +1769,7 @@ if (isset($_GET['title'])){
                                     data-selectable-paragraph="">Let us help you launch your business faster than you
                                     can. We are doing this for other African founders who have joined Buildr. Click this
                                     link:&nbsp;<a
-                                        href="https://talemia.com/joinbuildr/">https://talemia.com/joinbuildr/</a></p>
+                                        href="joinbuildr.php">https://talemia.com/joinbuildr.php</a></p>
 
                             </div>                       
                             <!-- .entry-content -->            
@@ -1789,7 +1787,7 @@ if (isset($_GET['title'])){
                                             $tag = explode(",",$tag);
                                             foreach ($tag as $value) {
                                                 echo"
-                                            <span><a href='https://talemia.com/blog/tag/$value/' rel='tag'>$value</a></span>
+                                            <span><a href='blog.php?tag=$value' rel='tag'>$value</a></span>
                                             ";
                                               }
                                             
@@ -1803,11 +1801,9 @@ if (isset($_GET['title'])){
 
                             <div class="wtbx-like-wrapper wtbx-page-like-wrapper">
                                 <div class="wtbx-like-inner">
-                                    <a href="https://talemia.com/wp-admin/admin-ajax.php?action=process_simple_like&amp;nonce=89ca697487&amp;post_id=9881&amp;disabled=true&amp;is_comment=0"
-                                        class="wtbx-like-button sl-button sl-button-9881 filled" data-nonce="89ca697487"
-                                        data-post-id="9881" data-iscomment="0" title="Like"><i
-                                            class="scape-ui-heart-filled"></i><span class="sl-count like-count">2
-                                            Likes</span>
+                                    <a href="#" class="wtbx-like-button sl-button like sl-button-9881 filled" title="Like">
+                                        <i class="scape-ui-heart-filled"></i>
+                                        <span class="sl-count like-count">2 Likes</span>
                                         <div class="wtbx-like-anim">
                                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                                         </div>
@@ -1819,52 +1815,50 @@ if (isset($_GET['title'])){
                             <!-- Comment Section -->
 
                             <div class="author-area clearfix ">
-                                <div>
+                            <?php
+                                            $title = $_GET['title'];
+                                            $comments = "SELECT * FROM `comments` WHERE `blog_id` = '$id'";
+                                            $display = mysqli_query($con, $comments);
+                                            while ($row = mysqli_fetch_array($display)) {
+                                                $comment_id = $row['comment_id'];
+                                                $id1 = $row['id'];
+                                                $name = $row['name'];
+                                                $comment = $row['description'];
+                                                $date = $row['date'];
+                                                echo   '
+                                                <div style="margin-bottom:10px;">
                                     <div class="author-image">
                                         <div class="author-image-inner">
                                             <img alt=""
                                                 src="https://secure.gravatar.com/avatar/d43ab1573f2e6770c84bd9747a50e167?s=120&amp;d=mm&amp;r=g"
                                                 srcset="https://secure.gravatar.com/avatar/d43ab1573f2e6770c84bd9747a50e167?s=240&amp;d=mm&amp;r=g 2x"
                                                 class="avatar avatar-120 photo" height="120" width="120" loading="lazy">
-                                                <h6>Okeke John Paul</h6>
+                                                <h6>'.$name.'</h6>
                                         </div>
-
-
-                                        <a href="https://talemia.com/author/talemiahq/" class="author-posts">8 Posts</a>
                                     </div>
                                     <div class="post-wrapper">
-
-
                                     <!-- Display comments -->
-                                    <?php
-                                            $title = $_GET['title'];
-                                            $comments = "SELECT * FROM `comment` WHERE `title` = '$title'";
-                                            $display = mysqli_query($con, $comments);
-                                            while ($row = mysqli_fetch_array($display)) {
-                                                $name = $row['name'];
-                                                $comment = $row['comment'];
-                                                $date = $row['date'];
-                                            }
-                                        ?>
-
-
-
-                                        <div class="comment">
-                                            <h6><b>$name</b> <i class="icon-circle"></i> <span>$date</span> </h6>
-                                            <p>$comment</p>
+                                    <div class="comment">
+                                            <h6><b>'.$name.'</b> <i class="icon-circle"></i> <span>'.$date.'</span> </h6>
+                                            <p>'.$comment.'</p>
                                             <div class="icon" style="display: flex; align-items:center; justify-content: flex-start;">
-                                                <button>Replies</button>
-                                                <i class="icon-circle"></i>
-                                                <a href="#">Share</a>
+                                                <button>Reply</button>
                                                 <i class="icon-circle"></i>
                                                 <span>10 Likes</span>
                                                 <i class="icon-circle"></i>
                                                 <i class="icon-thumbs-up thumb" style="margin: 0 4px 0 6px;color: #999;"></i>
-                                                <i class="icon-thumbs-down thumb"style="transform: rotateY(180deg);margin-left: 8px;color: #999;"></i>
                                             </div>
                                         </div>
+                                               
                                     </div>
                                 </div>
+                                                 ';
+                                            
+                                                # write a query that checks for the succomment a function would be a better approach
+                                            }
+                                        ?>
+                                
+                                <!-- End Comment -->
                                 <div class="sub-comment">
                                     <div class="author-image-sub-comment">
                                         <div class="author-image-inner">
@@ -1883,12 +1877,9 @@ if (isset($_GET['title'])){
                                             <div class="icon" style="display: flex; align-items:center; justify-content: flex-start;">
                                                 <button>Replies</button>
                                                 <i class="icon-circle"></i>
-                                                <a href="#">Share</a>
-                                                <i class="icon-circle"></i>
                                                 <span>10 Likes</span>
                                                 <i class="icon-circle"></i>
                                                 <i class="icon-thumbs-up" style="margin: 0 4px 0 6px;color: #999;"></i>
-                                                <i class="icon-thumbs-down"style="transform: rotateY(180deg);margin-left: 8px;color: #999;"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -2640,10 +2631,7 @@ if (isset($_GET['title'])){
 
 
                     <div id="respond" class="comment-respond">
-                        <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow"
-                                    id="cancel-comment-reply-link"
-                                    href="/blog/storytelling-for-early-stage-startups/#respond"
-                                    style="display:none;">(Cancel reply)</a></small></h3>
+                        <h3 id="reply-title" class="comment-reply-title">Leave a Reply</h3>
                         <form action="backend/comments.php" method="post" id="commentform"
                             class="comment-form">
                             <?php
@@ -2662,8 +2650,6 @@ if (isset($_GET['title'])){
                                 <div class="col_3 comment-form-email"><label for="email">Email</label> <span
                                         class="required">*</span><input id="email" name="email" type="text" value=""
                                         size="30" aria-required="true"></div>
-                                <div class="col_3 comment-form-url"><label for="url">Website</label><input id="url"
-                                        name="url" type="text" value="" size="30"></div>
                             </div>
                             <p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent"
                                     name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label
@@ -2671,8 +2657,8 @@ if (isset($_GET['title'])){
                                     for the next time I comment.</label></p>
                             <p class="form-submit"><input name="submit" type="submit" id="submit"
                                     class="submit wtbx-button wtbx-button-primary button-md" value="Post Comment">
-                                <input type="hidden" name="comment_post_ID" value="9881" id="comment_post_ID">
-                                <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                                <input type="hidden" name="blog_id" value="<?php echo $id ?>" id="comment_post_ID">
+                                <input type="hidden" name="comment_id" value="" id="comment_post_ID">
                             </p>
                         </form>
                     </div><!-- #respond -->
@@ -2688,30 +2674,46 @@ if (isset($_GET['title'])){
 }
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div><!-- #page-wrap  -->
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.wtbx-like-button.sl-button.like').on('click', function(e){
+            e.preventDefault();
+			var postid = <?php echo $id; ?>;
+			$.ajax({
+				url: 'backend/likes.php',
+				type: 'POST',
+				data: {
+					'postid': postid
+				},
+				success: function(response){
+					$(this).removeClass('like');
+                    $(this).addClass('unlike');
+                    $('.sl-count.like-count').text(response);
+				}
+			});
+		});
 
+		// when the user clicks on unlike
+		$('.unlike').on('click', function(){
+			var postid = <?php echo $id; ?>;
+			$.ajax({
+				url: 'backend/likes.php',
+				type: 'POST',
+				data: {
+					'postid': postid
+				},
+				success: function(response){
+                    $(this).removeClass('unlike');
+                    $(this).addClass('like');
+                    $('.sl-count.like-count').text(response);
+				}
+			});
+		});
+	});
+</script>
 
 
 

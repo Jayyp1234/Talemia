@@ -1479,50 +1479,6 @@ SCAPE app scripts
 	};
 
 
-
-	SCAPE.prettyLike = function() {
-		$('.wtbx-grid').each(function() {
-			var fullLabel = false;
-			if ( $(this).hasClass('wtbx-grid-magazine') ) {
-				fullLabel = true;
-			}
-
-			if ( fullLabel ) {
-				$(this).find('.sl-button .sl-count').each(function() {
-					var count = $(this).text();
-					count = parseInt(count);
-					switch (count) {
-						case 1:
-							count += ' ' + simpleLikes.likes_single;
-							break;
-						default:
-							count += ' ' + simpleLikes.likes_plural
-					}
-					$(this).text(count);
-				});
-			}
-		});
-
-		$('.wtbx-like-wrapper .sl-count').each(function() {
-			var count = $(this).text();
-			count = parseInt(count);
-			switch (count) {
-				case 0:
-					count = '';
-					break;
-				case 1:
-					count += ' ' + simpleLikes.likes_single;
-					break;
-				default:
-					count += ' ' + simpleLikes.likes_plural
-			}
-			$(this).text(count);
-		});
-
-	};
-
-
-
 	SCAPE.entryIsVisible = function($el) {
 		var $lazyImage	= $el.find('.wtbx-entry-media .wtbx-lazy'),
 			scrollTop	= SCAPE.scrollTop.get,
@@ -2974,82 +2930,6 @@ SCAPE app scripts
 			$dot.eq($dot.length).addClass('wtbx_dot_prev');
 		}
 
-	};
-
-
-
-	SCAPE.postLike = function() {
-		$(document).on('click', '.sl-button', function(e) {
-			SCAPE.stopEvent(e);
-			var button		= $(this);
-			var post_id		= button.attr('data-post-id');
-			var security	= button.attr('data-nonce');
-			var iscomment	= button.attr('data-iscomment');
-			var allbuttons;
-			var heart		= button.find('i');
-			var inner		= button.children('*');
-			if ( iscomment === '1' ) { /* Comments can have same id */
-				allbuttons	= $('.sl-comment-button-'+post_id);
-			} else {
-				allbuttons	= $('.sl-button-'+post_id);
-			}
-			var loader		= allbuttons.next('#sl-loader');
-			if (post_id !== '') {
-				$.ajax({
-					type: 'POST',
-					url: simpleLikes.ajaxurl,
-					data : {
-						action : 'process_simple_like',
-						post_id : post_id,
-						nonce : security,
-						is_comment : iscomment
-					},
-					beforeSend:function(){
-						button.addClass('loading');
-					},
-					success: function(response){
-						var icon = response.icon;
-						var count = response.count;
-						count = count == 1 ? count + ' ' + simpleLikes.likes_single : count + ' ' +  simpleLikes.likes_plural;
-						if ( button.closest('.blog-metro, .blog-masonry, .blog-carousel, .blog-minimal, .blog-boxed, .portfolio-masonry, .portfolio-metro, .portfolio-panels, .portfolio-square, .portfolio-tiles, .wtbx_recent_posts_cont, .header-section-meta-block').length ) {
-							count = parseInt(count);
-							if (isNaN(count)) {
-								count = 0;
-							}
-						}
-
-						if ( button.closest('.wtbx-like-wrapper').length && parseInt(count) === 0 ) {
-							count = '';
-						}
-
-						count = '<span class="sl-count like-count">' + count + '</span>';
-						var like_text = '';
-
-						if(response.status === 'unliked') {
-							like_text = simpleLikes.like;
-							allbuttons.removeClass('liked');
-						} else {
-							like_text = simpleLikes.unlike;
-							allbuttons.addClass('liked');
-						}
-
-						allbuttons.each(function() {
-							if ( !$(this).hasClass('filled') ) {
-								$(this).html(icon+count);
-								$(this).prop('title', like_text);
-							} else {
-								$(this).find('.sl-count').html(count);
-								$(this).siblings('.wtbx-like-label').find('.wtbx-like-label-prefix').text(like_text);
-							}
-						});
-
-						button.removeClass('loading');
-					}
-				});
-
-			}
-			return false;
-		});
 	};
 
 
@@ -4661,7 +4541,6 @@ SCAPE app scripts
 		setTimeout(function() {
 			SCAPE.scrollDown();
 			SCAPE.search();
-			SCAPE.postLike();
 			SCAPE.dismissAlert();
 
 			$(window).resize(function() {
@@ -4714,7 +4593,6 @@ SCAPE app scripts
 		SCAPE.portfolioSingle.slider($('.portfolio-item-slider .wtbx-slider-gallery'));
 		SCAPE.portfolioSingle.masonry($('.portfolio-item-masonry-wrapper'));
 
-		SCAPE.prettyLike();
 		SCAPE.atvHover();
 		SCAPE.verticalAlign();
 		SCAPE.fullscreen();
