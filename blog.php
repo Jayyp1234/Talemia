@@ -1803,7 +1803,18 @@ if (isset($_GET['title'])){
                                 <div class="wtbx-like-inner">
                                     <a href="#" class="wtbx-like-button sl-button like sl-button-9881 filled" title="Like">
                                         <i class="scape-ui-heart-filled"></i>
-                                        <span class="sl-count like-count">2 Likes</span>
+                                              
+<?php
+	 $new_likes = "SELECT * FROM `likes` WHERE `blog_id` = '$id'";
+	 $update_likes = mysqli_query($con, $new_likes);
+	 $x = 0;
+	 while ($row = mysqli_fetch_array($update_likes)) {
+		 $x += 1;
+	 }
+	 echo"<span class='sl-count like-count'>$x Likes</span> ";
+
+?>
+                                        
                                         <div class="wtbx-like-anim">
                                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                                         </div>
@@ -1816,8 +1827,47 @@ if (isset($_GET['title'])){
 
                             <div class="author-area clearfix ">
                             <?php
+                            require('backend/connection.php');
+                            function replies($id) {
+                                require('backend/connection.php');
+                                $comments = "SELECT * FROM `comments` WHERE `comment_id` = '$id'";
+                                            $display = mysqli_query($con, $comments);
+                                            while ($row = mysqli_fetch_array($display)) {
+                                                $name = $row['name'];
+                                                $comment = $row['description'];
+                                                $date = $row['date'];
+                                                    echo "
+                                                    <div class='sub-comment'>
+                                                    <div class='author-image-sub-comment'>
+                                                        <div class='author-image-inner'>
+                                                            <img alt=''
+                                                                src='https://secure.gravatar.com/avatar/d43ab1573f2e6770c84bd9747a50e167?s=120&amp;d=mm&amp;r=g'
+                                                                srcset='https://secure.gravatar.com/avatar/d43ab1573f2e6770c84bd9747a50e167?s=240&amp;d=mm&amp;r=g 2x'
+                                                                class='avatar avatar-120 photo' height='120' width='120' loading='lazy'>
+                                                                <h6>$name</h6>
+                                                        </div>
+                                                        <!-- <a href='https://talemia.com/author/talemiahq/' class='author-posts'>8 Posts</a> -->
+                                                    </div>
+                                                    <div class='post-wrapper'>
+                                                        <div class='comment'>
+                                                            <h6><b>$name</b> <i class='icon-circle'></i> <span>$date</span> </h6>
+                                                            <p>$comment</p>
+                                                            <div class='icon' style='display: flex; align-items:center; justify-content: flex-start;'>
+                                                                <button>Replies</button>
+                                                                <i class='icon-circle'></i>
+                                                                <span>10 Likes</span>
+                                                                <i class='icon-circle'></i>
+                                                                <i class='icon-thumbs-up' style='margin: 0 4px 0 6px;color: #999;'></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    ";
+                                            }
+
+                            }
                                             $title = $_GET['title'];
-                                            $comments = "SELECT * FROM `comments` WHERE `blog_id` = '$id'";
+                                            $comments = "SELECT * FROM `comments` WHERE `blog_id` = '$id' AND `comment_id` = '0'";
                                             $display = mysqli_query($con, $comments);
                                             while ($row = mysqli_fetch_array($display)) {
                                                 $comment_id = $row['comment_id'];
@@ -1854,36 +1904,13 @@ if (isset($_GET['title'])){
                                 </div>
                                                  ';
                                             
-                                                # write a query that checks for the succomment a function would be a better approach
+                                               //calling reply finction
+                                               replies($id1);
                                             }
                                         ?>
                                 
                                 <!-- End Comment -->
-                                <div class="sub-comment">
-                                    <div class="author-image-sub-comment">
-                                        <div class="author-image-inner">
-                                            <img alt=""
-                                                src="https://secure.gravatar.com/avatar/d43ab1573f2e6770c84bd9747a50e167?s=120&amp;d=mm&amp;r=g"
-                                                srcset="https://secure.gravatar.com/avatar/d43ab1573f2e6770c84bd9747a50e167?s=240&amp;d=mm&amp;r=g 2x"
-                                                class="avatar avatar-120 photo" height="120" width="120" loading="lazy">
-                                                <h6>Oladipo Isaac</h6>
-                                        </div>
-                                        <!-- <a href="https://talemia.com/author/talemiahq/" class="author-posts">8 Posts</a> -->
-                                    </div>
-                                    <div class="post-wrapper">
-                                        <div class="comment">
-                                            <h6><b>Oladipo Isaac</b> <i class="icon-circle"></i> <span>now</span> </h6>
-                                            <p>I find it fun and interesting to work with every single time.</p>
-                                            <div class="icon" style="display: flex; align-items:center; justify-content: flex-start;">
-                                                <button>Replies</button>
-                                                <i class="icon-circle"></i>
-                                                <span>10 Likes</span>
-                                                <i class="icon-circle"></i>
-                                                <i class="icon-thumbs-up" style="margin: 0 4px 0 6px;color: #999;"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
 
@@ -2636,7 +2663,7 @@ if (isset($_GET['title'])){
                             class="comment-form">
                             <?php
                                 $title = $_GET['title'];
-                                echo"$title <input type='hidden' name='title' value='$title'>";
+                                echo" <input type='hidden' name='title' value='$title'>";
                             ?>
                             <p class="comment-notes">Your email address will not be published. Required fields are
                                 marked *</p>
@@ -2682,11 +2709,13 @@ if (isset($_GET['title'])){
 		$('.wtbx-like-button.sl-button.like').on('click', function(e){
             e.preventDefault();
 			var postid = <?php echo $id; ?>;
+            var blogtid = <?php echo $blog_id; ?>;
+            var commentid = <?php echo $comment_id; ?>;
 			$.ajax({
 				url: 'backend/likes.php',
 				type: 'POST',
 				data: {
-					'postid': postid
+					'postid': postid,
 				},
 				success: function(response){
 					$(this).removeClass('like');
