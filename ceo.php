@@ -183,7 +183,6 @@ session_start();
         
 
         <div class="col-12 col-md-6 letter row">
-            <img src="assets/image/Talemia-header-illustration.svg"  class="img-fluid" alt="">
             <b>Dear Builder,</b>
             <p class="col-12">This is Victor.<br> I thought to personally send you this congratulatory note myself. You have made an incredible decision getting into Buildr. I personally think that you’re on the <strong>‘’Guinness World Records of Courageous People’’</strong>. I am not flattering you in any way. One of the most challenging things anyone could do is <strong> launch their own startup</strong>. It takes courage to decide that you’re going to find a problem and build  something that solves that problem<br><br>
 

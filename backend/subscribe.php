@@ -60,7 +60,7 @@ if (isset($_POST['subscribe'])) {
       curl_setopt($ch,CURLOPT_POST, true);
       curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
       curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        "Authorization: Bearer sk_test_ac4d89634a3d332fa722a805cff6ccce5dfb158a",
+        "Authorization: Bearer sk_test_3cdefe054578eef101b5814803bda115c812b487",
         "Cache-Control: no-cache",
       ));
       
