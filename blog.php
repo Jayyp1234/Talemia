@@ -1936,30 +1936,65 @@ if (isset($_GET['title'])){
                                         <a href="https://talemia.com/blog/moretechies-and-talemia-wants-to-make-it-easier-for-early-stage-startups-to-access-skilled-interns/"
                                             rel="prev">
                                             <div class="wtbx-nav-thumb">
-                                                <div class="wtbx-image-crop" style="padding-bottom: 100%"><img
-                                                        class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
-                                                        data-bg="false" data-imgratio="1:1" data-aspectratio="1"
-                                                        src="https://talemia.com/wp-content/uploads/2022/02/IMG-20220214-WA0009-150x150.jpg"
-                                                        srcset="https://talemia.com/wp-content/uploads/2022/02/IMG-20220214-WA0009-300x300.jpg 300w, https://talemia.com/wp-content/uploads/2022/02/IMG-20220214-WA0009-1024x1024.jpg 1024w, https://talemia.com/wp-content/uploads/2022/02/IMG-20220214-WA0009-150x150.jpg 150w, https://talemia.com/wp-content/uploads/2022/02/IMG-20220214-WA0009-768x768.jpg 768w, https://talemia.com/wp-content/uploads/2022/02/IMG-20220214-WA0009.jpg 1080w"
-                                                        data-sizes="auto" data-parent-fit="cover"
-                                                        alt="MoreTechies and Talemia wants to make it easier for early stage startups to access skilled Interns"
-                                                        sizes="50px"></div>
-                                            </div>
-                                            <div class="wtbx-nav-content"><span
-                                                    class="wtbx-nav-meta wtbx-nav-meta-prev">Previous Post</span><span
-                                                    class="wtbx-nav-title wtbx-nav-title-prev">MoreTechies and Talemia
-                                                    wants to make it easier for early stage startups to access skilled
-                                                    Interns</span></div>
+						    
+						    
+						    
+						<!-- function for previous and next post   -->
+						    
+						    
+						    
+						    
+                                                <?php
+                                            require('backend/connection.php');
+                                                function previous($id) {
+                                                    require('backend/connection.php');
+                                                    $previous_id = $id-1;
+                                                    $previous_post = mysqli_query($con, "SELECT * FROM `blog` WHERE `id` = '$previous_id'");
+                                                    while ($row = mysqli_fetch_array($previous_post)) {
+                                                        $title = $row['title'];
+                                                        echo "
+                                                        <li
+                                        class='wtbx-nav-next post-prev clearfix wtbx-element-reveal wtbx-reveal-cont wtbx-element-visible'>
+                                        <a href='https://talemia.com/blog.php?title=$title'
+                                            rel='next'>
+                                            <div class='wtbx-nav-content'><span
+                                                    class='wtbx-nav-meta wtbx-nav-meta-next'>Next Post</span><span
+                                                    class='wtbx-nav-title wtbx-nav-title-next'>$title</span></div>
                                         </a></li>
-                                    <li
-                                        class="wtbx-nav-next post-prev clearfix wtbx-element-reveal wtbx-reveal-cont wtbx-element-visible">
-                                        <a href="https://talemia.com/blog/resources-for-early-stage-founders/"
-                                            rel="next">
-                                            <div class="wtbx-nav-content"><span
-                                                    class="wtbx-nav-meta wtbx-nav-meta-next">Next Post</span><span
-                                                    class="wtbx-nav-title wtbx-nav-title-next">Resources For Early Stage
-                                                    Founders</span></div>
+                                                        ";
+                                                    }
+                                                }
+
+                                                function next_post($id) {
+                                                    require('backend/connection.php');
+                                                    $previous_id = $id+1;
+                                                    $previous_post = mysqli_query($con, "SELECT * FROM `blog` WHERE `id` = '$previous_id'");
+                                                    while ($row = mysqli_fetch_array($previous_post)) {
+                                                        $title = $row['title'];
+                                                        echo "
+                                                        <li
+                                        class='wtbx-nav-next post-prev clearfix wtbx-element-reveal wtbx-reveal-cont wtbx-element-visible'>
+                                        <a href='https://talemia.com/blog.php?title=$title'
+                                            rel='next'>
+                                            <div class='wtbx-nav-content'><span
+                                                    class='wtbx-nav-meta wtbx-nav-meta-next'>Next Post</span><span
+                                                    class='wtbx-nav-title wtbx-nav-title-next'>$title</span></div>
                                         </a></li>
+                                                        ";
+                                                    }
+                                                }
+                                                $title = $_GET['title'];
+                                                $get_id = mysqli_query($con, "SELECT `id` FROM `blog` WHERE `title` = '$title'");
+                                                while ($row = mysqli_fetch_array($get_id)) {
+                                                    $id = $row['id'];
+                                                }
+                                                previous($id);
+                                                next_post($id);
+                                            ?>
+						    
+						    
+						    
+						    
                                 </ul>
                             </div>
                         </nav>
