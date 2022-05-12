@@ -1130,9 +1130,19 @@ $title = "Techcleek";
                                                 <h3>TechCleek.</h3>
                                                 <p class="col-12">African early stage startups with little traction aren’t getting enough media spotlight. Are you building an innovative tech solution? Get even more visibility and wider reach</p>
                                             </div>
-                                            <div class="link">
-                                                <a href="" class="btn">Get Started</a>
-                                            </div>
+											<br>
+                                            <div class="wtbx_vc_button wtbx_vc_button-126754262 wtbx_style_arrow wtbx_type_simple wtbx_skin_dark wtbx_size_ wtbx_display_block">
+																									<div class="wtbx_vc_el_container wtbx_vc_button_container">
+																										<div class="wtbx_vc_el_inner wtbx_vc_button_inner">
+																											<a href="joinbuildr.php" target="_self" class="wtbx-button wtbx-button-arrow" rel="noopener"><span class="wtbx_button_inner">Get Started</span><svg class="wtbx_link_arrow" viewBox="0 0 813 486" xmlns="http://www.w3.org/2000/svg">
+																													<rect class="bar" height="60" rx="30" width="800" y="213">
+																													</rect>
+																													<path class="chevron" d="m793.388955 224.472433c9.626991 11.783528 8.945751 29.177709-2.043717 40.167177l-200.139611 200.139611c-11.715728 11.715728-30.710678 11.715728-42.426406 0-11.715729-11.715729-11.715729-30.710679 0-42.426407l179.073593-179.073593-179.352814-179.3528141c-11.715729-11.7157288-11.715729-30.7106781 0-42.4264069 11.715729-11.71572875 30.710678-11.71572875 42.426407 0l199.418831 199.418831c1.122031 1.122031 2.136603 2.310828 3.043717 3.553602z">
+																													</path>
+																												</svg></a>
+																										</div>
+																									</div>
+																								</div>
                                         </div>
                                         <div class="image col-12 col-md-6 text-center">
                                             <img src="assets/image/Picture4.png" alt="" class="img-fluid">

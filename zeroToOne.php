@@ -4,6 +4,9 @@ $title = "Buildr";
 ?>
 
 <style type="text/css">
+	a{
+		text-decoration:none !important;
+	}
 	.wtbx_vc_row-126735512 .wtbx_row_bg {
 		background-color: #ffffff;
 	}
