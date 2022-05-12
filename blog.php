@@ -774,8 +774,20 @@ if (isset($_GET['author'])){
 if (isset($_GET['title'])){
     $title = $_GET['title']."| Blog  - Talemia";
     include './assets/blog.html';
+
     ?>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        nav a, footer a, .post-tags-n-social a, .like, .wtbx_header_part.header_button.header_custom_button.header_button_height a{
+            text-decoration:none !important;
+        }
+        .modal-backdrop{
+            display: none !important;
+        }.modal-dialog{
+            opacity: 1 !important;
+            z-index: 99999999999;
+        }
+    </style>
 <?php
     $title = $_GET['title'];
     require('backend/connection.php');
@@ -1028,13 +1040,6 @@ if (isset($_GET['title'])){
                                                 <div class="dot third"></div>
                                             </div>
                                         </a></li>
-                                    <li
-                                        class="wtbx-nav-prev post-prev clearfix wtbx-element-reveal wtbx-reveal-cont wtbx-element-visible">
-                                        <a href="https://talemia.com/blog/moretechies-and-talemia-wants-to-make-it-easier-for-early-stage-startups-to-access-skilled-interns/"
-                                            rel="prev">
-                                            <div class="wtbx-nav-thumb">
-						    
-						    
 						    
 						<!-- function for previous and next post   -->
 						    
@@ -1043,24 +1048,34 @@ if (isset($_GET['title'])){
 						    
                                                 <?php
                                             require('backend/connection.php');
-                                                function previous($id) {
-                                                    require('backend/connection.php');
-                                                    $previous_id = $id-1;
-                                                    $previous_post = mysqli_query($con, "SELECT * FROM `blog` WHERE `id` = '$previous_id'");
-                                                    while ($row = mysqli_fetch_array($previous_post)) {
-                                                        $title = $row['title'];
-                                                        echo "
-                                                        <li
-                                        class='wtbx-nav-next post-prev clearfix wtbx-element-reveal wtbx-reveal-cont wtbx-element-visible'>
-                                        <a href='https://talemia.com/blog.php?title=$title'
-                                            rel='next'>
-                                            <div class='wtbx-nav-content'><span
-                                                    class='wtbx-nav-meta wtbx-nav-meta-next'>Next Post</span><span
-                                                    class='wtbx-nav-title wtbx-nav-title-next'>$title</span></div>
-                                        </a></li>
-                                                        ";
-                                                    }
+                                            function previous($id) {
+                                                require('backend/connection.php');
+                                                $data = '';
+                                                $previous_id = intval($id)-1;
+                                                $previous_post = mysqli_query($con, "SELECT * FROM `blog` WHERE `id` = '$previous_id'");
+                                                while ($row = mysqli_fetch_array($previous_post)) {
+                                                    $title = $row['title'];
+                                                    echo '
+                                                    <li class="wtbx-nav-prev post-prev clearfix wtbx-element-reveal wtbx-reveal-cont wtbx-element-visible">
+                                                        <a href="blog.php?title='.$title.'"
+                                                            rel="prev">
+                                                            <div class="wtbx-nav-thumb">
+                                                                <div class="wtbx-image-crop" style="padding-bottom: 100%"><img
+                                                                        class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
+                                                                        data-bg="false" data-imgratio="1:1" data-aspectratio="1"
+                                                                        src="./assets/image/'.$row['image'].'"
+                                                                        data-sizes="auto" data-parent-fit="cover"
+                                                                        alt="'.$title.'"
+                                                                        sizes="50px"></div>
+                                                            </div>
+                                                            <div class="wtbx-nav-content"><span
+                                                                    class="wtbx-nav-meta wtbx-nav-meta-prev">Previous Post</span><span
+                                                                    class="wtbx-nav-title wtbx-nav-title-prev">'.$title.'</span></div>
+                                                        </a>
+                                                    </li>';
                                                 }
+                                            }
+
 
                                                 function next_post($id) {
                                                     require('backend/connection.php');
@@ -1070,12 +1085,22 @@ if (isset($_GET['title'])){
                                                         $title = $row['title'];
                                                         echo "
                                                         <li
-                                        class='wtbx-nav-next post-prev clearfix wtbx-element-reveal wtbx-reveal-cont wtbx-element-visible'>
-                                        <a href='https://talemia.com/blog.php?title=$title'
+                                        class='wtbx-nav-next post-next clearfix wtbx-element-reveal wtbx-reveal-cont wtbx-element-visible'>
+                                        <a href='blog.php?title=$title'
                                             rel='next'>
+                                            
                                             <div class='wtbx-nav-content'><span
                                                     class='wtbx-nav-meta wtbx-nav-meta-next'>Next Post</span><span
                                                     class='wtbx-nav-title wtbx-nav-title-next'>$title</span></div>
+                                                    <div class='wtbx-nav-thumb'>
+                                                    <div class='wtbx-image-crop' style='padding-bottom: 100%'><img
+                                                            class='wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded'
+                                                            data-bg='false' data-imgratio='1:1' data-aspectratio='1'
+                                                            src='./assets/image/".$row['image']."'
+                                                            data-sizes='auto' data-parent-fit='cover'
+                                                            alt='".$title."'
+                                                            sizes='50px'></div>
+                                                </div>
                                         </a></li>
                                                         ";
                                                     }
@@ -1088,7 +1113,29 @@ if (isset($_GET['title'])){
                                                 previous($id);
                                                 next_post($id);
                                             ?>
-						    
+						    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: #0000001c;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 						    
 						    
 						    
@@ -1101,687 +1148,11 @@ if (isset($_GET['title'])){
 
             </div><!-- #container -->
         </article>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
-
-        <!-- 
-        <aside class="wtbx-related-posts">
-            <div class="wtbx-related-posts-inner row-inner">
-                <div class="wtbx-width wtbx-large-7 wtbx-medium-8 wtbx-small-9">
-                    <h3 class="wtbx-related-posts-title">Related Posts</h3>
-
-                    <div class="wtbx-related-posts-container">
-
-                        <div class="wtbx-related-posts-wrapper slick-initialized slick-slider" data-autoplay="4">
-                            <div class="slick-list draggable">
-                                <div class="slick-track"
-                                    style="opacity: 1; width: 2728px; transform: translate3d(-1488px, 0px, 0px);">
-                                    <div class="slick-slide slick-cloned" data-slick-index="-3" id="" aria-hidden="true"
-                                        style="width: 248px;" tabindex="-1">
-                                        <div>
-                                            <article class="wtbx-related-post wtbx-reveal-cont wtbx_preloader_cont"
-                                                style="width: 100%; display: inline-block;">
-
-
-                                                <div
-                                                    class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden preloader-display-none">
-                                                    <div class="wtbx-preloader-container">
-
-
-                                                        <div class="wtbx-preloader wtbx-preloader-2">
-                                                            <svg class="circular" viewBox="25 25 50 50">
-                                                                <circle class="path" cx="50" cy="50" r="20" fill="none"
-                                                                    stroke-width="3" stroke-miterlimit="10"
-                                                                    stroke="#09099d" stroke-linecap="round"></circle>
-                                                            </svg>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="wtbx-related-post-inner wtbx-element-reveal wtbx-element-visible">
-
-                                                    <div class="wtbx-related-post-thumbnail">
-                                                        <a href="https://talemia.com/blog/lofty-ideas-dont-always-make-great-companies/"
-                                                            rel="bookmark"
-                                                            title="Lofty Ideas Don’t Always Make Great Companies"
-                                                            tabindex="-1">
-                                                            <div class="wtbx-image-crop" style="padding-bottom: 100%">
-                                                                <img class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
-                                                                    data-bg="false" data-imgratio="1:1"
-                                                                    data-aspectratio="0.75"
-                                                                    src="https://talemia.com/wp-content/uploads/2022/02/IMG-20220215-WA0112-150x150.jpg"
-                                                                    srcset="https://talemia.com/wp-content/uploads/2022/02/IMG-20220215-WA0112-225x300.jpg 225w, https://talemia.com/wp-content/uploads/2022/02/IMG-20220215-WA0112-768x1024.jpg 768w, https://talemia.com/wp-content/uploads/2022/02/IMG-20220215-WA0112.jpg 960w"
-                                                                    data-sizes="auto" data-parent-fit="cover"
-                                                                    alt="Lofty Ideas Don’t Always Make Great Companies"
-                                                                    sizes="208px"></div>
-                                                        </a>
-
-                                                        <div class="wtbx-related-post-content">
-                                                            <div class="meta-categories">
-                                                                <div class="category-list"><a
-                                                                        href="https://talemia.com/blog/category/startup-tip/"
-                                                                        rel="category tag" tabindex="-1">Startup Tip</a>
-                                                                </div>
-                                                            </div>
-
-                                                            <h3 class="entry-title">
-                                                                <a href="https://talemia.com/blog/lofty-ideas-dont-always-make-great-companies/"
-                                                                    rel="bookmark"
-                                                                    title="Lofty Ideas Don’t Always Make Great Companies"
-                                                                    tabindex="-1">Lofty Ideas Don’t Always Make Great
-                                                                    Companies</a>
-                                                            </h3>
-                                                        </div>
-
-                                                    </div>
-
-
-
-
-                                                </div>
-
-                                            </article>
-                                        </div>
-                                    </div>
-                                    <div class="slick-slide slick-cloned" data-slick-index="-2" id="" aria-hidden="true"
-                                        style="width: 248px;" tabindex="-1">
-                                        <div>
-                                            <article class="wtbx-related-post wtbx-reveal-cont wtbx_preloader_cont"
-                                                style="width: 100%; display: inline-block;">
-
-
-                                                <div
-                                                    class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden preloader-display-none">
-                                                    <div class="wtbx-preloader-container">
-
-
-                                                        <div class="wtbx-preloader wtbx-preloader-2">
-                                                            <svg class="circular" viewBox="25 25 50 50">
-                                                                <circle class="path" cx="50" cy="50" r="20" fill="none"
-                                                                    stroke-width="3" stroke-miterlimit="10"
-                                                                    stroke="#09099d" stroke-linecap="round"></circle>
-                                                            </svg>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="wtbx-related-post-inner wtbx-element-reveal wtbx-element-visible">
-
-                                                    <div class="wtbx-related-post-thumbnail">
-                                                        <a href="https://talemia.com/blog/acquiring-your-first-set-of-users/"
-                                                            rel="bookmark" title="Acquiring Your First Set Of Users"
-                                                            tabindex="-1">
-                                                            <div class="wtbx-image-crop" style="padding-bottom: 100%">
-                                                                <img class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
-                                                                    data-bg="false" data-imgratio="1:1"
-                                                                    data-aspectratio="0.7994"
-                                                                    src="https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post-150x150.jpeg"
-                                                                    srcset="https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post-240x300.jpeg 240w, https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post-819x1024.jpeg 819w, https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post-768x961.jpeg 768w, https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post.jpeg 1080w"
-                                                                    data-sizes="auto" data-parent-fit="cover"
-                                                                    alt="Acquiring Your First Set Of Users"
-                                                                    sizes="208px"></div>
-                                                        </a>
-
-                                                        <div class="wtbx-related-post-content">
-                                                            <div class="meta-categories">
-                                                                <div class="category-list"><a
-                                                                        href="https://talemia.com/blog/category/startup-tip/"
-                                                                        rel="category tag" tabindex="-1">Startup Tip</a>
-                                                                </div>
-                                                            </div>
-
-                                                            <h3 class="entry-title">
-                                                                <a href="https://talemia.com/blog/acquiring-your-first-set-of-users/"
-                                                                    rel="bookmark"
-                                                                    title="Acquiring Your First Set Of Users"
-                                                                    tabindex="-1">Acquiring Your First Set Of Users</a>
-                                                            </h3>
-                                                        </div>
-
-                                                    </div>
-
-
-
-
-                                                </div>
-
-                                            </article>
-                                        </div>
-                                    </div>
-                                    <div class="slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true"
-                                        style="width: 248px;" tabindex="-1">
-                                        <div>
-                                            <article class="wtbx-related-post wtbx-reveal-cont wtbx_preloader_cont"
-                                                style="width: 100%; display: inline-block;">
-
-
-                                                <div
-                                                    class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden preloader-display-none">
-                                                    <div class="wtbx-preloader-container">
-
-
-                                                        <div class="wtbx-preloader wtbx-preloader-2">
-                                                            <svg class="circular" viewBox="25 25 50 50">
-                                                                <circle class="path" cx="50" cy="50" r="20" fill="none"
-                                                                    stroke-width="3" stroke-miterlimit="10"
-                                                                    stroke="#09099d" stroke-linecap="round"></circle>
-                                                            </svg>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="wtbx-related-post-inner wtbx-element-reveal wtbx-element-visible">
-
-                                                    <div class="wtbx-related-post-thumbnail">
-                                                        <a href="https://talemia.com/blog/fall-in-love-with-the-problem/"
-                                                            rel="bookmark" title="Fall In Love With The Problem"
-                                                            tabindex="-1">
-                                                            <div class="wtbx-image-crop" style="padding-bottom: 100%">
-                                                                <img class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
-                                                                    data-bg="false" data-imgratio="1:1"
-                                                                    data-aspectratio="1"
-                                                                    src="https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-150x150.png"
-                                                                    srcset="https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-300x300.png 300w, https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-1024x1024.png 1024w, https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-150x150.png 150w, https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-768x768.png 768w, https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post.png 1400w"
-                                                                    data-sizes="auto" data-parent-fit="cover"
-                                                                    alt="Fall In Love With The Problem" sizes="208px">
-                                                            </div>
-                                                        </a>
-
-                                                        <div class="wtbx-related-post-content">
-                                                            <div class="meta-categories">
-                                                                <div class="category-list"><a
-                                                                        href="https://talemia.com/blog/category/startup-tip/"
-                                                                        rel="category tag" tabindex="-1">Startup Tip</a>
-                                                                </div>
-                                                            </div>
-
-                                                            <h3 class="entry-title">
-                                                                <a href="https://talemia.com/blog/fall-in-love-with-the-problem/"
-                                                                    rel="bookmark" title="Fall In Love With The Problem"
-                                                                    tabindex="-1">Fall In Love With The Problem</a>
-                                                            </h3>
-                                                        </div>
-
-                                                    </div>
-
-
-
-
-                                                </div>
-
-                                            </article>
-                                        </div>
-                                    </div>
-                                    <div class="slick-slide" data-slick-index="0" aria-hidden="true"
-                                        style="width: 248px;" tabindex="-1">
-                                        <div>
-                                            <article class="wtbx-related-post wtbx-reveal-cont wtbx_preloader_cont"
-                                                style="width: 100%; display: inline-block;">
-
-
-                                                <div class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden">
-                                                    <div class="wtbx-preloader-container">
-
-
-                                                        <div class="wtbx-preloader wtbx-preloader-2">
-                                                            <svg class="circular" viewBox="25 25 50 50">
-                                                                <circle class="path" cx="50" cy="50" r="20" fill="none"
-                                                                    stroke-width="3" stroke-miterlimit="10"
-                                                                    stroke="#09099d" stroke-linecap="round"></circle>
-                                                            </svg>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="wtbx-related-post-inner wtbx-element-reveal wtbx-element-visible">
-
-
-
-                                                </div>
-
-                                            </article>
-                                        </div>
-                                    </div>
-                                    <div class="slick-slide" data-slick-index="1" aria-hidden="true"
-                                        style="width: 248px;" tabindex="-1">
-                                        <div>
-                                            <article class="wtbx-related-post wtbx-reveal-cont wtbx_preloader_cont"
-                                                style="width: 100%; display: inline-block;">
-
-
-                                                <div
-                                                    class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden preloader-display-none">
-                                                    <div class="wtbx-preloader-container">
-
-
-                                                        <div class="wtbx-preloader wtbx-preloader-2">
-                                                            <svg class="circular" viewBox="25 25 50 50">
-                                                                <circle class="path" cx="50" cy="50" r="20" fill="none"
-                                                                    stroke-width="3" stroke-miterlimit="10"
-                                                                    stroke="#09099d" stroke-linecap="round"></circle>
-                                                            </svg>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="wtbx-related-post-inner wtbx-element-reveal wtbx-element-visible">
-
-                                                    <div class="wtbx-related-post-thumbnail">
-                                                        <a href="https://talemia.com/blog/lofty-ideas-dont-always-make-great-companies/"
-                                                            rel="bookmark"
-                                                            title="Lofty Ideas Don’t Always Make Great Companies"
-                                                            tabindex="-1">
-                                                            <div class="wtbx-image-crop" style="padding-bottom: 100%">
-                                                                <img class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
-                                                                    data-bg="false" data-imgratio="1:1"
-                                                                    data-aspectratio="0.75"
-                                                                    src="https://talemia.com/wp-content/uploads/2022/02/IMG-20220215-WA0112-150x150.jpg"
-                                                                    srcset="https://talemia.com/wp-content/uploads/2022/02/IMG-20220215-WA0112-225x300.jpg 225w, https://talemia.com/wp-content/uploads/2022/02/IMG-20220215-WA0112-768x1024.jpg 768w, https://talemia.com/wp-content/uploads/2022/02/IMG-20220215-WA0112.jpg 960w"
-                                                                    data-sizes="auto" data-parent-fit="cover"
-                                                                    alt="Lofty Ideas Don’t Always Make Great Companies"
-                                                                    sizes="208px"></div>
-                                                        </a>
-
-                                                        <div class="wtbx-related-post-content">
-                                                            <div class="meta-categories">
-                                                                <div class="category-list"><a
-                                                                        href="https://talemia.com/blog/category/startup-tip/"
-                                                                        rel="category tag" tabindex="-1">Startup Tip</a>
-                                                                </div>
-                                                            </div>
-
-                                                            <h3 class="entry-title">
-                                                                <a href="https://talemia.com/blog/lofty-ideas-dont-always-make-great-companies/"
-                                                                    rel="bookmark"
-                                                                    title="Lofty Ideas Don’t Always Make Great Companies"
-                                                                    tabindex="-1">Lofty Ideas Don’t Always Make Great
-                                                                    Companies</a>
-                                                            </h3>
-                                                        </div>
-
-                                                    </div>
-
-
-
-
-                                                </div>
-
-                                            </article>
-                                        </div>
-                                    </div>
-                                    <div class="slick-slide" data-slick-index="2" aria-hidden="true"
-                                        style="width: 248px;" tabindex="-1">
-                                        <div>
-                                            <article class="wtbx-related-post wtbx-reveal-cont wtbx_preloader_cont"
-                                                style="width: 100%; display: inline-block;">
-
-
-                                                <div
-                                                    class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden preloader-display-none">
-                                                    <div class="wtbx-preloader-container">
-
-
-                                                        <div class="wtbx-preloader wtbx-preloader-2">
-                                                            <svg class="circular" viewBox="25 25 50 50">
-                                                                <circle class="path" cx="50" cy="50" r="20" fill="none"
-                                                                    stroke-width="3" stroke-miterlimit="10"
-                                                                    stroke="#09099d" stroke-linecap="round"></circle>
-                                                            </svg>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="wtbx-related-post-inner wtbx-element-reveal wtbx-element-visible">
-
-                                                    <div class="wtbx-related-post-thumbnail">
-                                                        <a href="https://talemia.com/blog/acquiring-your-first-set-of-users/"
-                                                            rel="bookmark" title="Acquiring Your First Set Of Users"
-                                                            tabindex="-1">
-                                                            <div class="wtbx-image-crop" style="padding-bottom: 100%">
-                                                                <img class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
-                                                                    data-bg="false" data-imgratio="1:1"
-                                                                    data-aspectratio="0.7994"
-                                                                    src="https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post-150x150.jpeg"
-                                                                    srcset="https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post-240x300.jpeg 240w, https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post-819x1024.jpeg 819w, https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post-768x961.jpeg 768w, https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post.jpeg 1080w"
-                                                                    data-sizes="auto" data-parent-fit="cover"
-                                                                    alt="Acquiring Your First Set Of Users"
-                                                                    sizes="208px"></div>
-                                                        </a>
-
-                                                        <div class="wtbx-related-post-content">
-                                                            <div class="meta-categories">
-                                                                <div class="category-list"><a
-                                                                        href="https://talemia.com/blog/category/startup-tip/"
-                                                                        rel="category tag" tabindex="-1">Startup Tip</a>
-                                                                </div>
-                                                            </div>
-
-                                                            <h3 class="entry-title">
-                                                                <a href="https://talemia.com/blog/acquiring-your-first-set-of-users/"
-                                                                    rel="bookmark"
-                                                                    title="Acquiring Your First Set Of Users"
-                                                                    tabindex="-1">Acquiring Your First Set Of Users</a>
-                                                            </h3>
-                                                        </div>
-
-                                                    </div>
-
-
-
-
-                                                </div>
-
-                                            </article>
-                                        </div>
-                                    </div>
-                                    <div class="slick-slide slick-current slick-active" data-slick-index="3"
-                                        aria-hidden="false" style="width: 248px;">
-                                        <div>
-                                            <article class="wtbx-related-post wtbx-reveal-cont wtbx_preloader_cont"
-                                                style="width: 100%; display: inline-block;">
-
-
-                                                <div
-                                                    class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden preloader-display-none">
-                                                    <div class="wtbx-preloader-container">
-
-
-                                                        <div class="wtbx-preloader wtbx-preloader-2">
-                                                            <svg class="circular" viewBox="25 25 50 50">
-                                                                <circle class="path" cx="50" cy="50" r="20" fill="none"
-                                                                    stroke-width="3" stroke-miterlimit="10"
-                                                                    stroke="#09099d" stroke-linecap="round"></circle>
-                                                            </svg>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="wtbx-related-post-inner wtbx-element-reveal wtbx-element-visible">
-
-                                                    <div class="wtbx-related-post-thumbnail">
-                                                        <a href="https://talemia.com/blog/fall-in-love-with-the-problem/"
-                                                            rel="bookmark" title="Fall In Love With The Problem"
-                                                            tabindex="0">
-                                                            <div class="wtbx-image-crop" style="padding-bottom: 100%">
-                                                                <img class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
-                                                                    data-bg="false" data-imgratio="1:1"
-                                                                    data-aspectratio="1"
-                                                                    src="https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-150x150.png"
-                                                                    srcset="https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-300x300.png 300w, https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-1024x1024.png 1024w, https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-150x150.png 150w, https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-768x768.png 768w, https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post.png 1400w"
-                                                                    data-sizes="auto" data-parent-fit="cover"
-                                                                    alt="Fall In Love With The Problem" sizes="208px">
-                                                            </div>
-                                                        </a>
-
-                                                        <div class="wtbx-related-post-content">
-                                                            <div class="meta-categories">
-                                                                <div class="category-list"><a
-                                                                        href="https://talemia.com/blog/category/startup-tip/"
-                                                                        rel="category tag" tabindex="0">Startup Tip</a>
-                                                                </div>
-                                                            </div>
-
-                                                            <h3 class="entry-title">
-                                                                <a href="https://talemia.com/blog/fall-in-love-with-the-problem/"
-                                                                    rel="bookmark" title="Fall In Love With The Problem"
-                                                                    tabindex="0">Fall In Love With The Problem</a>
-                                                            </h3>
-                                                        </div>
-
-                                                    </div>
-
-
-
-
-                                                </div>
-
-                                            </article>
-                                        </div>
-                                    </div>
-                                    <div class="slick-slide slick-cloned slick-active" data-slick-index="4" id=""
-                                        aria-hidden="false" style="width: 248px;" tabindex="-1">
-                                        <div>
-                                            <article class="wtbx-related-post wtbx-reveal-cont wtbx_preloader_cont"
-                                                style="width: 100%; display: inline-block;">
-
-
-                                                <div class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden">
-                                                    <div class="wtbx-preloader-container">
-
-
-                                                        <div class="wtbx-preloader wtbx-preloader-2">
-                                                            <svg class="circular" viewBox="25 25 50 50">
-                                                                <circle class="path" cx="50" cy="50" r="20" fill="none"
-                                                                    stroke-width="3" stroke-miterlimit="10"
-                                                                    stroke="#09099d" stroke-linecap="round"></circle>
-                                                            </svg>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="wtbx-related-post-inner wtbx-element-reveal wtbx-element-visible">
-
-
-
-                                                </div>
-
-                                            </article>
-                                        </div>
-                                    </div>
-                                    <div class="slick-slide slick-cloned slick-active" data-slick-index="5" id=""
-                                        aria-hidden="false" style="width: 248px;" tabindex="-1">
-                                        <div>
-                                            <article class="wtbx-related-post wtbx-reveal-cont wtbx_preloader_cont"
-                                                style="width: 100%; display: inline-block;">
-
-
-                                                <div
-                                                    class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden preloader-display-none">
-                                                    <div class="wtbx-preloader-container">
-
-
-                                                        <div class="wtbx-preloader wtbx-preloader-2">
-                                                            <svg class="circular" viewBox="25 25 50 50">
-                                                                <circle class="path" cx="50" cy="50" r="20" fill="none"
-                                                                    stroke-width="3" stroke-miterlimit="10"
-                                                                    stroke="#09099d" stroke-linecap="round"></circle>
-                                                            </svg>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="wtbx-related-post-inner wtbx-element-reveal wtbx-element-visible">
-
-                                                    <div class="wtbx-related-post-thumbnail">
-                                                        <a href="https://talemia.com/blog/lofty-ideas-dont-always-make-great-companies/"
-                                                            rel="bookmark"
-                                                            title="Lofty Ideas Don’t Always Make Great Companies"
-                                                            tabindex="0">
-                                                            <div class="wtbx-image-crop" style="padding-bottom: 100%">
-                                                                <img class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
-                                                                    data-bg="false" data-imgratio="1:1"
-                                                                    data-aspectratio="0.75"
-                                                                    src="https://talemia.com/wp-content/uploads/2022/02/IMG-20220215-WA0112-150x150.jpg"
-                                                                    srcset="https://talemia.com/wp-content/uploads/2022/02/IMG-20220215-WA0112-225x300.jpg 225w, https://talemia.com/wp-content/uploads/2022/02/IMG-20220215-WA0112-768x1024.jpg 768w, https://talemia.com/wp-content/uploads/2022/02/IMG-20220215-WA0112.jpg 960w"
-                                                                    data-sizes="auto" data-parent-fit="cover"
-                                                                    alt="Lofty Ideas Don’t Always Make Great Companies"
-                                                                    sizes="208px"></div>
-                                                        </a>
-
-                                                        <div class="wtbx-related-post-content">
-                                                            <div class="meta-categories">
-                                                                <div class="category-list"><a
-                                                                        href="https://talemia.com/blog/category/startup-tip/"
-                                                                        rel="category tag" tabindex="0">Startup Tip</a>
-                                                                </div>
-                                                            </div>
-
-                                                            <h3 class="entry-title">
-                                                                <a href="https://talemia.com/blog/lofty-ideas-dont-always-make-great-companies/"
-                                                                    rel="bookmark"
-                                                                    title="Lofty Ideas Don’t Always Make Great Companies"
-                                                                    tabindex="0">Lofty Ideas Don’t Always Make Great
-                                                                    Companies</a>
-                                                            </h3>
-                                                        </div>
-
-                                                    </div>
-
-
-
-
-                                                </div>
-
-                                            </article>
-                                        </div>
-                                    </div>
-                                    <div class="slick-slide slick-cloned" data-slick-index="6" id="" aria-hidden="true"
-                                        style="width: 248px;" tabindex="-1">
-                                        <div>
-                                            <article class="wtbx-related-post wtbx-reveal-cont wtbx_preloader_cont"
-                                                style="width: 100%; display: inline-block;">
-
-
-                                                <div
-                                                    class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden preloader-display-none">
-                                                    <div class="wtbx-preloader-container">
-
-
-                                                        <div class="wtbx-preloader wtbx-preloader-2">
-                                                            <svg class="circular" viewBox="25 25 50 50">
-                                                                <circle class="path" cx="50" cy="50" r="20" fill="none"
-                                                                    stroke-width="3" stroke-miterlimit="10"
-                                                                    stroke="#09099d" stroke-linecap="round"></circle>
-                                                            </svg>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="wtbx-related-post-inner wtbx-element-reveal wtbx-element-visible">
-
-                                                    <div class="wtbx-related-post-thumbnail">
-                                                        <a href="https://talemia.com/blog/acquiring-your-first-set-of-users/"
-                                                            rel="bookmark" title="Acquiring Your First Set Of Users"
-                                                            tabindex="-1">
-                                                            <div class="wtbx-image-crop" style="padding-bottom: 100%">
-                                                                <img class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
-                                                                    data-bg="false" data-imgratio="1:1"
-                                                                    data-aspectratio="0.7994"
-                                                                    src="https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post-150x150.jpeg"
-                                                                    srcset="https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post-240x300.jpeg 240w, https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post-819x1024.jpeg 819w, https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post-768x961.jpeg 768w, https://talemia.com/wp-content/uploads/2021/12/Chima-3rd-Blog-Post.jpeg 1080w"
-                                                                    data-sizes="auto" data-parent-fit="cover"
-                                                                    alt="Acquiring Your First Set Of Users"
-                                                                    sizes="208px"></div>
-                                                        </a>
-
-                                                        <div class="wtbx-related-post-content">
-                                                            <div class="meta-categories">
-                                                                <div class="category-list"><a
-                                                                        href="https://talemia.com/blog/category/startup-tip/"
-                                                                        rel="category tag" tabindex="-1">Startup Tip</a>
-                                                                </div>
-                                                            </div>
-
-                                                            <h3 class="entry-title">
-                                                                <a href="https://talemia.com/blog/acquiring-your-first-set-of-users/"
-                                                                    rel="bookmark"
-                                                                    title="Acquiring Your First Set Of Users"
-                                                                    tabindex="-1">Acquiring Your First Set Of Users</a>
-                                                            </h3>
-                                                        </div>
-
-                                                    </div>
-
-
-
-
-                                                </div>
-
-                                            </article>
-                                        </div>
-                                    </div>
-                                    <div class="slick-slide slick-cloned" data-slick-index="7" id="" aria-hidden="true"
-                                        style="width: 248px;" tabindex="-1">
-                                        <div>
-                                            <article class="wtbx-related-post wtbx-reveal-cont wtbx_preloader_cont"
-                                                style="width: 100%; display: inline-block;">
-
-
-                                                <div
-                                                    class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden preloader-display-none">
-                                                    <div class="wtbx-preloader-container">
-
-
-                                                        <div class="wtbx-preloader wtbx-preloader-2">
-                                                            <svg class="circular" viewBox="25 25 50 50">
-                                                                <circle class="path" cx="50" cy="50" r="20" fill="none"
-                                                                    stroke-width="3" stroke-miterlimit="10"
-                                                                    stroke="#09099d" stroke-linecap="round"></circle>
-                                                            </svg>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="wtbx-related-post-inner wtbx-element-reveal wtbx-element-visible">
-
-                                                    <div class="wtbx-related-post-thumbnail">
-                                                        <a href="https://talemia.com/blog/fall-in-love-with-the-problem/"
-                                                            rel="bookmark" title="Fall In Love With The Problem"
-                                                            tabindex="-1">
-                                                            <div class="wtbx-image-crop" style="padding-bottom: 100%">
-                                                                <img class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
-                                                                    data-bg="false" data-imgratio="1:1"
-                                                                    data-aspectratio="1"
-                                                                    src="https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-150x150.png"
-                                                                    srcset="https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-300x300.png 300w, https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-1024x1024.png 1024w, https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-150x150.png 150w, https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post-768x768.png 768w, https://talemia.com/wp-content/uploads/2021/12/Bolu-2nd-Blog-Post.png 1400w"
-                                                                    data-sizes="auto" data-parent-fit="cover"
-                                                                    alt="Fall In Love With The Problem" sizes="208px">
-                                                            </div>
-                                                        </a>
-
-                                                        <div class="wtbx-related-post-content">
-                                                            <div class="meta-categories">
-                                                                <div class="category-list"><a
-                                                                        href="https://talemia.com/blog/category/startup-tip/"
-                                                                        rel="category tag" tabindex="-1">Startup Tip</a>
-                                                                </div>
-                                                            </div>
-
-                                                            <h3 class="entry-title">
-                                                                <a href="https://talemia.com/blog/fall-in-love-with-the-problem/"
-                                                                    rel="bookmark" title="Fall In Love With The Problem"
-                                                                    tabindex="-1">Fall In Love With The Problem</a>
-                                                            </h3>
-                                                        </div>
-
-                                                    </div>
-
-
-
-
-                                                </div>
-
-                                            </article>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </aside>
-    -->
         <div class="row-inner">
             <div class="wtbx-width wtbx-large-7 wtbx-medium-8 wtbx-small-9">
 
