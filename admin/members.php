@@ -56,7 +56,6 @@
         </div>
         <br>
         <ul>
-            
             <li ><a href="dashboard.php"><i class="icon-dashboard"></i><span> Dashboard</span> </a></li>
             <li ><a href="newsletter.php"> <i class="icon-globe"></i> <span> Newsletter</span> </a></li>
             <li class="active"><a href="members.php"> <i class="icon-hdd-o"></i> <span> Members </span> </a></li>

@@ -4604,6 +4604,9 @@
         .wtbx_vc_button-221115352.wtbx_vc_button.wtbx_style_arrow.wtbx_type_simple .wtbx_vc_button_inner .wtbx-button {
             background-color: #09099d;
         }
+        body,input{
+            text-transform: none !important;
+        }
 </style>
 <body class="home">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
