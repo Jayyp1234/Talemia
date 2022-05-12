@@ -1375,6 +1375,8 @@ $title = "Buildr";
 			margin-top: 2rem;
 			font-size: 1.05rem;
 			line-height: 1.7pc;
+		}.section2 .privileges ul li{
+			font-size: 1.3rem;
 		}
 	}
 
