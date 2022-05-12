@@ -1,4 +1,6 @@
-
+<?php
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -118,17 +120,53 @@
   </div>
   <!-- Heading -->
         <br>
+<?php
+    if (isset($_GET['id'])){
+        require('../backend/connection.php');
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM blog where id = '$id' ";
+        $query = mysqli_query($con,$sql);
+        if($query){
+            if(mysqli_num_rows($query) > 0){
+                while($row = mysqli_fetch_assoc($query)){
+                    $text = $row['text'];
+                }
+            }
+        }
+    }
+    else if (isset($_POST['body'])){
+        $text = $_POST['body'];
+        $data = $_POST['html'];
+        $publish = $_POST['publish'];
+        $sql = "UPDATE `blog` SET `body`='$data',`text`='$text',`publish`='$publish' WHERE id = '$id'";
+            $query = mysqli_query($con,$sql);
+            if($query){
+                header('Location:blog_create.php');
+                ob_end_flush();
+            }
+    }
+?>
         <section class="content-main container">
-        <form>
+        <form action="" method="POST">
 
-        </form>
-        <textarea class="content">
-            Welcome to TinyMCE!
+        <textarea class="content" name ="body">
+            <?php echo $text; ?>
         </textarea>
 
-        </section> <!-- content-main end// -->
-        <button class="nn">Save Html</button>
+        <!-- content-main end// -->
         
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="publish" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+               <b> Do you want to Publish your Blog now ?</b>
+            </label>
+        </div>
+        <input type="hidden" name="html" class="html"/>
+        <div class="d-grid gap-2">
+            <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+        </div>
+        </form>
+        </section> 
     </main>
 
 </div>
@@ -146,8 +184,10 @@
       tinycomments_mode: 'embedded',
       tinycomments_author: 'Author name',
     });
-    $('.nn').on('click', function(){
-        alert($("#mce_0_ifr").contents().find('#tinymce').html());
+    $('.gap-2 .btn').on('click', function(){
+        $(".html").val($("#mce_0_ifr").contents().find('#tinymce').html());
+        //alert($("#mce_0_ifr").contents().find('#tinymce').html());
+        $('form').submit();
     });
 </script>
 

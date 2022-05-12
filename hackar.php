@@ -5,6 +5,9 @@ $title = "Products - Talemia";
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style type="text/css">
+	a{
+		text-decoration:none !important;
+	}
 	.wtbx_vc_row-126735512 .wtbx_row_bg {
 		background-color: #ffffff;
 	}
@@ -1163,7 +1166,11 @@ $title = "Products - Talemia";
         }
         
     }
-    
+    @media all and (max-width:769px){
+		.section3 .row .card {
+            width: 95%;
+        }
+	}
     @media all and (max-width: 425px){
         .content-desc {
             padding: 0;
@@ -1203,7 +1210,7 @@ $title = "Products - Talemia";
             margin: 0 auto;
         }.section3 .row .card {
             margin: 2rem auto 1rem;
-            width: 70%;
+            width: 93% !important;
             padding: 1rem 1rem 1.5rem;
         }.section3 .row .card .card-title {
             font-size: 1rem;
@@ -1236,7 +1243,7 @@ $title = "Products - Talemia";
         }.section2 .image .img-fluid {
             height: auto;
         }.section3 .row .card {
-            width: 80%;
+            width: 93%;
         }
     }
 </style>
@@ -1300,11 +1307,12 @@ $title = "Products - Talemia";
 							<div class="wtbx_vc_el_container wtbx_vc_row_container">
 								<div class="wtbx_vc_el_inner wtbx_vc_row_inner">
                                 <div class="container section3">
-                                    <div class="row col-12">
-                                        <div class="header col-10">
+								<div class="header col-10">
                                             <h4>Choose a Plan</h4>
                                         </div>
-                                        <div class="card one col-10 col-md-6 col-lg-2">
+                                    <div class="row col-12">
+                                        
+                                        <div class="card one col-sm-12 col-md-6 col-lg-2">
                                             <div class="card-body">
                                                 <h5 class="card-title">HACKAR<span>FLEX</span></h5>
                                                 <ul>
@@ -1317,7 +1325,7 @@ $title = "Products - Talemia";
                                                 <a href="" class="btn">Buy Now</a>
                                             </div>
                                         </div>
-                                        <div class="card two col-10 col-md-6 col-lg-2">
+                                        <div class="card two col-sm-12 col-md-6 col-lg-2">
                                             <div class="card-body ">
                                                 <h5 class="card-title">HACKAR<span>PLUS</span></h5>
                                                 <ul>
@@ -1330,7 +1338,7 @@ $title = "Products - Talemia";
                                                 <a href="" class="btn">Buy Now</a>
                                             </div>
                                         </div>
-                                        <div class="card three col-10 col-md-6 col-lg-2">
+                                        <div class="card three col-sm-12 col-md-6 col-lg-2">
                                             <div class="card-body three">
                                                 <h5 class="card-title">HACKAR<span>XTRA</span></h5>
                                                 <ul>
@@ -1343,7 +1351,7 @@ $title = "Products - Talemia";
                                                 <a href="" class="btn">Buy Now</a>
                                             </div>
                                         </div>
-                                        <div class="card four col-10 col-md-6 col-lg-2">
+                                        <div class="card four col-sm-12 col-md-6 col-lg-2">
                                             <div class="card-body four">
                                                 <h5 class="card-title">HACKAR<span>SUPA</span></h5>
                                                 <ul>

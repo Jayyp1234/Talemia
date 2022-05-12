@@ -1,4 +1,6 @@
-
+<?php
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,6 +106,8 @@
 }.bg-light {
     background-color: #09099d !important;
     color: white !important;
+}.form-label {
+    margin-bottom: 0 !important;
 }
 </style>
 <body>
@@ -130,18 +134,125 @@
   <div class="p-3 bg-light mb-4">
     <h1 class="">Blog</h1>
     <!-- Breadcrumb -->
-    <nav class="d-flex" style="position:static;width:90%;background-color:transparent;margin:0;margin-left: -10px !important;">
+    <nav class="d-flex" style="position: static;width: 95%;justify-content: space-between;background-color: transparent;margin: 0;margin-left: -10px !important;align-items: center;">
       <h6 class="mb-0">
         <a href="dashboard.php" class="text-reset">Home</a>
         <span>/</span>
         <a href="blog.php" class="text-reset">Blog</a>
       </h6>
+      <button type="button" class="btn main-bg btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Create Blog
+            </button>
     </nav>
     <!-- Breadcrumb -->
   </div>
   <!-- Heading -->
         <br>
-        
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create Blog</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form action="" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input type="text" name="title"  class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput2" class="form-label">Author</label>
+            <input type="text" name="author"  class="form-control" id="exampleFormControlInput2">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput5" class="form-label">Duration</label>
+            <input type="text" name="duration"  class="form-control" id="exampleFormControlInput5">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput3" class="form-label">Category</label>
+            <select class="form-select" name="category" aria-label="Default select example">
+                <option value="Press Release" selected>Press Release</option>
+                <option value="Startup Tip">Startup Tip</option>
+                <option value="Success Stories">Success Stories</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label" >Tags</label>
+            <input type="text" name="tags" class="form-control" id="exampleInputEmail1">
+            <small id="emailHelp" class="form-text text-muted">Seperate the tags ny comma.</small>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput3" class="form-label">Image(Optional)</label>
+            <input type="file" name="image"  class="form-control">
+        </div>
+        <div class="col-auto">
+            <button type="submit" name="submit" class="btn main-bg btn-primary mb-3">Create</button>
+        </div>
+      </form>
+      <?php
+        $error = [];
+        function validateFile($file){
+            $newFileName= "";
+            //allowed extension - pics/pdf
+            $allowedExtension = ['jpg','pdf','png','jpeg'];
+            $filename = $file['name'];
+            //split name to get extenstion..
+            $splittedname =  explode('.',$filename);
+            $fileExtension = end($splittedname);
+            if(in_array(strtolower($fileExtension),$allowedExtension) ){
+                if($file['size'] < 10000000 ){
+                    $newFileName = md5($filename).uniqid().".".$fileExtension;
+                }else{
+                    array_push($errors,'File is too large...');
+                }
+            }else{
+                array_push($errors,'You cannot upload file extension of '.$fileExtension);
+            }
+            
+            return ['filename' => $newFileName,'source' => $file['tmp_name'] ];
+        }
+        require('../backend/connection.php');
+        if (isset($_POST['submit'])) {
+            $title = $con->real_escape_string($_POST['title']);
+            $author = $con->real_escape_string($_POST['author']);
+            $category = $con->real_escape_string($_POST['category']);
+            $duration = $con->real_escape_string($_POST['duration']);
+            $tags = $con->real_escape_string($_POST['tags']);
+            $date = date("d F Y");
+            $uploadId = ($_FILES['image']['error'] == 0) ? validateFile($_FILES['image']) : "";
+            $uploadIdURL = $uploadId == "" ? "": $uploadId['filename'];
+            if (file_exists($_FILES['image']['tmp_name'])) {
+                $upload_id_query = "$uploadIdURL";
+            } else {
+                $upload_id_query = "IMG-20220214-WA0009-768x768.jpg";
+            }
+            $sql = "INSERT INTO `blog`(`id`, `category`, `tags`, `title`, `author`, `date`, `duration`, `image`, `body`) VALUES 
+            ('','$category','$tags','$title','$author','$date','$duration','$upload_id_query','')";
+                $query = mysqli_query($con,$sql);
+                if($query){
+                    if(!file_exists($_FILES['image']['tmp_name'])){
+                        $uIdURLtargetPath = $uploadIdURL;
+                        move_uploaded_file($_FILES["image"]["tmp_name"], "../assets/image/".$uIdURLtargetPath);
+                    }
+                    header('Location:blog.php');
+                }
+        }
+        else if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            $sql = "DELETE FROM `blog` WHERE id = '$id'";
+            $query = mysqli_query($con,$sql);
+            if($query){
+                header('Location:blog.php');
+                ob_end_flush();
+            }
+        }
+        ?>
+      </div>
+    </div>
+  </div>
+</div>
         <section class="content-main container">
     
             <div class="card mb-4">
@@ -149,43 +260,44 @@
                     <div class="table-responsive container">
                         <table id="example" class="display container" style="width:100%">
                             <?php
-                
-                require('../backend/connection.php');
-                $sql = "SELECT * FROM blog WHERE 1";
-                $query = mysqli_query($con,$sql);
-                 if($query){
-                     if(mysqli_num_rows($query) > 0){
-                         
-                         $output = "<thead>
-                         <tr>
-                             <th>Title</th>
-                             <th>Author</th>
-                             <th>Category</th>
-                             <th>Date</th>
-                             <th>Action</th>
-                         </tr>
-                     </thead><tbody>";
-                     while($row = mysqli_fetch_assoc($query)){
-                         $output .="<tr>
-                         <td>".strtoupper($row['title'])."</td>
-                         <td>".strtoupper($row['author'])."</td>
-                         <td>".strtoupper($row['category'])."</td>
-                         <td>".strtoupper($row['date'])."</td>
-                         <td class='text-end'> 
-                            <div class='dropdown'>
-                                <a href='#' data-bs-toggle='dropdown' class='btn btn-light'> <i class='material-icons md-more_horiz'></i> </a> 
-                                <div class='dropdown-menu'>
-                                <a class='dropdown-item' href='blog_create.php'> Edit Blog</a>
-                                <a class='dropdown-item' href='#'> Delete</a>
-                            </div>
-                        </div> 
-                   </tr>";
-                     }
-                 }else{
-                     $output = '<b>You do not have any Transactions Yet</b>';
-                 }
-                 echo $output."</tbody>";
-                 }
+                            require('../backend/connection.php');
+                            $sql = "SELECT * FROM blog ORDER BY id DESC";
+                            $query = mysqli_query($con,$sql);
+                            if($query){
+                                if(mysqli_num_rows($query) > 0){
+                                    
+                                    $output = "<thead>
+                                    <tr>
+                                        <th>Date Created</th>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Category</th>
+                                        
+                                        <th>Action</th>
+                                    </tr>
+                                </thead><tbody>";
+                                while($row = mysqli_fetch_assoc($query)){
+                                    $output .="<tr>
+                                    <td>".strtoupper($row['date'])."</td>
+                                    <td>".strtoupper($row['title'])."</td>
+                                    <td>".strtoupper($row['author'])."</td>
+                                    <td>".strtoupper($row['category'])."</td>
+                                    
+                                    <td class='text-end'> 
+                                        <div class='dropdown'>
+                                            <a href='#' data-bs-toggle='dropdown' class='btn btn-light'> <i class='material-icons md-more_horiz'></i> </a> 
+                                            <div class='dropdown-menu'>
+                                            <a class='dropdown-item' href='blog_create.php?id=".$row['id']."'> Edit Blog</a>
+                                            <a class='dropdown-item' href='blog.php?id=".$row['id']."'> Delete</a>
+                                        </div>
+                                    </div> 
+                            </tr>";
+                                }
+                            }else{
+                                $output = '<b>You do not have any Transactions Yet</b>';
+                            }
+                            echo $output."</tbody>";
+                         }
                 
                 ?>
                         </table>
@@ -193,9 +305,7 @@
                 </div> <!-- card-body end// -->
             </div> <!-- card end// -->
 
-
-        </section> <!-- content-main end// -->
-            
+        </section>
         
     </main>
 
