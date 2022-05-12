@@ -1295,7 +1295,7 @@ $title = "Buildr";
 		font-size: 1.05rem;
 		font-weight: 900;
 	}.section2{
-        padding: 0;
+        padding: 50px 0 150px;
         align-items: stretch;
         margin: 0;
     }.section2 .header{

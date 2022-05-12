@@ -977,7 +977,7 @@ $title = "Products - Talemia";
         font-size: 1.2rem
     }.section2 .content{
         background-color: #09099d;
-        padding: 90px;
+        padding: 50px;
         color: #fff;
         display: flex;
         align-items: center;
@@ -985,15 +985,16 @@ $title = "Products - Talemia";
         font-weight:900;
         font-size: 2.5rem;
         color: #fff;
-    }
-    .section2 .content p{
+	}.section2 .content p{
         margin-top: 2.5rem;
         font-size: 1.3rem;
         line-height: 1.9pc;
         text-transform: initial;
     }.section2 .image{
         padding: 0;
-    }.section3 .header{
+    }.section3{
+		padding: 90px 0 135px;
+	}.section3 .header{
         text-transform: initial;
         margin: 0 auto;
         text-align: center;
@@ -1019,14 +1020,15 @@ $title = "Products - Talemia";
     }.section3 .row .card:hover{
         transform: scale(1.07)
     }.section3 .row .card .card-title{
-        margin-bottom: 0;
-        font-size: 1.5rem;
-        border: 2.24px solid #09099d;
-        padding: 1rem 0;
-        font-weight: 600;
-        border-radius: 5px;
-        letter-spacing: 1px;
-        color: #687188;
+        font-size: 1.1rem;
+		border: 1.8px solid #09099d;
+		padding: 0.75rem 0;
+		font-weight: 600;
+		border-radius: 5px;
+		letter-spacing: 1px;
+		color: #687188;
+		width: 86%;
+		margin: 0 auto;
     }.section3 .row .card .card-title span{
         color: #09099d;
         font-weight: 800;
@@ -1041,20 +1043,23 @@ $title = "Products - Talemia";
         align-items:center;
         line-height: 2.4rem;
     }.section3 .row .card .card-body ul li i{
-        font-size: 20px;
+        font-size: 17px;
         color: #687188;
     }.section3 .row .card .card-body ul li span{
         margin-left: 14px;
-        font-size:  1rem;
+        font-size:  .85rem;
         color: #687188;
     }.section3 .row .card .card-body a{
-        background: #09099d;
-        font-size: 1.2rem;
-        font-weight: 800;
-        color: #fff;
-        margin-top: .8rem;
-        border-radius: 7px;
-        padding: 0.3em 1.5rem;
+		background: #09099d;
+		font-size: .93rem;
+		transition:.5s ease-in;
+		font-weight: 700;
+		color: #fff;
+		margin-top: 0.8rem;
+		border-radius: 7px;
+		padding: 0.4rem 1.5rem;
+	}.section3 .row .card .card-body a:hover{     
+    	box-shadow: 0 14px 30px -7px rgb(9 31 67 / 30%);
     }.section3 .row .card.two ul li span:not(.card.two ul li:nth-child(4) span, .card.two ul li:nth-child(5) span),
     .section3 .row .card.one ul li:first-child span,
     .section3 .row .card.three ul li span,

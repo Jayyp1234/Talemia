@@ -957,7 +957,7 @@ $title = "Techcleek";
     }
     .section1 .image img{
         width: auto;
-        height: 580px;
+        height: auto;
     }
     .content-desc .link {
         margin-top: 10px; 
@@ -973,7 +973,7 @@ $title = "Techcleek";
         font-weight: bolder;
     }
     .section2{
-        padding: 0;
+        padding: 0 0 160px;
         align-items: stretch;
         margin: 0;
     }
@@ -995,10 +995,11 @@ $title = "Techcleek";
         color: #fff;
         display: flex;
         align-items: center;
+		padding: 20px
     }
     .section2 .content h4{
         font-weight:900;
-        font-size: 2.8rem;
+        font-size: 2.5rem;
         color: #fff;
     }
     .section2 .content p{
@@ -1035,14 +1036,16 @@ $title = "Techcleek";
             height: auto;
         }
         .section2 {
-            padding-bottom: 3rem;
-        }
+            padding-bottom: 6rem;
+        }.section2 .header p {
+			font-size: .95rem;
+		}
         .section2 .content h4 {
-            font-size: 2.1rem;
+            font-size: 1.5rem;
         }
         .section2 .content p {
-            margin-top: 1.2rem;
-            font-size: 1.1rem;
+            margin-top: 1rem;
+            font-size: 1rem;
             line-height: 1.7pc;
             margin-bottom: 0;
         }
@@ -1064,8 +1067,7 @@ $title = "Techcleek";
             width: auto;
             margin-top: 1.1pc;
             height: auto;
-        }
-        .section2 .header {
+        }.section2 .header {
             margin: 0rem auto 1em;
             text-align: center;
             padding: 1em 1em 2rem;
@@ -1079,7 +1081,7 @@ $title = "Techcleek";
         }.section2 .content h4 {
             font-size: 1.95rem;
         }.section2 .content p {
-            margin-top: 2.5rem;
+            margin-top: 1.7rem;
             font-size: 1rem;
             line-height: 1.7pc;
         }
@@ -1168,7 +1170,7 @@ $title = "Techcleek";
                                         <p class="col-10 col-md-8">You don’t need to wait till you raise a $2M pre-seed to be seen. We can do get you visibility even with little traction. The ecosystem needs to know  about your innovative solution</p>
                                     </div>
                                     <div class="col-12 col-md-6 content">
-                                        <div class="col-10 mx-auto">
+                                        <div class="col-10 col-md-12 col-lg-10 mx-auto">
                                             <h4>Push Up Your Idea. Increase Your Visibility</h4>
                                             <p class="col">Imagine the possibility of getting your solution into the eyes of potential users, investors and partners? Let’s make the <em style="font-weight: bold">magic</em> happen</p>
                                         </div>

@@ -919,7 +919,9 @@ $title = "Buildr";
 	.wtbx_vc_button-126796581.wtbx_vc_button.wtbx_style_arrow.wtbx_type_simple .wtbx_vc_button_inner .wtbx-button {
 		background-color: #09099d;
 	}
-	
+	.wtbx_vc_row .wtbx_row_wrapper {
+		padding: 20px 0 50px;
+	}
 	@media (min-width: 768px) and (max-width: 1025px){
 		.wtbx_vc_row .wtbx_vc_column {
 			min-height: 0;
