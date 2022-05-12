@@ -4785,9 +4785,7 @@
                                                 <li class="sub-menu-item menu-item-depth-1 menu-item-9451"
                                                     data-id="menu-item-9451"><a href="resources.php#kb"
                                                         class="menu-link sub-menu-link" tabindex="-1">Kleekbuzz</a></li>
-                                                <li class="sub-menu-item menu-item-depth-1  menu-item-9646"
-                                                    data-id="menu-item-9646"><a href="blog.php"
-                                                        class="menu-link sub-menu-link" tabindex="-1">Blog</a></li>
+                                                
                                                 <li class="sub-menu-item menu-item-depth-1 menu-item-9452"
                                                     data-id="menu-item-9452"><a href="blog.php#success"
                                                         class="menu-link sub-menu-link" tabindex="-1">Success
