@@ -1,5 +1,6 @@
 <?php 
 include 'component/header.php';
+include './utility.php';
 ?>
 
 
@@ -100,7 +101,7 @@ if (!isset($_GET['author']) && !isset($_GET['tags']) && !isset($_GET['title']) &
                                                                                                                 require('backend/connection.php');
 
                                                                                                                     //select top 3 latest blog from blog table
-                                                                                                                    $sql = "SELECT * FROM `blog` WHERE 1 ORDER  BY `date` DESC";
+                                                                                                                    $sql = "SELECT * FROM `blog` WHERE `publish` = 'yes' ORDER  BY `date` DESC";
                                                                                                                     $store = mysqli_query($con, $sql);
                                                                                                                     //fetch sql data
                                                                                                                     while ($row = mysqli_fetch_array($store)) {
@@ -191,9 +192,9 @@ if (!isset($_GET['author']) && !isset($_GET['tags']) && !isset($_GET['title']) &
         
                                                                                                                                         <div
                                                                                                                                             class="post-entry-footer-section">
-                                                                                                                                            <a href="blog.php?title='.$row['title'].'#respond" title="View comments for: '.$row['title'].'" class="post-sbs-comments">
+                                                                                                                                            <a href="blog.php?title='.$row['title'].'" title="View comments for: '.$row['title'].'" class="post-sbs-comments">
                                                                                                                                                 <i class="scape-ui-comment"></i>
-                                                                                                                                                0
+                                                                                                                                                '.comments($row['id']).'
                                                                                                                                             </a>
                                                                                                                                         </div>
         
@@ -205,7 +206,7 @@ if (!isset($_GET['author']) && !isset($_GET['tags']) && !isset($_GET['title']) &
                                                                                                                                                     class="wtbx-like-button sl-button sl-button-9758"
                                                                                                                                                     title="Like"><i
                                                                                                                                                         class="scape-ui-heart"></i><span
-                                                                                                                                                        class="sl-count like-count">11</span></a>
+                                                                                                                                                        class="sl-count like-count">'.likes($row['id']).'</span></a>
                                                                                                                                             </div>
                                                                                                                                         </div>
         
@@ -352,7 +353,7 @@ if (isset($_GET['category'])){
                                                                                                                 require('backend/connection.php');
                                                                                                                     $data = $_GET['category'];
                                                                                                                     //select top 3 latest blog from blog table
-                                                                                                                    $sql = "SELECT * FROM `blog` WHERE category = '$data'  ORDER  BY `date` DESC";
+                                                                                                                    $sql = "SELECT * FROM `blog` WHERE category = '$data' and publish = 'yes' ORDER  BY `date` DESC";
                                                                                                                     $store = mysqli_query($con, $sql);
                                                                                                                     //fetch sql data
                                                                                                                     while ($row = mysqli_fetch_array($store)) {
@@ -438,14 +439,14 @@ if (isset($_GET['category'])){
                                                                                                                                     </div>
         
         
-                                                                                                                                    <div
+                                                                                                                                        <div
                                                                                                                                         class="post-entry-footer-right">
         
                                                                                                                                         <div
                                                                                                                                             class="post-entry-footer-section">
-                                                                                                                                            <a href="blog.php?title='.$row['title'].'#respond" title="View comments for: '.$row['title'].'" class="post-sbs-comments">
+                                                                                                                                            <a href="blog.php?title='.$row['title'].'" title="View comments for: '.$row['title'].'" class="post-sbs-comments">
                                                                                                                                                 <i class="scape-ui-comment"></i>
-                                                                                                                                                0
+                                                                                                                                                '.comments($row['id']).'
                                                                                                                                             </a>
                                                                                                                                         </div>
         
@@ -457,7 +458,7 @@ if (isset($_GET['category'])){
                                                                                                                                                     class="wtbx-like-button sl-button sl-button-9758"
                                                                                                                                                     title="Like"><i
                                                                                                                                                         class="scape-ui-heart"></i><span
-                                                                                                                                                        class="sl-count like-count">11</span></a>
+                                                                                                                                                        class="sl-count like-count">'.likes($row['id']).'</span></a>
                                                                                                                                             </div>
                                                                                                                                         </div>
         
@@ -605,7 +606,7 @@ if (isset($_GET['author'])){
                                                                                                                 require('backend/connection.php');
                                                                                                                     $data = $_GET['author'];
                                                                                                                     //select top 3 latest blog from blog table
-                                                                                                                    $sql = "SELECT * FROM `blog` WHERE author = '$data'  ORDER  BY `date` DESC";
+                                                                                                                    $sql = "SELECT * FROM `blog` WHERE author = '$data' and publish = 'yes' ORDER  BY `date` DESC";
                                                                                                                     $store = mysqli_query($con, $sql);
                                                                                                                     //fetch sql data
                                                                                                                     while ($row = mysqli_fetch_array($store)) {
@@ -696,9 +697,9 @@ if (isset($_GET['author'])){
         
                                                                                                                                         <div
                                                                                                                                             class="post-entry-footer-section">
-                                                                                                                                            <a href="blog.php?title='.$row['title'].'#respond" title="View comments for: '.$row['title'].'" class="post-sbs-comments">
+                                                                                                                                            <a href="blog.php?title='.$row['title'].'" title="View comments for: '.$row['title'].'" class="post-sbs-comments">
                                                                                                                                                 <i class="scape-ui-comment"></i>
-                                                                                                                                                0
+                                                                                                                                                '.comments($row['id']).'
                                                                                                                                             </a>
                                                                                                                                         </div>
         
@@ -710,7 +711,7 @@ if (isset($_GET['author'])){
                                                                                                                                                     class="wtbx-like-button sl-button sl-button-9758"
                                                                                                                                                     title="Like"><i
                                                                                                                                                         class="scape-ui-heart"></i><span
-                                                                                                                                                        class="sl-count like-count">11</span></a>
+                                                                                                                                                        class="sl-count like-count">'.likes($row['id']).'</span></a>
                                                                                                                                             </div>
                                                                                                                                         </div>
         
@@ -772,789 +773,9 @@ if (isset($_GET['author'])){
 <?php
 if (isset($_GET['title'])){
     $title = $_GET['title']."| Blog  - Talemia";
+    include './assets/blog.html';
     ?>
-<style type="text/css">
-    #page-wrap {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-
-    .wtbx_vc_row-76845183 .wtbx_row_bg {
-        background-color: #09099d;
-    }
-
-    .wtbx_vc_row-76845183 .wtbx_row_bg_overlay {}
-
-    .wtbx_vc_row-76845183 .wtbx_row_content_inner {
-        height: 50vh;
-    }
-
-    .wtbx_vc_row-76845183 .wtbx_row_content_inner {
-        min-height: 500px;
-    }
-
-    .wtbx_vc_row-76845183 .wtbx_row_content_inner {
-        padding-top: 120px !important;
-    }
-
-    .wtbx_vc_row-76845183 .wtbx_row_content_inner {
-        padding-bottom: 120px !important;
-    }
-
-    .wtbx_vc_column-76846154 .wtbx_column_content {
-        padding-top: 15px !important;
-    }
-
-    .wtbx_vc_column-76846154 .wtbx_column_content {
-        padding-right: 30px !important;
-    }
-
-    .wtbx_vc_column-76846154 .wtbx_column_content {
-        padding-bottom: 15px !important;
-    }
-
-    .wtbx_vc_column-76846154 .wtbx_column_content {
-        padding-left: 30px !important;
-    }
-
-    .wtbx_vc_styled_heading-76846541.wtbx_vc_styled_heading .wtbx_heading_el_title {
-        color: #f8b617;
-    }
-
-    .wtbx_vc_styled_heading-76846541.wtbx_vc_styled_heading .wtbx_heading_el_title_wrapper {
-        font-size: 30px;
-        font-weight: 700;
-    }
-
-    @media only screen and (max-width: 979px) {
-        .wtbx_vc_styled_heading-76846541.wtbx_vc_styled_heading .wtbx_heading_el_title {
-            font-size: 90%
-        }
-    }
-
-    @media only screen and (max-width: 767px) {
-        .wtbx_vc_styled_heading-76846541.wtbx_vc_styled_heading .wtbx_heading_el_title {
-            font-size: 80%
-        }
-    }
-
-    @media only screen and (max-width: 479px) {
-        .wtbx_vc_styled_heading-76846541.wtbx_vc_styled_heading .wtbx_heading_el_title {
-            font-size: 70%
-        }
-    }
-
-    .wtbx_vc_column-76846966 .wtbx_column_content {
-        padding-top: 15px !important;
-    }
-
-    .wtbx_vc_column-76846966 .wtbx_column_content {
-        padding-right: 15px !important;
-    }
-
-    .wtbx_vc_column-76846966 .wtbx_column_content {
-        padding-bottom: 15px !important;
-    }
-
-    .wtbx_vc_column-76846966 .wtbx_column_content {
-        padding-left: 15px !important;
-    }
-
-    #footer,
-    #footer .widget .wtbx_recent_posts_cont .entry-content,
-    #footer .wtbx_recent_comments .wtbx-recent-comment .comment-text,
-    #footer .widget_archive ul li,
-    #footer .widget_categories ul li,
-    #footer .widget_rss .rssSummary,
-    #footer .widget_text,
-    #footer .widget_recent_comments {
-        color: #ffffff
-    }
-
-    #footer .widget a {
-        color: #f7f8fd
-    }
-
-    #footer .widget a:hover {
-        color: #09099d
-    }
-
-    .wtbx_vc_row-77258536 .wtbx_row_content_inner {
-        padding-top: 60px !important;
-    }
-
-    .wtbx_vc_column-77259241 .wtbx_column_content {
-        padding-top: 15px !important;
-    }
-
-    .wtbx_vc_column-77259241 .wtbx_column_content {
-        padding-right: 15px !important;
-    }
-
-    .wtbx_vc_column-77259241 .wtbx_column_content {
-        padding-bottom: 15px !important;
-    }
-
-    .wtbx_vc_column-77259241 .wtbx_column_content {
-        padding-left: 15px !important;
-    }
-
-    .wtbx_vc_row-77259566 .wtbx_row_bg {
-        background-color: #151221;
-    }
-
-    .wtbx_vc_row-77259566 .wtbx_row_content_inner {
-        color: #ffffff;
-        font-size: 14px;
-    }
-
-    .wtbx_vc_row-77259566 .wtbx_row_content_inner {
-        padding-top: 0px !important;
-    }
-
-    .wtbx_vc_row-77259566 .wtbx_row_content_inner {
-        padding-bottom: 30px !important;
-    }
-
-    .wtbx_vc_column-77260190 .wtbx_column_content {
-        padding-top: 0px !important;
-    }
-
-    .wtbx_vc_column-77260190 .wtbx_column_content {
-        padding-right: 15px !important;
-    }
-
-    .wtbx_vc_column-77260190 .wtbx_column_content {
-        padding-bottom: 30px !important;
-    }
-
-    .wtbx_vc_column-77260190 .wtbx_column_content {
-        padding-left: 15px !important;
-    }
-
-    .wtbx_vc_column-77260190 .wtbx_column_content {
-        top: auto;
-        margin-top: -85px;
-    }
-
-    .wtbx_vc_content_box-77260617.wtbx_vc_content_box .wtbx_content_box_bg_idle {
-        background-color: #09099d;
-    }
-
-    .wtbx_vc_content_box-77260617.wtbx_vc_content_box .wtbx_content_box_bg,
-    .wtbx_vc_content_box-77260617.wtbx_vc_content_box .wtbx_content_box_container {
-        border-top-left-radius: 10px !important;
-    }
-
-    .wtbx_vc_content_box-77260617.wtbx_vc_content_box .wtbx_content_box_bg,
-    .wtbx_vc_content_box-77260617.wtbx_vc_content_box .wtbx_content_box_container {
-        border-top-right-radius: 10px !important;
-    }
-
-    .wtbx_vc_content_box-77260617.wtbx_vc_content_box .wtbx_content_box_bg,
-    .wtbx_vc_content_box-77260617.wtbx_vc_content_box .wtbx_content_box_container {
-        border-bottom-right-radius: 10px !important;
-    }
-
-    .wtbx_vc_content_box-77260617.wtbx_vc_content_box .wtbx_content_box_bg,
-    .wtbx_vc_content_box-77260617.wtbx_vc_content_box .wtbx_content_box_container {
-        border-bottom-left-radius: 10px !important;
-    }
-
-    .wtbx_vc_content_box-77260617.wtbx_vc_content_box .wtbx_content_box_container {
-        padding-top: 15px !important;
-    }
-
-    .wtbx_vc_content_box-77260617.wtbx_vc_content_box .wtbx_content_box_container {
-        padding-right: 15px !important;
-    }
-
-    .wtbx_vc_content_box-77260617.wtbx_vc_content_box .wtbx_content_box_container {
-        padding-bottom: 15px !important;
-    }
-
-    .wtbx_vc_content_box-77260617.wtbx_vc_content_box .wtbx_content_box_container {
-        padding-left: 15px !important;
-    }
-
-    .wtbx_vc_empty_space-77261250 .wtbx_empty_space_inner {
-        height: 30px
-    }
-
-    .wtbx_vc_styled_heading-77261439.wtbx_vc_styled_heading .wtbx_heading_el_title {
-        color: #ffffff;
-    }
-
-    .wtbx_vc_styled_heading-77261439.wtbx_vc_styled_heading .wtbx_heading_el_title_wrapper {
-        font-size: 26px;
-        font-weight: 700;
-    }
-
-    .wtbx_vc_empty_space-77261587 .wtbx_empty_space_inner {
-        height: 30px
-    }
-
-    .wtbx_vc_button-77261752.wtbx_vc_button.wtbx_style_arrow.wtbx_type_simple .wtbx_vc_button_inner .wtbx-button:hover .wtbx_button_inner {
-        color: #09099d;
-    }
-
-    .wtbx_vc_button-77261752.wtbx_vc_button.wtbx_style_arrow.wtbx_type_simple .wtbx_vc_button_inner .wtbx-button:hover .bar,
-    .wtbx_vc_button-77261752.wtbx_vc_button.wtbx_style_arrow.wtbx_type_simple .wtbx_vc_button_inner .wtbx-button:hover .chevron {
-        fill: #09099d
-    }
-
-    .wtbx_vc_empty_space-77261934 .wtbx_empty_space_inner {
-        height: 30px
-    }
-
-    .wtbx_vc_column-77262130 .wtbx_vc_column_container .wtbx_column_wrapper .wtbx_column_content {
-        color: #f7f8fd;
-    }
-
-    .wtbx_vc_column-77262130 .wtbx_column_content {
-        padding-top: 15px !important;
-    }
-
-    .wtbx_vc_column-77262130 .wtbx_column_content {
-        padding-right: 15px !important;
-    }
-
-    .wtbx_vc_column-77262130 .wtbx_column_content {
-        padding-bottom: 15px !important;
-    }
-
-    .wtbx_vc_column-77262130 .wtbx_column_content {
-        padding-left: 15px !important;
-    }
-
-    .wtbx_vc_text_element-77262464 .wtbx_text_element_content {
-        color: #f7f8fd;
-    }
-
-    .wtbx_vc_text_element-77262464 .wtbx_text_element_content {
-        font-size: 17px;
-        font-weight: 600;
-    }
-
-    .wtbx_vc_empty_space-77262654 .wtbx_empty_space_inner {
-        height: 15px
-    }
-
-    .wtbx_vc_column-77265721 .wtbx_column_content {
-        padding-top: 15px !important;
-    }
-
-    .wtbx_vc_column-77265721 .wtbx_column_content {
-        padding-right: 15px !important;
-    }
-
-    .wtbx_vc_column-77265721 .wtbx_column_content {
-        padding-bottom: 15px !important;
-    }
-
-    .wtbx_vc_column-77265721 .wtbx_column_content {
-        padding-left: 15px !important;
-    }
-
-    .wtbx_vc_text_element-77266096 .wtbx_text_element_content {
-        color: #f7f8fd;
-    }
-
-    .wtbx_vc_text_element-77266096 .wtbx_text_element_content {
-        font-size: 17px;
-        font-weight: 600;
-    }
-
-    .wtbx_vc_empty_space-77266379 .wtbx_empty_space_inner {
-        height: 15px
-    }
-
-    .wtbx_vc_column-77269578 .wtbx_column_content {
-        padding-top: 15px !important;
-    }
-
-    .wtbx_vc_column-77269578 .wtbx_column_content {
-        padding-right: 15px !important;
-    }
-
-    .wtbx_vc_column-77269578 .wtbx_column_content {
-        padding-bottom: 15px !important;
-    }
-
-    .wtbx_vc_column-77269578 .wtbx_column_content {
-        padding-left: 15px !important;
-    }
-
-    .wtbx_vc_text_element-77269798 .wtbx_text_element_content {
-        color: #f7f8fd;
-    }
-
-    .wtbx_vc_text_element-77269798 .wtbx_text_element_content {
-        font-size: 17px;
-        font-weight: 600;
-    }
-
-    .wtbx_vc_empty_space-77269972 .wtbx_empty_space_inner {
-        height: 15px
-    }
-
-    .wtbx_vc_column-77272086 .wtbx_column_content {
-        padding-top: 15px !important;
-    }
-
-    .wtbx_vc_column-77272086 .wtbx_column_content {
-        padding-right: 15px !important;
-    }
-
-    .wtbx_vc_column-77272086 .wtbx_column_content {
-        padding-bottom: 15px !important;
-    }
-
-    .wtbx_vc_column-77272086 .wtbx_column_content {
-        padding-left: 15px !important;
-    }
-
-    .wtbx_vc_text_element-77272396 .wtbx_text_element_content {
-        color: #f7f8fd;
-    }
-
-    .wtbx_vc_text_element-77272396 .wtbx_text_element_content {
-        font-size: 17px;
-        font-weight: 600;
-    }
-
-    .wtbx_vc_text_element-77272577 .wtbx_text_element_content * {
-        color: #f7f8fd;
-    }
-
-    .wtbx_vc_text_element-77272577 .wtbx_text_element_content {
-        font-family: 'Montserrat';
-        font-weight: 500;
-    }
-
-    .wtbx_vc_social_icons-77272836.wtbx_vc_social_icons a:not(:hover) i {
-        color: #f7f8fd;
-    }
-
-    .wtbx_vc_social_icons-77272836.wtbx_vc_social_icons a:hover i {
-        color: #f7f8fd;
-    }
-
-    .wtbx_vc_social_icons-77272836.wtbx_vc_social_icons a:not(:hover) {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .wtbx_vc_social_icons-77272836.wtbx_vc_social_icons a:hover {
-        background-color: #09099d;
-    }
-
-    .wtbx_vc_empty_space-77272991 .wtbx_empty_space_inner {
-        height: 15px
-    }
-
-    .wtbx_vc_column-77274029 .wtbx_column_content {
-        padding-top: 15px !important;
-    }
-
-    .wtbx_vc_column-77274029 .wtbx_column_content {
-        padding-right: 15px !important;
-    }
-
-    .wtbx_vc_column-77274029 .wtbx_column_content {
-        padding-bottom: 15px !important;
-    }
-
-    .wtbx_vc_column-77274029 .wtbx_column_content {
-        padding-left: 15px !important;
-    }
-
-    .wtbx_vc_modal-77274399.wtbx_vc_modal .wtbx_modal_body {
-        max-width: 500px;
-    }
-
-    .wtbx_vc_modal-77274399.wtbx_vc_modal .wtbx_modal_wrapper .wtbx_modal_content .wtbx_modal_inner {
-        padding-top: 45px !important;
-    }
-
-    .wtbx_vc_modal-77274399.wtbx_vc_modal .wtbx_modal_wrapper .wtbx_modal_content .wtbx_modal_inner {
-        padding-right: 45px !important;
-    }
-
-    .wtbx_vc_modal-77274399.wtbx_vc_modal .wtbx_modal_wrapper .wtbx_modal_content .wtbx_modal_inner {
-        padding-bottom: 45px !important;
-    }
-
-    .wtbx_vc_modal-77274399.wtbx_vc_modal .wtbx_modal_wrapper .wtbx_modal_content .wtbx_modal_inner {
-        padding-left: 45px !important;
-    }
-
-    .wtbx_vc_styled_heading-77274688.wtbx_vc_styled_heading .wtbx_heading_el_title_wrapper {
-        font-size: 30px;
-        font-weight: 700;
-    }
-
-    .wtbx_vc_button-77275240.wtbx_vc_button.wtbx_style_arrow.wtbx_type_simple .wtbx_vc_button_inner .wtbx-button {
-        background-color: #09099d;
-    }
-
-    .wtbx_vc_column-77276164 .wtbx_column_content {
-        padding-top: 15px !important;
-    }
-
-    .wtbx_vc_column-77276164 .wtbx_column_content {
-        padding-right: 15px !important;
-    }
-
-    .wtbx_vc_column-77276164 .wtbx_column_content {
-        padding-bottom: 15px !important;
-    }
-
-    .wtbx_vc_column-77276164 .wtbx_column_content {
-        padding-left: 15px !important;
-    }
-
-    .wtbx_vc_modal-77276364.wtbx_vc_modal .wtbx_modal_body {
-        max-width: 500px;
-    }
-
-    .wtbx_vc_modal-77276364.wtbx_vc_modal .wtbx_modal_wrapper .wtbx_modal_content .wtbx_modal_inner {
-        padding-top: 45px !important;
-    }
-
-    .wtbx_vc_modal-77276364.wtbx_vc_modal .wtbx_modal_wrapper .wtbx_modal_content .wtbx_modal_inner {
-        padding-right: 45px !important;
-    }
-
-    .wtbx_vc_modal-77276364.wtbx_vc_modal .wtbx_modal_wrapper .wtbx_modal_content .wtbx_modal_inner {
-        padding-bottom: 45px !important;
-    }
-
-    .wtbx_vc_modal-77276364.wtbx_vc_modal .wtbx_modal_wrapper .wtbx_modal_content .wtbx_modal_inner {
-        padding-left: 45px !important;
-    }
-
-    .wtbx_vc_styled_heading-77276557.wtbx_vc_styled_heading .wtbx_heading_el_title_wrapper {
-        font-size: 30px;
-        font-weight: 700;
-    }
-
-    .wtbx_vc_button-77276895.wtbx_vc_button.wtbx_style_arrow.wtbx_type_simple .wtbx_vc_button_inner .wtbx-button {
-        background-color: #09099d;
-    }.post-tags-n-social {
-    display: inline-block;
-    margin: 0;
-    width: 100%;
-}
-
-.post-tags-n-social .post-tags {
-    display: block;
-    text-align: center;
-    margin: 2em 0 0;
-    -webkit-transition: opacity 0.3s cubic-bezier(0.2, 0, 0.3, 1) 0.6s, visibility 0s cubic-bezier(0.2, 0, 0.3, 1) 0.6s;
-    -moz-transition: opacity 0.3s cubic-bezier(0.2, 0, 0.3, 1) 0.6s, visibility 0s cubic-bezier(0.2, 0, 0.3, 1) 0.6s;
-    -ms-transition: opacity 0.3s cubic-bezier(0.2, 0, 0.3, 1) 0.6s, visibility 0s cubic-bezier(0.2, 0, 0.3, 1) 0.6s;
-    -o-transition: opacity 0.3s cubic-bezier(0.2, 0, 0.3, 1) 0.6s, visibility 0s cubic-bezier(0.2, 0, 0.3, 1) 0.6s;
-    transition: opacity 0.3s cubic-bezier(0.2, 0, 0.3, 1) 0.6s, visibility 0s cubic-bezier(0.2, 0, 0.3, 1) 0.6s;
-}.post-tags-n-social .post-tags .tag-links {
-    display: inline-block;
-}.post-tags-n-social .post-tags .tag-links span {
-    display: inline-block;
-    margin: 0.4em 0.4em;
-}.post-tags-n-social .post-tags .tag-links span a:not(:hover) {
-    box-shadow: 0 5px 25px -4px rgb(9 31 67 / 15%);
-    border-color: transparent;
-    background-color: #fff;
-}.post-tags-n-social .post-tags .tag-links span a {
-    line-height: 2.6;
-    font-size: 0.857143em;
-    font-weight: 600;
-    padding: 0 1.3em;
-    display: block;
-    border-radius: 3em;
-    -webkit-transition: all 0.3s cubic-bezier(0.2, 0, 0.3, 1);
-    -moz-transition: all 0.3s cubic-bezier(0.2, 0, 0.3, 1);
-    -ms-transition: all 0.3s cubic-bezier(0.2, 0, 0.3, 1);
-    -o-transition: all 0.3s cubic-bezier(0.2, 0, 0.3, 1);
-    transition: all 0.3s cubic-bezier(0.2, 0, 0.3, 1);
-}
-.wtbx-like-wrapper {
-  margin: 4em auto;
-  text-align: center;
-}
-
-.wtbx-like-wrapper .wtbx-like-inner {
-  display: inline-block;
-  margin: 0 auto;
-}
-
-.wtbx-like-wrapper .wtbx-like-inner .wtbx-like-label {
-  font-size: .785714em;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-top: 2em;
-}
-
-.wtbx-like-wrapper .wtbx-like-inner .wtbx-like-button {
-  position: relative;
-  margin: 0 auto;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  display: flex;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-  -moz-transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-  -ms-transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-  -o-transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-  transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-}
-
-.wtbx-like-wrapper .wtbx-like-inner .wtbx-like-button:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-radius: 50%;
-  z-index: -1;
-  -webkit-transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-  -moz-transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-  -ms-transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-  -o-transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-  transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-}
-
-.wtbx-like-wrapper .wtbx-like-inner .wtbx-like-button i {
-  line-height: 30px;
-  font-size: 20px;
-  -webkit-transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-  -moz-transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-  -ms-transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-  -o-transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-  transition: all 0.2s cubic-bezier(0.2, 0, 0.3, 1);
-}
-
-.wtbx-like-wrapper .wtbx-like-inner .wtbx-like-button span {
-  line-height: 15px;
-  font-size: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.wtbx-like-wrapper .wtbx-like-inner .wtbx-like-button:hover:before {
-  background-color: #fff;
-  box-shadow: 0 20px 70px -10px rgba(9, 31, 67, 0.15);
-  -moz-transform: scale3d(1.05, 1.05, 1);
-  -o-transform: scale3d(1.05, 1.05, 1);
-  -ms-transform: scale3d(1.05, 1.05, 1);
-  -webkit-transform: scale3d(1.05, 1.05, 1);
-  -webkit-transform: -webkit-scale3d(1.05, 1.05, 1);
-  transform: scale3d(1.05, 1.05, 1);
-}
-
-.wtbx-like-wrapper .wtbx-like-inner .wtbx-like-button .wtbx-like-anim {
-  position: absolute;
-  width: 75px;
-  height: 75px;
-  top: 50%;
-  left: 50%;
-  -moz-transform: translate3d(-50%, -50%, 0);
-  -o-transform: translate3d(-50%, -50%, 0);
-  -ms-transform: translate3d(-50%, -50%, 0);
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  -webkit-transform: -webkit-translate3d(-50%, -50%, 0);
-  transform: translate3d(-50%, -50%, 0);
-}
-
-.wtbx-like-wrapper .wtbx-like-inner .wtbx-like-button .wtbx-like-anim span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 100%;
-  display: block;
-  opacity: 0;
-}
-
-.wtbx-like-wrapper .wtbx-like-inner .wtbx-like-button .wtbx-like-anim span:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-left: -1.5px;
-  width: 3px;
-  height: 10px;
-  border-radius: 10px;
-  -moz-transform-origin: top center;
-  -o-transform-origin: top center;
-  -ms-transform-origin: top center;
-  -webkit-transform-origin: top center;
-  transform-origin: top center;
-}.author-area > div{
-    display: flex;
-    align-items: center;
-}.author-image-inner h6{
-    display: none;
-}.post-wrapper{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-left: 2.5rem;
-}.post-wrapper .comment {
-    text-align: left;
-}
-.post-wrapper .comment h6{
-    display: flex;
-    align-items: center;
-    margin: 0;
-    text-transform: capitalize;
-}.post-wrapper .comment h6 span{
-    margin: 0 5px;
-    color: #777;
-}.post-wrapper .comment * [class="icon-circle"]{
-    font-size: 5px;
-    color: #999;
-}.post-wrapper .comment h6 [class="icon-circle"]{
-    margin: 0 5px 0 10px;
-}.post-wrapper .comment p{
-    text-transform: initial;
-    margin: 0;
-}.post-wrapper .comment .icon button{
-    outline: none;
-    border: none;
-    background: none;
-    font-size: 14px;
-    padding: 0;
-    color:#151221;
-}.comment .icon a, .icon span{
-    color:#151221;
-    font-size: 14px;
-}.comment .icon > [class="icon-circle"]{
-    margin: 0 7px;
-}
-/* subcomment styles */
-.sub-comment {
-    display: flex;
-    align-items: flex-start !important;
-    margin: 1rem 0 0 6.5rem;
-}.sub-comment .comment {
-    text-align: left;
-}
-.sub-comment .author-image-inner img{
-    border-radius: 100%;
-    width: 40px;
-}.sub-comment .post-wrapper{
-    margin-left: 1rem;
-}.sub-comment .post-wrapper .comment h6 {
-    margin: 0;
-    font-size: 13px;
-    text-transform: capitalize;
-}.sub-comment .post-wrapper .comment p{
-    margin: 0;
-    font-size: 13px;
-}.sub-comment .post-wrapper .comment * [class="icon-circle"]{
-    font-size: 4px;
-}.sub-comment .post-wrapper .comment .icon [class="icon-thumbs-up"],
-.sub-comment .post-wrapper .comment .icon [class="icon-thumbs-down"]{
-    font-size: 13px;
-}.sub-comment .post-wrapper .comment .icon button, .sub-comment .comment .icon a, .sub-comment .icon span{
-    font-size: 13px;
-}
-
-@media all and (max-width: 425px){
-    .author-area {
-        padding:0 0 1rem;
-    }
-    .author-area > div{
-        padding: 1.3rem .7rem .3rem;
-        display: block;
-    }.author-area .author-image {
-        width: 100%;
-        float: none;
-        align-items: center;
-        text-align: center;
-        display: flex;
-        margin: 0;
-        justify-content: space-between;
-    }.author-area .post-wrapper .comment{
-        margin-left: 2.5rem;
-    }
-    .author-area .author-image .author-image-inner {
-        width: auto;
-        display: flex;
-        height: auto;
-        align-items: center;
-        border-radius: unset;
-        margin: 0;
-    }.author-area .author-image .author-image-inner h6 {
-        margin: 0 0 0 10px;
-        font-size: 13px;
-        font-weight: 600;
-        display: block;
-    }.author-area .author-image .author-image-inner img {
-        border-radius: 100%;
-        width: 30px;
-        height: 30px;
-    }.author-area .author-image .author-posts {
-        margin:0;
-    }.post-wrapper{
-        margin: 0 auto;
-    }.post-wrapper .comment h6 {
-        display: none;
-    }.post-wrapper .comment p {
-        margin: 5px 0;
-        line-height: 1rem;
-        font-size: 13px;
-    }.post-wrapper .comment .icon button, .comment .icon a, .icon span {
-    font-size: 12px;
-    }.comment .icon .thumb{
-        font-size: 14px;
-    }form label{
-        white-space: normal;
-    }
-    /* sub-comment style */
-    .sub-comment {
-        margin: 0 0 0 3rem;
-        padding: 0 !important;
-    }.sub-comment .post-wrapper {
-        margin-left: 0;
-    }.sub-comment .author-image-inner img {
-        width: 25px;
-    }.sub-comment .author-image-inner h6 {
-        display: block;
-    }.sub-comment .author-image-inner{
-        display: flex;
-        align-items: center;
-    }.sub-comment .author-image-inner h6 {
-        margin: 0 0 0 10px;
-        font-size: 12px;
-    }.sub-comment .post-wrapper .comment p {
-        margin: 4px 0 6px 0;
-        font-size: 12px;
-    }.sub-comment .post-wrapper .comment{
-        margin-left: 2.1rem;
-    }.sub-comment .post-wrapper .comment .icon button, .sub-comment .comment .icon a,.sub-comment .icon span {
-        font-size: 12px;
-    }
-
-}
-
-
-</style>
+    
 <?php
     $title = $_GET['title'];
     require('backend/connection.php');
@@ -1646,134 +867,10 @@ if (isset($_GET['title'])){
                         <div class="wtbx-width wtbx-large-7 wtbx-medium-8 wtbx-small-9">
                             <div class="post-entry-header">
                             </div><!-- .entry-header -->
-                            <div class="entry-meta single-post-meta">
+                            
+                            
 
-                                <span class="meta-author">By <a class="meta-author-link"
-                                        href="blog.php?author=talemiahq"
-                                        title="View all posts by Talemia HQ">Talemia HQ</a>
-                                </span>
-
-                                <span class="meta-category">
-                                    in<span class="category-list"><a
-                                            href="https://talemia.com/blog/category/startup-tip/"
-                                            rel="category tag">Startup Tip</a></span>
-                                </span>
-
-                            </div>
-                            <div class="entry-content">
-                                <ol>
-                                    <li>Hey Tribe,<br>
-                                        Welcome to a new quarter and a new month. Cheers to a productive and fruitful
-                                        Q2.</li>
-                                </ol>
-                                <p>You must have missed our bi-weekly posts. We are fully back with much more content
-                                    for you and we are definitely better than ever. Check back every Mondays and Fridays
-                                    for new articles that challenge your mind as an early stage founder.</p>
-                                <p>Our first post this quarter is from our 0 to 1 session on Storytelling which featured
-                                    Blessing Abeng and David Hundeyin. 0 to 1 holds from 7:00pm WAT every Friday on
-                                    Twitter Spaces. You can check out our Twitter page <a
-                                        href="https://twitter.com/talemiahq" target="_blank" rel="noopener">HERE</a> and
-                                    set reminders for upcoming spaces. Blessing and David shared so many insightful and
-                                    practical tips that we couldn’t help but make it into a blog post.</p>
-                                <p>Read on to have your mind blown…<span id="more-9881"></span></p>
-                                <p><em>Startups can no longer afford to be faceless in a highly competitive
-                                        ecosystem<strong>. </strong>Startups must convey their stories with empathy and
-                                        connect deeper with their target audience to survive.</em></p>
-                                <p><strong>What is Storytelling?</strong><br>
-                                    Storytelling is when you pass across the most incredible amount of information in
-                                    the fewest possible words.</p>
-                                <p>As a startup founder, if you are trying to include storytelling in your growth
-                                    strategy, you must have a realistic understanding of what storytelling is.
-                                    Storytelling metrics are not equivalent to sales metrics. Different goals exist
-                                    within storytelling. These goals include awareness, perception building,
-                                    trust-building, and education.</p>
-                                <p><strong>How do you know what Stories to tell as an early-stage startup?</strong></p>
-                                <p>People know their problems; they may not know how to articulate them. By asking
-                                    better questions and listening to what is said and unsaid, you will be able to
-                                    extract what is essential to them and their pain points, and you will be able to
-                                    make stories out of that. Many startups use surveys in research, but a better way to
-                                    get answers from people is through conversations. Have conversations, prioritize
-                                    conversations too, listen and also tell.</p>
-                                <p><strong>How do you tell your story as an Early Stage Startup?</strong></p>
-                                <ul>
-                                    <li><strong>Set goals</strong><br>
-                                        Founders must be specific about what goal they want their startup to achieve
-                                        with storytelling specifically. For starters, an early stage Startup would
-                                        prioritize awareness and perception building.</li>
-                                    <li><strong>Have Conversations</strong><br>
-                                        Surveys may not bring out the accurate data you need, so you must engage in
-                                        conversations. Listen to what is said and unsaid.</li>
-                                    <li><strong>Be empathetic</strong><br>
-                                        Stories that hold <strong>Top of Mind Awareness</strong> are the ones that
-                                        connect to people’s pain points.<br>
-                                        Sharing your target audience’s pain points is one way to show empathy.</li>
-                                    <li><strong>Write, publish and iterate</strong><br>
-                                        There is no formula to storytelling. Experiment, do trial and error and iterate
-                                        from what is not working to what is producing results.</li>
-                                </ul>
-                                <p>Conversations fuel life. If your story is good enough, it will come up in
-                                    conversations. Tell stories that emphasize how your startup solves people’s
-                                    problems.
-                                    <!--more-->
-                                </p>
-                                <div class="fm fn fo fp fq l">
-                                    <div class="o dd">
-                                        <div class="ds ea fr fs ft fu fv fw fx fy fz">
-                                            <article>
-                                                <div class="l">
-                                                    <div class="l">
-                                                        <section>
-                                                            <div>
-                                                                <div class="ir is it iu iv">
-                                                                    <p id="df1e"
-                                                                        class="pw-post-body-paragraph kj kk iy kl b km kn ko kp kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg ir ha"
-                                                                        data-selectable-paragraph="">There you have
-                                                                        it,<br>
-                                                                        <strong>You need to tell your story to survive
-                                                                            as a startup</strong><br>
-                                                                        I hope this has helped you<br>
-                                                                        Have anything to add? Or something that stood
-                                                                        out to you? Feel free to comment</p>
-                                                                    <p id="a330"
-                                                                        class="pw-post-body-paragraph kj kk iy kl b km kn ko kp kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg ir ha"
-                                                                        data-selectable-paragraph="">You can check out
-                                                                        Blessing Abeng and David Hundeyin on Twitter, <a
-                                                                            href="https://twitter.com/blessingabeng_"
-                                                                            target="_blank" rel="noopener">HERE</a> and
-                                                                        <a href="https://twitter.com/DavidHundeyin"
-                                                                            target="_blank" rel="noopener">HERE</a></p>
-                                                                </div>
-                                                            </div>
-                                                        </section>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p>
-                                    <!--more-->
-                                </p>
-                                <p data-selectable-paragraph="">Don’t forget to check back every Monday and Friday for
-                                    new content specially curated to help, educate and teach you on your journey as a
-                                    founder.</p>
-                                <p data-selectable-paragraph="">You can check out other expressions of Talemia <a
-                                        href="https://talemia.disha.page/" target="_blank" rel="noopener">HERE</a></p>
-                                <p id="f0b6"
-                                    class="pw-post-body-paragraph kj kk iy kl b km kn ko kp kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg ir ha"
-                                    data-selectable-paragraph="">Are you building a tech startup and want us to feature
-                                    you or know someone who is?<br>
-                                    Tweet at us: @talemiahq<br>
-                                    Email us: talemiahq@gmail.com</p>
-                                <p id="9892"
-                                    class="pw-post-body-paragraph kj kk iy kl b km kn ko kp kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg ir ha"
-                                    data-selectable-paragraph="">Let us help you launch your business faster than you
-                                    can. We are doing this for other African founders who have joined Buildr. Click this
-                                    link:&nbsp;<a
-                                        href="joinbuildr.php">https://talemia.com/joinbuildr.php</a></p>
-
-                            </div>                       
-                            <!-- .entry-content -->            
+                            
                             <div class="post-tags-n-social">
                                 <div class="post-tags">
                                     <div class="tag-links">
@@ -1805,16 +902,15 @@ if (isset($_GET['title'])){
                                     <a href="#" class="wtbx-like-button sl-button like sl-button-9881 filled" title="Like">
                                         <i class="scape-ui-heart-filled"></i>
                                               
-<?php
-	 $new_likes = "SELECT * FROM `likes` WHERE `blog_id` = '$id'";
-	 $update_likes = mysqli_query($con, $new_likes);
-	 $x = 0;
-	 while ($row = mysqli_fetch_array($update_likes)) {
-		 $x += 1;
-	 }
-	 echo"<span class='sl-count like-count'>$x Likes</span> ";
-
-?>
+                                        <?php
+                                            $new_likes = "SELECT * FROM `likes` WHERE `blog_id` = '$id'";
+                                            $update_likes = mysqli_query($con, $new_likes);
+                                            $x = 0;
+                                            while ($row = mysqli_fetch_array($update_likes)) {
+                                                $x += 1;
+                                            }
+                                            echo"<span class='sl-count like-count'>$x Likes</span> ";
+                                        ?>
                                         
                                         <div class="wtbx-like-anim">
                                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -2745,8 +1841,6 @@ if (isset($_GET['title'])){
 		$('.wtbx-like-button.sl-button.like').on('click', function(e){
             e.preventDefault();
 			var postid = <?php echo $id; ?>;
-            var blogtid = <?php echo $blog_id; ?>;
-            var commentid = <?php echo $comment_id; ?>;
 			$.ajax({
 				url: 'backend/likes.php',
 				type: 'POST',
@@ -2760,25 +1854,11 @@ if (isset($_GET['title'])){
 				}
 			});
 		});
-
-		// when the user clicks on unlike
-		$('.unlike').on('click', function(){
-			var postid = <?php echo $id; ?>;
-			$.ajax({
-				url: 'backend/likes.php',
-				type: 'POST',
-				data: {
-					'postid': postid
-				},
-				success: function(response){
-                    $(this).removeClass('unlike');
-                    $(this).addClass('like');
-                    $('.sl-count.like-count').text(response);
-				}
-			});
-		});
 	});
 </script>
+
+
+
 
 
 

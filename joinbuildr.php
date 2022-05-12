@@ -248,5 +248,4 @@
 
 <?php
     include "component/footer.php";
-// >>>>>>> 939ba273db06a2b5d81baf426a9c05a979051734
 ?>
