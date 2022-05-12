@@ -786,6 +786,8 @@ if (isset($_GET['title'])){
         }.modal-dialog{
             opacity: 1 !important;
             z-index: 99999999999;
+        }form p ,.col_container  {
+            text-align:left;
         }
     </style>
 <?php
@@ -962,9 +964,7 @@ if (isset($_GET['title'])){
                                                             <h6><b>$name</b> <i class='icon-circle'></i> <span>$date</span> </h6>
                                                             <p>$comment</p>
                                                             <div class='icon' style='display: flex; align-items:center; justify-content: flex-start;'>
-                                                                <button>Replies</button>
-                                                                <i class='icon-circle'></i>
-                                                                <span>10 Likes</span>
+                                                                <span>0 Likes</span>
                                                                 <i class='icon-circle'></i>
                                                                 <i class='icon-thumbs-up' style='margin: 0 4px 0 6px;color: #999;'></i>
                                                             </div>
@@ -1000,8 +1000,9 @@ if (isset($_GET['title'])){
                                     <div class="comment">
                                             <h6><b>'.$name.'</b> <i class="icon-circle"></i> <span>'.$date.'</span> </h6>
                                             <p>'.$comment.'</p>
+
                                             <div class="icon" style="display: flex; align-items:center; justify-content: flex-start;">
-                                                <button>Reply</button>
+                                                <button class="linker" data_value='.$id1.' data-bs-toggle="modal" data-bs-target="#exampleModal">Reply</button>
                                                 <i class="icon-circle"></i>
                                                 <span>10 Likes</span>
                                                 <i class="icon-circle"></i>
@@ -1113,25 +1114,45 @@ if (isset($_GET['title'])){
                                                 previous($id);
                                                 next_post($id);
                                             ?>
-						    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: #0000001c;">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Leave a Reply</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div id="respond" class="comment-respond">
+                        <form action="backend/comments.php" method="post" id="commentform"
+                            class="comment-form">
+                            <?php
+                                $title = $_GET['title'];
+                                echo" <input type='hidden' name='title' value='$title'>";
+                            ?>
+                            <p class="comment-notes">Your email address will not be published. Required fields are
+                                marked *</p>
+                            <p class="comment-form-comment"><label for="comment">Comment <span class="required"
+                                        aria-hidden="true">*</span></label> <textarea id="comment" name="comment"
+                                    cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
+                            <div class="comment-form-info-fields col_container">
+                                <div class="col_3 comment-form-author"><label for="author">Name</label> <span
+                                        class="required">*</span><input id="author" name="name" type="text" value=""
+                                        size="30" aria-required="true"></div>
+                                <div class="col_3 comment-form-email"><label for="email">Email</label> <span
+                                        class="required">*</span><input id="email" name="email" type="text" value=""
+                                        size="30" aria-required="true"></div>
+                            </div>
+                            <br>
+                            <p class="form-submit"><input name="submit" type="submit" id="submit"
+                                    class="submit wtbx-button wtbx-button-primary button-md" value="Post Comment">
+                                <input type="hidden" name="blog_id" value="<?php echo $id ?>" id="comment_post_ID">
+                                <input type="hidden" name="comment_id" class="commentid" value="" id="comment_post_ID">
+                            </p>
+                            <br>
+                        </form>
+                    </div><!-- #respond -->
       </div>
     </div>
   </div>
