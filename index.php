@@ -1554,10 +1554,40 @@ $title = "Talemia - Launch Your Startup Faster";
                                                                                                             data-filter-prefix="category">
                                                                                                             <!-- Actual Blog Start -->
                                                                                                             <?php
+                                                                                                            function likes($id){
+                                                                                                                require('backend/connection.php');
+                                                                                                                $sql = "SELECT COUNT(*) AS count FROM `likes` WHERE blog_id = '$id'";
+                                                                                                                $query = mysqli_query($con, $sql);
+                                                                                                                //fetch sql data
+                                                                                                                if($query){
+                                                                                                                    $data = 0;
+                                                                                                                    if(mysqli_num_rows($query) > 0){
+                                                                                                                        while ($row = mysqli_fetch_array($query)) {
+                                                                                                                            $data = $row['count'];
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                                return $data;
+                                                                                                            }
+                                                                                                            function comments($id){
+                                                                                                                require('backend/connection.php');
+                                                                                                                $sql = "SELECT COUNT(*) AS count FROM `comments` WHERE blog_id = '$id'";
+                                                                                                                $query = mysqli_query($con, $sql);
+                                                                                                                //fetch sql data
+                                                                                                                if($query){
+                                                                                                                    $data = 0;
+                                                                                                                    if(mysqli_num_rows($query) > 0){
+                                                                                                                        while ($row = mysqli_fetch_array($query)) {
+                                                                                                                            $data = $row['count'];
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                                return $data;
+                                                                                                            }
                                                                                                                 require('backend/connection.php');
 
                                                                                                                     //select top 3 latest blog from blog table
-                                                                                                                    $sql = "SELECT * FROM `blog` WHERE `category` = 'Press Release' ORDER  BY `date` LIMIT 3";
+                                                                                                                    $sql = "SELECT * FROM `blog` WHERE `category` = 'Press Release' and `publish` = 'yes' ORDER  BY `date` LIMIT 3";
                                                                                                                     $store = mysqli_query($con, $sql);
                                                                                                                     //fetch sql data
                                                                                                                     while ($row = mysqli_fetch_array($store)) {
@@ -1648,9 +1678,9 @@ $title = "Talemia - Launch Your Startup Faster";
         
                                                                                                                                         <div
                                                                                                                                             class="post-entry-footer-section">
-                                                                                                                                            <a href="blog.php?title='.$row['title'].'#respond" title="View comments for: '.$row['title'].'" class="post-sbs-comments">
+                                                                                                                                            <a href="blog.php?title='.$row['title'].'" title="View comments for: '.$row['title'].'" class="post-sbs-comments">
                                                                                                                                                 <i class="scape-ui-comment"></i>
-                                                                                                                                                0
+                                                                                                                                                '.comments($row['id']).'
                                                                                                                                             </a>
                                                                                                                                         </div>
         
@@ -1662,7 +1692,7 @@ $title = "Talemia - Launch Your Startup Faster";
                                                                                                                                                     class="wtbx-like-button sl-button sl-button-9758"
                                                                                                                                                     title="Like"><i
                                                                                                                                                         class="scape-ui-heart"></i><span
-                                                                                                                                                        class="sl-count like-count">11</span></a>
+                                                                                                                                                        class="sl-count like-count">'.likes($row['id']).'</span></a>
                                                                                                                                             </div>
                                                                                                                                         </div>
         

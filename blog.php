@@ -96,6 +96,7 @@ if (!isset($_GET['author']) && !isset($_GET['tags']) && !isset($_GET['title']) &
 
                                                                                                 <!-- Actual Blog Start -->
                                                                                                 <?php
+                                                                                                
                                                                                                                 require('backend/connection.php');
 
                                                                                                                     //select top 3 latest blog from blog table
