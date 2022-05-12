@@ -1101,14 +1101,9 @@ $title = "Buildr";
 																				<div class="wtbx_text_element_content">
 																					<div
 																						class="wtbx_text_element_inner">
-																						<p>A high impact community where
-																							we work with early stage
-																							African founders to
-																							transform their ideas into
-																							viable businesses that can
-																							be scaled significantly.
-																							Buildr takes you on the
-																							journey from 0 to 1</p>
+																						<p>Launch your startup through a simplified roadmap while
+																							collaborating with other founders. It doesn’t get any more
+																							better with the Community. Get traction in 30 days</p>
 																					</div>
 																				</div>
 																			</div>

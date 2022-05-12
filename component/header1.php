@@ -4891,19 +4891,27 @@
                                                     <ul class="menu-depth-1 sub-menu sub-menu-group">
                                                         <li class="sub-menu-item menu-item-depth-1 menu-item-9412"
                                                             data-id="menu-item-9412"><a
-                                                                href="products.php#buildr"
+                                                                href="buildr.php"
                                                                 class="menu-link sub-menu-link">Buildr</a></li>
                                                         <li class="sub-menu-item menu-item-depth-1 menu-item-9413"
                                                             data-id="menu-item-9413"><a
-                                                                href="products.php#0to1"
+                                                                href="zeroToOne.php"
                                                                 class="menu-link sub-menu-link">0 to 1</a></li>
                                                         <li class="sub-menu-item menu-item-depth-1 menu-item-9448"
                                                             data-id="menu-item-9448"><a
-                                                                href="products.php#collabo"
-                                                                class="menu-link sub-menu-link">Collabo</a></li>
+                                                                href="techcleek.php"
+                                                                class="menu-link sub-menu-link">Tech Cleek</a></li>
+                                                                <li class="sub-menu-item menu-item-depth-1 menu-item-9448"
+                                                            data-id="menu-item-9448"><a
+                                                                href="hackar.php"
+                                                                class="menu-link sub-menu-link">Hackar</a></li>
                                                     </ul>
                                                 </div>
                                             </li>
+                                            <li class="menu-item menu-item-depth-0 menu-item-9503 nav-item"
+                                                id="menu-item-9503"><a href="blog.php"
+                                                    class="menu-link main-menu-link item-title"
+                                                    id="accessible-megamenu-1650757761209-6">Blog</a></li>
                                             <li class="menu-item menu-item-depth-0 has-submenu menu-item-9449 nav-item"
                                                 id="menu-item-9449"><a href="resources.php"
                                                     class="menu-link main-menu-link item-title"
@@ -4924,25 +4932,16 @@
                                                             data-id="menu-item-9451"><a
                                                                 href="resources.php#kb"
                                                                 class="menu-link sub-menu-link">Kleekbuzz</a></li>
-                                                        <li class="sub-menu-item menu-item-depth-1  menu-item-9646"
-                                                            data-id="menu-item-9646"><a href="blog.php"
-                                                                class="menu-link sub-menu-link">Blog</a></li>
-                                                        <li class="sub-menu-item menu-item-depth-1 menu-item-9452"
-                                                            data-id="menu-item-9452"><a
-                                                                href="blog.php#success"
-                                                                class="menu-link sub-menu-link">Success Stories</a></li>
+                                                        
                                                         <li class="sub-menu-item menu-item-depth-1  menu-item-9453"
                                                             data-id="menu-item-9453"><a target="_blank"
                                                                 href="https://drive.google.com/drive/folders/1tdKLGiOHqAQ3N2lqBVk2Lps9MAQyKQww"
                                                                 class="menu-link sub-menu-link">Startup Freebies</a>
                                                         </li>
-                                                        <li class="sub-menu-item menu-item-depth-1  menu-item-9691"
-                                                            data-id="menu-item-9691"><a target="_blank"
-                                                                href="https://drive.google.com/drive/folders/1KO9RHXU0gjkW9jcfyQMEsipKNKj8BH91"
-                                                                class="menu-link sub-menu-link">Reports</a></li>
                                                     </ul>
                                                 </div>
                                             </li>
+                                            
                                             <li class="menu-item menu-item-depth-0 menu-item-9503 nav-item"
                                                 id="menu-item-9503"><a href="faqs.php"
                                                     class="menu-link main-menu-link item-title"

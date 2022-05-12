@@ -1030,22 +1030,22 @@
                                                                             <ul id="menu-company" class="menu">
                                                                                 <li class="menu-item menu-item-depth-0  menu-item-8835"
                                                                                     data-id="menu-item-8835"><a
-                                                                                        href="https://talemia.com/about/"
+                                                                                        href="about.php"
                                                                                         class="menu-link main-menu-link item-title">About
                                                                                         Us</a></li>
                                                                                 <li class="menu-item menu-item-depth-0 menu-item-8836"
                                                                                     data-id="menu-item-8836"><a
-                                                                                        href="https://talemia.com/about/#core-values"
+                                                                                        href="about.php#core-values"
                                                                                         class="menu-link main-menu-link item-title">Core
                                                                                         Values</a></li>
                                                                                 <li class="menu-item menu-item-depth-0 menu-item-8837"
                                                                                     data-id="menu-item-8837"><a
-                                                                                        href="https://talemia.com/about/#our-people"
+                                                                                        href="about.php#our-people"
                                                                                         class="menu-link main-menu-link item-title">Our
                                                                                         People</a></li>
                                                                                 <li class="menu-item menu-item-depth-0  menu-item-8838"
                                                                                     data-id="menu-item-8838"><a
-                                                                                        href="https://talemia.com/careers"
+                                                                                        href="about.php#careers"
                                                                                         class="menu-link main-menu-link item-title">Careers</a>
                                                                                 </li>
                                                                             </ul>
@@ -1083,18 +1083,23 @@
                                                                             <ul id="menu-product" class="menu">
                                                                                 <li class="menu-item menu-item-depth-0 menu-item-9343"
                                                                                     data-id="menu-item-9343"><a
-                                                                                        href="https://talemia.com/products/#buildr"
+                                                                                        href="buildr.php"
                                                                                         class="menu-link main-menu-link item-title">Buildr</a>
                                                                                 </li>
                                                                                 <li class="menu-item menu-item-depth-0 menu-item-9344"
                                                                                     data-id="menu-item-9344"><a
-                                                                                        href="https://talemia.com/products/#0to1"
+                                                                                        href="zeroToOne.php"
                                                                                         class="menu-link main-menu-link item-title">0
                                                                                         to 1</a></li>
                                                                                 <li class="menu-item menu-item-depth-0 menu-item-9345"
                                                                                     data-id="menu-item-9345"><a
-                                                                                        href="https://talemia.com/products/#collabo"
-                                                                                        class="menu-link main-menu-link item-title">Collabo</a>
+                                                                                        href="techcleek.php"
+                                                                                        class="menu-link main-menu-link item-title">Tech Cleek</a>
+                                                                                </li>
+                                                                                <li class="menu-item menu-item-depth-0 menu-item-9345"
+                                                                                    data-id="menu-item-9345"><a
+                                                                                        href="hackar.php"
+                                                                                        class="menu-link main-menu-link item-title">Hackar</a>
                                                                                 </li>
                                                                             </ul>
                                                                         </div>
