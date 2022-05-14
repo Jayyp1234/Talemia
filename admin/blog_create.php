@@ -72,6 +72,9 @@ ob_start();
 .form-2 .input-group-addon {
     border: 1px solid #ba68c8;
 }
+.btn-primary {
+    background-color: #09099d !important;
+}
 .danger-text {
     color: #ff3547; 
 }  
@@ -118,6 +121,7 @@ ob_start();
     </nav>
     <!-- Breadcrumb -->
   </div>
+  <div class="heaven container"></div>
   <!-- Heading -->
         <br>
 <?php
@@ -134,17 +138,6 @@ ob_start();
             }
         }
     }
-    else if (isset($_POST['body'])){
-        $text = $_POST['body'];
-        $data = $_POST['html'];
-        $publish = $_POST['publish'];
-        $sql = "UPDATE `blog` SET `body`='$data',`text`='$text',`publish`='$publish' WHERE id = '$id'";
-            $query = mysqli_query($con,$sql);
-            if($query){
-                header('Location:blog_create.php');
-                ob_end_flush();
-            }
-    }
 ?>
         <section class="content-main container">
         <form action="" method="POST">
@@ -152,18 +145,17 @@ ob_start();
         <textarea class="content" name ="body">
             <?php echo $text; ?>
         </textarea>
-
-        <!-- content-main end// -->
-        
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="publish" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-               <b> Do you want to Publish your Blog now ?</b>
-            </label>
+        <br>
+        <div class="container-fluid">
+        <label class="form-check-label" for="flexSwitchCheckDefault"><b> Do you want to Publish your Blog now ?</b></label>
+        <select class="form-select form-select mb-3">
+        <option value="yes">yes</option>
+        <option value="no">no</option>
+        </select>
         </div>
         <input type="hidden" name="html" class="html"/>
         <div class="d-grid gap-2">
-            <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+            <input type="submit" class="btn save_changes btn-primary" name="submit" value="Save Changes">
         </div>
         </form>
         </section> 
@@ -184,11 +176,28 @@ ob_start();
       tinycomments_mode: 'embedded',
       tinycomments_author: 'Author name',
     });
-    $('.gap-2 .btn').on('click', function(){
-        $(".html").val($("#mce_0_ifr").contents().find('#tinymce').html());
-        //alert($("#mce_0_ifr").contents().find('#tinymce').html());
-        $('form').submit();
-    });
+    // Alerts the currently selected contents
+    $('.save_changes').on('click', function (e) {
+            e.preventDefault();
+            var id = <?php echo $id; ?>;
+            $.ajax({
+                url: '../backend/create_blog.php',
+                type: 'POST',
+                data: {
+                    'id': id,
+                    'body': $("#mce_0_ifr").contents().find('#tinymce').text(),
+                    'html': '<div class="entry-content">'+ $("#mce_0_ifr").contents().find('#tinymce').html()+ '</div>',
+                    'publish': $('.form-select').val()
+                },
+                beforeSend: function() {
+                    $(this).val('Loading...');
+                },
+                success: function (response) {
+                    $('.heaven').html(response);
+
+                }
+            });
+        });
 </script>
 
 

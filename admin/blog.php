@@ -228,8 +228,8 @@ ob_start();
             } else {
                 $upload_id_query = "IMG-20220214-WA0009-768x768.jpg";
             }
-            $sql = "INSERT INTO `blog`(`id`, `category`, `tags`, `title`, `author`, `date`, `duration`, `image`, `body`) VALUES 
-            ('','$category','$tags','$title','$author','$date','$duration','$upload_id_query','')";
+            $sql = "INSERT INTO `blog`(`id`, `category`, `tags`, `title`, `author`, `date`, `duration`, `image`, `body`, `text`, `publish`, `editable`)
+             VALUES ('','$category','$tags','$title','$author','$date','$duration','$upload_id_query','','','no', 1)";
                 $query = mysqli_query($con,$sql);
                 if($query){
                     if(!file_exists($_FILES['image']['tmp_name'])){
@@ -260,6 +260,14 @@ ob_start();
                     <div class="table-responsive container">
                         <table id="example" class="display container" style="width:100%">
                             <?php
+                            function disable($id, $id2){
+                                if ($id == 0){
+                                    return "<a class='dropdown-item disabled' href='blog_create.php?id=".$id2."'> Edit Blog</a>";
+                                }
+                                else{
+                                    return "<a class='dropdown-item' href='blog_create.php?id=".$id2."'> Edit Blog</a>";
+                                }
+                            }
                             require('../backend/connection.php');
                             $sql = "SELECT * FROM blog ORDER BY id DESC";
                             $query = mysqli_query($con,$sql);
@@ -287,7 +295,7 @@ ob_start();
                                         <div class='dropdown'>
                                             <a href='#' data-bs-toggle='dropdown' class='btn btn-light'> <i class='material-icons md-more_horiz'></i> </a> 
                                             <div class='dropdown-menu'>
-                                            <a class='dropdown-item' href='blog_create.php?id=".$row['id']."'> Edit Blog</a>
+                                            ".disable($row['editable'],$row['id'])."
                                             <a class='dropdown-item' href='blog.php?id=".$row['id']."'> Delete</a>
                                         </div>
                                     </div> 

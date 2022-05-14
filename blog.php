@@ -1314,7 +1314,7 @@ if (isset($_GET['title'])){
     $(document).ready(function () {
         $('.wtbx-like-button.sl-button.like').on('click', function (e) {
             e.preventDefault();
-            var postid = < ? php echo $id; ? > ;
+            var postid = <?php echo $id; ?> ;
             $.ajax({
                 url: 'backend/likes.php',
                 type: 'POST',

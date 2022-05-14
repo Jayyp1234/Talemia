@@ -150,7 +150,7 @@
             <table id="example" class="display" style="width:100%">
               <?php
                 require('../backend/connection.php');
-                $sql = "SELECT * FROM signup where payment_status='paid' ORDER BY id DESC  ";
+                $sql = "SELECT * FROM signup where payment_status='paid' ORDER BY id DESC";
                 $query = mysqli_query($con,$sql);
                  if($query){
                      if(mysqli_num_rows($query) > 0){
@@ -206,7 +206,7 @@
                      while($row = mysqli_fetch_assoc($query)){
                          
                          $output .="<tr>
-                         <td>".$row['firstname']." ".$row['lastname']."</td>]
+                         <td>".$row['firstname']." ".$row['lastname']."</td>
                          <td>".$row['email']."</td>
                          <td>".$row['gender']."</td>
                          </tr>";
