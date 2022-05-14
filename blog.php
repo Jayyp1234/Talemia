@@ -1,4 +1,5 @@
 <?php 
+ob_start();
 include 'component/header.php';
 include './utility.php';
 ?>
@@ -44,7 +45,7 @@ if (!isset($_GET['author']) && !isset($_GET['tags']) && !isset($_GET['title']) &
                                                                                 <div class="wtbx_text_element_content">
                                                                                     <div
                                                                                         class="wtbx_text_element_inner">
-                                                                                        <h3><strong>Our Blog</strong>
+                                                                                        <h3 style="text-align: center;"><strong>Our Blog</strong>
                                                                                         </h3>
                                                                                     </div>
                                                                                 </div>
@@ -297,7 +298,7 @@ if (isset($_GET['category'])){
                                                                                 <div class="wtbx_text_element_content">
                                                                                     <div
                                                                                         class="wtbx_text_element_inner">
-                                                                                        <h3><strong><?php echo $_GET['category']; ?></strong>
+                                                                                        <h3 style="text-align: center;"><strong><?php echo $_GET['category']; ?></strong>
                                                                                         </h3>
                                                                                     </div>
                                                                                 </div>
@@ -549,7 +550,7 @@ if (isset($_GET['author'])){
                                                                                 <div class="wtbx_text_element_content">
                                                                                     <div
                                                                                         class="wtbx_text_element_inner">
-                                                                                        <h3><strong>Blog Posts by
+                                                                                        <h3 style="text-align: center;"><strong>Blog Posts by
                                                                                                 <?php echo $_GET['author']; ?></strong>
                                                                                         </h3>
                                                                                     </div>
@@ -766,9 +767,6 @@ if (isset($_GET['author'])){
 
 
 
-
-
-
 <!-- Comment Section Only to Echo when there is an actual title Posted-->
 <?php
 if (isset($_GET['title'])){
@@ -776,20 +774,42 @@ if (isset($_GET['title'])){
     include './assets/blog.html';
 
     ?>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <style>
-        nav a, footer a, .post-tags-n-social a, .like, .wtbx_header_part.header_button.header_custom_button.header_button_height a{
-            text-decoration:none !important;
-        }
-        .modal-backdrop{
-            display: none !important;
-        }.modal-dialog{
-            opacity: 1 !important;
-            z-index: 99999999999;
-        }form p ,.col_container  {
-            text-align:left;
-        }
-    </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+    nav a,
+    footer a,
+    .post-tags-n-social a,
+    .like,
+    .wtbx_header_part.header_button.header_custom_button.header_button_height a,
+    .entry-content a {
+        text-decoration: none !important;
+    }
+
+    .modal-backdrop {
+        display: none !important;
+    }
+
+    .modal-dialog {
+        opacity: 1 !important;
+        z-index: 99999999999;
+    }
+
+    form p,
+    .col_container {
+        text-align: left;
+    }
+
+    body {
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif !important
+    }
+
+    p {
+        margin-top: 1rem;
+        font-size: 1.142857em;
+        margin-bottom: 1rem;
+    }
+</style>
 <?php
     $title = $_GET['title'];
     require('backend/connection.php');
@@ -801,41 +821,57 @@ if (isset($_GET['title'])){
 
         //fetch sql data
         //display blog post
-        while ($row = mysqli_fetch_array($store)) {
-            $title = $row['title'];
-            $id = $row['id'];
-            $body = $row['body'];
+        if ($store){
+            if(mysqli_num_rows($store) > 0){
+                while ($row = mysqli_fetch_array($store)) {
+                    $title = $row['title'];
+                    $id = $row['id'];
+                    $blog = $row['body'];
+                    $category = $row['category'];
+                    $author = $row['author'];
+                    $image = $row['image']; 
+                }
+            }
+            else{
+                header('Location:blog.php');
+                ob_end_flush();
+            }
         }
+        else{
+            header('Location:blog.php');
+            ob_end_flush();
+        }
+        
 
     ?>
 <div id="main" class="wtbx-footer-default">
 
 
-<br><br>
+    <br><br>
     <div id="page-header" class="layout-five type-content_block wtbx-fadeout" data-fullscroll="">
-        <div class="wtbx_vc_row wtbx_vc_row-141164155 wtbx_stretch_row wtbx_center_align_tablet_portrait wtbx_anim_style_1 wtbx_row_fixed_height_screen wtbx_row-flex-align-stretch wtbx_row-content-align-middle wtbx_row-flex"
+        <div class="wtbx_vc_row wtbx_vc_row-227642951 wtbx_stretch_row wtbx_center_align_tablet_portrait wtbx_anim_style_1 wtbx_row_fixed_height_screen wtbx_row-flex-align-stretch wtbx_row-content-align-middle wtbx_row-flex"
             data-skin="light">
             <div class="wtbx_vc_el_container wtbx_vc_row_container">
-                <div class="wtbx_vc_el_inner wtbx_vc_row_inner">
+                <div class="wtbx_vc_el_inner wtbx_vc_row_inner ">
                     <div class="wtbx_row_wrapper">
                         <div class="wtbx_row_bg"></div>
                         <div class="wtbx_row_content clearfix">
                             <div class="wtbx_row_content_wrapper">
-                                <div class="wtbx_row_content_inner clearfix">
+                                <div class="wtbx_row_content_inner clearfix bigger">
                                     <div
-                                        class="wtbx_vc_column vc_col-sm-8 vc_col-md-6 wtbx_with_image wtbx_vc_column-141165853">
+                                        class="wtbx_vc_column vc_col-sm-8 vc_col-md-6 wtbx_with_image wtbx_vc_column-227644112">
                                         <div class="wtbx_vc_el_container wtbx_vc_column_container">
                                             <div class="wtbx_vc_el_inner wtbx_vc_column_inner">
                                                 <div class="wtbx_column_wrapper clearfix">
                                                     <div class="wtbx_column_content">
                                                         <div
-                                                            class="wtbx_vc_styled_heading wtbx_vc_styled_heading-141166661 wtbx_style_default">
+                                                            class="wtbx_vc_styled_heading wtbx_vc_styled_heading-227644440 wtbx_style_default">
                                                             <div
                                                                 class="wtbx_vc_el_container wtbx_vc_styled_heading_container clearfix">
                                                                 <div
                                                                     class="wtbx_vc_el_inner wtbx_vc_styled_heading_inner">
                                                                     <div class="wtbx_heading_el_title_wrapper h1">
-                                                                        <h1 class="wtbx_heading_el_title wtbx-text">
+                                                                    <h1 class="wtbx_heading_el_title wtbx-text">
                                                                             <?php  echo $title; ?></h1>
                                                                     </div>
                                                                 </div>
@@ -847,11 +883,24 @@ if (isset($_GET['title'])){
                                         </div>
                                     </div>
                                     <div
-                                        class="wtbx_vc_column vc_col-sm-4 vc_col-md-6 wtbx_with_image wtbx_vc_column-141167155">
+                                        class="wtbx_vc_column vc_col-sm-4 vc_col-md-6 wtbx_with_image wtbx_vc_column-227644850">
                                         <div class="wtbx_vc_el_container wtbx_vc_column_container">
                                             <div class="wtbx_vc_el_inner wtbx_vc_column_inner">
                                                 <div class="wtbx_column_wrapper clearfix">
-                                                    <div class="wtbx_column_content"></div>
+                                                    <div class="wtbx_column_content">
+                                                        <div
+                                                            class="wpb_single_image wpb_content_element vc_align_center">
+
+                                                            <figure class="wpb_wrapper vc_figure">
+                                                                <div
+                                                                    class="vc_single_image-wrapper vc_box_rounded  vc_box_border_grey">
+                                                                    <img class="vc_single_image-img "
+                                                                        src="./assets/image/<?php echo $image; ?>"
+                                                                        width="1024" height="819" alt="<?php echo $title; ?>"
+                                                                        title="<?php echo $title; ?>"></div>
+                                                            </figure>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -866,7 +915,6 @@ if (isset($_GET['title'])){
 
 
     </div>
-
     <!-- Page-wrap start -->
     <div id="page-wrap" class="clearfix">
 
@@ -881,15 +929,28 @@ if (isset($_GET['title'])){
                         <div class="wtbx-width wtbx-large-7 wtbx-medium-8 wtbx-small-9">
                             <div class="post-entry-header">
                             </div><!-- .entry-header -->
-                            
-                            
+                            <div class="entry-meta single-post-meta">
 
-                            
+                                <span class="meta-author">By <a class="meta-author-link"
+                                        href="blog.php?category=<?php echo $author; ?>"
+                                        title="View all posts by Talemia HQ">Talemia HQ</a>
+                                </span>
+
+                                <span class="meta-category">
+                                    in<span class="category-list"><a class="meta-author-link"
+                                            href="blog.php?category=<?php echo $category; ?>" rel="category tag">Success
+                                            Stories</a></span>
+                                </span>
+
+                            </div>
+                            <?php echo $blog; ?>
+
+
                             <div class="post-tags-n-social">
                                 <div class="post-tags">
                                     <div class="tag-links">
 
-                                    <?php
+                                        <?php
                                             require('backend/connection.php');
                                             $categories = "SELECT * FROM `blog` WHERE `title` = '$title'";
                                             $tags = mysqli_query($con, $categories);
@@ -906,16 +967,17 @@ if (isset($_GET['title'])){
                                         ?>
 
 
-                                            </div>
+                                    </div>
                                 </div>
                             </div>
 
 
                             <div class="wtbx-like-wrapper wtbx-page-like-wrapper">
                                 <div class="wtbx-like-inner">
-                                    <a href="#" class="wtbx-like-button sl-button like sl-button-9881 filled" title="Like">
+                                    <a href="#" class="wtbx-like-button sl-button like sl-button-9881 filled"
+                                        title="Like">
                                         <i class="scape-ui-heart-filled"></i>
-                                              
+
                                         <?php
                                             $new_likes = "SELECT * FROM `likes` WHERE `blog_id` = '$id'";
                                             $update_likes = mysqli_query($con, $new_likes);
@@ -925,7 +987,7 @@ if (isset($_GET['title'])){
                                             }
                                             echo"<span class='sl-count like-count'>$x Likes</span> ";
                                         ?>
-                                        
+
                                         <div class="wtbx-like-anim">
                                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                                         </div>
@@ -937,7 +999,7 @@ if (isset($_GET['title'])){
                             <!-- Comment Section -->
 
                             <div class="author-area clearfix ">
-                            <?php
+                                <?php
                             require('backend/connection.php');
                             function replies($id) {
                                 require('backend/connection.php');
@@ -1018,9 +1080,9 @@ if (isset($_GET['title'])){
                                                replies($id1);
                                             }
                                         ?>
-                                
+
                                 <!-- End Comment -->
-                                
+
                             </div>
                         </div>
 
@@ -1041,13 +1103,13 @@ if (isset($_GET['title'])){
                                                 <div class="dot third"></div>
                                             </div>
                                         </a></li>
-						    
-						<!-- function for previous and next post   -->
-						    
-						    
-						    
-						    
-                                                <?php
+
+                                    <!-- function for previous and next post   -->
+
+
+
+
+                                    <?php
                                             require('backend/connection.php');
                                             function previous($id) {
                                                 require('backend/connection.php');
@@ -1115,51 +1177,66 @@ if (isset($_GET['title'])){
                                                 next_post($id);
                                             ?>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: #0000001c;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Leave a Reply</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <div id="respond" class="comment-respond">
-                        <form action="backend/comments.php" method="post" id="commentform"
-                            class="comment-form">
-                            <?php
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true"
+                                        style="background-color: #0000001c;">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Leave a Reply</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div id="respond" class="comment-respond">
+                                                        <form action="backend/comments.php" method="post"
+                                                            id="commentform" class="comment-form">
+                                                            <?php
                                 $title = $_GET['title'];
                                 echo" <input type='hidden' name='title' value='$title'>";
                             ?>
-                            <p class="comment-notes">Your email address will not be published. Required fields are
-                                marked *</p>
-                            <p class="comment-form-comment"><label for="comment">Comment <span class="required"
-                                        aria-hidden="true">*</span></label> <textarea id="comment" name="comment"
-                                    cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
-                            <div class="comment-form-info-fields col_container">
-                                <div class="col_3 comment-form-author"><label for="author">Name</label> <span
-                                        class="required">*</span><input id="author" name="name" type="text" value=""
-                                        size="30" aria-required="true"></div>
-                                <div class="col_3 comment-form-email"><label for="email">Email</label> <span
-                                        class="required">*</span><input id="email" name="email" type="text" value=""
-                                        size="30" aria-required="true"></div>
-                            </div>
-                            <br>
-                            <p class="form-submit"><input name="submit" type="submit" id="submit"
-                                    class="submit wtbx-button wtbx-button-primary button-md" value="Post Comment">
-                                <input type="hidden" name="blog_id" value="<?php echo $id ?>" id="comment_post_ID">
-                                <input type="hidden" name="comment_id" class="commentid" value="" id="comment_post_ID">
-                            </p>
-                            <br>
-                        </form>
-                    </div><!-- #respond -->
-      </div>
-    </div>
-  </div>
-</div>
-						    
-						    
-						    
+                                                            <p class="comment-notes">Your email address will not be
+                                                                published. Required fields are
+                                                                marked *</p>
+                                                            <p class="comment-form-comment"><label for="comment">Comment
+                                                                    <span class="required"
+                                                                        aria-hidden="true">*</span></label> <textarea
+                                                                    id="comment" name="comment" cols="45" rows="8"
+                                                                    maxlength="65525" required="required"></textarea>
+                                                            </p>
+                                                            <div class="comment-form-info-fields col_container">
+                                                                <div class="col_3 comment-form-author"><label
+                                                                        for="author">Name</label> <span
+                                                                        class="required">*</span><input id="author"
+                                                                        name="name" type="text" value="" size="30"
+                                                                        aria-required="true"></div>
+                                                                <div class="col_3 comment-form-email"><label
+                                                                        for="email">Email</label> <span
+                                                                        class="required">*</span><input id="email"
+                                                                        name="email" type="text" value="" size="30"
+                                                                        aria-required="true"></div>
+                                                            </div>
+                                                            <br>
+                                                            <p class="form-submit"><input name="submit" type="submit"
+                                                                    id="submit"
+                                                                    class="submit wtbx-button wtbx-button-primary button-md"
+                                                                    value="Post Comment">
+                                                                <input type="hidden" name="blog_id"
+                                                                    value="<?php echo $id ?>" id="comment_post_ID">
+                                                                <input type="hidden" name="comment_id" class="commentid"
+                                                                    value="" id="comment_post_ID">
+                                                            </p>
+                                                            <br>
+                                                        </form>
+                                                    </div><!-- #respond -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
                                 </ul>
                             </div>
                         </nav>
@@ -1169,10 +1246,7 @@ if (isset($_GET['title'])){
 
             </div><!-- #container -->
         </article>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
 
         <div class="row-inner">
             <div class="wtbx-width wtbx-large-7 wtbx-medium-8 wtbx-small-9">
@@ -1183,8 +1257,7 @@ if (isset($_GET['title'])){
 
                     <div id="respond" class="comment-respond">
                         <h3 id="reply-title" class="comment-reply-title">Leave a Reply</h3>
-                        <form action="backend/comments.php" method="post" id="commentform"
-                            class="comment-form">
+                        <form action="backend/comments.php" method="post" id="commentform" class="comment-form">
                             <?php
                                 $title = $_GET['title'];
                                 echo" <input type='hidden' name='title' value='$title'>";
@@ -1228,25 +1301,37 @@ if (isset($_GET['title'])){
 </div><!-- #page-wrap  -->
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+</script>
 <script>
-	$(document).ready(function(){
-		$('.wtbx-like-button.sl-button.like').on('click', function(e){
+    $(document).ready(function () {
+        $('.wtbx-like-button.sl-button.like').on('click', function (e) {
             e.preventDefault();
-			var postid = <?php echo $id; ?>;
-			$.ajax({
-				url: 'backend/likes.php',
-				type: 'POST',
-				data: {
-					'postid': postid,
-				},
-				success: function(response){
-					$(this).removeClass('like');
+            var postid = < ? php echo $id; ? > ;
+            $.ajax({
+                url: 'backend/likes.php',
+                type: 'POST',
+                data: {
+                    'postid': postid,
+                },
+                success: function (response) {
+                    $(this).removeClass('like');
                     $(this).addClass('unlike');
                     $('.sl-count.like-count').text(response);
-				}
-			});
-		});
-	});
+                }
+            });
+        });
+        $(document).on("click", ".linker", function () {
+            $('.commentid').val($(this).attr('data_value'));
+        });
+    });
 </script>
 
 

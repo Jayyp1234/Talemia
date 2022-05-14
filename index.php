@@ -1587,13 +1587,132 @@ $title = "Talemia - Launch Your Startup Faster";
                                                                                                                 require('backend/connection.php');
 
                                                                                                                     //select top 3 latest blog from blog table
-                                                                                                                    $sql = "SELECT * FROM `blog` WHERE `category` = 'Press Release' and `publish` = 'yes' ORDER  BY `date` LIMIT 3";
+                                                                                                                    $sql = "SELECT * FROM `blog` WHERE `category` = 'Press Release' and `publish` = 'yes' ORDER  BY `date` LIMIT 1";
                                                                                                                     $store = mysqli_query($con, $sql);
                                                                                                                     //fetch sql data
                                                                                                                     while ($row = mysqli_fetch_array($store)) {
                                                                                                                         echo '    
                                                                                                                     <article
                                                                                                                         id="post-9758"
+                                                                                                                        class="post-entry wtbx-grid-entry wtbx-boxed-entry wtbx-grid-anim-container post-9758 post type-post status-publish format-standard has-post-thumbnail hentry category-press-release">
+                                                                                                                        <div class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden preloader-display-none">
+                                                                                                                            <div class="wtbx-preloader-container">
+                                                                                                                                <div class="wtbx-preloader wtbx-preloader-2">
+                                                                                                                                    <svg class="circular"
+                                                                                                                                        viewBox="25 25 50 50">
+                                                                                                                                        <circle
+                                                                                                                                            class="path"
+                                                                                                                                            cx="50"
+                                                                                                                                            cy="50"
+                                                                                                                                            r="20"
+                                                                                                                                            fill="none"
+                                                                                                                                            stroke-width="3"
+                                                                                                                                            stroke-miterlimit="10"
+                                                                                                                                            stroke="#09099d"
+                                                                                                                                            stroke-linecap="round">
+                                                                                                                                        </circle>
+                                                                                                                                    </svg>
+                                                                                                                                </div>
+        
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="post-boxed-inner wtbx-entry-inner wtbx-element-reveal wtbx_appearance_animation wtbx-grid-anim-slideup wtbx_to_be_revealed wtbx_to_be_animated wtbx_animated wtbx-element-visible">
+        
+                                                                                                                            <div class="post-boxed-media wtbx-entry-media">
+                                                                                                                                <div class="wtbx-image-crop"
+                                                                                                                                    style="padding-bottom: 62.5%">
+                                                                                                                                    <img class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
+                                                                                                                                        data-bg="false"
+                                                                                                                                        data-imgratio="16:10"
+                                                                                                                                        data-aspectratio="1"
+                                                                                                                                        src="assets/image/'.$row['image'].'"
+                                                                                                                                        data-sizes="auto"
+                                                                                                                                        data-parent-fit="cover"
+                                                                                                                                        alt="'.$row['title'].'"
+                                                                                                                                        sizes="430px">
+                                                                                                                                </div>
+                                                                                                                                <div
+                                                                                                                                    class="meta-categories">
+                                                                                                                                    <div class="category-list">
+                                                                                                                                        <a href="blog.php?category='.$row['category'].'"  rel="category tag">'.$row['category'].'</a>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+        
+                                                                                                                                <a href="blog.php?title='.$row['title'].'" class="post-boxed-button">
+                                                                                                                                    <i class="scape-ui-chevron-right"></i>
+                                                                                                                                </a>
+                                                                                                                            </div>
+        
+                                                                                                                            <div
+                                                                                                                                class="post-entry-content">
+                                                                                                                                <div class="post-entry-header">
+                                                                                                                                    <div class="meta-date wtbx-text">
+                                                                                                                                    '.$row['date'].'
+                                                                                                                                    </div>
+        
+                                                                                                                                    <h1
+                                                                                                                                        class="entry-title">
+                                                                                                                                        <a href="blog.php?title='.$row['title'].'" title="'.$row['title'].'" rel="bookmark">'.$row['title'].'</a>
+                                                                                                                                    </h1>
+        
+                                                                                                                                </div>
+        
+        
+                                                                                                                                <div
+                                                                                                                                    class="post-entry-footer clearfix">
+        
+                                                                                                                                    <div
+                                                                                                                                        class="meta-author">
+                                                                                                                                        <a class="meta-author-link" href="blog.php?author='.$row['author'].'"
+                                                                                                                                            title="View all posts by '.$row['author'].'">
+                                                                                                                                            <div class="author-image">
+                                                                                                                                                <img alt="" src="https://secure.gravatar.com/avatar/d43ab1573f2e6770c84bd9747a50e167?s=48&amp;d=mm&amp;r=g" class="avatar avatar-48 photo" height="48" width="48" loading="lazy">
+                                                                                                                                            </div>
+                                                                                                                                            <span>'.$row['author'].'</span>
+                                                                                                                                        </a>
+                                                                                                                                    </div>
+        
+        
+                                                                                                                                    <div
+                                                                                                                                        class="post-entry-footer-right">
+        
+                                                                                                                                        <div
+                                                                                                                                            class="post-entry-footer-section">
+                                                                                                                                            <a href="blog.php?title='.$row['title'].'" title="View comments for: '.$row['title'].'" class="post-sbs-comments">
+                                                                                                                                                <i class="scape-ui-comment"></i>
+                                                                                                                                                '.comments($row['id']).'
+                                                                                                                                            </a>
+                                                                                                                                        </div>
+        
+                                                                                                                                        <div
+                                                                                                                                            class="post-entry-footer-section">
+                                                                                                                                            <div
+                                                                                                                                                class="post-like">
+                                                                                                                                                <a href="#"
+                                                                                                                                                    class="wtbx-like-button sl-button sl-button-9758"
+                                                                                                                                                    title="Like"><i
+                                                                                                                                                        class="scape-ui-heart"></i><span
+                                                                                                                                                        class="sl-count like-count">'.likes($row['id']).'</span></a>
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+        
+                                                                                                                                    </div>
+        
+        
+                                                                                                                                </div>
+                                                                                                                            </div>
+        
+                                                                                                                        </div>
+                                                                                                                    </article>
+                                                                                                                        ';
+                                                                                                                    }
+
+                                                                                                                    $sql = "SELECT * FROM `blog` WHERE `category` != 'Press Release' and `publish` = 'yes' ORDER  BY `date` LIMIT 2";
+                                                                                                                    $store = mysqli_query($con, $sql);
+                                                                                                                    //fetch sql data
+                                                                                                                    while ($row = mysqli_fetch_array($store)) {
+                                                                                                                        echo '    
+                                                                                                                    <article id="post-9758"
                                                                                                                         class="post-entry wtbx-grid-entry wtbx-boxed-entry wtbx-grid-anim-container post-9758 post type-post status-publish format-standard has-post-thumbnail hentry category-press-release">
                                                                                                                         <div class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden preloader-display-none">
                                                                                                                             <div class="wtbx-preloader-container">
