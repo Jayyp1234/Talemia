@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<title>Newsletter</title>
+	<title>Members - Admin</title>
 	<meta name="description"
         content="Talemia is an Edtech platform supporting early stage African founders to launch their startups faster than than they can do their own">
     <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
@@ -37,13 +37,66 @@
     <link href="../assets/css/dashboard.css" rel="stylesheet">
 </head>
 <style type="text/css">
+   <style type="text/css">
    form input, form textarea{
      width:100%;
      display: block;
      border:1px solid #d4d4d4;
      margin-bottom:7px;
      border-radius:7px;
-   }
+   }.hm-gradient {
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.darken-grey-text {
+    color: #2E2E2E;
+    font-weight:600;
+}
+.input-group.md-form.form-sm.form-2 input {
+    border: 1px solid #bdbdbd;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+.input-group.md-form.form-sm.form-2 input.purple-border {
+    border: 1px solid #9e9e9e;
+}
+.input-group.m-form.form-sm.form-2 input[type=text]:focus:not([readonly]).purple-border {
+    border: 1px solid #ba68c8;
+    box-shadow: none;
+}
+.form-2 .input-group-addon {
+    border: 1px solid #ba68c8;
+}
+.danger-text {
+    color: #ff3547; 
+}  
+.success-text {
+    color: #00C851; 
+}
+.table-bordered.red-border, .table-bordered.red-border th, .table-bordered.red-border td {
+    border: 1px solid #ff3547!important;
+}        
+.table.table-bordered th {
+    text-align: center;
+}.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #fff !important;
+    border: 1px solid #09099d !important;
+    background: -webkit-linear-gradient(top, #0275d8 0%, #09099d 100%);
+    background: -moz-linear-gradient(top, #0275d8 0%, #09099d 100%);
+    background: -ms-linear-gradient(top, #0275d8 0%, #09099d 100%);
+    background: -o-linear-gradient(top, #0275d8 0%, #09099d 100%);
+    background: linear-gradient(to bottom, #0275d8 0%, #09099d 100%) !important;
+}table.dataTable tbody th, table.dataTable tbody td {
+    font-weight: 400;
+    color: #6a6a6a;
+    padding: 8px 10px;
+    font-size:13px !important;
+}label{
+    display: flex;
+    align-items: center;
+}.bg-light {
+    background-color: #09099d !important;
+    color: white !important;
+}
 </style>
 <body>
     <i class="icon-bars"></i>
@@ -56,7 +109,7 @@
         </div>
         <br>
         <ul>
-            <li ><a href="dashboard.php"><i class="icon-dashboard"></i><span> Dashboard</span> </a></li>
+            <li ><a href="dashboard.php"><i class="icon-dashboard"></i><span>Price Update</span> </a></li>
             <li ><a href="newsletter.php"> <i class="icon-globe"></i> <span> Newsletter</span> </a></li>
             <li class="active"><a href="members.php"> <i class="icon-hdd-o"></i> <span> Members </span> </a></li>
             <li ><a href="blog.php"> <i class="icon-child"></i> <span> Blogs </span> </a></li>
@@ -65,10 +118,20 @@
         <br>
     </nav>
     <main style="margin-right:5px;">
-        <div class="intro-div">
-            <b>Members</b>
-            <span id="time" class="time"></span>
-        </div>
+        <!-- Heading -->
+  <div class="p-3 bg-light mb-4">
+    <h1 class="">Members</h1>
+    <!-- Breadcrumb -->
+    <nav class="d-flex" style="position:static;width:90%;background-color:transparent;margin:0;margin-left: -10px !important;">
+      <h6 class="mb-0">
+        <a href="dashboard.php" class="text-reset">Home</a>
+        <span>/</span>
+        <a href="members.php" class="text-reset">Members</a>
+      </h6>
+    </nav>
+    <!-- Breadcrumb -->
+  </div>
+  <!-- Heading -->
         <br>
         <section class="content-main">
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">

@@ -6,7 +6,7 @@ ob_start();
 <head>
 	<meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<title>transactions</title>
+	<title>Blog - Admin</title>
 	<meta name="description"
         content="Talemia is an Edtech platform supporting early stage African founders to launch their startups faster than than they can do their own">
     <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
@@ -121,7 +121,7 @@ ob_start();
         </div>
         <br>
         <ul>
-            <li ><a href="dashboard.php"><i class="icon-dashboard"></i><span> Dashboard</span> </a></li>
+            <li ><a href="dashboard.php"><i class="icon-dashboard"></i><span> Price Update</span> </a></li>
             <li ><a href="newsletter.php"> <i class="icon-globe"></i> <span> Newsletter</span> </a></li>
             <li><a href="members.php"> <i class="icon-hdd-o"></i> <span> Members </span> </a></li>
             <li class="active"><a href="blog.php"> <i class="icon-child"></i> <span> Blogs </span> </a></li>
