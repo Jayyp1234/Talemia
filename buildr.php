@@ -2,7 +2,7 @@
 include 'component/header.php';
 $title = "Buildr";
 ?>
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style type="text/css">
 	.wtbx_vc_row-126735512 .wtbx_row_bg {
 		background-color: #ffffff;
@@ -994,7 +994,346 @@ $title = "Buildr";
 			top: 0;
 		}
 	}
+	.wtbx_vc_row-126741377 .wtbx_row_bg {
+    background-color: white;
+    color: black;
+}.wtbx_vc_text_element.wtbx_disable_margin .wtbx_text_element_inner p:last-child {
+    color: black;
+}a{
+	text-decoration:none;
+}
+ul{
+        padding: 0;
+        list-style-type: none;
+    }.container{
+        padding: 90px 0;
+    }.section1{
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }.content-desc {
+        padding: 0;
+        margin: 0 auto;
+        text-align: start;
+    }.content-desc h3 {
+    font-weight: bolder;
+    font-size: 4rem;
+    color: rgba(12, 12, 100, 1);
+}.content-desc p{
+        margin: 0;
+        font-size: 1.35rem;
+        text-transform: initial;
+    }.content-desc p span {
+    font-weight: 900;
+    color: rgba(9, 9, 157, 1);
+}.section1 .image img{
+        width: auto;
+        height: 480px;
+    }.content-desc .link {
+        margin-top: 10px; 
+    }.content-desc .link a{
+        text-transform: initial;
+        background: #09099d;
+        color: #fff;
+        font-size: 1.4rem;
+        border-radius: 7px;
+        margin: 1rem 0;
+        padding: 8px 1.4rem;
+        font-weight: bolder;
+    }.section2{
+        padding: 0;
+        align-items: stretch;
+        margin: 0;
+    }.section2 .header{
+        margin: 1rem auto;
+        text-align:center;
+        padding: 2em 1em;
+    }.section2 .header h4{
+        font-size: 1.6rem
+    }.section2 .header p{
+        margin: 0 auto;
+        text-transform: initial;
+        font-size: 1.2rem
+    }.section2 .content{
+        background-color: #09099d;
+        padding: 50px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+    }.section2 .content h4{
+        font-weight:900;
+        font-size: 2.5rem;
+        color: #fff;
+	}.section2 .content p{
+        margin-top: 2.5rem;
+        font-size: 1.3rem;
+        line-height: 1.9pc;
+        text-transform: initial;
+    }.section2 .image{
+        padding: 0;
+    }.section3{
+		padding: 90px 0 135px;
+	}.section3 .header{
+        text-transform: initial;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+        font-weight: 900;
+        font-size: 2rem;
+        margin: 3rem auto;
+    }.section3 .header h4{
+        font-weight: 900;
+        font-size: 2rem;
+    }.section3 .row{
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+    }.section3 .row .card{
+        text-align: center;
+        width: 23%;
+        padding: 1.5rem 1rem 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 20px -2px rgb(9 31 67 / 10%);
+        border-color: transparent;
+        transition: .3s ease-in;
+    }.section3 .row .card:hover{
+        transform: scale(1.07)
+    }.section3 .row .card .card-title{
+        font-size: 1.1rem;
+		border: 1.8px solid #09099d;
+		padding: 0.75rem 0;
+		font-weight: 600;
+		border-radius: 5px;
+		letter-spacing: 1px;
+		color: #687188;
+		width: 86%;
+		margin: 0 auto;
+    }.section3 .row .card .card-title span{
+        color: #09099d;
+        font-weight: 800;
+    }.section3 .row .card .card-body{
+        padding: 0;
+        margin: 1rem 0;
+    }.section3 .row .card .card-body ul{
+        text-align: start;
+        margin-top: 14px
+    }.section3 .row .card .card-body ul li{
+        display: flex;
+        align-items:center;
+        line-height: 2.4rem;
+    }.section3 .row .card .card-body ul li i{
+        font-size: 17px;
+        color: #687188;
+    }.section3 .row .card .card-body ul li span{
+        margin-left: 14px;
+        font-size:  .85rem;
+        color: #687188;
+    }.section3 .row .card .card-body a{
+		background: #09099d;
+		font-size: .93rem;
+		transition:.5s ease-in;
+		font-weight: 700;
+		color: #fff;
+		margin-top: 0.8rem;
+		border-radius: 7px;
+		padding: 0.4rem 1.5rem;
+	}.section3 .row .card .card-body a:hover{     
+    	box-shadow: 0 14px 30px -7px rgb(9 31 67 / 30%);
+    }.section3 .row .card.two ul li span:not(.card.two ul li:nth-child(4) span, .card.two ul li:nth-child(5) span),
+    .section3 .row .card.one ul li:first-child span,
+    .section3 .row .card.three ul li span,
+    .section3 .row .card.four ul li span{
+        color: #09099d;
+        font-weight: 800
+    }
+    @media (max-width: 768px){
+        .section2 {
+            align-items: stretch;
+        }
+        .section2 .image .img-fluid {
+            height: 346px;
+        }
+    }
+    @media all and (max-width: 1024px){
+        .section2 {
+            align-items: stretch;
+        }
+        .section2 .image .img-fluid {
+            height: auto;
+        }
+        .section3 .row .card .card-body ul {
+            width: 80%;
+            margin: 14px auto;
+        }
+        .section3 .row .card .card-body ul li span {
+            margin-left: 8px;
+            font-size: 1.03rem;
+        } 
+    }
+    @media (min-width: 768px) and (max-width: 1024px){
+        .container {
+            padding: 70px 0 0;
+        }
+        .content-desc {
+            padding: 0;
+        }.content-desc h3 {
+            font-size: 2.7rem;
+        }
+        .content-desc .link a {
+            font-size: 1.1rem;
+            margin: 0.6rem 0 0;
+        }
+        .content-desc p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        .section1 .image img {
+            height: 340px;
+        }
+        .section2 .header p {
+            font-size: 1.04rem;
+        }
+        .section2 .content {
+            background-color: #09099d;
+            padding: .8rem;
+            justify-content: center;
+        }
+        .section2 .content > div {
+            margin: 0 !important;
+        }
+        .section2 .content h4 {
+            font-size: 1.7rem;
+        }
+        .section2 .content p {
+            margin-top: 1.2rem;
+            font-size: 1.1rem;
+            line-height: 1.7pc;
+            margin-bottom: 0;
+        }
+        .section2 .image .img-fluid {
+            height: auto;
+        }
+        .section3 .header {
+            margin: 2rem auto;
+        }
+        .section3 .header h4 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        .section3 .row .card {
+            width: 43%;
+            margin: 1rem auto;
+            padding: 1.5rem 0.5rem 2rem;
+        }        
+        .section3 .row .card .card-title {
+            font-size: 1.23rem;
+            padding: .8rem 0;
+            border-radius: 9px;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .section3 .row .card .card-body ul li span {
+            margin-left: 8px;
+            font-size: .9rem;
+        }
+        .section3 .row .card .card-body a {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-top: 0.55rem;
+            padding: 0.5em 1.5rem;
+        }
+    }
+    @media all and (max-width: 1024px){
+        .section3 .row .card .card-body ul li span {
+            margin-left: 8px;
+            font-size: .91rem;
+        }
+        
+    }
+    @media all and (max-width:769px){
+		.section3 .row .card {
+            width: 95%;
+        }
+	}
+    @media all and (max-width: 425px){
+        .content-desc {
+            padding: 0;
+        }.content-desc p {
+            font-size: 1.07rem;
+        }.content-desc .link a {
+            font-size: 1rem;
+        }.section1 {
+            padding:80px 0 0;
+        }.section .image{
+            padding: 1rem 0 0;
+        }.section1 .image img {
+            height: 360px;
+            margin-top: 2pc;
+        }.content-desc h3 {
+            font-weight: bolder;
+            font-size: 2rem;
+        }.container {
+            padding: 40px 0 10px;
+        }.section2 .header h4 {
+            margin: 0 auto 1rem
+        }.section2 .header h4 {
+            font-size: 1.2rem;
+        }.section2 .header p {
+            text-align: start;
+            font-size: .9rem;
+        }.section2 .content {
+            text-align: left;
+            padding: 40px 1rem;
+        }.section2 .content h4 {
+            font-size: 1.9rem;
+        }.section2 .content p {
+            margin-top: 2.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7pc;
+        }.section3 .row {
+            margin: 0 auto;
+        }.section3 .row .card {
+            margin: 2rem auto 1rem;
+            width: 93% !important;
+            padding: 1rem 1rem 1.5rem;
+        }.section3 .row .card .card-title {
+            font-size: 1rem;
+            font-weight: 800;
+        }.section3 .header {
+            margin: 2rem auto 1rem;
+        }.section3 .header h4 {
+            font-size: 1.7rem;
+            margin: 0;
+        }.section3 .row .card .card-body ul li {
+            line-height: 2rem;
+        }.section3 .row .card .card-body ul li i {
+            font-size: 15px;
+        }.section3 .row .card .card-body ul li span {
+            font-size: 13px;
+        }.section3 .row .card .card-body a {
+            font-size: 13px;
+            padding: 0.7em 1.5rem;  
+        } 
+    }
+    @media all and (max-width: 375px){
+        .container {
+            padding: 50px 0 15px;
+        }.section1 .image img {
+            height: auto;
+        }.content-desc .link a {
+            font-size: .8rem;
+        }.section2 .content h4 {
+            font-size: 1.5rem;
+        }.section2 .image .img-fluid {
+            height: auto;
+        }.section3 .row .card {
+            width: 93%;
+        }
+    }
+	
 </style>
+
 <div id="main" style="width:100%;" class="wtbx-footer-default">
 	<!-- Page-wrap start -->
 	<div id="page-wrap" class="clearfix">
@@ -1003,417 +1342,48 @@ $title = "Buildr";
 			<div id="content">
 				<article id="post-9722" class="clearfix post-9722 page type-page status-publish hentry">
 					<div class="entry-content clearfix">
-						<div class="wtbx_vc_row wtbx_vc_row-126735512 wtbx_stretch_row wtbx_align_center wtbx-fadeout wtbx_anim_style_1 wtbx_row_fixed_height_screen wtbx_row-flex-align-stretch wtbx_row-content-align-middle wtbx_row-flex  wtbx_disable_height_tablet_portrait"
-							data-skin="light">
-							<div class="wtbx_vc_el_container wtbx_vc_row_container">
-								<div class="wtbx_vc_el_inner wtbx_vc_row_inner">
-									<div class="wtbx_row_wrapper">
-										<div class="wtbx_row_content clearfix">
-											<div class="wtbx_row_content_wrapper">
-												<div class="wtbx_row_content_inner clearfix"
-													style="transform: translate3d(0px, 111px, 0px); opacity: 0;">
-													<div
-														class="wtbx_vc_column vc_col-sm-12 wtbx_with_image wtbx_vc_column-126737661">
-														<div class="wtbx_vc_el_container wtbx_vc_column_container">
-															<div class="wtbx_vc_el_inner wtbx_vc_column_inner">
-																<div class="wtbx_column_wrapper clearfix">
-																	<div class="wtbx_column_content">
-																		<div
-																			class="wtbx_vc_styled_heading wtbx_vc_styled_heading-126739291 wtbx_style_default wtbx_appearance_animation wtbx-anim-bottom-to-top-small wtbx-duration-700 wtbx_easing-natural wtbx_to_be_animated wtbx_animated">
-																			<div
-																				class="wtbx_vc_el_container wtbx_vc_styled_heading_container clearfix">
-																				<div
-																					class="wtbx_vc_el_inner wtbx_vc_styled_heading_inner">
-																					<div
-																						class="wtbx_heading_el_title_wrapper h1">
-																						<h1
-																							class="wtbx_heading_el_title wtbx-text">
-																							Join Buildr</h1>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-
-																		<div
-																			class="wtbx_vc_empty_space wtbx_vc_empty_space-126740650">
-																			<span class="wtbx_empty_space_inner"></span>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						
 						<div class="wtbx_vc_row wtbx_vc_row-126741377 wtbx_stretch_row wtbx_anim_style_1 wtbx_row-flex-align-stretch wtbx_row-content-align-middle wtbx_row-flex"
 							id="buildr" data-skin="light">
 							<div class="wtbx_vc_el_container wtbx_vc_row_container">
 								<div class="wtbx_vc_el_inner wtbx_vc_row_inner">
-									<div class="wtbx_row_wrapper">
-										<div class="wtbx_row_bg"></div>
-										<div class="wtbx_row_content clearfix">
-											<div class="wtbx_row_content_wrapper">
-												<div class="wtbx_row_content_inner clearfix">
-													<div
-														class="wtbx_vc_column vc_col-sm-6 wtbx_with_image wtbx_vc_column-126742143">
-														<div class="wtbx_vc_el_container wtbx_vc_column_container">
-															<div class="wtbx_vc_el_inner wtbx_vc_column_inner">
-																<div class="wtbx_column_wrapper clearfix">
-																	<div class="wtbx_column_content">
-																		<div
-																			class="wtbx_vc_text_element wtbx_vc_text_element-126743372 wtbx_display_block wtbx_disable_margin">
-																			<div
-																				class="wtbx_vc_el_container wtbx_vc_text_element_container">
-																				<div class="wtbx_text_element_content">
-																					<div
-																						class="wtbx_text_element_inner">
-																						<p>Buildr</p>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
+								<div class="container">
+                                    <div class="row col-12 section1">
+                                        <div class="content-desc wow fadeInLeftBig col-10 col-md-6">
+                                            <div class="col-12">
+                                                <h3>Buildr</h3>
+                                                <p class="col-12">
+												Launch your startup through a <span>simplified roadmap </span> while collaborating with other founders. It doesn’t get any more better with the Community. Get <span> traction </span> in <span>30 days</span>
 
-																		<div
-																			class="wtbx_vc_empty_space wtbx_vc_empty_space-126743788">
-																			<span class="wtbx_empty_space_inner"></span>
-																		</div>
-																		<div
-																			class="wtbx_vc_divider wtbx_vc_divider-126745439 wtbx_style_horizontal">
-																			<div
-																				class="wtbx_vc_el_container wtbx_vc_divider_container">
-																				<div
-																					class="wtbx_vc_el_inner wtbx_vc_divider_inner">
-																				</div>
-																			</div>
-																		</div>
-
-																		<div
-																			class="wtbx_vc_empty_space wtbx_vc_empty_space-126745620">
-																			<span class="wtbx_empty_space_inner"></span>
-																		</div>
-																		<div
-																			class="wtbx_vc_text_element wtbx_vc_text_element-126745806 wtbx_display_block wtbx_disable_margin">
-																			<div
-																				class="wtbx_vc_el_container wtbx_vc_text_element_container">
-																				<div class="wtbx_text_element_content">
-																					<div
-																						class="wtbx_text_element_inner">
-																						<p>Launch your startup through a simplified roadmap while
-																							collaborating with other founders. It doesn’t get any more
-																							better with the Community. Get traction in 30 days</p>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-
-																		<div
-																			class="wtbx_vc_empty_space wtbx_vc_empty_space-126746095">
-																			<span class="wtbx_empty_space_inner"></span>
-																		</div>
-																		<div
-																			class="wtbx_vc_button wtbx_vc_button-126746997 wtbx_style_arrow wtbx_type_simple wtbx_skin_light wtbx_size_ wtbx_display_block">
-																			<div
-																				class="wtbx_vc_el_container wtbx_vc_button_container">
-																				<div
-																					class="wtbx_vc_el_inner wtbx_vc_button_inner">
-																					<a href="joinbuildr.php"
-																						target="_self"
-																						class="wtbx-button wtbx-button-arrow"
-																						rel="noopener"><span
-																							class="wtbx_button_inner">Join
-																							Buildr</span><svg
-																							class="wtbx_link_arrow"
-																							viewBox="0 0 813 486"
-																							xmlns="http://www.w3.org/2000/svg">
-																							<rect class="bar"
-																								height="60" rx="30"
-																								width="800" y="213">
-																							</rect>
-																							<path class="chevron"
-																								d="m793.388955 224.472433c9.626991 11.783528 8.945751 29.177709-2.043717 40.167177l-200.139611 200.139611c-11.715728 11.715728-30.710678 11.715728-42.426406 0-11.715729-11.715729-11.715729-30.710679 0-42.426407l179.073593-179.073593-179.352814-179.3528141c-11.715729-11.7157288-11.715729-30.7106781 0-42.4264069 11.715729-11.71572875 30.710678-11.71572875 42.426407 0l199.418831 199.418831c1.122031 1.122031 2.136603 2.310828 3.043717 3.553602z">
-																							</path>
-																						</svg></a></div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div
-														class="wtbx_vc_column vc_col-sm-6 vc_col-md-offset-2 vc_col-md-4 wtbx_with_image wtbx_vc_column-126747282">
-														<div class="wtbx_vc_el_container wtbx_vc_column_container">
-															<div class="wtbx_vc_el_inner wtbx_vc_column_inner">
-																<div class="wtbx_column_wrapper clearfix">
-																	<div class="wtbx_column_content">
-																		<div
-																			class="wtbx_vc_image_element wtbx_vc_image_element-126748435 wtbx_img_align_center wtbx_preloader_cont">
-																			<div
-																				class="wtbx_image_wrapper wtbx_with_image">
-																				<div
-																					class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden preloader-display-none">
-																					<div
-																						class="wtbx-preloader-container">
-
-
-																						<div
-																							class="wtbx-preloader wtbx-preloader-2">
-																							<svg class="circular"
-																								viewBox="25 25 50 50">
-																								<circle class="path"
-																									cx="50" cy="50"
-																									r="20" fill="none"
-																									stroke-width="3"
-																									stroke-miterlimit="10"
-																									stroke="#09099d"
-																									stroke-linecap="round">
-																								</circle>
-																							</svg>
-																						</div>
-
-																					</div>
-																				</div>
-																				<div
-																					class="wtbx_vc_el_container wtbx_vc_image_element_container">
-																					<div
-																						class="wtbx_vc_el_inner wtbx_vc_image_element_inner">
-																						<div
-																							class="wtbx_image_inner wtbx-element-reveal wtbx-reveal-cont wtbx-element-visible">
-																							<div
-																								class="wtbx_image_overlap wtbx_image_noaction">
-																							</div>
-																							<div class="wtbx-image-crop"
-																								style="padding-bottom: 133.61%">
-																								<img class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
-																									data-bg="false"
-																									data-imgratio="958:1280"
-																									data-aspectratio="0.7484"
-																									src="assets/image/Picture2.png"
-																									data-sizes="auto"
-																									data-parent-fit="cover"
-																									alt="talemia about"
-																									sizes="360px"></div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="wtbx_vc_row wtbx_vc_row-126751346 wtbx_stretch_row wtbx_anim_style_1 wtbx_row-flex-align-stretch wtbx_row-content-align-middle wtbx_row-flex"
-							data-skin="light">
-							<div class="wtbx_vc_el_container wtbx_vc_row_container">
-								<div class="wtbx_vc_el_inner wtbx_vc_row_inner">
-									<div class="wtbx_row_wrapper">
-										<div class="wtbx_row_bg"></div>
-										<div class="wtbx_row_content clearfix">
-											<div class="wtbx_row_content_wrapper">
-												<div class="wtbx_row_content_inner clearfix">
-													<div
-														class="wtbx_vc_column vc_col-sm-6 wtbx_with_image wtbx_vc_column-126751789">
-														<div class="wtbx_vc_el_container wtbx_vc_column_container">
-															<div class="wtbx_vc_el_inner wtbx_vc_column_inner">
-																<div class="wtbx_column_wrapper clearfix">
-																	<div class="wtbx_column_content">
-																		<div
-																			class="wtbx_vc_text_element wtbx_vc_text_element-126752118 wtbx_display_block wtbx_disable_margin">
-																			<div
-																				class="wtbx_vc_el_container wtbx_vc_text_element_container">
-																				<div class="wtbx_text_element_content">
-																					<div
-																						class="wtbx_text_element_inner">
-																						<p>Why you should join Buildr
-																						</p>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-
-																		<div
-																			class="wtbx_vc_empty_space wtbx_vc_empty_space-126752289">
-																			<span class="wtbx_empty_space_inner"></span>
-																		</div>
-																		<div
-																			class="wtbx_vc_text_element wtbx_vc_text_element-126752396 wtbx_display_block wtbx_disable_margin">
-																			<div
-																				class="wtbx_vc_el_container wtbx_vc_text_element_container">
-																				<div class="wtbx_text_element_content">
-																					<div
-																						class="wtbx_text_element_inner">
-																						<p>Knowledge is easy! Execution
-																							is hard. Buildr was designed
-																							to simplify the entire
-																							launch process. Joining
-																							Buildr gives you lifetime
-																							access to:</p>
-																						<ul>
-																							<li style="font-weight: 400;"
-																								aria-level="1"><span
-																									style="font-weight: 400;">Startup
-																									Structure
-																									Playbook</span></li>
-																							<li style="font-weight: 400;"
-																								aria-level="1"><span
-																									style="font-weight: 400;">Startup
-																									Checklist</span>
-																							</li>
-																							<li style="font-weight: 400;"
-																								aria-level="1"><span
-																									style="font-weight: 400;">Business
-																									Group Coaching
-																									Meetings</span></li>
-																							<li style="font-weight: 400;"
-																								aria-level="1"><span
-																									style="font-weight: 400;">Startup
-																									Library</span></li>
-																							<li style="font-weight: 400;"
-																								aria-level="1"><span
-																									style="font-weight: 400;">Mp3
-																									Clips of all 0 to 1
-																									Clubhouse
-																									sessions</span></li>
-																							<li style="font-weight: 400;"
-																								aria-level="1"><span
-																									style="font-weight: 400;">Top
-																									Business events and
-																									collaboration
-																									opportunities</span>
-																							</li>
-																							<li style="font-weight: 400;"
-																								aria-level="1"><span
-																									style="font-weight: 400;">Business
-																									Master Templates,
-																									Tools and
-																									Kits</span></li>
-																						</ul>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div
-														class="wtbx_vc_column vc_col-sm-6 vc_col-md-offset-2 vc_col-md-4 wtbx_with_image wtbx_vc_column-126752677">
-														<div class="wtbx_vc_el_container wtbx_vc_column_container">
-															<div class="wtbx_vc_el_inner wtbx_vc_column_inner">
-																<div class="wtbx_column_wrapper clearfix">
-																	<div class="wtbx_column_content">
-																		<div class="wtbx_vc_content_box wtbx_vc_content_box-126753636 wtbx_style_custom wtbx_vertical_horizontal_align= wtbx_big_shadow wtbx_hover_no_shadow wtbx_border_default wtbx_scale_ wtbx_equal_height wtbx_appearance_animation wtbx-anim-right-to-left-small wtbx-duration-1000 wtbx_easing-natural wtbx_equal_height_init wtbx_to_be_animated wtbx_animated"
-																			data-equal="alignment=">
-																			<div
-																				class="wtbx_vc_el_container wtbx_vc_content_box_container wtbx_equal_height_cont clearfix">
-																				<div
-																					class="wtbx_vc_el_inner wtbx_vc_content_box_inner wtbx_equal_height_cont clearfix">
-																					<div
-																						class="wtbx_content_box_bg wtbx_content_box_bg_idle">
-																					</div>
-																					<div
-																						class="wtbx_content_box_container">
-																						<div
-																							class="wtbx_content_box_wrapper">
-																							<div
-																								class="wtbx_content_box_content">
-																								<div
-																									class="wtbx_vc_text_element wtbx_vc_text_element-126753958 wtbx_display_block wtbx_disable_margin">
-																									<div
-																										class="wtbx_vc_el_container wtbx_vc_text_element_container">
-																										<div
-																											class="wtbx_text_element_content">
-																											<div
-																												class="wtbx_text_element_inner">
-																												<p>With
-																													only
-																													<span
-																														style="font-size: 14px;"><del>$30/</del></span><span
-																														style="font-size: 21px;"><strong><span
-																																style="color: #000080;">$3</span></strong></span>,
-																													you
-																													can
-																													now
-																													take
-																													your
-																													business
-																													to
-																													the
-																													next
-																													level
-																												</p>
-																											</div>
-																										</div>
-																									</div>
-																								</div>
-
-																								<div
-																									class="wtbx_vc_empty_space wtbx_vc_empty_space-126754135">
-																									<span
-																										class="wtbx_empty_space_inner"></span>
-																								</div>
-																								<div
-																									class="wtbx_vc_button wtbx_vc_button-126754262 wtbx_style_arrow wtbx_type_simple wtbx_skin_dark wtbx_size_ wtbx_display_block">
-																									<div
-																										class="wtbx_vc_el_container wtbx_vc_button_container">
-																										<div
-																											class="wtbx_vc_el_inner wtbx_vc_button_inner">
-																											<a href="joinbuildr.php"
-																												target="_self"
-																												class="wtbx-button wtbx-button-arrow"
-																												rel="noopener"><span
-																													class="wtbx_button_inner">Join
-																													Buildr</span><svg
-																													class="wtbx_link_arrow"
-																													viewBox="0 0 813 486"
-																													xmlns="http://www.w3.org/2000/svg">
-																													<rect
-																														class="bar"
-																														height="60"
-																														rx="30"
-																														width="800"
-																														y="213">
+                                                </p>
+                                            </div>
+											<br>
+                                            <div class="wtbx_vc_button wtbx_vc_button-126754262 wtbx_style_arrow wtbx_type_simple wtbx_skin_dark wtbx_size_ wtbx_display_block">
+																									<div class="wtbx_vc_el_container wtbx_vc_button_container">
+																										<div class="wtbx_vc_el_inner wtbx_vc_button_inner">
+																											<a href="joinbuildr.php" target="_self" class="wtbx-button wtbx-button-arrow" rel="noopener"><span class="wtbx_button_inner">Join Now</span><svg class="wtbx_link_arrow" viewBox="0 0 813 486" xmlns="http://www.w3.org/2000/svg">
+																													<rect class="bar" height="60" rx="30" width="800" y="213">
 																													</rect>
-																													<path
-																														class="chevron"
-																														d="m793.388955 224.472433c9.626991 11.783528 8.945751 29.177709-2.043717 40.167177l-200.139611 200.139611c-11.715728 11.715728-30.710678 11.715728-42.426406 0-11.715729-11.715729-11.715729-30.710679 0-42.426407l179.073593-179.073593-179.352814-179.3528141c-11.715729-11.7157288-11.715729-30.7106781 0-42.4264069 11.715729-11.71572875 30.710678-11.71572875 42.426407 0l199.418831 199.418831c1.122031 1.122031 2.136603 2.310828 3.043717 3.553602z">
+																													<path class="chevron" d="m793.388955 224.472433c9.626991 11.783528 8.945751 29.177709-2.043717 40.167177l-200.139611 200.139611c-11.715728 11.715728-30.710678 11.715728-42.426406 0-11.715729-11.715729-11.715729-30.710679 0-42.426407l179.073593-179.073593-179.352814-179.3528141c-11.715729-11.7157288-11.715729-30.7106781 0-42.4264069 11.715729-11.71572875 30.710678-11.71572875 42.426407 0l199.418831 199.418831c1.122031 1.122031 2.136603 2.310828 3.043717 3.553602z">
 																													</path>
 																												</svg></a>
 																										</div>
 																									</div>
 																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+                                        </div>
+                                        <div class="image col-12 wow fadeInRightBig col-md-6 text-center">
+                                            <img src="assets/image/Picture2.png" alt="" class="img-fluid">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
 								</div>
 							</div>
 						</div>
+						
+						
+
 						<div class="wtbx_vc_row wtbx_vc_row-126754676 wtbx_stretch_row wtbx_align_center wtbx_anim_style_1"
 							id="0to1" data-skin="light">
 							<div class="wtbx_vc_el_container wtbx_vc_row_container">

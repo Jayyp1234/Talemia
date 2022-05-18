@@ -1936,7 +1936,8 @@ Admin bar
   height: 2.6em;
   line-height: 2.6em;
   max-height: 100%;
-  padding: 0 3em;
+  font-weight: 500;
+  padding: 0 1.7rem;
 }
 
 /*---------------------------------------------------------------*/
@@ -5812,7 +5813,7 @@ Admin bar
   -ms-transition: all 0.3s cubic-bezier(0.2, 0, 0.3, 1), margin 0s;
   -o-transition: all 0.3s cubic-bezier(0.2, 0, 0.3, 1), margin 0s;
   transition: all 0.3s cubic-bezier(0.2, 0, 0.3, 1), margin 0s;
-  moz-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
   -o-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   -webkit-transform-origin: 50% 50%;
@@ -7762,7 +7763,7 @@ Admin bar
 .wtbx_hs_header .wtbx_header_logo_wrapper,
 .wtbx_hs_bottombar .wtbx_header_logo_wrapper {
   position: absolute;
-  top: 0;
+  top: 10px;
 }
 
 .wtbx_hs_header .wtbx_header_logo_wrapper .wtbx_header_logo,

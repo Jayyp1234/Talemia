@@ -3119,8 +3119,7 @@
             }
         }
     </style>
-    <link rel="stylesheet" id="scape-style-css"
-        href="assets/css/template.css" media="all">
+    <link rel="stylesheet" id="scape-style-css" href="assets/css/template.css" media="all">
     <link rel="icon" href="https://talemia.com/wp-content/uploads/2021/12/cropped-favicon-new-32x32.png" sizes="32x32">
     <link rel="icon" href="https://talemia.com/wp-content/uploads/2021/12/cropped-favicon-new-192x192.png"
         sizes="192x192">

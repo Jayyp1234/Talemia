@@ -935,19 +935,21 @@ $title = "Products - Talemia";
         margin: 0;
         padding: 30px 0;
     }.content-desc {
-        padding: 0 0 0 5pc;
+        padding: 0;
         margin: 0 auto;
         text-align: start;
-    }.content-desc h3{
-        font-weight: bolder;
-        font-size: 4rem;
-    }.content-desc p{
+    }.content-desc h3 {
+    font-weight: bolder;
+    font-size: 4rem;
+    color: rgba(12, 12, 100, 1);
+}.content-desc p{
         margin: 0;
         font-size: 1.35rem;
         text-transform: initial;
-    }.content-desc p span{
-        font-weight: 900;   
-    }.section1 .image img{
+    }.content-desc p span {
+    font-weight: 900;
+    color: rgba(9, 9, 157, 1);
+}.section1 .image img{
         width: auto;
         height: 480px;
     }.content-desc .link {
@@ -1093,10 +1095,10 @@ $title = "Products - Talemia";
     }
     @media (min-width: 768px) and (max-width: 1024px){
         .container {
-            padding: 90px 0 0;
+            padding: 70px 0 0;
         }
         .content-desc {
-            padding: 0 0 0 5pc;
+            padding: 0;
         }.content-desc h3 {
             font-size: 2.7rem;
         }
@@ -1251,7 +1253,9 @@ $title = "Products - Talemia";
             width: 93%;
         }
     }
+	
 </style>
+
 <div id="main" style="width:100%;" class="wtbx-footer-default">
 	<!-- Page-wrap start -->
 	<div id="page-wrap" class="clearfix">
@@ -1268,7 +1272,7 @@ $title = "Products - Talemia";
 
                                 <div class="container">
                                     <div class="row col-12 section1">
-                                        <div class="content-desc col-10 col-md-6">
+                                        <div class="content-desc wow fadeInLeftBig col-10 col-md-6">
                                             <div class="col-12">
                                                 <h3>Hackar.</h3>
                                                 <p class="col-12">Think of a <span>Buffet</span> but for <span>Business</span>. Get what’s most important to your next level of business growth. Unique solutions to unique problems in your business 
@@ -1288,7 +1292,7 @@ $title = "Products - Talemia";
 																									</div>
 																								</div>
                                         </div>
-                                        <div class="image col-12 col-md-6 text-center">
+                                        <div class="image col-12 wow fadeInRightBig col-md-6 text-center">
                                             <img src="assets/image/Picture1.png" alt="" class="img-fluid">
                                         </div>
                                         
@@ -1328,7 +1332,7 @@ $title = "Products - Talemia";
 										</div>
                                     <div class="row col-12">
                                         
-                                        <div class="card one col-sm-12 col-md-6 col-lg-2">
+                                        <div class="card one wow fadeInUp col-sm-12 col-md-6 col-lg-2" data-wow-delay="0.1s">
                                             <div class="card-body">
                                                 <h5 class="card-title">HACKAR<span>FLEX</span></h5>
                                                 <ul>
@@ -1341,7 +1345,7 @@ $title = "Products - Talemia";
                                                 <a href="" class="btn">Buy Now</a>
                                             </div>
                                         </div>
-                                        <div class="card two col-sm-12 col-md-6 col-lg-2">
+                                        <div class="card two wow fadeInUp col-sm-12 col-md-6 col-lg-2" data-wow-delay="0.3s">
                                             <div class="card-body ">
                                                 <h5 class="card-title">HACKAR<span>PLUS</span></h5>
                                                 <ul>
@@ -1354,7 +1358,7 @@ $title = "Products - Talemia";
                                                 <a href="" class="btn">Buy Now</a>
                                             </div>
                                         </div>
-                                        <div class="card three col-sm-12 col-md-6 col-lg-2">
+                                        <div class="card three wow fadeInUp  col-sm-12 col-md-6 col-lg-2" data-wow-delay="0.5s">
                                             <div class="card-body three">
                                                 <h5 class="card-title">HACKAR<span>XTRA</span></h5>
                                                 <ul>
@@ -1367,7 +1371,7 @@ $title = "Products - Talemia";
                                                 <a href="" class="btn">Buy Now</a>
                                             </div>
                                         </div>
-                                        <div class="card four col-sm-12 col-md-6 col-lg-2">
+                                        <div class="card four wow fadeInUp col-sm-12 col-md-6 col-lg-2" data-wow-delay="0.7s">
                                             <div class="card-body four">
                                                 <h5 class="card-title">HACKAR<span>SUPA</span></h5>
                                                 <ul>

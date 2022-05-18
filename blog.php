@@ -45,7 +45,8 @@ if (!isset($_GET['author']) && !isset($_GET['tags']) && !isset($_GET['title']) &
                                                                                 <div class="wtbx_text_element_content">
                                                                                     <div
                                                                                         class="wtbx_text_element_inner">
-                                                                                        <h3 style="text-align: center;"><strong>Our Blog</strong>
+                                                                                        <h3 style="text-align: center;">
+                                                                                            <strong>Our Blog</strong>
                                                                                         </h3>
                                                                                     </div>
                                                                                 </div>
@@ -298,7 +299,8 @@ if (isset($_GET['category'])){
                                                                                 <div class="wtbx_text_element_content">
                                                                                     <div
                                                                                         class="wtbx_text_element_inner">
-                                                                                        <h3 style="text-align: center;"><strong><?php echo $_GET['category']; ?></strong>
+                                                                                        <h3 style="text-align: center;">
+                                                                                            <strong><?php echo $_GET['category']; ?></strong>
                                                                                         </h3>
                                                                                     </div>
                                                                                 </div>
@@ -550,7 +552,8 @@ if (isset($_GET['author'])){
                                                                                 <div class="wtbx_text_element_content">
                                                                                     <div
                                                                                         class="wtbx_text_element_inner">
-                                                                                        <h3 style="text-align: center;"><strong>Blog Posts by
+                                                                                        <h3 style="text-align: center;">
+                                                                                            <strong>Blog Posts by
                                                                                                 <?php echo $_GET['author']; ?></strong>
                                                                                         </h3>
                                                                                     </div>
@@ -805,9 +808,80 @@ if (isset($_GET['title'])){
     }
 
     p {
-        margin-top: 1rem;
-        font-size: 1.142857em;
-        margin-bottom: 1rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height:27px;
+    letter-spacing: 0.045em;
+}
+p a{
+    color: #09099d;
+    font-weight: 500;
+
+}ol{
+    padding-left:0px;
+}
+ol li{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    line-height: 27px;
+    letter-spacing: 0.045em;
+}
+.post-categories a{
+    color: #09099d !important;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight:500;
+    font-size:14px;
+    text-decoration: none !important;
+    }.entry-title{
+        font-weight: bold;
+        margin-top:20px;
+        line-height: 42px;
+        margin-bottom:10px;
+        text-align: left;
+    }@media all and (max-width:600px){
+        .wtbx-large-7 {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+    }.inhype-data-post-details{
+        display:flex;
+        align-items:baseline;
+        margin-top:15px;
+        font-size:14px;
+        margin-bottom:25px;
+    }.inhype-post .post-author a {
+        color: #022b69;
+        font-size: 14px;
+        text-decoration: none;
+    }
+    .vcard{
+        font-weight:550;
+    }.fn{
+        color:#022b69;
+        font-weight:500;
+    }.inhype-post .post-info-dot {
+    display: inline-block;
+    margin-left: 7px;
+    margin-right: 7px;
+    border-radius: 5px;
+    width: 6px;
+    height: 6px;
+    border: 1px solid #909090;
+    top: -1px;
+    position: relative;
+}
+    @media all and (max-width:600px){
+        .inhype-data-post-details{
+            display:grid;
+            justify-content:start;
+        }
+        .inhype-post .post-info-dot {
+            display: none;
+        }
+
+    }.vc_single_image-img{
+        border-radius:7px;
     }
 </style>
 <?php
@@ -830,6 +904,8 @@ if (isset($_GET['title'])){
                     $category = $row['category'];
                     $author = $row['author'];
                     $image = $row['image']; 
+                    $duration = $row['duration'];
+                    $time = $row['date'];
                 }
             }
             else{
@@ -849,67 +925,47 @@ if (isset($_GET['title'])){
 
     <br><br>
     <div id="page-header" class="layout-five type-content_block wtbx-fadeout" data-fullscroll="">
-        <div class="wtbx_vc_row wtbx_vc_row-227642951 wtbx_stretch_row wtbx_center_align_tablet_portrait wtbx_anim_style_1 wtbx_row_fixed_height_screen wtbx_row-flex-align-stretch wtbx_row-content-align-middle wtbx_row-flex"
-            data-skin="light">
-            <div class="wtbx_vc_el_container wtbx_vc_row_container">
-                <div class="wtbx_vc_el_inner wtbx_vc_row_inner ">
-                    <div class="wtbx_row_wrapper">
-                        <div class="wtbx_row_bg"></div>
-                        <div class="wtbx_row_content clearfix">
-                            <div class="wtbx_row_content_wrapper">
-                                <div class="wtbx_row_content_inner clearfix bigger">
-                                    <div
-                                        class="wtbx_vc_column vc_col-sm-8 vc_col-md-6 wtbx_with_image wtbx_vc_column-227644112">
-                                        <div class="wtbx_vc_el_container wtbx_vc_column_container">
-                                            <div class="wtbx_vc_el_inner wtbx_vc_column_inner">
-                                                <div class="wtbx_column_wrapper clearfix">
-                                                    <div class="wtbx_column_content">
-                                                        <div
-                                                            class="wtbx_vc_styled_heading wtbx_vc_styled_heading-227644440 wtbx_style_default">
-                                                            <div
-                                                                class="wtbx_vc_el_container wtbx_vc_styled_heading_container clearfix">
-                                                                <div
-                                                                    class="wtbx_vc_el_inner wtbx_vc_styled_heading_inner">
-                                                                    <div class="wtbx_heading_el_title_wrapper h1">
-                                                                    <h1 class="wtbx_heading_el_title wtbx-text">
-                                                                            <?php  echo $title; ?></h1>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="wtbx_vc_column vc_col-sm-4 vc_col-md-6 wtbx_with_image wtbx_vc_column-227644850">
-                                        <div class="wtbx_vc_el_container wtbx_vc_column_container">
-                                            <div class="wtbx_vc_el_inner wtbx_vc_column_inner">
-                                                <div class="wtbx_column_wrapper clearfix">
-                                                    <div class="wtbx_column_content">
-                                                        <div
-                                                            class="wpb_single_image wpb_content_element vc_align_center">
-
-                                                            <figure class="wpb_wrapper vc_figure">
-                                                                <div
-                                                                    class="vc_single_image-wrapper vc_box_rounded  vc_box_border_grey">
-                                                                    <img class="vc_single_image-img "
-                                                                        src="./assets/image/<?php echo $image; ?>"
-                                                                        width="1024" height="819" alt="<?php echo $title; ?>"
-                                                                        title="<?php echo $title; ?>"></div>
-                                                            </figure>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="wtbx-large-7">
+            <br><br>
+            <div class="inhype-post-single inhype-post">
+                <div class="post-categories"><a href="blog.php?category=<?php echo $category; ?>"><span
+                            class="cat-title"><?php echo $category; ?></span></a></div>
+                <div class="inhype-post-details">
+                    <h1 class="post-title entry-title" ><?php echo $title; ?>
+                    </h1>
+                    <div class="inhype-data-post-details">
+                    <div class="post-author">
+                        <span class="vcard">
+                            By: <span class="fn"><a href="blog.php?author=<?php echo $author; ?>" title="Posts by <?php echo $author; ?>"
+                                    rel="author"><?php echo $author; ?></a></span>
+                        </span>
                     </div>
+                    <div class="post-info-dot"></div>
+                    <div class="post-date">
+                        <span class="vcard">
+                            Published On:
+                            <span class="fn"> <time class="entry-date published updated"><?php echo $time; ?></time> </span>
+                        </span>
+                        
+                    </div>
+                    <div class="post-info-dot"></div>
+                    <div class="post-read-time">
+                        <span class="vcard">
+                            Duration:
+                            <span class="fn"> <time class="entry-date published updated"><?php echo $duration; ?></time> </span>
+                        </span></div>
+                    </div>
+                    
+                    
                 </div>
+            </div>
+            <div class="row">
+                <figure class="wpb_wrapper vc_figure">
+                    <div class="vc_single_image-wrapper vc_box_rounded  vc_box_border_grey">
+                        <img class="vc_single_image-img " src="./assets/image/<?php echo $image; ?>" width="1024"
+                            height="819" alt="<?php echo $title; ?>" title="<?php echo $title; ?>">
+                    </div>
+                </figure>
             </div>
         </div>
 
@@ -929,20 +985,7 @@ if (isset($_GET['title'])){
                         <div class="wtbx-width wtbx-large-7 wtbx-medium-8 wtbx-small-9">
                             <div class="post-entry-header">
                             </div><!-- .entry-header -->
-                            <div class="entry-meta single-post-meta">
-
-                                <span class="meta-author">By <a class="meta-author-link"
-                                        href="blog.php?category=<?php echo $author; ?>"
-                                        title="View all posts by Talemia HQ">Talemia HQ</a>
-                                </span>
-
-                                <span class="meta-category">
-                                    in<span class="category-list"><a class="meta-author-link"
-                                            href="blog.php?category=<?php echo $category; ?>" rel="category tag">Success
-                                            Stories</a></span>
-                                </span>
-
-                            </div>
+                            
                             <?php echo $blog; ?>
 
 
@@ -1314,7 +1357,7 @@ if (isset($_GET['title'])){
     $(document).ready(function () {
         $('.wtbx-like-button.sl-button.like').on('click', function (e) {
             e.preventDefault();
-            var postid = <?php echo $id; ?> ;
+            var postid = < ? php echo $id; ? > ;
             $.ajax({
                 url: 'backend/likes.php',
                 type: 'POST',
