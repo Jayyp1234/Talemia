@@ -955,7 +955,7 @@ $title = "Buildr";
 																					<div
 																						class="wtbx_heading_el_title_wrapper h1">
 																						<h1
-																							class="wtbx_heading_el_title wtbx-text">
+																							class="wtbx_heading_el_title wtbx-text wow zoomIn">
 																							Start a 0 to 1 Journey</h1>
 																					</div>
 																				</div>
@@ -1024,6 +1024,7 @@ $title = "Buildr";
 																			class="wtbx_vc_empty_space wtbx_vc_empty_space-126745620">
 																			<span class="wtbx_empty_space_inner"></span>
 																		</div>
+																	<div class="wow fadeInUp" data-wow-delay="0.1s">
 																		<div
 																			class="wtbx_vc_text_element wtbx_vc_text_element-126745806 wtbx_display_block wtbx_disable_margin">
 																			<div
@@ -1070,6 +1071,7 @@ $title = "Buildr";
 															</div>
 														</div>
 													</div>
+												</div>
 													<div
 														class="wtbx_vc_column vc_col-sm-6 vc_col-md-offset-2 vc_col-md-4 wtbx_with_image wtbx_vc_column-126747282">
 														<div class="wtbx_vc_el_container wtbx_vc_column_container">
@@ -1159,7 +1161,7 @@ $title = "Buildr";
 																			<div
 																				class="wtbx_vc_el_container wtbx_vc_content_box_container wtbx_equal_height_cont clearfix">
 																				<div
-																					class="wtbx_vc_el_inner wtbx_vc_content_box_inner wtbx_equal_height_cont clearfix">
+																					class="wtbx_vc_el_inner wtbx_vc_content_box_inner wtbx_equal_height_cont clearfix wow slideInUp" data-wow-delay="0.2s">
 																					<div
 																						class="wtbx_content_box_bg wtbx_content_box_bg_idle">
 																					</div>
@@ -1338,16 +1340,21 @@ $title = "Buildr";
 		font-size: 1.6rem;
 		line-height: 1.8;
     }.section2 .privileges ul li i{
-        display: flex;
+		color: #09099d;
+		display: flex;
 		align-items: center;
-		font-size: 1.2rem
-    }.section2 .privileges ul li span{
-        font-weight: 800;
+		font-size: 1.4rem;
+	}.section2 .privileges ul li span{
+		font-weight: 600;
 		margin-left: 2rem;
-		color: #151221;
+		color: #09099d;
+		font-size: 1.4rem;
     }
 
 	@media (min-width: 768px) and (max-width: 1025px){
+		.para {
+			font-size: 2.5rem;
+		}
 		.wtbx-image-crop img {
 			height: 300px;
 		}.wtbx_vc_button.wtbx_style_arrow.wtbx_type_simple .wtbx-button {
@@ -1378,8 +1385,9 @@ $title = "Buildr";
 			margin-top: 2rem;
 			font-size: 1.05rem;
 			line-height: 1.7pc;
-		}.section2 .privileges ul li{
-			font-size: 1.3rem;
+		}.section2 .privileges ul li i,
+		.section2 .privileges ul li span {
+			font-size: 1.2rem;
 		}
 	}
 
@@ -1432,13 +1440,16 @@ $title = "Buildr";
 			font-size: 1.08rem;
 			line-height: 1.6pc;
 			text-align: start;
-		}.section2 .privileges ul li {
+		}.section2 .privileges ul li i {
+			font-size: 1.1rem;
+		}.section2 .privileges ul li span {
 			font-size: 1.2rem;
 		}
 	}
+
 	@media all and (max-width: 375px){
 		.section2 .header p {
-			font-size: .8rem;
+			font-size: .9rem;
 			font-weight: 600;
 		}.section2 .content h4 {
 			font-size: 1.75rem;
@@ -1451,12 +1462,12 @@ $title = "Buildr";
 	
 	</style>
 			<div class="row col-12 section2">
-				<div class="col-12 header">
+				<div class="col-12 header wow flipInX" data-wow-delay="0.2s">
 					<h4 style="font-weight: bolder"> Knowledge that triggers Execution</h4>
 					<p class="col-10 col-md-8">There’s absolutely no need to bore you with what’s googleable. We bring you practical and relatable unique stories from big players in the African startup ecosystem so that you can move seamlessly from 0 to 1</p>
 				</div>
 				<div class="col-12 col-md-6 content">
-					<div class="col-10 mx-auto">
+					<div class="col-10 mx-auto wow fadeInUp">
 						<h4>Go from 0 to 1</h4>
 						<p class="col">Ideas are $0. Execution is the game! Go from knowing to doing. There are no ‘Unicorn Ideas’. Ideas no longer rule the world, Execution does</p>
 					</div>
@@ -1464,13 +1475,13 @@ $title = "Buildr";
 				<div class="col-12 col-md-6 privileges">
 					<div>
 						<ul>
-							<li><i class="icon-check_circle"></i><span>Startup Playbook</span></li>
-							<li><i class="icon-check_circle"></i><span>Launch Tools</span></li>
-							<li><i class="icon-check_circle"></i><span>Group Coaching calls</span></li>
-							<li><i class="icon-check_circle"></i><span>Free Event Access</span></li>
-							<li><i class="icon-check_circle"></i><span>Accessibility</span></li>
-							<li><i class="icon-check_circle"></i><span>Digital Visibility</span></li>
-							<li><i class="icon-check_circle"></i><span>Network Collaboration</span></li>
+							<li class="wow fadeInUp" data-wow-delay="0.1s"><i class="icon-check_circle"></i><span>Startup Playbook</span></li>
+							<li class="wow fadeInUp" data-wow-delay="0.3s"><i class="icon-check_circle"></i><span>Launch Tools</span></li>
+							<li class="wow fadeInUp" data-wow-delay="0.5s"><i class="icon-check_circle"></i><span>Group Coaching calls</span></li>
+							<li class="wow fadeInUp" data-wow-delay="0.7s"><i class="icon-check_circle"></i><span>Free Event Access</span></li>
+							<li class="wow fadeInUp" data-wow-delay="0.9s"><i class="icon-check_circle"></i><span>Accessibility</span></li>
+							<li class="wow fadeInUp" data-wow-delay="1.1s"><i class="icon-check_circle"></i><span>Digital Visibility</span></li>
+							<li class="wow fadeInUp" data-wow-delay="1.3s"><i class="icon-check_circle"></i><span>Network Collaboration</span></li>
 						</ul>
 					</div>
 				</div>

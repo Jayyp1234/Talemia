@@ -1041,7 +1041,7 @@ $title = "Techcleek";
 			font-size: .95rem;
 		}
         .section2 .content h4 {
-            font-size: 1.5rem;
+			font-size: 1.48rem;
         }
         .section2 .content p {
             margin-top: 1rem;
@@ -1128,7 +1128,7 @@ $title = "Techcleek";
                                 <div class="container">
                                     <div class="row col-12 section1">
                                         <div class="content-desc col-10 col-md-6">
-                                            <div class="col-12">
+                                            <div class="col-12 wow fadeInLeft" data-wow-delay="0.1s">
                                                 <h3>TechCleek.</h3>
                                                 <p class="col-12">African early stage startups with little traction aren’t getting enough media spotlight. Are you building an innovative tech solution? Get even more visibility and wider reach</p>
                                             </div>
@@ -1146,7 +1146,7 @@ $title = "Techcleek";
 																									</div>
 																								</div>
                                         </div>
-                                        <div class="image col-12 col-md-6 text-center">
+                                        <div class="image col-12 col-md-6 text-center wow fadeInRight" data-wow-delay="0.3s">
                                             <img src="assets/image/Picture4.png" alt="" class="img-fluid">
                                         </div>
                                         
@@ -1165,12 +1165,12 @@ $title = "Techcleek";
 							<div class="wtbx_vc_el_container wtbx_vc_row_container">
 								<div class="wtbx_vc_el_inner wtbx_vc_row_inner">
                                 <div class="row col-12 section2">
-                                    <div class="col-12 header">
+                                    <div class="col-12 header wow fadeInUp" data-wow-delay="0.3s">
                                         <h4 style="font-weight: bolder">Little Traction? Still Get Seen</h4>
                                         <p class="col-10 col-md-8">You don’t need to wait till you raise a $2M pre-seed to be seen. We can do get you visibility even with little traction. The ecosystem needs to know  about your innovative solution</p>
                                     </div>
                                     <div class="col-12 col-md-6 content">
-                                        <div class="col-10 col-md-12 col-lg-10 mx-auto">
+                                        <div class="col-10 col-md-12 col-lg-10 mx-auto wow zoomIn" data-wow-delay="0.4s">
                                             <h4>Push Up Your Idea. Increase Your Visibility</h4>
                                             <p class="col">Imagine the possibility of getting your solution into the eyes of potential users, investors and partners? Let’s make the <em style="font-weight: bold">magic</em> happen</p>
                                         </div>

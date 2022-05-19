@@ -998,7 +998,7 @@ $title = "Buildr";
     background-color: white;
     color: black;
 }.wtbx_vc_text_element.wtbx_disable_margin .wtbx_text_element_inner p:last-child {
-    color: black;
+    /* color: white; */
 }a{
 	text-decoration:none;
 }
@@ -1020,14 +1020,14 @@ ul{
     font-weight: bolder;
     font-size: 4rem;
     color: rgba(12, 12, 100, 1);
-}.content-desc p{
+	}.content-desc p{
         margin: 0;
         font-size: 1.35rem;
         text-transform: initial;
     }.content-desc p span {
     font-weight: 900;
     color: rgba(9, 9, 157, 1);
-}.section1 .image img{
+	}.section1 .image img{
         width: auto;
         height: 480px;
     }.content-desc .link {
@@ -1072,7 +1072,70 @@ ul{
         text-transform: initial;
     }.section2 .image{
         padding: 0;
-    }.section3{
+    }
+	
+	
+
+	.sectiontwo{
+        padding: 50px 0 50px;
+        align-items: stretch;
+        margin: 0;
+    }.sectiontwo .header{
+        margin: 1rem auto;
+        text-align:center;
+        padding: 2em 1em;
+    }.sectiontwo .header h4{
+        font-size: 1.6rem
+    }.sectiontwo .header p{
+        margin: 0 auto;
+        text-transform: initial;
+        font-size: 1.2rem
+    }.sectiontwo .body{
+        background-color: #09099d;
+        padding: 90px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+    }.sectiontwo .body h4{
+        font-weight:900;
+        font-size: 2.5rem;
+        color: #fff;
+    }.sectiontwo .body p{
+        margin-top: 2.5rem;
+        font-size: 1.3rem;
+        line-height: 1.9pc;
+        text-transform: initial;
+	}.sectiontwo .privileges, .sectiontwo .privileges ul{
+        padding: 0;
+    }.sectiontwo .privileges{
+		background: #f6f6f6;
+        padding:45px;
+	}.sectiontwo .privileges > div{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}.sectiontwo .privileges ul li{
+		display: flex;
+		align-items: center;
+		font-size: 1.6rem;
+		line-height: 1.8;
+    }.sectiontwo .privileges ul li i{
+		color: #09099d;
+		display: flex;
+		align-items: center;
+		font-size: 1.45rem;
+	}.sectiontwo .privileges ul li span{
+		font-weight: 600;
+		margin-left: 2rem;
+		color: #09099d;
+		font-size: 1.4rem;
+    }
+
+	
+	
+	
+	
+	.section3{
 		padding: 90px 0 135px;
 	}.section3 .header{
         text-transform: initial;
@@ -1205,6 +1268,9 @@ ul{
         .section2 .content h4 {
             font-size: 1.7rem;
         }
+		.sectiontwo .privileges ul li{
+			font-size: 1.3rem;
+		}
         .section2 .content p {
             margin-top: 1.2rem;
             font-size: 1.1rem;
@@ -1249,12 +1315,33 @@ ul{
             margin-left: 8px;
             font-size: .91rem;
         }
+		.sectiontwo .body {
+			padding: 40px;
+		}
+		.sectiontwo .privileges ul li i {
+			font-size: 1.25rem;
+		}
+		.sectiontwo .privileges ul li span {
+			font-size: 1.25rem;
+		}
+		
         
     }
     @media all and (max-width:769px){
 		.section3 .row .card {
             width: 95%;
         }
+		.sectiontwo .body h4 {
+			font-weight: 800;
+			font-size: 2.1rem;
+		}
+		.sectiontwo .body p {
+			font-size: 1rem;
+		}
+		.sectiontwo .privileges ul li i, .sectiontwo .privileges ul li span {
+			font-size: 1.17rem;
+		}
+
 	}
     @media all and (max-width: 425px){
         .content-desc {
@@ -1291,7 +1378,26 @@ ul{
             margin-top: 2.5rem;
             font-size: 1.05rem;
             line-height: 1.7pc;
-        }.section3 .row {
+        }.sectiontwo {
+			padding: 90px 0 50px;
+		}.sectiontwo .body {
+			padding: 40px 3rem;
+		}.sectiontwo .body h4 {
+			font-weight: 800;
+			font-size: 1.6rem;
+		}.sectiontwo .body p {
+			margin-top: 1.5rem;
+			font-size: 1.08rem;
+			line-height: 1.6pc;
+			text-align: start;
+		}.sectiontwo .privileges {
+			padding: 40px 1rem;
+		}.sectiontwo .privileges ul li i{
+			font-size: 1.2rem;
+		}.sectiontwo .privileges ul li span{
+			font-size: 1rem;
+			font-weight: 500;
+		}.section3 .row {
             margin: 0 auto;
         }.section3 .row .card {
             margin: 2rem auto 1rem;
@@ -1307,14 +1413,20 @@ ul{
             margin: 0;
         }.section3 .row .card .card-body ul li {
             line-height: 2rem;
-        }.section3 .row .card .card-body ul li i {
-            font-size: 15px;
-        }.section3 .row .card .card-body ul li span {
-            font-size: 13px;
-        }.section3 .row .card .card-body a {
+        }.sectiontwo .privileges ul li i{
+			font-size: 1.07rem;
+		}.sectiontwo .privileges ul li span{
+			font-size: 1.1rem;
+			font-weight: 500;
+		}.section3 .row .card .card-body a {
             font-size: 13px;
             padding: 0.7em 1.5rem;  
         } 
+		.wtbx_vc_row .wtbx_row_wrapper {
+			padding: 20px 0 30px;
+		}
+
+	
     }
     @media all and (max-width: 375px){
         .container {
@@ -1329,7 +1441,20 @@ ul{
             height: auto;
         }.section3 .row .card {
             width: 93%;
-        }
+        }.sectiontwo {
+			padding: 50px 0 10px;
+		}.sectiontwo .body {
+			padding: 40px 1rem;
+		}.sectiontwo .body h4 {
+			font-size: 1.75rem;
+		}.sectiontwo .body p {
+			font-size: 1rem;
+		}.sectiontwo .privileges ul li i{
+			font-size: 1.03rem;
+		}.sectiontwo .privileges ul li span{
+			font-size: 1.07rem;
+			font-weight: 500;
+		}
     }
 	
 </style>
@@ -1382,6 +1507,30 @@ ul{
 							</div>
 						</div>
 						
+
+
+						<div class="row col-12 sectiontwo">
+							<div class="col-12 col-md-6 body">
+								<div class="col-10 mx-auto  wow fadeInUp" data-wow-delay="0.2s">
+									<h4>Go from 0 to 1</h4>
+									<p class="col">Ideas are $0. Execution is the game! Go from knowing to doing. There are no ‘Unicorn Ideas’. Ideas no longer rule the world, Execution does</p>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 privileges">
+								<div>
+									<ul>
+										<li class="wow fadeInUp" data-wow-delay="0.1s"><i class="icon-check_circle"></i><span>Startup Playbook</span></li>
+										<li class="wow fadeInUp" data-wow-delay="0.3s"><i class="icon-check_circle"></i><span>Launch Tools</span></li>
+										<li class="wow fadeInUp" data-wow-delay="0.5s"><i class="icon-check_circle"></i><span>Group Coaching calls</span></li>
+										<li class="wow fadeInUp" data-wow-delay="0.7s"><i class="icon-check_circle"></i><span>Free Event Access</span></li>
+										<li class="wow fadeInUp" data-wow-delay="0.9s"><i class="icon-check_circle"></i><span>Accessibility</span></li>
+										<li class="wow fadeInUp" data-wow-delay="1.1s"><i class="icon-check_circle"></i><span>Digital Visibility</span></li>
+										<li class="wow fadeInUp" data-wow-delay="1.3s"><i class="icon-check_circle"></i><span>Network Collaboration</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
 						
 
 						<div class="wtbx_vc_row wtbx_vc_row-126754676 wtbx_stretch_row wtbx_align_center wtbx_anim_style_1"
@@ -1403,7 +1552,7 @@ ul{
 																			<div
 																				class="wtbx_vc_el_container wtbx_vc_content_box_container wtbx_equal_height_cont clearfix">
 																				<div
-																					class="wtbx_vc_el_inner wtbx_vc_content_box_inner wtbx_equal_height_cont clearfix">
+																					class="wtbx_vc_el_inner wtbx_vc_content_box_inner wtbx_equal_height_cont clearfix wow flipInY" data-wow-delay="0.5s">
 																					<div
 																						class="wtbx_content_box_bg wtbx_content_box_bg_idle">
 																					</div>
