@@ -1054,6 +1054,7 @@ $title = "Products - Talemia";
 	.section3 .row .card .card-body ul li span{
         margin-left: 14px;
         font-size:  15px;
+		text-decoration:line-through;
         color: #687188;
 		letter-spacing: .3px;
     }.section3 .row .card .card-body a{
@@ -1072,7 +1073,9 @@ $title = "Products - Talemia";
     .section3 .row .card.three ul li span,
     .section3 .row .card.four ul li span{
         color: #09099d;
-        font-weight: 700
+        font-weight: 500;
+		font-size:90%;
+		text-decoration:none;
     }
     @media (max-width: 768px){
         .section2 {
@@ -1155,7 +1158,8 @@ $title = "Products - Talemia";
             width: 43%;
             margin: 1rem auto;
             padding: 1.5rem 0.5rem 2rem;
-			margin: 2.7rem 2rem;
+			margin: 0;
+			margin-bottom:30px;
         }        
         .section3 .row .card .card-title {
             font-size: 1.23rem;
@@ -1321,17 +1325,17 @@ $title = "Products - Talemia";
 						<div class="wtbx_vc_row wtbx_vc_row-126741377 wtbx_stretch_row wtbx_anim_style_1 wtbx_row-flex-align-stretch wtbx_row-content-align-middle wtbx_row-flex"
 							id="buildr" data-skin="light">
 							<div class="row col-12 section2">
-                                <div class="col-12 header">
+                                <div class="col-12 header wow fadeInUp lightSpeedOutRight">
                                     <h4 style="font-weight: bolder">Let's get you Unstuck</h4>
                                     <p class="col-10 col-lg-8">Regardless of how your business journey has been, we’re here to make it super easy for you. We look at all the moving parts, figure out quickly where you’re stuck</p>
                                 </div>
-                                <div class="col-12 col-md-6 content">
-                                    <div class="col-10 mx-auto wow fadeInUp">
+                                <div class="col-12 col-md-6 content wow fadeInLeft">
+                                    <div class="col-10 mx-auto">
                                         <h4>Hack Your Business Growth. Start Today</h4>
                                         <p class="col">We will create the fastest, shortest and the most efficient roadmap for your next level growth. Our expert team with 25 years+ combined experienced are on standby to hand-hold you. Let’s make the journey easier</p>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 image">
+                                <div class="col-12 col-md-6 image wow fadeInRight">
                                     <img src="assets/image/Picture5.png" alt="" class="img-fluid">
                                 </div>
                             </div>

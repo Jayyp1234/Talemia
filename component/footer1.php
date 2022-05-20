@@ -1081,10 +1081,15 @@
                                                                     <div class="vc_wp_custommenu wpb_content_element">
                                                                         <div class="widget widget_nav_menu">
                                                                             <ul id="menu-product" class="menu">
-                                                                                <li class="menu-item menu-item-depth-0 menu-item-9343"
+                                                                            <li class="menu-item menu-item-depth-0 menu-item-9343"
                                                                                     data-id="menu-item-9343"><a
                                                                                         href="buildr.php"
                                                                                         class="menu-link main-menu-link item-title">Buildr</a>
+                                                                                </li>
+                                                                                <li class="menu-item menu-item-depth-0 menu-item-9345"
+                                                                                    data-id="menu-item-9345"><a
+                                                                                        href="hackar.php"
+                                                                                        class="menu-link main-menu-link item-title">Hackar</a>
                                                                                 </li>
                                                                                 <li class="menu-item menu-item-depth-0 menu-item-9344"
                                                                                     data-id="menu-item-9344"><a
@@ -1095,11 +1100,6 @@
                                                                                     data-id="menu-item-9345"><a
                                                                                         href="techcleek.php"
                                                                                         class="menu-link main-menu-link item-title">Tech Cleek</a>
-                                                                                </li>
-                                                                                <li class="menu-item menu-item-depth-0 menu-item-9345"
-                                                                                    data-id="menu-item-9345"><a
-                                                                                        href="hackar.php"
-                                                                                        class="menu-link main-menu-link item-title">Hackar</a>
                                                                                 </li>
                                                                             </ul>
                                                                         </div>
@@ -1139,11 +1139,7 @@
                                                                                         href="#modal-Kleekpod"
                                                                                         class="menu-link main-menu-link item-title">Kleekpod</a>
                                                                                 </li>
-                                                                                <li class="menu-item menu-item-depth-0 menu-item-9347"
-                                                                                    data-id="menu-item-9347"><a
-                                                                                        href="#modal-Kleekbuzz"
-                                                                                        class="menu-link main-menu-link item-title">Kleekbuzz</a>
-                                                                                </li>
+                                                                                
                                                                                 <li class="menu-item menu-item-depth-0  menu-item-9648"
                                                                                     data-id="menu-item-9648"><a
                                                                                         href="https://talemia.com/blog"
