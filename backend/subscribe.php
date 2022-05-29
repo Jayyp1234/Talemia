@@ -2,8 +2,6 @@
 // Start the session
 session_start();
 ?>
-
-
 <?php
 require('connection.php');
 
@@ -35,8 +33,6 @@ if (isset($_POST['subscribe'])) {
       $email = $con->real_escape_string($_POST['email']);
       //session
       $_SESSION["email"] = $email;
-// <<<<<<< HEAD
-// =======
       $_SESSION["name"] = $first_name.''.$first_name;
       $fees = "SELECT `price` FROM `fee` WHERE `id` = '1'";
       $fees_query = mysqli_query($con, $fees);
@@ -48,35 +44,34 @@ if (isset($_POST['subscribe'])) {
       $url = "https://api.paystack.co/transaction/initialize";
       $fields = [
         'email' => $email,
-        'amount' => $price,
-        'callback_url' => 'http://localhost/Talemia/ceo.php'
+        'amount' => "100",
+        'plan' => "PLN_30vj76m3qjulq12"
       ];
       $fields_string = http_build_query($fields);
       //open connection
       $ch = curl_init();
-      
+
       //set the url, number of POST vars, POST data
       curl_setopt($ch,CURLOPT_URL, $url);
       curl_setopt($ch,CURLOPT_POST, true);
       curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
       curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        "Authorization: Bearer sk_test_3cdefe054578eef101b5814803bda115c812b487",
+        "Authorization: Bearer sk_live_715f799648cc103446bdcba18b145ae99e0787f8",
         "Cache-Control: no-cache",
       ));
-      
+
       //So that curl_exec returns the contents of the cURL; rather than echoing it
       curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
-      
+
       //execute post
       $result = curl_exec($ch);
       $myarray = json_decode($result);
       $result2 = ($myarray->data->authorization_url);
-      // echo $result;
-      header("Location: $result2");
+       echo $result;
+       header("Location: https://paystack.com/pay/gbjpd4728-");
     } else {
         echo 'error';
     }
 }
-    
     
 ?>

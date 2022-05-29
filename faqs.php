@@ -626,7 +626,9 @@ $title = "Faqs - Talemia";
     .wtbx_vc_text_element-28508597 .wtbx_text_element_content {
         color: #f7f8fd;
     }
-
+    a{
+        text-decoration:none !important;
+    }
     .wtbx_vc_text_element-28508597 .wtbx_text_element_content {
         font-size: 17px;
         font-weight: 600;
@@ -727,19 +729,19 @@ $title = "Faqs - Talemia";
     }
 
     .wtbx_vc_modal-28513460.wtbx_vc_modal .wtbx_modal_wrapper .wtbx_modal_content .wtbx_modal_inner {
-        padding-top: 45px !important;
+        padding-top: 30px !important;
     }
 
     .wtbx_vc_modal-28513460.wtbx_vc_modal .wtbx_modal_wrapper .wtbx_modal_content .wtbx_modal_inner {
-        padding-right: 45px !important;
+        padding-right: 15px !important;
     }
 
     .wtbx_vc_modal-28513460.wtbx_vc_modal .wtbx_modal_wrapper .wtbx_modal_content .wtbx_modal_inner {
-        padding-bottom: 45px !important;
+        padding-bottom: 30px !important;
     }
 
     .wtbx_vc_modal-28513460.wtbx_vc_modal .wtbx_modal_wrapper .wtbx_modal_content .wtbx_modal_inner {
-        padding-left: 45px !important;
+        padding-left: 15px !important;
     }
 
     .wtbx_vc_styled_heading-28513671.wtbx_vc_styled_heading .wtbx_heading_el_title_wrapper {
@@ -751,6 +753,8 @@ $title = "Faqs - Talemia";
         background-color: #09099d;
     }
 </style>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <div id="main" class="wtbx-footer-default">
 
 
@@ -760,7 +764,44 @@ $title = "Faqs - Talemia";
 
         <div id="container" class="row-inner page-template-default no_sidebar width-default">
             <div id="content">
-
+                                                                                                                <div class="accordion accordion-flush" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+      <div class="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
 
                 <article id="post-2840" class="clearfix post-2840 page type-page status-publish hentry">
                     <div class="entry-content clearfix">
@@ -867,6 +908,7 @@ $title = "Faqs - Talemia";
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
+                                                                                                <!--
                                                                                                 <div
                                                                                                     class="wtbx_vc_expandable_list wtbx_vc_expandable_list-28480534 wtbx_style_default wtbx_skin_light">
                                                                                                     <div
@@ -1411,6 +1453,8 @@ $title = "Faqs - Talemia";
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
+                                                                                                -->
+
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -1493,6 +1537,7 @@ $title = "Faqs - Talemia";
                                                                                                                                     weekly
                                                                                                                                     sessions?
                                                                                                                                 </div>
+                                                                                                                                <i class="fa fa-minus-square-o" aria-hidden="true"></i>
                                                                                                                             </div>
                                                                                                                         </div>
                                                                                                                         <div
@@ -2117,7 +2162,15 @@ $title = "Faqs - Talemia";
 
     </div><!-- #page-wrap  -->
 
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+$( document ).ready(function() {
+    
+});
+</script>
     <?php
     include "component/footer.php";
 

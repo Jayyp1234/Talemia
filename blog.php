@@ -1311,11 +1311,12 @@ ol li{
                                         aria-hidden="true">*</span></label> <textarea id="comment" name="comment"
                                     cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
                             <div class="comment-form-info-fields col_container">
-                                <div class="col_3 comment-form-author"><label for="author">Name</label> <span
-                                        class="required">*</span><input id="author" name="name" type="text" value=""
+                                <div class="col_3 comment-form-author"><label for="author">Name <span
+                                        class="required">*</span></label> 
+                                        <input id="author" name="name" type="text" value=""
                                         size="30" aria-required="true"></div>
-                                <div class="col_3 comment-form-email"><label for="email">Email</label> <span
-                                        class="required">*</span><input id="email" name="email" type="text" value=""
+                                <div class="col_3 comment-form-email"><label for="email">Email <span
+                                        class="required">*</span></label> <input id="email" name="email" type="text" value=""
                                         size="30" aria-required="true"></div>
                             </div>
                             <p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent"
@@ -1325,7 +1326,7 @@ ol li{
                             <p class="form-submit"><input name="submit" type="submit" id="submit"
                                     class="submit wtbx-button wtbx-button-primary button-md" value="Post Comment">
                                 <input type="hidden" name="blog_id" value="<?php echo $id ?>" id="comment_post_ID">
-                                <input type="hidden" name="comment_id" value="" id="comment_post_ID">
+                                <input type="hidden" class="commentid" name="comment_id" value="" id="comment_post_ID">
                             </p>
                         </form>
                     </div><!-- #respond -->
@@ -1354,26 +1355,28 @@ ol li{
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
 </script>
 <script>
-    $(document).ready(function () {
-        $('.wtbx-like-button.sl-button.like').on('click', function (e) {
+    $(document).ready(function(){
+        $(document).on("click", ".linker", function(){
+            alert();
+            $('.commentid').val($(this).attr('data_value'));
+        });
+        $('.wtbx-like-button.sl-button.like').on('click', function(e){
             e.preventDefault();
-            var postid = < ? php echo $id; ? > ;
+            var postid = <?php echo $id; ?>;
             $.ajax({
                 url: 'backend/likes.php',
                 type: 'POST',
                 data: {
-                    'postid': postid,
+                    'postid': postid
                 },
-                success: function (response) {
+                success: function(response){
                     $(this).removeClass('like');
                     $(this).addClass('unlike');
                     $('.sl-count.like-count').text(response);
                 }
             });
         });
-        $(document).on("click", ".linker", function () {
-            $('.commentid').val($(this).attr('data_value'));
-        });
+        
     });
 </script>
 

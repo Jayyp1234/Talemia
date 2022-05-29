@@ -6,7 +6,9 @@ $title = "About Talemia - Talemia";
 	.wtbx_vc_row-101797132 .wtbx_row_bg {
 		background-color: #09099d;
 	}
-
+    .wtbx_inner_column_content {
+    box-shadow: 0 0 25px -7px rgb(9 31 67 / 20%);
+}
 	.wtbx_vc_row-101797132 .wtbx_row_bg_overlay {}
 
 	.wtbx_vc_row-101797132 .wtbx_row_content_inner {
@@ -2746,7 +2748,7 @@ $title = "About Talemia - Talemia";
 											<div class="wtbx_row_content_wrapper">
 												<div class="wtbx_row_content_inner clearfix">
 													<div
-														class="wtbx_vc_column vc_col-sm-6 wtbx_with_image wtbx_vc_column-104929792">
+														class="wtbx_vc_column vc_col-sm-6 vc_col-md-3 wtbx_with_image wtbx_vc_column-104929792">
 														<div class="wtbx_vc_el_container wtbx_vc_column_container">
 															<div class="wtbx_vc_el_inner wtbx_vc_column_inner">
 																<div class="wtbx_column_wrapper clearfix">
@@ -2810,7 +2812,7 @@ $title = "About Talemia - Talemia";
 																															src="assets/image/talemia-people-1-150x150.png"
 																															data-sizes="auto"
 																															alt=""
-																															sizes="150px">
+																															sizes="150px" style="filter: grayscale(100%);">
 																													</div>
 																												</div>
 																												<div
@@ -2853,7 +2855,7 @@ $title = "About Talemia - Talemia";
 																				<div class="wtbx_text_element_content">
 																					<div
 																						class="wtbx_text_element_inner">
-																						<p>Co-founder + Head of Growth
+																						<p>Founder/CEO
 																						</p>
 																					</div>
 																				</div>
@@ -2865,7 +2867,7 @@ $title = "About Talemia - Talemia";
 														</div>
 													</div>
 													<div
-														class="wtbx_vc_column vc_col-sm-6 wtbx_with_image wtbx_vc_column-104976309">
+														class="wtbx_vc_column vc_col-sm-6 vc_col-md-3 wtbx_with_image wtbx_vc_column-104976309">
 														<div class="wtbx_vc_el_container wtbx_vc_column_container">
 															<div class="wtbx_vc_el_inner wtbx_vc_column_inner">
 																<div class="wtbx_column_wrapper clearfix">
@@ -2926,10 +2928,10 @@ $title = "About Talemia - Talemia";
 																														<img class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
 																															data-bg="false"
 																															data-imgratio="1"
-																															src="https://talemia.com/wp-content/uploads/2021/12/talemia-people-2-150x150.png"
+																															src="assets/image/talemia-people-2.png"
 																															data-sizes="auto"
 																															alt=""
-																															sizes="150px">
+																															sizes="150px" style="filter: grayscale(100%);height: 150px;">
 																													</div>
 																												</div>
 																												<div
@@ -2972,7 +2974,244 @@ $title = "About Talemia - Talemia";
 																				<div class="wtbx_text_element_content">
 																					<div
 																						class="wtbx_text_element_inner">
-																						<p>Product Operations</p>
+																						<p>Product Ops</p>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div
+														class="wtbx_vc_column vc_col-sm-6 vc_col-md-3  wtbx_with_image wtbx_vc_column-104929792">
+														<div class="wtbx_vc_el_container wtbx_vc_column_container">
+															<div class="wtbx_vc_el_inner wtbx_vc_column_inner">
+																<div class="wtbx_column_wrapper clearfix">
+																	<div class="wtbx_column_content">
+																		<div
+																			class="wtbx_vc_content_box wtbx_vc_content_box-104930369 wtbx_center_align_mobile_landscape wtbx_style_custom wtbx_align_center wtbx_no_shadow wtbx_hover_big_shadow wtbx_border_default wtbx_scale_ wtbx_overflow">
+																			<div
+																				class="wtbx_vc_el_container wtbx_vc_content_box_container wtbx_equal_height_cont clearfix">
+																				<div
+																					class="wtbx_vc_el_inner wtbx_vc_content_box_inner wtbx_equal_height_cont clearfix">
+																					<div
+																						class="wtbx_content_box_bg wtbx_content_box_bg_idle">
+																					</div>
+																					<div
+																						class="wtbx_content_box_container">
+																						<div
+																							class="wtbx_content_box_wrapper">
+																							<div
+																								class="wtbx_content_box_content">
+																								<div
+																									class="wtbx_vc_team_member wtbx_vc_team_member-104931984 wtbx_with_image wtbx_style_4 wtbx_skin_dark wtbx_scheme_">
+																									<div
+																										class="wtbx_vc_el_container wtbx_vc_team_member_container">
+																										<div
+																											class="wtbx_vc_el_inner wtbx_vc_team_member_inner wtbx_equal_height_cont">
+																											<figure
+																												class="touchhover">
+																												<div
+																													class="wtbx_team_member_photo wtbx_preloader_cont">
+																													<div
+																														class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden preloader-display-none">
+																														<div
+																															class="wtbx-preloader-container">
+
+
+																															<div
+																																class="wtbx-preloader wtbx-preloader-2">
+																																<svg class="circular"
+																																	viewBox="25 25 50 50">
+																																	<circle
+																																		class="path"
+																																		cx="50"
+																																		cy="50"
+																																		r="20"
+																																		fill="none"
+																																		stroke-width="3"
+																																		stroke-miterlimit="10"
+																																		stroke="#09099d"
+																																		stroke-linecap="round">
+																																	</circle>
+																																</svg>
+																															</div>
+
+																														</div>
+																													</div>
+																													<div
+																														class="wtbx_team_member_photo_inner wtbx-element-reveal wtbx-reveal-cont wtbx-element-visible">
+																														<img class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
+																															data-bg="false"
+																															data-imgratio="1"
+																															src="assets/image/Victor Afia.jpg"
+																															data-sizes="auto"
+																															alt=""
+																															sizes="150px" style="filter: grayscale(100%);">
+																													</div>
+																												</div>
+																												<div
+																													class="wtbx_team_member_content">
+																													<div
+																														class="wtbx_team_member_details">
+																													</div>
+																												</div>
+																											</figure>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+
+																		<div
+																			class="wtbx_vc_empty_space wtbx_vc_empty_space-104975216">
+																			<span class="wtbx_empty_space_inner"></span>
+																		</div>
+																		<div
+																			class="wtbx_vc_text_element wtbx_vc_text_element-104975477 wtbx_display_block wtbx_disable_margin">
+																			<div
+																				class="wtbx_vc_el_container wtbx_vc_text_element_container">
+																				<div class="wtbx_text_element_content">
+																					<div
+																						class="wtbx_text_element_inner">
+																						<p>Victor Afia</p>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div
+																			class="wtbx_vc_text_element wtbx_vc_text_element-104975836 wtbx_display_block wtbx_disable_margin">
+																			<div
+																				class="wtbx_vc_el_container wtbx_vc_text_element_container">
+																				<div class="wtbx_text_element_content">
+																					<div
+																						class="wtbx_text_element_inner">
+																						<p>Communications
+																						</p>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div
+														class="wtbx_vc_column vc_col-sm-6 vc_col-md-3 wtbx_with_image wtbx_vc_column-104976309">
+														<div class="wtbx_vc_el_container wtbx_vc_column_container">
+															<div class="wtbx_vc_el_inner wtbx_vc_column_inner">
+																<div class="wtbx_column_wrapper clearfix">
+																	<div class="wtbx_column_content">
+																		<div
+																			class="wtbx_vc_content_box wtbx_vc_content_box-104976764 wtbx_style_custom wtbx_align_center wtbx_content_align_center wtbx_no_shadow wtbx_hover_big_shadow wtbx_border_default wtbx_scale_ wtbx_overflow">
+																			<div
+																				class="wtbx_vc_el_container wtbx_vc_content_box_container wtbx_equal_height_cont clearfix">
+																				<div
+																					class="wtbx_vc_el_inner wtbx_vc_content_box_inner wtbx_equal_height_cont clearfix">
+																					<div
+																						class="wtbx_content_box_bg wtbx_content_box_bg_idle">
+																					</div>
+																					<div
+																						class="wtbx_content_box_container">
+																						<div
+																							class="wtbx_content_box_wrapper">
+																							<div
+																								class="wtbx_content_box_content">
+																								<div
+																									class="wtbx_vc_team_member wtbx_vc_team_member-104977219 wtbx_with_image wtbx_style_4 wtbx_skin_dark wtbx_scheme_">
+																									<div
+																										class="wtbx_vc_el_container wtbx_vc_team_member_container">
+																										<div
+																											class="wtbx_vc_el_inner wtbx_vc_team_member_inner wtbx_equal_height_cont">
+																											<figure
+																												class="touchhover">
+																												<div
+																													class="wtbx_team_member_photo wtbx_preloader_cont">
+																													<div
+																														class="wtbx-preloader-wrapper wtbx-preloader-el preloader-hidden preloader-display-none">
+																														<div
+																															class="wtbx-preloader-container">
+
+
+																															<div
+																																class="wtbx-preloader wtbx-preloader-2">
+																																<svg class="circular"
+																																	viewBox="25 25 50 50">
+																																	<circle
+																																		class="path"
+																																		cx="50"
+																																		cy="50"
+																																		r="20"
+																																		fill="none"
+																																		stroke-width="3"
+																																		stroke-miterlimit="10"
+																																		stroke="#09099d"
+																																		stroke-linecap="round">
+																																	</circle>
+																																</svg>
+																															</div>
+
+																														</div>
+																													</div>
+																													<div
+																														class="wtbx_team_member_photo_inner wtbx-element-reveal wtbx-reveal-cont wtbx-element-visible">
+																														<img class="wtbx-image wtbx-lazy lazyautosizes wtbx-lazyloaded"
+																															data-bg="false"
+																															data-imgratio="1"
+																															src="assets/image/talemia-people-2.png"
+																															data-sizes="auto"
+																															alt=""
+																															sizes="150px" style="filter: grayscale(100%);">
+																													</div>
+																												</div>
+																												<div
+																													class="wtbx_team_member_content">
+																													<div
+																														class="wtbx_team_member_details">
+																													</div>
+																												</div>
+																											</figure>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+
+																		<div
+																			class="wtbx_vc_empty_space wtbx_vc_empty_space-105023458">
+																			<span class="wtbx_empty_space_inner"></span>
+																		</div>
+																		<div
+																			class="wtbx_vc_text_element wtbx_vc_text_element-105023698 wtbx_display_block wtbx_disable_margin">
+																			<div
+																				class="wtbx_vc_el_container wtbx_vc_text_element_container">
+																				<div class="wtbx_text_element_content">
+																					<div
+																						class="wtbx_text_element_inner">
+																						<p>Paul Okoduwa</p>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div
+																			class="wtbx_vc_text_element wtbx_vc_text_element-105024074 wtbx_display_block wtbx_disable_margin">
+																			<div
+																				class="wtbx_vc_el_container wtbx_vc_text_element_container">
+																				<div class="wtbx_text_element_content">
+																					<div
+																						class="wtbx_text_element_inner">
+																						<p>Growth</p>
 																					</div>
 																				</div>
 																			</div>
@@ -3065,12 +3304,11 @@ $title = "About Talemia - Talemia";
 																									data-bg="false"
 																									data-imgratio="1542:550"
 																									data-aspectratio="2.8036"
-																									src="https://talemia.com/wp-content/uploads/2021/12/more-techies-drk-300x107.png"
-																									srcset="https://talemia.com/wp-content/uploads/2021/12/more-techies-drk.png 1542w, https://talemia.com/wp-content/uploads/2021/12/more-techies-drk-300x107.png 300w, https://talemia.com/wp-content/uploads/2021/12/more-techies-drk-1024x365.png 1024w, https://talemia.com/wp-content/uploads/2021/12/more-techies-drk-768x274.png 768w, https://talemia.com/wp-content/uploads/2021/12/more-techies-drk-1536x548.png 1536w, https://talemia.com/wp-content/uploads/2021/12/more-techies-drk-1440x514.png 1440w"
+																									src="assets/image/more-techies-drk.png"
 																									data-sizes="auto"
 																									data-parent-fit="cover"
 																									alt="more techies drk"
-																									sizes="151.3944px">
+																									sizes="151.3944px" >
 																							</div>
 																						</div>
 																					</div>

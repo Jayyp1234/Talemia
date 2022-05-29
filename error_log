@@ -1,0 +1,134 @@
+[20-May-2022 12:27:50 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/talecmqj/public_html/Talemia/backend/connection.php on line 8
+[20-May-2022 12:29:08 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/talecmqj/public_html/Talemia/backend/connection.php on line 8
+[20-May-2022 12:29:22 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/talecmqj/public_html/Talemia/backend/connection.php on line 8
+[20-May-2022 12:33:48 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'talecmqj_wp593'@'server266.web-hosting.com' (using password: YES) in /home/talecmqj/public_html/Talemia/backend/connection.php on line 8
+[20-May-2022 12:34:24 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'talecmqj_wp593'@'server266.web-hosting.com' (using password: YES) in /home/talecmqj/public_html/Talemia/backend/connection.php on line 8
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: category in /home/talecmqj/public_html/Talemia/blog.php on line 931
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: category in /home/talecmqj/public_html/Talemia/blog.php on line 932
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 939
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 939
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 940
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: time in /home/talecmqj/public_html/Talemia/blog.php on line 947
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: duration in /home/talecmqj/public_html/Talemia/blog.php on line 955
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: image in /home/talecmqj/public_html/Talemia/blog.php on line 965
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: blog in /home/talecmqj/public_html/Talemia/blog.php on line 989
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: tag in /home/talecmqj/public_html/Talemia/blog.php on line 1003
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1025
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1084
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1219
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1220
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1269
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1327
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: category in /home/talecmqj/public_html/Talemia/blog.php on line 931
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: category in /home/talecmqj/public_html/Talemia/blog.php on line 932
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 939
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 939
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 940
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: time in /home/talecmqj/public_html/Talemia/blog.php on line 947
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: duration in /home/talecmqj/public_html/Talemia/blog.php on line 955
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: image in /home/talecmqj/public_html/Talemia/blog.php on line 965
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: blog in /home/talecmqj/public_html/Talemia/blog.php on line 989
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: tag in /home/talecmqj/public_html/Talemia/blog.php on line 1003
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1025
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1084
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1219
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1220
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1269
+[20-May-2022 13:08:52 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1327
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: category in /home/talecmqj/public_html/Talemia/blog.php on line 931
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: category in /home/talecmqj/public_html/Talemia/blog.php on line 932
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 939
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 939
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 940
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: time in /home/talecmqj/public_html/Talemia/blog.php on line 947
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: duration in /home/talecmqj/public_html/Talemia/blog.php on line 955
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: image in /home/talecmqj/public_html/Talemia/blog.php on line 965
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: blog in /home/talecmqj/public_html/Talemia/blog.php on line 989
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: tag in /home/talecmqj/public_html/Talemia/blog.php on line 1003
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1025
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1084
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1219
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1220
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1269
+[20-May-2022 13:08:53 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1327
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: category in /home/talecmqj/public_html/Talemia/blog.php on line 931
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: category in /home/talecmqj/public_html/Talemia/blog.php on line 932
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 939
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 939
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 940
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: time in /home/talecmqj/public_html/Talemia/blog.php on line 947
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: duration in /home/talecmqj/public_html/Talemia/blog.php on line 955
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: image in /home/talecmqj/public_html/Talemia/blog.php on line 965
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: blog in /home/talecmqj/public_html/Talemia/blog.php on line 989
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: tag in /home/talecmqj/public_html/Talemia/blog.php on line 1003
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1025
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1084
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1219
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1220
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1269
+[20-May-2022 13:29:30 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1327
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: category in /home/talecmqj/public_html/Talemia/blog.php on line 931
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: category in /home/talecmqj/public_html/Talemia/blog.php on line 932
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 939
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 939
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 940
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: time in /home/talecmqj/public_html/Talemia/blog.php on line 947
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: duration in /home/talecmqj/public_html/Talemia/blog.php on line 955
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: image in /home/talecmqj/public_html/Talemia/blog.php on line 965
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: blog in /home/talecmqj/public_html/Talemia/blog.php on line 989
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: tag in /home/talecmqj/public_html/Talemia/blog.php on line 1003
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1025
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1084
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1219
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1220
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1269
+[20-May-2022 13:29:36 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1327
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: category in /home/talecmqj/public_html/Talemia/blog.php on line 931
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: category in /home/talecmqj/public_html/Talemia/blog.php on line 932
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 939
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 939
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 940
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: time in /home/talecmqj/public_html/Talemia/blog.php on line 947
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: duration in /home/talecmqj/public_html/Talemia/blog.php on line 955
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: image in /home/talecmqj/public_html/Talemia/blog.php on line 965
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: blog in /home/talecmqj/public_html/Talemia/blog.php on line 989
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: tag in /home/talecmqj/public_html/Talemia/blog.php on line 1003
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1025
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1084
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1219
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1220
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1269
+[20-May-2022 13:29:54 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1327
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: category in /home/talecmqj/public_html/Talemia/blog.php on line 931
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: category in /home/talecmqj/public_html/Talemia/blog.php on line 932
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 939
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 939
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: author in /home/talecmqj/public_html/Talemia/blog.php on line 940
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: time in /home/talecmqj/public_html/Talemia/blog.php on line 947
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: duration in /home/talecmqj/public_html/Talemia/blog.php on line 955
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: image in /home/talecmqj/public_html/Talemia/blog.php on line 965
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: blog in /home/talecmqj/public_html/Talemia/blog.php on line 989
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: tag in /home/talecmqj/public_html/Talemia/blog.php on line 1003
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1025
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1084
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1219
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1220
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1269
+[20-May-2022 13:30:07 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/Talemia/blog.php on line 1327
+[20-May-2022 15:19:08 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/talecmqj/public_html/blog.php on line 1000
+[20-May-2022 15:19:08 America/New_York] PHP Notice:  Undefined variable: tag in /home/talecmqj/public_html/blog.php on line 1003
+[20-May-2022 15:19:08 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/talecmqj/public_html/blog.php on line 1216
+[20-May-2022 15:21:59 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/talecmqj/public_html/blog.php on line 1000
+[20-May-2022 15:21:59 America/New_York] PHP Notice:  Undefined variable: tag in /home/talecmqj/public_html/blog.php on line 1003
+[20-May-2022 15:21:59 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/talecmqj/public_html/blog.php on line 1216
+[20-May-2022 15:22:19 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/talecmqj/public_html/blog.php on line 1000
+[20-May-2022 15:22:19 America/New_York] PHP Notice:  Undefined variable: tag in /home/talecmqj/public_html/blog.php on line 1003
+[20-May-2022 15:22:19 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/talecmqj/public_html/blog.php on line 1216
+[20-May-2022 15:25:16 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/talecmqj/public_html/blog.php on line 1000
+[20-May-2022 15:25:16 America/New_York] PHP Notice:  Undefined variable: tag in /home/talecmqj/public_html/blog.php on line 1003
+[20-May-2022 15:25:16 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/talecmqj/public_html/blog.php on line 1216
+[20-May-2022 15:32:29 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/talecmqj/public_html/blog.php on line 1000
+[20-May-2022 15:32:29 America/New_York] PHP Notice:  Undefined variable: tag in /home/talecmqj/public_html/blog.php on line 1003
+[20-May-2022 15:32:29 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/talecmqj/public_html/blog.php on line 1216
+[22-May-2022 00:53:10 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/blog.php on line 1365
+[22-May-2022 17:19:26 America/New_York] PHP Notice:  Undefined variable: id in /home/talecmqj/public_html/blog.php on line 1365

@@ -35,8 +35,9 @@
 --><br><br><br>
     <div class="col-12 container position-relative">
         <div class="gform_heading">
-            <h2 class="gform_title" style="font-weight:700;">Join Buildr</h2>
-            <span class="gform_description"></span>
+            <h2 class="gform_title" style="font-weight:700;text-align:center;">Start Your Application</h2>
+            <span class="gform_description"  style="text-align:center;display:block;">Fill out all fields correctly
+</span>
             <p class="gform_required_legend">"<span class="gfield_required gfield_required_asterisk">*</span>" indicates
                 required fields</p>
         </div>
@@ -245,7 +246,3 @@
     </div>
 </div>
 
-
-<?php
-    include "component/footer.php";
-?>

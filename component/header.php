@@ -41,6 +41,8 @@
             vertical-align: -0.1em !important;
             background: none !important;
             padding: 0 !important;
+        }*{
+            font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
         }
     </style>
     <style id="global-styles-inline-css">
@@ -4808,6 +4810,9 @@
                                         </div>
                                     </li>
                                     <li class="menu-item menu-item-depth-0  menu-item-9503" data-id="menu-item-9503"><a
+                                            href="events.php" class="menu-link main-menu-link item-title"
+                                            tabindex="-1">Events</a></li>
+                                    <li class="menu-item menu-item-depth-0  menu-item-9503" data-id="menu-item-9503"><a
                                             href="faqs.php" class="menu-link main-menu-link item-title"
                                             tabindex="-1">FAQs</a></li>
                                 </ul>
@@ -4819,7 +4824,7 @@
                     <div class="wtbx_hs_inner clearfix">
                         <div class="wtbx_ha wtbx_ha_footer_bottom_stack clearfix">
                             <div class="wtbx_header_part header_button header_custom_button header_button_height">
-                                <a href="products.php#buildr" class="wtbx-button wtbx-button-primary"
+                                <a href="joinbuildr.php" class="wtbx-button wtbx-button-primary"
                                     tabindex="-1">Get Started</a>
                             </div>
                             <div class="wtbx_header_part wtbx_header_space header_button_height"></div>
@@ -4867,7 +4872,7 @@
                             <div class="wtbx_hs_inner">
 
                                 <div class="wtbx_header_logo_wrapper with_sticky_logo">
-                                    <a class="wtbx_header_logo" href="https://talemia.com/">
+                                    <a class="wtbx_header_logo" href="index.php">
                                         <img class="wtbx_logo_img" width="120" height="21"
                                             src="assets/image/talemia-logo.svg"
                                             alt="Talemia">
@@ -4944,7 +4949,10 @@
                                                     </ul>
                                                 </div>
                                             </li>
-                                            
+                                            <li class="menu-item menu-item-depth-0 menu-item-9503 nav-item"
+                                                id="menu-item-9503"><a href="events.php"
+                                                    class="menu-link main-menu-link item-title"
+                                                    id="accessible-megamenu-1650757761209-6">Events</a></li>
                                             <li class="menu-item menu-item-depth-0 menu-item-9503 nav-item"
                                                 id="menu-item-9503"><a href="faqs.php"
                                                     class="menu-link main-menu-link item-title"

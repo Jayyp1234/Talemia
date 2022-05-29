@@ -1048,6 +1048,11 @@
                                                                                         href="about.php#careers"
                                                                                         class="menu-link main-menu-link item-title">Careers</a>
                                                                                 </li>
+                                                                                <li class="menu-item menu-item-depth-0  menu-item-8838"
+                                                                                    data-id="menu-item-8838"><a
+                                                                                        href="events.php"
+                                                                                        class="menu-link main-menu-link item-title">Events</a>
+                                                                                </li>
                                                                             </ul>
                                                                         </div>
                                                                     </div>
@@ -1137,12 +1142,12 @@
                                                                             <ul id="menu-resources" class="menu">
                                                                                 <li class="menu-item menu-item-depth-0 menu-item-9346"
                                                                                     data-id="menu-item-9346"><a
-                                                                                        href="#modal-Kleekpod"
+                                                                                        href="https://anchor.fm/kleekpod"
                                                                                         class="menu-link main-menu-link item-title">Kleekpod</a>
                                                                                 </li>
                                                                                 <li class="menu-item menu-item-depth-0  menu-item-9648"
                                                                                     data-id="menu-item-9648"><a
-                                                                                        href="https://talemia.com/blog.php"
+                                                                                        href="blog.php"
                                                                                         class="menu-link main-menu-link item-title">Blog</a>
                                                                                 </li>
                                                                                 
@@ -1156,7 +1161,7 @@
                                                                                 
                                                                                 <li class="menu-item menu-item-depth-0  menu-item-9504"
                                                                                     data-id="menu-item-9504"><a
-                                                                                        href="https://talemia.com/faqs.php"
+                                                                                        href="faqs.php"
                                                                                         class="menu-link main-menu-link item-title">FAQs</a>
                                                                                 </li>
                                                                             </ul>

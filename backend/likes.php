@@ -5,7 +5,7 @@ require('connection.php');
  $postid = $_POST['postid'];
  $likes = "SELECT `user_ip` FROM `likes` WHERE `user_ip` = '$ipaddress'";
  $validate = mysqli_query($con, $likes);
- if (mysqli_num_rows($validate) == 0) {
+ if (mysqli_num_rows($validate) != 0) {
 	$new_likes = "SELECT * FROM `likes` WHERE `blog_id` = '$postid'";
 	 $update_likes = mysqli_query($con, $new_likes);
 	 $x = 0;

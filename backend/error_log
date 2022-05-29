@@ -1,0 +1,4 @@
+[20-May-2022 16:24:54 America/New_York] PHP Notice:  Undefined property: stdClass::$data in /home/talecmqj/public_html/backend/subscribe.php on line 73
+[20-May-2022 16:24:54 America/New_York] PHP Notice:  Trying to get property 'authorization_url' of non-object in /home/talecmqj/public_html/backend/subscribe.php on line 73
+[20-May-2022 16:25:16 America/New_York] PHP Notice:  Undefined variable: name in /home/talecmqj/public_html/backend/webhook.php on line 26
+[20-May-2022 16:31:42 America/New_York] PHP Notice:  Undefined variable: name in /home/talecmqj/public_html/backend/webhook.php on line 26

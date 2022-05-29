@@ -154,13 +154,15 @@
                              <th>Name</th>
                              <th>Title</th>
                              <th>Price</th>
+                             <th>Timestamp</th>
                          </tr>
                      </thead><tbody>";
                      while($row = mysqli_fetch_assoc($query)){
                          $output .="<tr>
-                         <td>".strtoupper($row['user_id'])."</td>
+                         <td>".strtoupper($row['name'])."</td>
                          <td>".strtoupper($row['title'])."</td>
                          <td>".number_format($row['amount'])."</td>
+                         <td>".date('d, m Y',$row['time_stamp'])."</td>
                           
                    </tr>";
                      }

@@ -1,4 +1,9 @@
 <?php
+   //$servername = "server266.web-hosting.com";
+   //$username = "talecmqj_johnpaul";
+   //$password = "+4lI9VBxd2lf";
+   //$database = "talecmqj_talemia";
+
    $servername = "localhost";
    $username = "root";
    $password = "";

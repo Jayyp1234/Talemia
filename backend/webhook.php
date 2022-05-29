@@ -12,6 +12,7 @@ if(isset($reqBody['data'])){
     $status = $reqBody['data']['status'];
     $email = $reqBody['data']['customer']['email'];
     $auth = $reqBody['data']['authorization']['authorization_code'];
+    $name = $reqBody['data']['customer']['first_name'].' '.$reqBody['data']['customer']['last_name'];
     if ($status == 'success' || $status == true){
         $start = time();
         $finish = $start + (intval(1) * 30 * 3600);
