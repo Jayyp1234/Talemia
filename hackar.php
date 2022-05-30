@@ -994,7 +994,9 @@ $title = "Products - Talemia";
         text-transform: initial;
     }.section2 .image{
         padding: 0;
-    }.section3{
+    }.section2 .image img{
+		min-height: 100%;
+	}.section3{
 		padding: 90px 0 135px;
 	}.section3 .header{
         text-transform: initial;
@@ -1011,35 +1013,102 @@ $title = "Products - Talemia";
         align-items: center;
         justify-content: space-between;
         margin: 0 auto;
-    }.section3 .row .card{
-        text-align: center;
-        width: 23%;
-        padding: 1.5rem 1rem 2rem;
-        border-radius: 1rem;
-        box-shadow: 0 0 25px -7px rgb(9 31 67 / 20%);
-        border-color: transparent;
-        transition: .3s ease-in;
-    }.section3 .row .card:hover{
-        transform: scale(1.09);
-    }.section3 .row .card .card-title{
-        font-size: 1.1rem;
-		border: 1.8px solid #09099d;
-		padding: 0.75rem 0;
-		font-weight: 600;
-		border-radius: 5px;
-		letter-spacing: 1px;
-		color: #687188;
-		width: 86%;
-		margin: 0 auto;
-    }.section3 .row .card .card-title span{
-        color: #09099d;
-        font-weight: 800;
-    }.section3 .row .card .card-body{
-        padding: 0;
-        margin: 1rem 0;
-    }.section3 .row .card .card-body ul{
-        text-align: start;
-        margin-top: 1.2rem;
+    }.section3 .row .layer_card{
+		border-radius: 0.25rem;
+		position: relative;
+		backdrop-filter: blur(1px);
+		background-color: #f3eded;
+		min-height: 425px;
+		width: 23%;
+		padding: 0;
+		transition: all .3s ease-in-out;
+	}
+	.layer_card_inner a{
+		padding: 0.5rem 1.1rem;
+		color: whitesmoke;
+		background: #09099d;
+		font-size: 1.05rem;
+		margin: 1.3rem auto 0.5rem;
+		border-radius: 6px;
+		font-weight: bold;
+		letter-spacing: .4px;
+	}
+	.section3 .row .layer_card_inner{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		/* border-radius: .45rem; */
+		padding: 1rem;
+    	text-align: justify;
+		display: flex;
+		align-items: start;
+		justify-content: space-between;
+		flex-direction: column;
+
+	}
+	.section3 .row .layer_card_inner::before,
+	.section3 .row .layer_card_inner::after{
+		/* background-color: #8080801c; */
+		/* border-radius: .25rem; */
+		position: absolute;
+		content: '';
+		height: 100%;
+		width: 100%;
+		transition: all .3s ease-in-out;
+	}
+	.section3 .row .layer_card_inner::before{
+		left: 3%;
+		top: 3%;
+		background-color: #e9e5e54f;
+		z-index: -1;
+		filter: blur(1px);
+	}
+	.section3 .row .layer_card_inner::after{
+		left: 6%;
+		top: 6%;
+		background-color: #f3efef3b;
+		filter: blur(1px);
+		z-index: -2;
+		backdrop-filter: blur(1px);
+	}
+	.section3 .row .layer_card:hover{
+		backdrop-filter: none;
+    	transform: scale(1.05); 
+	}
+	.layer_card:hover .layer_card_inner::after,
+	.layer_card:hover .layer_card_inner::before{
+		left: 0;
+		top: 0;
+		backdrop-filter: unset;
+		filter: unset;
+		background-color: initial;
+
+	}
+	.layer_card_inner ul{
+		margin: 0;
+		width: 100%;
+		flex-grow: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: space-evenly;
+		margin-top: 14px;
+	}
+	.layer_card_inner ul li{
+		height: 40px;
+		line-height: 1;
+		display: flex;
+		align-items: center;
+	}
+	.layer_card_inner .card-title{
+        margin: 0 auto;
+		padding: 0.8rem 3.2rem;
+		border: 3px solid #09099d;
+		border-radius: 8px;
+		font-weight: 700;
+		color: white;
+		letter-spacing: .5px;
+		background: #09099d
     }
 	.section3 .row .card .card-body ul li{
         display: flex;
@@ -1047,16 +1116,16 @@ $title = "Products - Talemia";
         line-height: 2.4rem;
 		padding-left: 1rem;
     }
-	.section3 .row .card .card-body ul li i{
+	.layer_card_inner  i{
         font-size: 17px;
-		color: #687188;
     }
-	.section3 .row .card .card-body ul li span{
-        margin-left: 14px;
-        font-size:  15px;
-		text-decoration:line-through;
-        color: #687188;
+	.layer_card_inner li span{
+        font-size: .96rem;
+   		/* text-decoration: line-through; */
+		color: #353a46b3;
 		letter-spacing: .3px;
+		margin-left: 1rem;
+		font-weight: 600;
     }.section3 .row .card .card-body a{
 		background: #09099d;
 		font-size: .93rem;
@@ -1081,16 +1150,10 @@ $title = "Products - Talemia";
         .section2 {
             align-items: stretch;
         }
-        .section2 .image .img-fluid {
-            height: 346px;
-        }
     }
     @media all and (max-width: 1024px){
         .section2 {
             align-items: stretch;
-        }
-        .section2 .image .img-fluid {
-            height: auto;
         }
         .section3 .row .card .card-body ul {
             width: 80%;
@@ -1143,9 +1206,6 @@ $title = "Products - Talemia";
             font-size: 1.1rem;
             line-height: 1.7pc;
             margin-bottom: 0;
-        }
-        .section2 .image .img-fluid {
-            height: auto;
         }
         .section3 .header {
             margin: 2rem auto;
@@ -1264,8 +1324,6 @@ $title = "Products - Talemia";
 			font-size: 12px;
 		}.section3 .row .card .card-body ul li{
 			padding-left: 0;
-    	}.section2 .image .img-fluid {
-            height: auto;
         }.section3{
 			padding: 50px 0 100px;
 		}.section3 .row .card {
@@ -1332,11 +1390,11 @@ $title = "Products - Talemia";
                                 <div class="col-12 col-md-6 content wow fadeInLeft">
                                     <div class="col-10 mx-auto">
                                         <h4>Hack Your Business Growth. Start Today</h4>
-                                        <p class="col">We will create the fastest, shortest and the most efficient roadmap for your next level growth. Our expert team with 25 years+ combined experienced are on standby to hand-hold you. Let’s make the journey easier</p>
+                                        <p class="col">We will create the fastest, shortest and the most efficient roadmap for your next level growth. Our expert team with 35 years+ combined experienced are on standby to hand-hold you. Let’s make the journey easier</p>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 image wow fadeInRight">
-                                    <img src="assets/image/Picture5.png" alt="" class="img-fluid">
+                                    <img src="assets/image/Picture5.png" alt="" class="img-fluid" id="lady">
                                 </div>
                             </div>
 						</div>
@@ -1344,67 +1402,67 @@ $title = "Products - Talemia";
 							data-skin="light">
 							<div class="wtbx_vc_el_container wtbx_vc_row_container">
 								<div class="wtbx_vc_el_inner wtbx_vc_row_inner">
-                                <div class="container section3">
-								<div class="header col-10">
-                                            <h4>Choose a Plan</h4>
-                                    
-										</div>
-                                    <div class="row col-12">
-                                        
-                                        <div class="card one wow fadeInUp col-sm-12 col-md-6 col-lg-2" data-wow-delay="0.1s">
-                                            <div class="card-body">
-                                                <h5 class="card-title">HACKAR<span>FLEX</span></h5>
-                                                <ul>
-                                                    <li><i class="icon-check_circle" style="color: #090dd9;"></i><span>Strategy Session</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #969799;"></i><span>Strategy Framework</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #969799;"></i><span>Strategy Framework Session</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #969799;"></i><span>Strategy Execution</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #969799;"></i><span>Performance Tracking</span></li>
-                                                </ul>
-                                                <a href="" class="btn">Buy Now</a>
-                                            </div>
-                                        </div>
-                                        <div class="card two wow fadeInUp col-sm-12 col-md-6 col-lg-2" data-wow-delay="0.3s">
-                                            <div class="card-body ">
-                                                <h5 class="card-title">HACKAR<span>PLUS</span></h5>
-                                                <ul>
-                                                    <li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Session</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Framework</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Framework Session</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #969799;"></i><span>Strategy Execution</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #969799;"></i><span>Performance Tracking</span></li>
-                                                </ul>
-                                                <a href="" class="btn">Buy Now</a>
-                                            </div>
-                                        </div>
-                                        <div class="card three wow fadeInUp  col-sm-12 col-md-6 col-lg-2" data-wow-delay="0.5s">
-                                            <div class="card-body three">
-                                                <h5 class="card-title">HACKAR<span>XTRA</span></h5>
-                                                <ul>
-                                                    <li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Session</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Framework</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Framework Session</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Execution</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #09099d;"></i><span>Performance Tracking [6x] </span></li>
-                                                </ul>
-                                                <a href="" class="btn">Buy Now</a>
-                                            </div>
-                                        </div>
-                                        <div class="card four wow fadeInUp col-sm-12 col-md-6 col-lg-2" data-wow-delay="0.7s">
-                                            <div class="card-body four">
-                                                <h5 class="card-title">HACKAR<span>SUPA</span></h5>
-                                                <ul>
-                                                    <li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Session</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Framework</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Framework Session</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Execution</span></li>
-                                                    <li><i class="icon-check_circle" style="color: #09099d;"></i><span>Performance Tracking [12x] </span></li>
-                                                </ul>
-                                                <a href="" class="btn">Buy Now</a>
-                                            </div>
-                                        </div>
+									<div class="container section3">
+										<div class="header col-10"><h4>Choose a Plan</h4></div>
+										<div class="row col-12 p-0 m-0 align-items-center">
+											<!-- card one -->
+											<div class="layer_card one wow fadeInUp col-sm-12 col-md-6 col-lg-2" data-wow-delay="0.1s">
+												<div class="layer_card_inner col-12">
+													<h5 class="card-title">HACKAR<span>FLEX</span></h5>
+													<ul>
+														<li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Session</span></li>
+														<li><i class="icon-times-circle" style="color: #969799;"></i><span>Framework Design</span></li>
+														<li><i class="icon-times-circle" style="color: #969799"></i><span>Framework</span></li>
+														<li><i class="icon-times-circle" style="color: #969799;"></i><span>Strategy Execution</span></li>
+														<li><i class="icon-times-circle" style="color: #969799;"></i><span>Performance Tracking</span></li>
+													</ul>
+													<a href="" class="btn">Buy Now</a>
+												</div>
+											</div>
 
-                                        </div>
+											<!-- card two -->
+											<div class="layer_card one wow fadeInUp col-sm-12 col-md-6 col-lg-2" data-wow-delay="0.3s">
+												<div class="layer_card_inner col-12">
+													<h5 class="card-title">HACKAR<span>PLUS</span></h5>
+													<ul>
+														<li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Session</span></li>
+														<li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Framework</span></li>
+														<li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Framework Session</span></li>
+														<li><i class="icon-times-circle" style="color: #969799;"></i><span>Strategy Execution</span></li>
+														<li><i class="icon-times-circle" style="color: #969799;"></i><span>Performance Tracking</span></li>
+													</ul>
+													<a href="" class="btn">Buy Now</a>
+												</div>
+											</div>
+											<!-- card three -->
+											<div class="layer_card one wow fadeInUp col-sm-12 col-md-6 col-lg-2" data-wow-delay="0.5s">
+												<div class="layer_card_inner col-12">
+													<h5 class="card-title">HACKAR<span>XTRA</span></h5>
+													<ul>
+														<li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Session</span></li>
+														<li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Framework</span></li>
+														<li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Framework Session</span></li>
+														<li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Execution</span></li>
+														<li><i class="icon-check_circle" style="color: #09099d;"></i><span>Performance Tracking [6x] </span></li>
+													</ul>
+													<a href="" class="btn">Buy Now</a>
+												</div>
+											</div>
+											<!-- card three -->
+											<div class="layer_card one wow fadeInUp col-sm-12 col-md-6 col-lg-2" data-wow-delay="0.7s">
+												<div class="layer_card_inner col-12">
+													<h5 class="card-title">HACKAR<span>SUPA</span></h5>
+													<ul>
+														<li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Session</span></li>
+														<li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Framework</span></li>
+														<li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Framework Session</span></li>
+														<li><i class="icon-check_circle" style="color: #09099d;"></i><span>Strategy Execution</span></li>
+														<li><i class="icon-check_circle" style="color: #09099d;"></i><span>Performance Tracking [12x] </span></li>
+													</ul>
+													<a href="" class="btn">Buy Now</a>
+												</div>
+											</div>
+										</div>
                                     </div>
 								</div>
 							</div>
@@ -1422,6 +1480,7 @@ $title = "Products - Talemia";
 
 	</div><!-- #page-wrap  -->
 </div>
+
 
 
 <?php

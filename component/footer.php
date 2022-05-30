@@ -1104,7 +1104,7 @@
                                                                                 <li class="menu-item menu-item-depth-0 menu-item-9345"
                                                                                     data-id="menu-item-9345"><a
                                                                                         href="techcleek.php"
-                                                                                        class="menu-link main-menu-link item-title">Tech Cleek</a>
+                                                                                        class="menu-link main-menu-link item-title">TechCleek</a>
                                                                                 </li>
                                                                                 
                                                                             </ul>

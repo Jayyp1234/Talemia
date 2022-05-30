@@ -6,7 +6,7 @@
     <!-- Search Engine Optimization by Rank Math PRO - https://s.rankmath.com/home -->
     <title><?php echo isset ($title); ?></title>
     <meta name="description"
-        content="Talemia is an Edtech platform supporting early stage African founders to launch their startups faster than than they can do their own">
+        content="Talemia is an Edtech platform supporting early stage African founders to launch their startups faster than they can do their own">
     <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
     <link rel="canonical" href="https://talemia.com/">
     <meta property="og:locale" content="en_US">
@@ -4780,7 +4780,7 @@
                                                                 <li class="sub-menu-item menu-item-depth-1 menu-item-9448"
                                                             data-id="menu-item-9448"><a
                                                                 href="techcleek.php"
-                                                                class="menu-link sub-menu-link">Tech Cleek</a></li>
+                                                                class="menu-link sub-menu-link">TechCleek</a></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -4916,7 +4916,7 @@
                                                                 <li class="sub-menu-item menu-item-depth-1 menu-item-9448"
                                                             data-id="menu-item-9448"><a
                                                                 href="techcleek.php"
-                                                                class="menu-link sub-menu-link">Tech Cleek</a></li>
+                                                                class="menu-link sub-menu-link">TechCleek</a></li>
                                                     </ul>
                                                 </div>
                                             </li>

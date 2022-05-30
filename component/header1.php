@@ -4776,7 +4776,7 @@
                                                                 <li class="sub-menu-item menu-item-depth-1 menu-item-9448"
                                                             data-id="menu-item-9448"><a
                                                                 href="techcleek.php"
-                                                                class="menu-link sub-menu-link">Tech Cleek</a></li>
+                                                                class="menu-link sub-menu-link">TechCleek</a></li>
                                                     </ul>
                                         </div>
                                     </li>
@@ -4906,7 +4906,7 @@
                                                         <li class="sub-menu-item menu-item-depth-1 menu-item-9448"
                                                             data-id="menu-item-9448"><a
                                                                 href="techcleek.php"
-                                                                class="menu-link sub-menu-link">Tech Cleek</a></li>
+                                                                class="menu-link sub-menu-link">TechCleek</a></li>
                                                                 <li class="sub-menu-item menu-item-depth-1 menu-item-9448"
                                                             data-id="menu-item-9448"><a
                                                                 href="hackar.php"

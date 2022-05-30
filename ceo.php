@@ -18,7 +18,7 @@ session_start();
         $price = $row['price'];
       }
      $sql = "UPDATE `signup` SET `date_paid`='$start',`date_expiry`='$finish',`payment_status`='$status' WHERE `email` = '$email'";
-    $sql2 = "INSERT INTO `transaction`(`name`, `title`, `amount`, `time_stamp`) VALUES ('$name','$title','$price','$start')";
+     $sql2 = "INSERT INTO `transaction`(`name`, `title`, `amount`, `time_stamp`) VALUES ('$name','$title','$price','$start')";
      //      query our SQL code
      $update = mysqli_query($con, $sql);
      $insert = mysqli_query($con, $sql2);

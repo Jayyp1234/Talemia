@@ -1523,9 +1523,9 @@ ul{
 										<li class="wow fadeInUp" data-wow-delay="0.3s"><i class="icon-check_circle"></i><span>Launch Tools</span></li>
 										<li class="wow fadeInUp" data-wow-delay="0.5s"><i class="icon-check_circle"></i><span>Group Coaching calls</span></li>
 										<li class="wow fadeInUp" data-wow-delay="0.7s"><i class="icon-check_circle"></i><span>Free Event Access</span></li>
-										<li class="wow fadeInUp" data-wow-delay="0.9s"><i class="icon-check_circle"></i><span>Accessibility</span></li>
-										<li class="wow fadeInUp" data-wow-delay="1.1s"><i class="icon-check_circle"></i><span>Digital Visibility</span></li>
-										<li class="wow fadeInUp" data-wow-delay="1.3s"><i class="icon-check_circle"></i><span>Network Collaboration</span></li>
+										<li class="wow fadeInUp" data-wow-delay="0.9s"><i class="icon-check_circle"></i><span>Premium Access</span></li>
+										<li class="wow fadeInUp" data-wow-delay="1.1s"><i class="icon-check_circle"></i><span>Brand Visibility</span></li>
+										<li class="wow fadeInUp" data-wow-delay="1.3s"><i class="icon-check_circle"></i><span>Networking & Collaboration</span></li>
 									</ul>
 								</div>
 							</div>
@@ -1577,8 +1577,7 @@ ul{
 																													margin-top: 1rem;
 																												}
 																											</style>
-																											<div
-																												class="wtbx_text_element_inner">
+																											<div class="wtbx_text_element_inner">
 																												<p class="para">Launch your idea into a startup</p>
 																											</div>
 																										</div>
@@ -1592,7 +1591,7 @@ ul{
 																											class="wtbx_text_element_content">
 																											<div
 																												class="wtbx_text_element_inner inner-para">
-																												<p style="text-align: center">Buildr will help you figure out all the back-end moving parts in order to take your idea to the market in the shortest time possible
+																												<p style="text-align: center">Buildr will help you figu-in-out all the back-end moving parts in order to take your idea to the market in the shortest time possible
 																												</p>
 																											</div>
 																										</div>
@@ -1604,8 +1603,42 @@ ul{
 																									<span
 																										class="wtbx_empty_space_inner"></span>
 																								</div>
-																								
+																								<style>
+																									.button{
+																										border-radius: 0.55rem;
+																										margin: 0 auto;
+																										text-align: center;
+																										background-color: #09099d;
+																										padding: 0.6em 1rem;
+																										width: max-content;
+																										cursor: pointer;
+																									}
+																									.button a{
+																										font-size: 1.06rem;
+																										font-weight: 600;
+																										color: white;
+																										display: flex;
+																										align-items: center;
+																									}
+																									svg:not(:root) {
+																										overflow: hidden;
+																										width: 18;
+																										margin: 0 0 0 1rem;
+																										fill: #fff;
+																									}
+																								</style>
+																								<div class="button">
+																									<div class="wtbx_vc_el_inner wtbx_vc_button_inner">
+																											<a href="joinbuildr.php" target="_self" class="wtbx-button wtbx-button-arrow" rel="noopener"><span class="wtbx_button_inner">Join Now</span><svg class="wtbx_link_arrow" viewBox="0 0 813 486" xmlns="http://www.w3.org/2000/svg">
+																												<rect class="bar" height="60" rx="30" width="800" y="213">
+																												</rect>
+																												<path class="chevron" d="m793.388955 224.472433c9.626991 11.783528 8.945751 29.177709-2.043717 40.167177l-200.139611 200.139611c-11.715728 11.715728-30.710678 11.715728-42.426406 0-11.715729-11.715729-11.715729-30.710679 0-42.426407l179.073593-179.073593-179.352814-179.3528141c-11.715729-11.7157288-11.715729-30.7106781 0-42.4264069 11.715729-11.71572875 30.710678-11.71572875 42.426407 0l199.418831 199.418831c1.122031 1.122031 2.136603 2.310828 3.043717 3.553602z">
+																												</path>
+																											</svg></a>
+																									</div>
+																								</div>
 																							</div>
+
 																						</div>
 																					</div>
 																				</div>
@@ -1640,7 +1673,7 @@ ul{
 </div>
 
 <?php
-    include "component/footer.php";
+    // include "component/footer.php";
 
 ?>
 

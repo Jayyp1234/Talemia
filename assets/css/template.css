@@ -16404,7 +16404,7 @@ Divider
   display: inline-block;
   font-weight: 600;
   line-height: 3.8em;
-  font-size: .928571em;
+  font-size: 1.03em;
   padding: 0 2.5em;
   border-radius: 6px;
   background-color: #fff;
@@ -16430,7 +16430,7 @@ Divider
   right: 1.5em;
   display: inline-block;
   vertical-align: middle;
-  width: 1em;
+  width: 1.25em;
   height: 1em;
   margin: 0 0 0 1em;
   -moz-transform: translate3d(-3px, -50%, 0);

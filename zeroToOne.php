@@ -1622,15 +1622,15 @@ ul{
 				</div>
 				<div class="col-12 col-md-6 privileges">
 					<div>
-						<ul>
-							<li class="wow fadeInUp" data-wow-delay="0.1s"><i class="icon-check_circle"></i><span>Startup Playbook</span></li>
-							<li class="wow fadeInUp" data-wow-delay="0.3s"><i class="icon-check_circle"></i><span>Launch Tools</span></li>
-							<li class="wow fadeInUp" data-wow-delay="0.5s"><i class="icon-check_circle"></i><span>Group Coaching calls</span></li>
-							<li class="wow fadeInUp" data-wow-delay="0.7s"><i class="icon-check_circle"></i><span>Free Event Access</span></li>
-							<li class="wow fadeInUp" data-wow-delay="0.9s"><i class="icon-check_circle"></i><span>Accessibility</span></li>
-							<li class="wow fadeInUp" data-wow-delay="1.1s"><i class="icon-check_circle"></i><span>Digital Visibility</span></li>
-							<li class="wow fadeInUp" data-wow-delay="1.3s"><i class="icon-check_circle"></i><span>Network Collaboration</span></li>
-						</ul>
+					<ul>
+						<li class="wow fadeInUp" data-wow-delay="0.1s"><i class="icon-check_circle"></i><span>Startup Playbook</span></li>
+						<li class="wow fadeInUp" data-wow-delay="0.3s"><i class="icon-check_circle"></i><span>Launch Tools</span></li>
+						<li class="wow fadeInUp" data-wow-delay="0.5s"><i class="icon-check_circle"></i><span>Group Coaching calls</span></li>
+						<li class="wow fadeInUp" data-wow-delay="0.7s"><i class="icon-check_circle"></i><span>Free Event Access</span></li>
+						<li class="wow fadeInUp" data-wow-delay="0.9s"><i class="icon-check_circle"></i><span>Premium Access</span></li>
+						<li class="wow fadeInUp" data-wow-delay="1.1s"><i class="icon-check_circle"></i><span>Brand Visibility</span></li>
+						<li class="wow fadeInUp" data-wow-delay="1.3s"><i class="icon-check_circle"></i><span>Networking & Collaboration</span></li>
+					</ul>
 					</div>
 				</div>
 			</div>
